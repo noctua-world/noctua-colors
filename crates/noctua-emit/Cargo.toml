@@ -1,0 +1,25 @@
+[package]
+name = "noctua-emit"
+description = "Output targets for noctua-colors: CSS, Tailwind v4, Rust, DTCG, JSON/TypeScript, SCSS and QML."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# This crate performs NO color math. It consumes resolved, quantized colors and
+# formats them. See AGENTS.md ("Invariants").
+[dependencies]
+noctua-core.workspace = true
+noctua-engine.workspace = true
+noctua-spec.workspace = true
+noctua-check.workspace = true
+blake3.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+# Only to verify that the manifest this crate generates is valid TOML.
+toml.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

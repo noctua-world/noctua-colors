@@ -1,0 +1,159 @@
+/* Motion.
+ *
+ * Two rules govern everything here.
+ *
+ * Only `transform` and `opacity` are animated. Both are composited, so they
+ * never trigger layout or paint; animating `height`, `top` or `margin` would
+ * make a long page of swatches stutter on exactly the phone this site is
+ * meant to impress.
+ *
+ * Everything is opt-out by default. `prefers-reduced-motion: reduce` is not a
+ * courtesy — for some visitors motion causes nausea or triggers migraine, so
+ * the reduced state is the safe default and the animation is the enhancement.
+ */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration: 220ms;
+  --duration-slow: 420ms;
+}
+
+/* --- Reveal on scroll ---------------------------------------------------
+ *
+ * Driven by IntersectionObserver rather than by scroll position, so nothing
+ * runs on the main thread while scrolling.
+ *
+ * The initial hidden state is applied by script, not by this stylesheet. If
+ * it were set here and the script failed to load, the whole page would be
+ * invisible — content must never depend on JavaScript to become visible.
+ */
+
+.reveal[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+
+.reveal[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+/* Children stagger, so a row of cards arrives as a sequence rather than a
+ * block. Capped at six: past that the last item feels late rather than
+ * choreographed. */
+.cards .reveal[data-reveal="shown"]:nth-child(2),
+.preview-grid .reveal[data-reveal="shown"]:nth-child(2) {
+  transition-delay: 60ms;
+}
+
+.cards .reveal[data-reveal="shown"]:nth-child(3),
+.preview-grid .reveal[data-reveal="shown"]:nth-child(3) {
+  transition-delay: 120ms;
+}
+
+/* --- Interaction -------------------------------------------------------- */
+
+.swatch {
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+/* Hover-only affordances are useless on touch, so the swatch is a real button
+ * with a real focus and active state; hover is decoration on top. */
+@media (hover: hover) {
+  .swatch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--nc-color-fg) 18%, transparent);
+  }
+}
+
+.swatch:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.button,
+.copy-button,
+.tab {
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.button:active,
+.copy-button:active {
+  transform: scale(0.97);
+}
+
+.mode-toggle-thumb {
+  transition: transform var(--duration) var(--ease-out);
+}
+
+[data-theme="dark"] .mode-toggle-thumb {
+  transform: translateX(1.05rem);
+}
+
+/* --- Theme switching -----------------------------------------------------
+ *
+ * A class added for one frame while the theme changes, then removed. Applied
+ * permanently, every hover and focus would also cross-fade, which feels
+ * sluggish; applied only during the switch, the palette change reads as one
+ * deliberate movement.
+ */
+
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition:
+    background-color var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out),
+    color var(--duration) var(--ease-out) !important;
+}
+
+.detail {
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.detail[hidden] {
+  /* `hidden` alone would snap it away mid-animation. */
+  display: block;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+/* --- Opt out -------------------------------------------------------------
+ *
+ * Everything above is switched off together. Content still appears, states
+ * still change; nothing moves.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal[data-reveal="pending"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .detail[hidden] {
+    display: none;
+    transform: none;
+  }
+}

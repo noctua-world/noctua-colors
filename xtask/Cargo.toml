@@ -1,0 +1,28 @@
+[package]
+name = "xtask"
+description = "The developer command surface for noctua-colors."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+noctua-check.workspace = true
+noctua-core.workspace = true
+noctua-docs.workspace = true
+noctua-emit.workspace = true
+noctua-engine.workspace = true
+noctua-spec.workspace = true
+anstream.workspace = true
+anstyle.workspace = true
+clap.workspace = true
+indexmap.workspace = true
+miette = { workspace = true, features = ["fancy"] }
+notify.workspace = true
+notify-debouncer-full.workspace = true
+tiny_http.workspace = true
+wasm-bindgen-cli-support.workspace = true
+
+[lints]
+workspace = true

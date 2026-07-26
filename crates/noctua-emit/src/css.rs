@@ -1,0 +1,637 @@
+//! CSS custom properties.
+//!
+//! # Light and dark without any configuration
+//!
+//! The brief asks that a consumer pick a light/dark strategy without editing
+//! generated files. The answer is to stop asking: all three strategies are
+//! emitted, composed so they cannot conflict.
+//!
+//! ```css
+//! :root { /* light */ }
+//! @media (prefers-color-scheme: dark) {
+//!   :root:not([data-theme="light"]):not(.light) { /* dark */ }
+//! }
+//! [data-theme="dark"], .dark { /* dark */ }
+//! [data-theme="light"], .light { /* light */ }
+//! ```
+//!
+//! The system preference works with no setup. A class or a data attribute
+//! overrides it, on the root or on any subtree. The `:not()` guards stop a
+//! forced light theme from being overruled by a dark system preference — the
+//! one combination that would otherwise break.
+//!
+//! **The dark block is written twice, on purpose.** Once inside the `@media`
+//! query and once for the forced selector, with identical declarations, because
+//! the two cannot be combined: a selector list is dropped entirely if any
+//! selector in it is invalid, and `@media` cannot be factored into one. Anyone
+//! reading this as duplication to remove should know it compresses to nothing —
+//! the two blocks are byte-identical, which is the best case for gzip — and that
+//! merging them silently loses one of the two mechanisms.
+//!
+//! # Three value layers
+//!
+//! Every palette token is emitted three times: hex, then `oklch()` behind
+//! `@supports`, then a wider `oklch()` behind `@media (color-gamut: p3)`.
+//!
+//! The third layer is the point of relative chroma made visible. The same
+//! token genuinely has a *different number* there, because its chroma was
+//! resolved against a wider boundary. It is not the same color declared twice.
+//!
+//! # Why the semantic layer is prefixed too
+//!
+//! `--nc-color-surface`, not `--color-surface`. Tailwind v4 fixes its theme
+//! namespace at `--color-*` and nothing can rename it, so the *Tailwind* target
+//! emits those names — and since `tailwind/theme.css` imports this file, an
+//! unprefixed layer here would occupy that namespace for every consumer,
+//! including one who has never installed Tailwind and whose own
+//! `--color-surface` would then be silently overridden.
+//!
+//! Prefixing costs three characters and buys the guarantee that nothing this
+//! project emits can collide with anything a consumer writes.
+
+use std::fmt::Write as _;
+
+use noctua_engine::{Palette, ResolvedMode, ResolvedStep};
+
+use crate::tokens;
+use crate::value;
+use crate::{CommentStyle, EmittedFile, Emitter, header};
+
+/// The CSS custom-properties target.
+#[derive(Debug, Clone, Copy)]
+pub struct Css;
+
+impl Emitter for Css {
+    fn id(&self) -> &'static str {
+        "css"
+    }
+
+    fn describe(&self) -> &'static str {
+        "CSS custom properties with a hex fallback and a Display P3 upgrade layer"
+    }
+
+    fn emit(&self, palette: &Palette) -> Vec<EmittedFile> {
+        let mut files = vec![ramp_file(palette)];
+
+        for (index, theme) in palette.themes.iter().enumerate() {
+            files.push(theme_file(palette, theme, index == 0));
+        }
+
+        files.push(index_file(palette));
+        files
+    }
+}
+
+/// How a token's value is spelled in a given layer.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum Layer {
+    /// `#rrggbb`, understood everywhere.
+    Hex,
+    /// `oklch()` resolved against the primary gamut.
+    Oklch,
+    /// `oklch()` resolved against a wider gamut.
+    Wide(usize),
+}
+
+impl Layer {
+    fn render(self, step: &ResolvedStep) -> String {
+        match self {
+            Self::Hex => value::hex(step.primary()),
+            Self::Oklch => value::oklch(step.primary()),
+            Self::Wide(slot) => value::oklch(&step.renditions[slot]),
+        }
+    }
+}
+
+fn spec_path() -> &'static str {
+    "specs/noctua.toml"
+}
+
+/// The theme's own scope, and the selectors for each mode override.
+struct Selectors {
+    light: String,
+    system_dark: String,
+    forced_dark: String,
+    forced_light: String,
+}
+
+/// The stylesheet a theme is written to.
+///
+/// Every theme's file is named after the theme. The default one drops the
+/// prefix — `balanced.css` rather than `theme-balanced.css` — because it is
+/// the one a consumer links by default and the others are opt-in extras asked
+/// for by name.
+///
+/// **Renaming a theme renames this file.** That is deliberate: the file holds
+/// exactly one theme and saying so is worth more than a fixed name. The cost
+/// is that a rename is a breaking change for anyone linking it directly, and
+/// the references inside this repository all have to move together — the
+/// README, `examples/`, the site's integration snippet, and
+/// `noctua_docs::token_files`. `dist/css/index.css` is the name that never
+/// moves, for consumers who would rather not track theme names at all.
+fn theme_file_name(theme: &str, is_default: bool) -> String {
+    if is_default {
+        format!("{theme}.css")
+    } else {
+        format!("theme-{theme}.css")
+    }
+}
+
+fn selectors(theme: &str, is_default: bool) -> Selectors {
+    if is_default {
+        Selectors {
+            light: ":root".to_owned(),
+            // The guards matter: without them a system dark preference would
+            // override a page that explicitly asked for light.
+            system_dark: r#":root:not([data-theme="light"]):not(.light)"#.to_owned(),
+            forced_dark: r#"[data-theme="dark"], .dark"#.to_owned(),
+            forced_light: r#"[data-theme="light"], .light"#.to_owned(),
+        }
+    } else {
+        let scope = format!(r#"[data-palette="{theme}"]"#);
+        Selectors {
+            light: scope.clone(),
+            system_dark: format!(r#"{scope}:not([data-theme="light"]):not(.light)"#),
+            forced_dark: format!(r#"{scope}[data-theme="dark"], {scope}.dark"#),
+            forced_light: format!(r#"{scope}[data-theme="light"], {scope}.light"#),
+        }
+    }
+}
+
+/// Writes one declaration block of palette tokens.
+fn block(
+    out: &mut String,
+    indent: &str,
+    selector: &str,
+    prefix: &str,
+    mode: &ResolvedMode,
+    layer: Layer,
+) {
+    writeln!(out, "{indent}{selector} {{").expect("string write");
+    if layer == Layer::Hex {
+        // `color-scheme` makes form controls, scrollbars and the canvas match
+        // the theme. Without it a dark page still gets light scrollbars.
+        writeln!(out, "{indent}  color-scheme: {};", mode.mode.id()).expect("string write");
+    }
+    for token in tokens::palette_tokens(mode) {
+        writeln!(
+            out,
+            "{indent}  --{prefix}-{}: {};",
+            token.stem(),
+            layer.render(token.step)
+        )
+        .expect("string write");
+    }
+    for (scale, steps) in &mode.scales {
+        for step in steps {
+            writeln!(
+                out,
+                "{indent}  --{prefix}-{scale}-{}: {};",
+                step.role,
+                layer.render(step)
+            )
+            .expect("string write");
+        }
+    }
+    writeln!(out, "{indent}}}").expect("string write");
+}
+
+/// Writes all four mode blocks for one value layer.
+fn mode_layer(
+    out: &mut String,
+    indent: &str,
+    selectors: &Selectors,
+    prefix: &str,
+    light: &ResolvedMode,
+    dark: &ResolvedMode,
+    layer: Layer,
+) {
+    block(out, indent, &selectors.light, prefix, light, layer);
+    writeln!(out, "\n{indent}@media (prefers-color-scheme: dark) {{").expect("string write");
+    block(
+        out,
+        &format!("{indent}  "),
+        &selectors.system_dark,
+        prefix,
+        dark,
+        layer,
+    );
+    writeln!(out, "{indent}}}\n").expect("string write");
+    block(out, indent, &selectors.forced_dark, prefix, dark, layer);
+    writeln!(out).expect("string write");
+    block(out, indent, &selectors.forced_light, prefix, light, layer);
+}
+
+fn theme_file(
+    palette: &Palette,
+    theme: &noctua_engine::ResolvedTheme,
+    is_default: bool,
+) -> EmittedFile {
+    let prefix = &palette.prefix;
+    let selectors = selectors(&theme.name, is_default);
+    let light = &theme.modes[0];
+    let dark = &theme.modes[1];
+
+    let mut out = header(spec_path(), CommentStyle::Block);
+    writeln!(out, "\n/* Theme: {}", theme.name).expect("string write");
+    if is_default {
+        writeln!(
+            out,
+            "   Bound to :root, so importing this file is all it takes."
+        )
+        .expect("string write");
+    } else {
+        writeln!(
+            out,
+            "   Apply with data-palette=\"{}\" on any element.",
+            theme.name
+        )
+        .expect("string write");
+    }
+    writeln!(
+        out,
+        "\n   Light and dark are all three of: the system preference, a\n\
+        \x20  [data-theme] attribute, and a .light / .dark class. Nothing to\n\
+        \x20  configure — use whichever suits, on the root or on a subtree. */\n"
+    )
+    .expect("string write");
+
+    writeln!(out, "/* --- Values: hex, understood everywhere --- */\n").expect("string write");
+    mode_layer(&mut out, "", &selectors, prefix, light, dark, Layer::Hex);
+
+    writeln!(out, "\n/* --- Values: OKLCH, where supported --- */\n").expect("string write");
+    writeln!(out, "@supports (color: oklch(0 0 0)) {{").expect("string write");
+    mode_layer(
+        &mut out,
+        "  ",
+        &selectors,
+        prefix,
+        light,
+        dark,
+        Layer::Oklch,
+    );
+    writeln!(out, "}}").expect("string write");
+
+    for (slot, gamut) in palette.gamuts.iter().enumerate().skip(1) {
+        writeln!(
+            out,
+            "\n/* --- Values: {} on displays that can show it ---\n\
+            \x20  These are different numbers, not the same color repeated: each\n\
+            \x20  token's relative chroma resolved against a wider boundary. */\n",
+            gamut.id()
+        )
+        .expect("string write");
+        writeln!(out, "@media (color-gamut: p3) {{").expect("string write");
+        writeln!(out, "  @supports (color: oklch(0 0 0)) {{").expect("string write");
+        mode_layer(
+            &mut out,
+            "    ",
+            &selectors,
+            prefix,
+            light,
+            dark,
+            Layer::Wide(slot),
+        );
+        writeln!(out, "  }}").expect("string write");
+        writeln!(out, "}}").expect("string write");
+    }
+
+    writeln!(
+        out,
+        "\n/* --- Aliases and the semantic contract ---\n\
+        \x20  Indirections, so they are written once and follow whichever mode\n\
+        \x20  and gamut layer is active. */\n"
+    )
+    .expect("string write");
+    writeln!(out, "{} {{", selectors.light).expect("string write");
+    for alias in tokens::numeric_aliases(light) {
+        writeln!(
+            out,
+            "  --{prefix}-{}: var(--{prefix}-{});",
+            alias.name, alias.target
+        )
+        .expect("string write");
+    }
+    writeln!(out).expect("string write");
+    for alias in tokens::semantic_tokens(light) {
+        writeln!(
+            out,
+            "  --{prefix}-color-{}: var(--{prefix}-{});",
+            alias.name, alias.target
+        )
+        .expect("string write");
+    }
+
+    // The translucency ladder. One definition covers both modes and every gamut
+    // layer, because `color-mix` resolves the token it references rather than a
+    // value frozen here.
+    writeln!(out).expect("string write");
+    for alpha in tokens::alpha_tokens(palette, light) {
+        writeln!(
+            out,
+            "  --{prefix}-{}: {};",
+            alpha.stem(),
+            value::color_mix(
+                &format!("--{prefix}-{}", alpha.source(&palette.alpha.role)),
+                alpha.percentage
+            )
+        )
+        .expect("string write");
+    }
+    writeln!(out, "}}").expect("string write");
+
+    EmittedFile::new(
+        format!("css/{}", theme_file_name(&theme.name, is_default)),
+        out,
+    )
+}
+
+/// The dense neutral ramp, which does not vary by theme or mode.
+fn ramp_file(palette: &Palette) -> EmittedFile {
+    let prefix = &palette.prefix;
+    let mut out = header(spec_path(), CommentStyle::Block);
+    writeln!(
+        out,
+        "\n/* The dense neutral ramp: one resource both modes draw from, so\n\
+        \x20  --{prefix}-gray-4 is one color rather than two. */\n"
+    )
+    .expect("string write");
+
+    let layers: Vec<(String, Layer)> = std::iter::once((String::new(), Layer::Hex))
+        .chain(std::iter::once((
+            "@supports (color: oklch(0 0 0))".to_owned(),
+            Layer::Oklch,
+        )))
+        .chain(palette.gamuts.iter().enumerate().skip(1).map(|(slot, _)| {
+            (
+                "@media (color-gamut: p3) { @supports (color: oklch(0 0 0)) }".to_owned(),
+                Layer::Wide(slot),
+            )
+        }))
+        .collect();
+
+    for (wrapper, layer) in layers {
+        let indent = if wrapper.is_empty() { "" } else { "  " };
+        if wrapper.contains("@media") {
+            writeln!(out, "@media (color-gamut: p3) {{").expect("string write");
+            writeln!(out, "  @supports (color: oklch(0 0 0)) {{").expect("string write");
+        } else if !wrapper.is_empty() {
+            writeln!(out, "{wrapper} {{").expect("string write");
+        }
+        let indent = if wrapper.contains("@media") {
+            "    "
+        } else {
+            indent
+        };
+
+        writeln!(out, "{indent}:root {{").expect("string write");
+        for (ramp, steps) in &palette.neutral_ramps {
+            for step in steps {
+                writeln!(
+                    out,
+                    "{indent}  --{prefix}-{ramp}-{}: {};",
+                    step.index,
+                    layer.render(step)
+                )
+                .expect("string write");
+            }
+        }
+        writeln!(out, "{indent}}}").expect("string write");
+
+        if wrapper.contains("@media") {
+            writeln!(out, "  }}").expect("string write");
+            writeln!(out, "}}").expect("string write");
+        } else if !wrapper.is_empty() {
+            writeln!(out, "}}").expect("string write");
+        }
+        writeln!(out).expect("string write");
+    }
+
+    EmittedFile::new("css/ramp.css", out)
+}
+
+fn index_file(palette: &Palette) -> EmittedFile {
+    let mut out = header(spec_path(), CommentStyle::Block);
+    writeln!(
+        out,
+        "\n/* Everything: the neutral ramp and every theme.\n\
+        \x20  For just the default theme, import {}.css instead. */\n",
+        palette.themes[0].name
+    )
+    .expect("string write");
+
+    writeln!(out, "@import \"./ramp.css\";").expect("string write");
+    for (index, theme) in palette.themes.iter().enumerate() {
+        let file = theme_file_name(&theme.name, index == 0);
+        writeln!(out, "@import \"./{file}\";").expect("string write");
+    }
+    EmittedFile::new("css/index.css", out)
+}
+
+#[cfg(test)]
+mod tests {
+    use noctua_engine::build;
+
+    use super::*;
+
+    fn shipped() -> Palette {
+        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../../specs/noctua.toml");
+        build(&noctua_spec::load(path).expect("valid spec")).expect("builds")
+    }
+
+    fn emitted() -> Vec<EmittedFile> {
+        Css.emit(&shipped())
+    }
+
+    fn file(name: &str) -> String {
+        emitted()
+            .into_iter()
+            .find(|f| f.path == name)
+            .unwrap_or_else(|| panic!("{name} should be emitted"))
+            .contents
+    }
+
+    #[test]
+    fn one_file_per_theme_plus_the_ramp_and_an_index() {
+        let palette = shipped();
+        let files = Css.emit(&palette);
+        assert_eq!(files.len(), palette.themes.len() + 2);
+        assert!(files.iter().any(|f| f.path == "css/ramp.css"));
+        assert!(files.iter().any(|f| f.path == "css/index.css"));
+        assert!(files.iter().any(|f| f.path == "css/ochre-balanced.css"));
+    }
+
+    #[test]
+    fn every_file_carries_a_generated_header() {
+        for file in emitted() {
+            assert!(
+                file.contents.starts_with("/*!"),
+                "{} does not start with a header",
+                file.path
+            );
+            assert!(file.contents.contains("do not edit"), "{}", file.path);
+            assert!(file.contents.contains(crate::REGENERATE), "{}", file.path);
+        }
+    }
+
+    /// The default theme drops the prefix; every other theme keeps it. A
+    /// rename therefore moves the file, and every reference in the repository
+    /// has to move with it — `index.css` is the name that does not.
+    #[test]
+    fn a_theme_file_is_named_after_its_theme() {
+        assert_eq!(theme_file_name("balanced", true), "balanced.css");
+        assert_eq!(theme_file_name("anything-else", true), "anything-else.css");
+        assert_eq!(theme_file_name("vivid", false), "theme-vivid.css");
+    }
+
+    #[test]
+    fn the_default_theme_binds_root_so_importing_is_enough() {
+        let css = file("css/ochre-balanced.css");
+        assert!(
+            css.contains(":root {"),
+            "the default theme must apply without an attribute"
+        );
+        assert!(!css.contains("data-palette=\"noctua\""));
+    }
+
+    #[test]
+    fn other_themes_are_scoped_to_an_attribute() {
+        let css = file("css/theme-ochre-vivid.css");
+        assert!(css.contains(r#"[data-palette="ochre-vivid"]"#));
+    }
+
+    #[test]
+    fn all_three_light_dark_strategies_are_present() {
+        let css = file("css/ochre-balanced.css");
+        assert!(
+            css.contains("@media (prefers-color-scheme: dark)"),
+            "system preference"
+        );
+        assert!(css.contains(r#"[data-theme="dark"]"#), "data attribute");
+        assert!(css.contains(".dark {") || css.contains(".dark,"), "class");
+        assert!(css.contains(r#"[data-theme="light"]"#), "forced light");
+    }
+
+    /// The combination that breaks if the guards are missing.
+    #[test]
+    fn a_forced_light_theme_survives_a_dark_system_preference() {
+        let css = file("css/ochre-balanced.css");
+        assert!(
+            css.contains(r#":not([data-theme="light"]):not(.light)"#),
+            "the system-dark block must exclude explicitly-light pages"
+        );
+    }
+
+    #[test]
+    fn colour_scheme_is_declared_so_native_controls_follow() {
+        let css = file("css/ochre-balanced.css");
+        assert!(css.contains("color-scheme: light;"));
+        assert!(css.contains("color-scheme: dark;"));
+    }
+
+    #[test]
+    fn hex_comes_first_and_oklch_upgrades_it() {
+        let css = file("css/ochre-balanced.css");
+        let hex_at = css.find("--nc-accent-solid: #").expect("a hex value");
+        let oklch_at = css
+            .find("--nc-accent-solid: oklch(")
+            .expect("an oklch value");
+        assert!(
+            hex_at < oklch_at,
+            "the fallback must come before the upgrade"
+        );
+        assert!(css.contains("@supports (color: oklch(0 0 0))"));
+    }
+
+    /// The payoff of relative chroma, checked in the output.
+    #[test]
+    fn the_wide_gamut_layer_carries_different_numbers() {
+        let css = file("css/ochre-balanced.css");
+        assert!(css.contains("@media (color-gamut: p3)"));
+
+        let values: Vec<&str> = css
+            .match_indices("--nc-accent-solid: oklch(")
+            .map(|(at, _)| {
+                let rest = &css[at..];
+                &rest[..rest.find(';').expect("terminated")]
+            })
+            .collect();
+        assert!(values.len() >= 2, "expected a base and a wide value");
+        assert_ne!(
+            values[0],
+            values[values.len() - 1],
+            "the P3 layer repeated the sRGB value, which would make it pointless"
+        );
+    }
+
+    #[test]
+    fn aliases_and_semantics_are_indirections_written_once() {
+        let css = file("css/ochre-balanced.css");
+        assert!(css.contains("--nc-accent-9: var(--nc-accent-solid);"));
+        assert!(css.contains("--nc-color-accent: var(--nc-accent-solid);"));
+        assert!(css.contains("--nc-color-surface: var(--nc-neutral-bg-app);"));
+        assert_eq!(css.matches("--nc-color-accent: var(").count(), 1);
+
+        // The unprefixed namespace belongs to Tailwind, and this file is not
+        // the Tailwind target.
+        assert!(
+            !css.contains("\n  --color-"),
+            "the plain layer must not define Tailwind's theme namespace"
+        );
+    }
+
+    /// The ladder is one definition for both modes and every gamut layer,
+    /// because `color-mix` resolves the token it references rather than a value
+    /// frozen at emit time.
+    #[test]
+    fn the_translucency_ladder_follows_the_token_it_washes() {
+        let css = file("css/ochre-balanced.css");
+        assert!(css.contains(
+            "--nc-neutral-a1: color-mix(in oklab, var(--nc-neutral-text-strong) 2%, transparent);"
+        ));
+        assert_eq!(
+            css.matches("--nc-neutral-a1:").count(),
+            1,
+            "one definition, not one per mode"
+        );
+        // Mixing with `transparent` in `oklab` is premultiplied, which is what
+        // makes this the token at that alpha rather than a blend toward grey.
+        for line in css.lines().filter(|l| l.contains("-a1: color-mix")) {
+            assert!(line.contains("in oklab"), "{line}");
+            assert!(line.contains(", transparent)"), "{line}");
+        }
+    }
+
+    #[test]
+    fn the_ramp_is_emitted_once_for_both_modes() {
+        let css = file("css/ramp.css");
+        assert!(css.contains("--nc-gray-1:"));
+        assert!(css.contains("--nc-gray-24:"));
+        assert!(
+            !css.contains("prefers-color-scheme"),
+            "the ramp does not vary by mode"
+        );
+    }
+
+    #[test]
+    fn the_index_imports_everything() {
+        let css = file("css/index.css");
+        assert!(css.contains(r#"@import "./ramp.css";"#));
+        assert!(css.contains(r#"@import "./ochre-balanced.css";"#));
+        assert!(css.contains(r#"@import "./theme-ochre-vivid.css";"#));
+    }
+
+    #[test]
+    fn braces_balance_in_every_file() {
+        for file in emitted() {
+            let opens = file.contents.matches('{').count();
+            let closes = file.contents.matches('}').count();
+            assert_eq!(opens, closes, "{} has unbalanced braces", file.path);
+        }
+    }
+
+    #[test]
+    fn output_is_deterministic() {
+        assert_eq!(Css.emit(&shipped()), Css.emit(&shipped()));
+    }
+}

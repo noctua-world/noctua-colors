@@ -1,0 +1,16 @@
+[package]
+name = "noctua-check"
+description = "Quality gates for noctua-colors: contrast, colour-vision safety, perceptual spacing, and source invariants."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+indexmap.workspace = true
+noctua-core.workspace = true
+noctua-engine.workspace = true
+noctua-spec.workspace = true
+
+[lints]
+workspace = true

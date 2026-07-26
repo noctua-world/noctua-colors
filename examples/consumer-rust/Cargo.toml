@@ -1,0 +1,28 @@
+# A consumer, exactly as a sibling project would write it: one path
+# dependency on the generated crate and nothing else.
+#
+# Deliberately outside the workspace. A sibling project is not a member of
+# this one, and if this example compiled only because the workspace resolved
+# something for it, it would prove nothing about the export path.
+[workspace]
+
+[package]
+name = "consumer-rust"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+# Four palettes out of thirty-six, named explicitly.
+#
+# This is the point of the generated crate's features: every consumer that names
+# it loads the metadata for whatever is compiled in, and a program using four
+# palettes should not carry thirty-two it never mentions. `default-features =
+# false` drops even the default palette unless it is listed here — and
+# `ochre_balanced` is, because this example uses it.
+noctua-colors-tokens = { path = "../../dist/rust", default-features = false, features = [
+  "ochre_balanced",
+  "ochre_vivid",
+  "ochre_sober",
+  "blue_balanced",
+] }

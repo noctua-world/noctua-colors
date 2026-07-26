@@ -1,0 +1,1350 @@
+/* The documentation site.
+ *
+ * Every color here is a `var(--nc-color-*)` or `var(--nc-*)` read from the
+ * generated tokens. There is no hex value in this file, and the source gate
+ * fails the build if one appears — the site is a consumer of the system, not a
+ * second opinion about it.
+ *
+ * Translucency uses `color-mix(in oklab, ...)` rather than an rgba literal,
+ * for the same reason: an rgba would be a color this file invented.
+ *
+ * Mobile first throughout. Every layout starts as a single column and widens
+ * at a breakpoint; nothing is designed at desktop and squeezed down.
+ */
+
+/* --- Reset ------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Anchored sections land below the sticky header rather than under it. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--nc-color-surface);
+  color: var(--nc-color-fg);
+  font-family: var(--font-ui);
+  font-weight: var(--font-weight-normal);
+  font-size: 1rem;
+  line-height: 1.65;
+  /* Long OKLCH values and hex strings must never push the page sideways. */
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--nc-color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+code {
+  font-size: 0.9em;
+  background: var(--nc-color-surface-raised);
+  border-radius: 0.25rem;
+  padding: 0.1em 0.35em;
+}
+
+/* --- Focus -------------------------------------------------------------
+ *
+ * A visible focus ring on everything reachable. `--nc-color-ring` is gated at
+ * APCA Lc 30 against the surface, so this is guaranteed visible rather than
+ * hoped to be.
+ */
+
+:where(a, button, select, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--nc-color-ring);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--nc-color-surface-raised);
+  color: var(--nc-color-fg);
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--nc-color-border);
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* --- Layout ------------------------------------------------------------ */
+
+.wrap {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(3rem, 9vw, 6rem);
+  border-top: 1px solid var(--nc-color-border-strong);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 6.5vw, 3.6rem);
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  max-width: 58ch;
+  color: var(--nc-color-fg-muted);
+}
+
+.section-lead {
+  max-width: 62ch;
+  color: var(--nc-color-fg-muted);
+  margin-bottom: 2rem;
+}
+
+.muted {
+  color: var(--nc-color-fg-muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+/* --- Header ------------------------------------------------------------ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in oklab, var(--nc-color-surface) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nc-color-border);
+}
+
+.nav {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* The wordmark and the controls hold the first row; the section links take a
+   row of their own when all three will not fit.
+ *
+ * Ordering rather than hiding, because how much room the links need depends
+ * on the language — the Portuguese labels are around a fifth wider, and a
+ * width that fits one comfortably orphans the controls onto a second row in
+ * the other. Letting the links be the part that wraps makes the two-row
+ * header look intended in both. */
+.nav-links {
+  order: 3;
+  flex: 1 1 100%;
+}
+
+.nav-controls {
+  margin-inline-start: auto;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--nc-color-fg);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.wordmark-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--nc-color-accent);
+}
+
+.nav-links {
+  display: none;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--nc-color-fg-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--nc-color-fg);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* --- Icons --------------------------------------------------------------
+ *
+ * Drawn with `currentColor`, so an icon is whatever colour the text around
+ * it is. Nothing here picks a colour, which is the same rule the palette
+ * itself is built on.
+ */
+
+.icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+  flex: none;
+}
+
+/* --- The theme select ---------------------------------------------------
+ *
+ * The native control is stripped and redrawn: a browser's own arrow sits
+ * hard against the border on some platforms and cannot be moved. The affix
+ * is a sibling rather than a background image so the icon and the chevron
+ * are real elements that inherit colour and scale with the text.
+ */
+
+.select-shell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--nc-color-surface-raised);
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.5rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--nc-color-fg);
+  min-height: 2.75rem;
+  /* Room on the right for the icon, the chevron and the gap between them,
+     so the chevron is never crowded against the border. */
+  padding: 0.35rem 3.9rem 0.35rem 0.85rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.select:hover {
+  border-color: var(--nc-color-border-strong);
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--nc-color-ring);
+  outline-offset: 2px;
+}
+
+.select-affix {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--nc-color-fg-muted);
+  /* The select underneath keeps the clicks; this is decoration. */
+  pointer-events: none;
+}
+
+.select-chevron .icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+/* --- The appearance control ---------------------------------------------
+ *
+ * Three segments rather than a two-position switch, because "follow the
+ * system" is a destination and not the absence of a choice.
+ */
+
+.mode-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.6rem;
+  background: var(--nc-color-surface-raised);
+}
+
+.mode-option {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-radius: 0.45rem;
+  color: var(--nc-color-fg-muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  /* Each segment is a touch target in its own right, per WCAG 2.5.8. */
+  min-width: 2.35rem;
+  min-height: 2.35rem;
+}
+
+.mode-option:hover {
+  color: var(--nc-color-fg);
+}
+
+.mode-option:focus-visible {
+  outline: 2px solid var(--nc-color-ring);
+  outline-offset: 2px;
+}
+
+/* The selected segment is marked by fill *and* by contrast, never by colour
+   alone — this site is partly about people who cannot rely on colour. */
+.mode-option[aria-pressed="true"] {
+  background: var(--nc-color-accent);
+  color: var(--nc-color-on-accent);
+}
+
+/* --- The language switch ------------------------------------------------ */
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding-inline: 0.7rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.5rem;
+  background: var(--nc-color-surface-raised);
+  color: var(--nc-color-fg-muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.lang-switch:hover {
+  color: var(--nc-color-fg);
+  border-color: var(--nc-color-border-strong);
+}
+
+.lang-switch:focus-visible {
+  outline: 2px solid var(--nc-color-ring);
+  outline-offset: 2px;
+}
+
+.lang-code {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 52rem) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* Wide enough for the wordmark, the longest set of links and the controls
+   side by side. Measured against the Portuguese labels, which are the longer
+   of the two. */
+@media (min-width: 76rem) {
+  .nav-links {
+    order: 0;
+    flex: 0 1 auto;
+  }
+}
+
+/* --- Hero -------------------------------------------------------------- */
+
+.hero {
+  padding-block: clamp(3rem, 12vw, 7rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--nc-color-accent);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--nc-color-accent);
+}
+
+.hero-proof {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.75rem;
+  background: var(--nc-color-surface-subtle);
+}
+
+.hero-swatch {
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--nc-color-fg) 12%, transparent);
+}
+
+.hero-proof-text p + p {
+  margin-top: 0.5rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 2.5rem;
+}
+
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 1rem;
+  border-radius: 0.6rem;
+  background: var(--nc-color-surface-subtle);
+  border: 1px solid var(--nc-color-border);
+}
+
+.hero-stats strong {
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.hero-stats span {
+  font-size: 0.8rem;
+  color: var(--nc-color-fg-muted);
+}
+
+@media (min-width: 40rem) {
+  .hero-proof {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-swatch {
+    width: 9rem;
+    height: 6rem;
+    flex: none;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- Cards ------------------------------------------------------------- */
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--nc-color-border);
+  background: var(--nc-color-surface-raised);
+}
+
+.card p + p {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 52rem) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gamut-compare {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gamut-row {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.gamut-chip {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid color-mix(in oklab, var(--nc-color-fg) 12%, transparent);
+}
+
+.gamut-name {
+  color: var(--nc-color-fg-muted);
+}
+
+.gamut-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Palette browser --------------------------------------------------- */
+
+.ramps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ramp-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ramp-head h4 {
+  font-size: 1rem;
+}
+
+.ramp-steps {
+  display: grid;
+  /* Twelve steps wrap to a comfortable count on a narrow screen rather than
+   * scrolling sideways. */
+  grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+  gap: 0.35rem;
+}
+
+.swatch {
+  appearance: none;
+  border: 1px solid color-mix(in oklab, var(--nc-color-fg) 10%, transparent);
+  border-radius: 0.4rem;
+  /* Comfortably past the 44px touch-target floor. */
+  min-height: 4rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+.swatch-role,
+.swatch-hex {
+  font-size: 0.62rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.swatch-role {
+  font-weight: var(--font-weight-bold);
+}
+
+/* The label colour is chosen from the swatch's own lightness, emitted as a
+ * data attribute — not guessed from the hex at runtime. */
+.swatch[data-ink="dark"] .swatch-role,
+.swatch[data-ink="dark"] .swatch-hex {
+  color: var(--nc-gray-2);
+}
+
+.swatch[data-ink="light"] .swatch-role,
+.swatch[data-ink="light"] .swatch-hex {
+  color: var(--nc-gray-23);
+}
+
+.swatch-hex {
+  opacity: 0.8;
+}
+
+.gray-ramp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3.5rem, 1fr));
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.ramp-note {
+  margin-top: 1.25rem;
+}
+
+.ramp-name {
+  margin: 1.5rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--nc-color-fg-muted);
+}
+
+/* --- Contexts ----------------------------------------------------------- */
+
+/* The grid and the strips are edge-to-edge blocks, so a following heading needs
+ * its own air; the global heading margin assumes a paragraph above it. */
+#contexts h3 {
+  margin-top: 3rem;
+}
+
+/* Every chip is painted from `var(--nc-color-<slot>)` rather than from a hex
+ * string, so it follows the selected palette and cannot claim a colour the
+ * stylesheet is not serving. That is also why nothing here sets a colour. */
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.4rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.context-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.context-chip code {
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.scale-strip,
+.alpha-ladder {
+  display: flex;
+  align-items: stretch;
+  gap: 0.2rem;
+  margin-top: 0.75rem;
+  border-radius: 0.4rem;
+  overflow-x: auto;
+}
+
+.alpha-ladder {
+  gap: 0;
+  padding: 0.6rem;
+  border: 1px solid var(--nc-color-border);
+}
+
+.scale-name {
+  flex: 0 0 6.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--nc-color-fg-muted);
+}
+
+.scale-stop {
+  flex: 1 1 0;
+  min-width: 3rem;
+  padding: 0.7rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+/* An ordered scale spans lightness on purpose, so one ink colour cannot serve
+ * every stop. Decided from each stop's own lightness, the same way a swatch
+ * decides it, rather than guessed from the scale. */
+.scale-stop[data-ink="dark"] {
+  color: var(--nc-gray-2);
+}
+
+.scale-stop[data-ink="light"] {
+  color: var(--nc-gray-23);
+}
+
+.alpha-stop {
+  flex: 1 1 0;
+  min-width: 1.5rem;
+  min-height: 2.2rem;
+}
+
+/* --- Contrast matrix --------------------------------------------------- */
+
+.matrix {
+  /* The one place horizontal scroll is correct: inside its own container, so
+   * the page body never moves. */
+  overflow-x: auto;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.6rem;
+}
+
+.contrast-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 34rem;
+}
+
+.contrast-table th,
+.contrast-table td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--nc-color-border);
+  white-space: nowrap;
+}
+
+.contrast-table th {
+  background: var(--nc-color-surface-subtle);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--nc-color-fg-muted);
+}
+
+.contrast-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.numeric {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Failures are obvious at a glance, and not by colour alone — the marker
+ * carries a symbol too, for anyone who cannot see the difference. */
+.contrast-row[data-state="pass"] .measured {
+  color: var(--nc-color-success);
+}
+
+.contrast-row[data-state="fail"] .measured {
+  color: var(--nc-color-danger);
+  font-weight: var(--font-weight-bold);
+}
+
+.contrast-row[data-state="fail"] {
+  background: var(--nc-color-danger-bg);
+}
+
+/* A soft pair falling short reads as a caution, not a defect: the compiler
+   ships this palette, and the row has to say the same thing the gate does. */
+.contrast-row[data-state="warn"] .measured {
+  color: var(--nc-color-warning);
+  font-weight: var(--font-weight-bold);
+}
+
+.contrast-row[data-state="warn"] {
+  background: var(--nc-color-warning-bg);
+}
+
+/* --- Previews ---------------------------------------------------------- */
+
+.preview-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.preview-card {
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.75rem;
+  background: var(--nc-color-surface-raised);
+  padding: 1.25rem;
+}
+
+.preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  border: 1px solid;
+}
+
+.badge-success {
+  color: var(--nc-color-success);
+  background: var(--nc-color-success-bg);
+  border-color: var(--nc-color-success-border);
+}
+
+.preview-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.preview-stats dt {
+  font-size: 0.75rem;
+  color: var(--nc-color-fg-muted);
+}
+
+.preview-stats dd {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  appearance: none;
+  border: 1px solid var(--nc-color-border);
+  background: var(--nc-color-surface);
+  color: var(--nc-color-fg);
+  border-radius: 0.45rem;
+  padding: 0.55rem 1rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.button-primary {
+  background: var(--nc-color-accent);
+  border-color: var(--nc-color-accent);
+  /* The accent family's own step 1: near-white over a mid-toned solid in
+   * light mode, near-black over a light one in dark mode. Correct in both
+   * without a runtime decision. */
+  color: var(--nc-color-on-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+.button-primary:hover {
+  background: var(--nc-color-accent-hover);
+  border-color: var(--nc-color-accent-hover);
+}
+
+.button-quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--nc-color-fg-muted);
+}
+
+.callout {
+  border: 1px solid;
+  border-left-width: 3px;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.callout + .callout {
+  margin-top: 0.6rem;
+}
+
+.callout p {
+  color: var(--nc-color-fg-muted);
+}
+
+.callout-danger {
+  background: var(--nc-color-danger-bg);
+  border-color: var(--nc-color-danger-border);
+}
+
+.callout-warning {
+  background: var(--nc-color-warning-bg);
+  border-color: var(--nc-color-warning-border);
+}
+
+.callout-info {
+  background: var(--nc-color-info-bg);
+  border-color: var(--nc-color-info-border);
+}
+
+.preview-form label {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.preview-form span {
+  font-size: 0.8rem;
+  color: var(--nc-color-fg-muted);
+}
+
+input[type="text"] {
+  background: var(--nc-color-surface);
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.65rem;
+  min-height: 2.75rem;
+  width: 100%;
+}
+
+@media (min-width: 52rem) {
+  .preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+}
+
+/* --- Integration tabs -------------------------------------------------- */
+
+.tab-strip {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--nc-color-border);
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.tab {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-radius: 0.4rem 0.4rem 0 0;
+  padding: 0.6rem 0.9rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  color: var(--nc-color-fg-muted);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--nc-color-fg);
+  border-bottom-color: var(--nc-color-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+pre {
+  background: var(--nc-color-surface-subtle);
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* --- Detail panel ------------------------------------------------------ */
+
+.detail {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 60;
+  background: var(--nc-color-surface-raised);
+  border-top: 1px solid var(--nc-color-border-strong);
+  padding: 1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.detail-grid {
+  width: min(100% - 1rem, 72rem);
+  margin-inline: auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.detail-swatch {
+  height: 4rem;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--nc-color-fg) 12%, transparent);
+}
+
+.detail dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+.detail dt {
+  color: var(--nc-color-fg-muted);
+}
+
+.detail dd {
+  font-variant-numeric: tabular-nums;
+}
+
+.copy-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.copy-button {
+  appearance: none;
+  border: 1px solid var(--nc-color-border);
+  background: var(--nc-color-surface);
+  color: var(--nc-color-fg);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.copy-button[data-copied="true"] {
+  border-color: var(--nc-color-success-border);
+  background: var(--nc-color-success-bg);
+  color: var(--nc-color-success);
+}
+
+.detail-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  appearance: none;
+  background: none;
+  border: 0;
+  color: var(--nc-color-fg-muted);
+  cursor: pointer;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 46rem) {
+  .detail-grid {
+    grid-template-columns: 10rem 1fr 1fr;
+    align-items: start;
+  }
+
+  .detail-swatch {
+    height: 6rem;
+  }
+}
+
+/* --- Footer ------------------------------------------------------------ */
+
+.site-footer {
+  border-top: 1px solid var(--nc-color-border-strong);
+  padding-block: 2.5rem;
+  color: var(--nc-color-fg-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p + p {
+  margin-top: 0.75rem;
+}
+
+.colophon {
+  color: var(--nc-color-fg-muted);
+}
+
+/* --- The playground ------------------------------------------------------
+ *
+ * A tool rather than a document, so it gets the one layout on this site that
+ * fills the viewport: on a wide screen the editor and the result sit side by
+ * side, and on a phone they stack with the editor first. Nothing here fixes a
+ * width — the grid decides, and the code panes scroll inside themselves.
+ */
+
+.playground {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.playground-head h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.playground-head p {
+  max-width: 60ch;
+  margin: 0;
+}
+
+.playground-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.pg-status {
+  color: var(--nc-color-fg-muted);
+  font-size: 0.85rem;
+  margin-inline-start: auto;
+}
+
+.playground-grid {
+  display: grid;
+  gap: 1rem;
+  /* One column by default. The editor comes first in the markup, so the
+     phone layout is already correct without reordering anything. */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .playground-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    align-items: start;
+  }
+}
+
+.pg-heading {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nc-color-fg-muted);
+}
+
+.pg-textarea {
+  width: 100%;
+  min-height: 24rem;
+  padding: 0.75rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.5rem;
+  background: var(--nc-color-surface-raised);
+  color: var(--nc-color-fg);
+  font: inherit;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  resize: vertical;
+  tab-size: 2;
+}
+
+.pg-textarea:focus-visible {
+  outline: 2px solid var(--nc-color-ring);
+  outline-offset: 2px;
+}
+
+@media (min-width: 60rem) {
+  .pg-textarea {
+    /* Tall enough to work in, short enough that the result stays on screen. */
+    min-height: 34rem;
+  }
+}
+
+.pg-error {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--nc-color-danger);
+  background: var(--nc-color-danger-bg);
+  color: var(--nc-color-fg);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.pg-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.pg-panel-body {
+  min-height: 12rem;
+}
+
+.pg-emit-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.pg-label {
+  font-size: 0.8rem;
+  color: var(--nc-color-fg-muted);
+}
+
+/* --- Ramps --------------------------------------------------------------- */
+
+.pg-ramp-heading {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--nc-color-fg-muted);
+}
+
+.pg-ramp {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.pg-ramp-label {
+  flex: 0 0 6.5rem;
+  font-size: 0.75rem;
+  color: var(--nc-color-fg-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pg-strip {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  height: 1.75rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  border: 1px solid var(--nc-color-border);
+}
+
+.pg-cell {
+  flex: 1;
+  min-width: 0;
+}
+
+/* --- Findings ------------------------------------------------------------ */
+
+.pg-findings {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.pg-finding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.35rem;
+  border-radius: 0.35rem;
+  border-left: 3px solid;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* The word in the badge carries the severity. The color agrees with it, and
+   is never the only thing saying it — which is the same rule this compiler
+   enforces on the palettes it produces. */
+.pg-finding[data-severity="fail"] {
+  border-color: var(--nc-color-danger);
+  background: var(--nc-color-danger-bg);
+}
+
+.pg-finding[data-severity="warn"] {
+  border-color: var(--nc-color-warning);
+  background: var(--nc-color-warning-bg);
+}
+
+.pg-badge {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--nc-color-fg-muted);
+}
+
+.pg-margin {
+  margin-inline-start: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--nc-color-fg-muted);
+}
+
+/* --- Generated files ----------------------------------------------------- */
+
+.pg-code {
+  margin: 0;
+  padding: 0.75rem;
+  max-height: 34rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.5rem;
+  background: var(--nc-color-surface-subtle);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  overflow: auto;
+  overflow-x: auto;
+}
+
+/* --- Without script ------------------------------------------------------ */
+
+.pg-fallback {
+  display: block;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.5rem;
+  background: var(--nc-color-surface-raised);
+}
+
+.nav-brand {
+  font-weight: 700;
+  color: var(--nc-color-fg);
+  text-decoration: none;
+}

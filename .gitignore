@@ -1,0 +1,27 @@
+# Rust build output, including the generated token crate's.
+/target
+dist/rust/target/
+dist/rust/Cargo.lock
+**/*.rs.bk
+
+# The examples sit outside the workspace on purpose — a consumer is not a
+# workspace member — so each builds into a target directory of its own that
+# `/target` does not cover. Their lockfiles are kept: they pin nothing but a
+# path dependency, and committing them would only produce churn.
+/examples/*/target
+/examples/*/Cargo.lock
+
+# Docs-site build output. The *sources* (css/, js/, assets/) are committed;
+# the rendered site is not — CI builds and deploys it.
+/docs-site/public
+
+# Scratch area for hand-vendored inputs (fonts, reference palettes). The folder
+# itself is kept so the vendoring workflow in AGENTS.md has somewhere to land;
+# nothing inside it is ever tracked.
+/.TEMP/*
+!/.TEMP/.gitkeep
+
+# NOTE: /dist is deliberately NOT ignored. Generated token artifacts are
+# committed so consumers work via submodule, subtree, sparse checkout, raw copy
+# or direct URL fetch with no build step. `cargo xtask check` verifies they are
+# in sync with the spec.

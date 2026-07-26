@@ -1,0 +1,11 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 1b56b18452fb902186e70ceb337ca48d87ca1dc2ed1cefc05104127873fe43f7 # shrinks to rgb = Rgb { r: 0.0, g: 0.0, b: 0.9393586915948252 }, deficiency = Protanopia
+cc 92ae97813fd444fede2061e53cfeb02142592edb59dd1e43cb721629b2b46df7 # shrinks to a = Rgb { r: 0.8707340008314494, g: 0.5852230160076555, b: 0.4973648742804269 }, b = Rgb { r: 0.7670868706149152, g: 0.0, b: 0.0 }, deficiency = Protanopia
+cc 5696d41b47d89eb0a44f34e01e6936102dd3f62a73ea7f1b7ec3879cacc52347 # shrinks to color = Oklch { l: 0.4281506018307725, c: 0.41099536654411556, h: 260.6393016194992 }, gamut = Srgb
+cc 673cd72a21eb08a683c8d0661600099676ce0a4f9a51ee35b3337d1adc3891ed # shrinks to color = Oklch { l: 0.9809312769934166, c: 0.1587318904720185, h: 105.74780710339967 }, gamut = Srgb
+cc 176bae7b097d49246a842f3e8a1c675ce41a7c9cf2e13366953e7b4322f56251 # shrinks to rgb = Rgb { r: 0.42116863854206765, g: 0.46265640871772284, b: 0.5587607734865687 }, deficiency = Protanopia

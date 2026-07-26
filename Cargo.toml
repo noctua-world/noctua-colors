@@ -1,0 +1,72 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "xtask"]
+
+# The generated token crate is its own workspace root and is never a member.
+exclude = ["dist/rust"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+# --- Workspace-internal ---
+noctua-core = { path = "crates/noctua-core", version = "0.1.0" }
+noctua-spec = { path = "crates/noctua-spec", version = "0.1.0" }
+noctua-engine = { path = "crates/noctua-engine", version = "0.1.0" }
+noctua-emit = { path = "crates/noctua-emit", version = "0.1.0" }
+noctua-check = { path = "crates/noctua-check", version = "0.1.0" }
+noctua-docs = { path = "crates/noctua-docs", version = "0.1.0" }
+
+# --- Third party ---
+# Pinned as minor-compatible; `cargo xtask check` fails on a dirty lockfile, so
+# upgrades are always a deliberate, reviewed change.
+anstream = "0.6"
+anstyle = "1.0"
+blake3 = "1"
+indexmap = { version = "2.14", features = ["serde"] }
+clap = { version = "4.6", features = ["derive"] }
+maud = "0.27"
+wasm-bindgen = "0.2"
+wasm-bindgen-cli-support = "0.2.126"
+miette = "7.6"
+notify = "8.2"
+tiny_http = "0.12"
+notify-debouncer-full = "0.7"
+proptest = "1.11"
+serde = { version = "1.0", features = ["derive"] }
+# `preserve_order` keeps emitted JSON in the order it was authored rather than
+# alphabetical: deterministic either way, but only one of them is readable.
+serde_json = { version = "1.0", features = ["preserve_order"] }
+thiserror = "2.0"
+# `preserve_order` keeps families and themes in the order they were written.
+# Without it the parser hands them over alphabetically, which is still
+# deterministic but reorders a spec author's output behind their back.
+toml = { version = "1.1", features = ["preserve_order"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+unreachable_pub = "warn"
+missing_debug_implementations = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+# Numeric code fights these constantly and the lints add no safety here: every
+# cast in this workspace is a deliberate f64 -> f32/u8 narrowing at an encoding
+# boundary, and the "similar names" are the standard color-science symbols
+# (l/m/s, a/b, r/g/b) whose whole value is matching the published formulae.
+cast_precision_loss = "allow"
+cast_possible_truncation = "allow"
+cast_sign_loss = "allow"
+similar_names = "allow"
+many_single_char_names = "allow"
+must_use_candidate = "allow"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

@@ -1,0 +1,19 @@
+[package]
+name = "noctua-spec"
+description = "Parsing, defaults and validation for the noctua-colors specification format."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+noctua-core.workspace = true
+blake3.workspace = true
+indexmap.workspace = true
+miette = { workspace = true, features = ["fancy"] }
+serde.workspace = true
+thiserror.workspace = true
+toml.workspace = true
+
+[lints]
+workspace = true

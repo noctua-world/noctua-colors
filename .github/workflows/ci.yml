@@ -1,0 +1,60 @@
+# CI runs exactly what a developer runs. There is deliberately no separate list
+# of steps here: `cargo xtask check` is the gate, and duplicating its contents
+# in YAML is how the two drift until "passes locally, fails in CI" becomes a
+# normal thing to say.
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check:
+    name: cargo xtask check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the pinned toolchain
+        # rust-toolchain.toml decides the version and components; nothing is
+        # named twice.
+        run: rustup show
+
+      - uses: Swatinem/rust-cache@v2
+
+      - run: cargo xtask check
+
+  determinism:
+    name: byte-identical rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup show
+      - uses: Swatinem/rust-cache@v2
+
+      # `check` already proves dist/ matches the spec once. This proves the
+      # compiler is deterministic: two builds from the same input must be
+      # byte-identical, or nothing downstream can be reproducible and every
+      # diff becomes noise.
+      - name: Build twice and compare
+        run: |
+          cargo xtask build
+          cp -r dist /tmp/dist-first
+          cargo xtask build
+          # Excluding build output: compiling the generated crate leaves
+          # incremental-compilation fingerprints, which are not reproducible
+          # and are not artifacts of this compiler.
+          diff -r --exclude=target --exclude=Cargo.lock /tmp/dist-first dist
+
+      # The site is generated too, and its WebAssembly bundle is part of it.
+      # Both are byte-identical across builds; if that ever stops being true,
+      # this is where it surfaces rather than in a deploy diff.
+      - name: The rendered site is deterministic too
+        run: |
+          cp -r docs-site/public /tmp/site-first
+          cargo xtask build
+          diff -r /tmp/site-first docs-site/public

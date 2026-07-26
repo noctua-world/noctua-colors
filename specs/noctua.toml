@@ -1,0 +1,431 @@
+# noctua-colors — the specification.
+#
+# This file is the only thing a developer edits. Everything under dist/ is
+# generated from it by `cargo xtask build` and must never be hand-edited.
+#
+# Every field below has a default, so anything you delete keeps working. The
+# smallest useful spec is three lines:
+#
+#     [families.accent]
+#     hue = 264
+#
+# Hues come from the existing fleet palette, measured rather than copied: the
+# ochre that noctua-hub and noctua-shell already use sits at hue 59.3 with
+# about 61% of the chroma sRGB allows there. Recording the hue and letting the
+# curves regenerate the rest is the entire point of this project — the two
+# projects had already drifted apart on five of thirteen shared tokens.
+
+[output]
+# The gamut relative chroma resolves against, and the one the hex fallback
+# layer is written in. Everything a browser or a QML file falls back to.
+gamut = "srgb"
+
+# Wider gamuts emitted as extra layers. The same token comes out more
+# saturated in each, because its relative chroma resolves against more room —
+# without being redefined anywhere.
+upgrades = ["display-p3"]
+
+# Namespace for emitted custom properties: `nc` produces `--nc-accent-solid`
+# and `--nc-color-surface`. Everything this project emits carries it — including
+# the semantic layer, which used to be bare `--color-*`. Only the Tailwind
+# target emits that namespace, because Tailwind v4 fixes it and nothing can
+# rename it; a bare layer here would have claimed those names for consumers who
+# have never installed Tailwind.
+prefix = "nc"
+
+
+# --- Families -----------------------------------------------------------
+#
+# A family is a hue and a chroma curve. Lightness is never authored: it is
+# solved, per step, from the contrast that step's role asks for.
+#
+# `cr` is *relative* chroma — a fraction of the most the gamut can show at
+# each step's lightness and hue, not an absolute number. That is what keeps a
+# yellow and a blue looking equally saturated at the same step despite blue
+# having nearly twice the chroma available.
+#
+# `torsion` shifts hue along the ramp, ends rotating in opposite directions
+# about the base. It is what makes a ramp look designed rather than computed.
+# Note it follows *ramp position*, not lightness: step 12 is the strongest
+# text in both modes, but it is the darkest step in light mode and the
+# lightest in dark mode, so the same torsion reads as warmer-in-shadow in one
+# and warmer-in-highlight in the other.
+
+[families.accent]
+# The house ochre. Torsion pulls the deep end slightly red and the light end
+# slightly gold, which is how a warm neutral-adjacent hue stays warm instead
+# of going muddy as it darkens.
+hue = { base = 59.3, torsion = -7.0 }
+cr = { ends = [0.12, 0.40], peak = 0.88 }
+
+[families.danger]
+hue = { base = 30.8, torsion = -5.0 }
+# Semantic families are pushed apart in lightness, because hue is precisely the
+# axis a red-green dichromat is missing: unshifted, success and danger collapse
+# to 0.038 apart under deuteranopia against 0.234 for normal vision.
+#
+# These values are the measured optimum, not a guess. Searched subject to every
+# hard requirement — fills stay visible, ramps stay sane, text stays readable —
+# they roughly double the worst-case separation, from 0.0078 to 0.0163.
+#
+# That is still under one just-noticeable difference, and no other choice does
+# better. Six semantic colors cannot be made mutually distinguishable under all
+# three dichromacies by color alone; the gate reports the margin so the number
+# is visible rather than assumed. Pair these with an icon or a label.
+contrast_shift = 12.0
+
+[families.warning]
+hue = { base = 89.7 }
+contrast_shift = -10.0
+# Yellows run out of room early: they are inherently light, so a dark yellow
+# is a dark olive rather than a dark yellow. Pulling the deep end back keeps
+# the ramp honest instead of muddy.
+cr = { ends = [0.14, 0.30], peak = 0.95 }
+
+[families.success]
+hue = { base = 144.0, torsion = 6.0 }
+contrast_shift = -2.0
+
+[families.info]
+hue = { base = 232.0, torsion = -8.0 }
+contrast_shift = -6.0
+# Oklab drifts blues toward purple as they darken at high chroma. This is the
+# corrective term for that — a defect of the color space, deliberately kept in
+# a separate field from `torsion`, which is intent. Merging them would make
+# "was this on purpose?" unanswerable in a year.
+hue_correction = [[0.25, 4.0], [0.55, 6.5], [0.85, 2.0]]
+
+# The four families below exist because their contexts have to be told apart
+# from every other context *without a legend* — `waiting` beside `active` in a
+# job list, `urgent` beside `danger` in an alert feed. Every other context in
+# `[semantic]` is an alias, because a family costs a full twelve-role ramp in
+# every theme, mode and gamut — about 3.5 MiB — while an alias costs 15 KiB.
+# The ratio is 244 to 1, and it is the whole reason there are ten families and
+# not forty.
+#
+# Their hues are what the wheel had left. Sixteen hues were already occupied
+# (five semantic families and twelve accents), which averages 22.5 degrees of
+# spacing, and the 158–172 protanopia dead zone is unusable. Measured, only
+# three gaps were wide enough to sit 14 degrees clear of both neighbours: 45,
+# 74.5 and 264. The other two hues below are 12.5 and 9 degrees from the
+# nearest *accent* — deliberately, because an accent is chosen by whoever
+# installs the palette and a status colour is not, so the accent gives way.
+# Separation from another semantic family is the constraint that holds.
+
+[families.urgent]
+# A red-orange between danger and warning, which is what "act now" is. The
+# nearest semantic family is danger, 14.2 degrees away, and hue is not what
+# separates them — `contrast_shift` is.
+hue = { base = 45.0, torsion = -5.0 }
+contrast_shift = 6.0
+
+[families.waiting]
+# A yellow-green: past warning, not yet success. 27.8 degrees from warning and
+# 26.5 from success, the widest either allows.
+hue = { base = 117.5, torsion = 4.0 }
+# Measured: -10 and below collapse `border-strong` onto `solid` — 0.0096 apart,
+# under the just-noticeable difference — because a yellow-green's solid target
+# falls onto the same lightness the border is anchored to. -8 is the largest
+# magnitude that keeps every step distinct.
+contrast_shift = -8.0
+
+[families.active]
+# A cyan, above the protanopia dead zone. Chosen at 203 rather than 190 so it
+# clears the zone by 31 degrees rather than 18 — a hue that close to the zone
+# edge inherits some of its problem.
+hue = { base = 203.0, torsion = 5.0 }
+contrast_shift = 4.0
+
+[families.progress]
+# The widest remaining gap on the whole wheel: 264 sits 14 degrees from both
+# the blue and the indigo accents, and 32 from info.
+hue = { base = 264.0, torsion = -6.0 }
+# Thirty-two degrees of blue is not much, and tritanopia is the deficiency that
+# removes exactly that axis: at -8 this family and `info` measured 0.0132 apart
+# under tritanopia, below the 0.015 floor — the same colour. Lightness is the
+# only lever left, and -14 takes the pair to 0.0487.
+#
+# It is pinched from the other side, and by *both* modes at once. This is the
+# only family whose shift is large enough to move its `solid` past its own
+# `border-strong` — below it in dark mode, above it in light — so the two walk
+# together whichever way the shift moves, and the window is narrow. Measured at
+# -11 the light-mode pair collapses to 0.0075 and at -8 the tritanopia
+# separation falls to 0.0139, both under their floors. -14 keeps 0.0148 and
+# 0.0487. Re-measure both before touching this number, and both modes.
+contrast_shift = -14.0
+hue_correction = [[0.25, 3.5], [0.55, 5.5], [0.85, 1.5]]
+
+
+# --- Semantic contexts --------------------------------------------------
+#
+# Slot on the left, family on the right. A slot named after a family is mapped
+# to it automatically, so only the names that differ appear here.
+#
+# Declared once rather than per theme: with thirty-six palettes, repeating two
+# dozen aliases in each would be the largest and least informative part of this
+# file. A `[themes.<name>.semantic]` block still overrides one palette.
+#
+# Every slot emits five tokens — `--nc-color-rejected`, `-hover`, `-bg`,
+# `-border`, and `--nc-color-on-rejected`.
+
+[semantic]
+# Done, and done well.
+positive = "success"
+finished = "success"
+
+# Done, and not well. `error` is the name most codebases already use; `danger`
+# is the name the family has, because it is also the colour of a destructive
+# button that has not been pressed yet.
+error = "danger"
+negative = "danger"
+rejected = "danger"
+declined = "danger"
+
+# Late is a kind of warning, not a kind of urgent: it needs attention, but the
+# thing has not gone wrong yet.
+delayed = "warning"
+
+# The default state of anything. Deliberately the same blue as `info` — a
+# system that gives "normal" its own colour has coloured the background noise.
+normal = "info"
+
+# Things the brand points at. `new` is not a Rust or CSS problem but it is a
+# JavaScript reserved word, so the QML target emits it as `new_`.
+highlight = "accent"
+new = "accent"
+experimental = "accent"
+
+# States that are the absence of a state. Gray on purpose: nothing here should
+# compete with a real status for attention.
+inactive = "neutral"
+draft = "neutral"
+archived = "neutral"
+paused = "neutral"
+
+# In flight, in both directions.
+sent = "progress"
+received = "progress"
+
+
+# --- Neutral ------------------------------------------------------------
+
+[neutral]
+# Grays are tinted toward the brand, not dead. Two or three percent is below
+# the threshold of being read as "a color" and well above the threshold of
+# sitting comfortably beside one. Set `achromatic = true` for a true gray.
+tint_hue = 59.3
+tint_strength = 0.030
+
+# Two more temperatures beside the brand-tinted gray. Naming a hue is what asks
+# for the variant; leaving it out emits neither.
+#
+# These do *not* follow the accent, unlike `tint_hue` — the point of a cool gray
+# is to be a different temperature from the brand, so following the brand would
+# collapse it onto the base ramp. They are fixed, and every palette gets the
+# same two.
+#
+# These carry far more chroma than the base, and they have to. The distance
+# between two tints is bounded by roughly the sum of their chromas, so at the
+# base's 3% — an absolute chroma of about 0.004 — no hue placement can separate
+# anything: the first version of this block used 0.030 and 0.022 and produced
+# three ramps that were mutually indistinguishable, `gray-warm` byte-identical
+# to `gray` at most steps. Hue is not the lever here; chroma is.
+#
+# The strengths are unequal, and the direction is the opposite of what it looks
+# like it should be: **warm needs more than cool.** The base tint is itself warm
+# (hue 59.3), so a warm variant's chroma partly cancels against it — 17 degrees
+# apart, the radii subtract — while cool sits 191 degrees away and the radii add.
+# Equal appearance therefore costs unequal chroma.
+#
+# Warm is at 42 rather than beside the base: at 58 it was 1.3 degrees from
+# `tint_hue`, which is the same hue, and the two ramps could only have differed
+# by how much of it they carried. 42 is a taupe, and clears `danger` at 30.8.
+#
+# Measured at these values, peak separation across the ramp: `gray` to
+# `gray-cool` 0.0328, `gray` to `gray-warm` 0.0289, and the two temperatures
+# 0.0583 apart — well over one just-noticeable difference from the base and
+# nearly three from each other. `noctua_check::spacing` gates it at 0.025 and
+# reports the margin, so this cannot quietly collapse again.
+#
+# The margin above that gate is deliberate. An earlier pass landed both pairs on
+# 0.0300 against a gate of 0.03, which warned on a floating-point hair and would
+# have flipped with any change to the gamut solver or the quantization.
+#
+# The separation peaks mid-ramp and fades at both ends, and no setting changes
+# that: the gamut allows a maximum chroma of 0.0060 at step 24 and 0.0236 at
+# step 1, so the extremes cannot hold a tint however much is asked for. The
+# temperature lives in the mid-tones — borders and muted text — while surfaces
+# stay near-neutral.
+cool_hue = 250.0
+cool_tint_strength = 0.16
+warm_hue = 42.0
+warm_tint_strength = 0.165
+
+# The dense ramp, separate from the twelve functional roles and emitted once
+# for both modes. Interfaces need far finer gray resolution than twelve steps.
+steps = 24
+
+# Where those steps go. Light-mode surfaces all live just below white and
+# dark-mode surfaces just above black; the middle is mostly borders. Spreading
+# evenly would waste most of the ramp and run out exactly where fine
+# discrimination is needed.
+density = [
+  { range = [0.10, 0.25], weight = 3.0 },
+  { range = [0.85, 0.99], weight = 3.0 },
+]
+
+
+# --- Palettes -----------------------------------------------------------
+#
+# Two axes. A palette is one accent hue crossed with one saturation, so twelve
+# accents and three saturations describe thirty-six palettes in fifteen lines.
+# The alternative is thirty-six near-identical `[themes.*]` blocks in which the
+# two axes exist only as a naming convention.
+#
+# Order matters: the first accent crossed with the first saturation is the
+# default palette, the one the emitted CSS binds to `:root`.
+
+[accents]
+# Every hue here sits at least 14 degrees from every semantic family — danger
+# 30.8, warning 89.7, success 144.0, info 232.0 — so a chosen accent is never
+# mistakable for a status colour. Spacing is therefore deliberately uneven:
+# these are twelve named choices, not a generated scale.
+#
+# One band is missing on purpose. Measured by sweeping the arc in 2.5-degree
+# steps, an accent between roughly 158 and 172 degrees collapses onto `danger`
+# under protanopia — worst at 165, where the two sit 0.0018 apart, far inside a
+# just-noticeable difference. Since 130 to 158 is already excluded by the
+# success family, the greens above lime are unusable, and the range from jade
+# onward is teal rather than green. This is why there is one green here and
+# three blue-greens.
+#
+# `hue_correction` appears only on the hues that need it. Oklab drifts blues
+# toward purple as they darken at high chroma; a green does not have that
+# problem, and giving it a blue's correction would introduce one.
+
+# The house ochre, unchanged, and the default.
+ochre   = { hue = { base = 59.3, torsion = -7.0 } }
+amber   = { hue = { base = 105.0, torsion = -5.0 } }
+lime    = { hue = { base = 130.0, torsion = 4.0 } }
+jade    = { hue = { base = 176.0, torsion = 5.0 } }
+teal    = { hue = { base = 194.0, torsion = 5.0 } }
+azure   = { hue = { base = 212.0, torsion = -6.0 }, hue_correction = [[0.25, 3.0], [0.55, 5.0], [0.85, 1.5]] }
+blue    = { hue = { base = 250.0, torsion = -8.0 }, hue_correction = [[0.25, 4.0], [0.55, 6.5], [0.85, 2.0]] }
+indigo  = { hue = { base = 278.0, torsion = -6.0 }, hue_correction = [[0.25, 3.0], [0.55, 4.5], [0.85, 1.5]] }
+violet  = { hue = { base = 300.0, torsion = -4.0 } }
+magenta = { hue = { base = 325.0, torsion = -3.0 } }
+rose    = { hue = { base = 350.0, torsion = -4.0 } }
+clay    = { hue = { base = 15.0, torsion = -6.0 } }
+# The one brown, and the one accent whose `cr` is its own. That curve is what
+# makes it brown rather than a second ochre: at the default curve this hue is an
+# orange, and hue alone cannot separate the two — swept from 38 to 50, the
+# distance from `ochre` moved by 0.004 while dropping the chroma peak from 0.55
+# to 0.42 moved it by 0.006 at every hue. Same lesson as the neutral
+# temperatures: chroma is the lever, hue only decides which colour.
+#
+# The `solid` step is a mocha rather than a chocolate, and no setting changes
+# that — its lightness is fixed by the contrast contract, Lc 58 against the
+# page, so it lands near L 0.66 whatever the hue. The brown lives in the deep
+# steps: #836252 and #36261f against ochre's #83634c and #33271f.
+#
+# 50 is 9 degrees from `ochre` and 5 from the `urgent` family, inside the 14 the
+# other accents keep. The rule uses degrees as a proxy for confusability and the
+# proxy fails safe here, because `umber` carries about half their chroma — so
+# the separation is measured rather than assumed. Worst case across all three
+# saturations and both modes: **0.0264 from ochre, 0.0539 from urgent, 0.0480
+# from clay, 0.0770 from danger**, against a just-noticeable difference of 0.02.
+# The tightest is `umber-sober` against `ochre-sober`, where both saturations
+# pull toward the same muted warm.
+umber   = { hue = { base = 50.0, torsion = -6.0 }, cr = { ends = [0.07, 0.42], peak = 0.42, peak_at = 0.55 } }
+
+[saturations]
+# The sober-to-vivid axis. Measured: the house look sits at 61% of the chroma
+# sRGB allows at the accent's lightness and hue, so `balanced` is a little
+# under one.
+balanced = 0.82
+vivid = 1.15
+sober = 0.55
+
+
+# --- Categorical scale --------------------------------------------------
+
+[chart]
+# Six rather than eight. Eight generated colours cannot be kept apart under
+# all three dichromacies — measured, the closest pair collapses to 0.042 —
+# while six hold at 0.072. Raise it if a chart needs more; the gate will warn,
+# and the answer then is to label the series rather than rely on colour.
+count = 6
+# Equal hue angles are not equal to the eye: a rotation through the greens
+# changes appearance far less than the same rotation through the blues.
+# This spaces entries by perceptual difference instead.
+spread = "even-delta-e"
+cr = 0.80
+
+# Entries span this much lightness. Hue alone cannot separate a categorical
+# scale for a dichromat: hue is the axis their vision is missing.
+lightness_spread = 0.60
+
+
+# --- Ordered scales -----------------------------------------------------
+#
+# A scale is a hue path plus the stops along it. It differs from `[chart]` in
+# what it is for, and therefore in how it is built: a chart spreads hues *around
+# the wheel* so a legend can tell six series apart, while a scale walks a hue
+# *path* so a reader can tell which of two stops is worse without a legend.
+#
+# Both scales below are traffic lights, green through yellow to red, and both
+# ascend into red: `level-10` and `higher` are the bad end. Reversing that is
+# one edit — reverse the hue knots.
+#
+# `even = true` (the default) places stops at equal *perceptual* distance along
+# the path rather than at equal `t`. It matters here: a hue path crosses Oklab
+# at very uneven rates, and spacing evenly in `t` compresses the yellow middle
+# against the red end badly enough to see.
+
+[[scales]]
+# Eleven stops, `level-0` through `level-10`. Counted stops number from zero,
+# which is what a level scale means by its first stop.
+name = "level"
+hue = { knots = [[0.0, 144.0], [0.5, 89.7], [1.0, 30.8]] }
+stops = 11
+# Higher than a family's curve. These stops are read against each other, not
+# used as surfaces or text, so there is no reason to mute the ends.
+cr = { ends = [0.70, 0.80], peak = 0.92, peak_at = 0.5 }
+# Eleven stops on one 113-degree arc cannot be separated by hue alone, and under
+# dichromacy they cannot be separated by hue at all. Lightness is what makes the
+# scale still read as ordered, so it spans more here than a five-stop scale
+# needs.
+#
+# **Negative on purpose**, and this is a measured result rather than taste. A
+# negative spread descends: `level-0` is the lightest stop and `level-10` the
+# darkest. Ascending instead, the worst neighbouring pair came out 0.0185 apart
+# under protanopia — inside the just-noticeable difference, two stops read as
+# one. The cause is that protanopia darkens reds sharply, so an ascending ramp
+# has the deficiency working against it, cancelling most of each step at the red
+# end. Descending, the same darkening *adds* to the ramp, and the worst pair
+# goes to 0.0447. Same eleven colours, opposite sign, more than twice the
+# separation where it is scarcest.
+lightness_spread = -0.50
+
+[[scales]]
+# The same path, five named stops. Independent of `level` on purpose: a form
+# that offers five choices should not have to explain that they are levels 0,
+# 2, 5, 8 and 10.
+name = "magnitude"
+hue = { knots = [[0.0, 144.0], [0.5, 89.7], [1.0, 30.8]] }
+stops = ["lower", "low", "medium", "high", "higher"]
+cr = { ends = [0.70, 0.80], peak = 0.92, peak_at = 0.5 }
+# Descending, for the same measured reason as `level` above.
+lightness_spread = -0.34
+
+
+# --- Consumers ----------------------------------------------------------
+#
+# Where `cargo xtask export` copies generated output. Add three lines per
+# project; nothing else needs configuring. No sibling repository is registered
+# yet — output stays inside this one until real paths are added here.
+
+[[consumers]]
+name = "docs-site"
+path = "docs-site/vendor/tokens"
+targets = ["css", "json-ts"]

@@ -1,0 +1,21 @@
+[package]
+name = "noctua-wasm"
+description = "Browser bindings over the noctua-colors engine, for the playground."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+noctua-check.workspace = true
+noctua-core.workspace = true
+noctua-emit.workspace = true
+noctua-engine.workspace = true
+noctua-spec.workspace = true
+wasm-bindgen.workspace = true
+
+[lints]
+workspace = true

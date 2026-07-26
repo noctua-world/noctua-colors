@@ -1,0 +1,17 @@
+[package]
+name = "noctua-core"
+description = "Color math for the noctua-colors compiler: Oklab/OKLCH, gamut boundary and mapping, APCA, delta-E, CVD simulation."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# noctua-core knows nothing about the spec format or the output targets, and
+# has no workspace dependencies. See AGENTS.md ("Invariants").
+[dependencies]
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

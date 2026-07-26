@@ -1,0 +1,5 @@
+# Makes `cargo xtask <verb>` work from anywhere in the repository, with no
+# tool to install first. This file is the entire reason the command surface
+# needs no bootstrap step.
+[alias]
+xtask = "run --quiet --package xtask --"

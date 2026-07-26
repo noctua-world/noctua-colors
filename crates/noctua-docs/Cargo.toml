@@ -1,0 +1,19 @@
+[package]
+name = "noctua-docs"
+description = "Static generator for the noctua-colors documentation site."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# Deliberately does NOT depend on noctua-engine. The site reads dist/, exactly
+# like any other consumer, which is what makes "the site cannot drift from the
+# system" a mechanism rather than a promise.
+[dependencies]
+indexmap.workspace = true
+maud.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

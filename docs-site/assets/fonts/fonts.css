@@ -1,0 +1,61 @@
+/* Typography.
+ *
+ * Self-hosted: no font CDN, no runtime network dependency, nothing that can
+ * fail between the visitor and the page.
+ *
+ * The fallback stack is a real fallback, not a formality. The site is fully
+ * usable before these load and if they never arrive at all — every fallback
+ * named is a monospace face that ships with some major platform.
+ *
+ * A monospace primary is a deliberate choice for this site specifically. It is
+ * an instrument: dense with hex values, OKLCH triples, Lc numbers and contrast
+ * matrices. A fixed advance width aligns those columns for free. The prose is
+ * short by design, so the cost monospace normally carries in long-form reading
+ * is not paid here.
+ */
+
+@font-face {
+  font-family: "Noctua Iosevka";
+  src: url("./NoctuaIosevka-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  /* `optional`, not `swap`. Both avoid blocking on the download; only this one
+   * avoids the reflow afterwards. With `swap` the fallback paints first and
+   * every line of text shifts when the real face arrives — on a page that is
+   * mostly tables of hex values, that is a visible jolt on every load.
+   *
+   * `optional` lets the browser use the webfont only if it is ready before the
+   * first paint, and never swaps after. The faces are preloaded and total 34 KB,
+   * so it is ready on every visit but the very first with a cold cache — and on
+   * that one visit the fallback is a monospace face that ships with the
+   * platform, which is what the stack below is for. */
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Noctua Iosevka";
+  src: url("./NoctuaIosevka-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Noctua Iosevka";
+  src: url("./NoctuaIosevka-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: optional;
+}
+
+:root {
+  --font-ui:
+    "Noctua Iosevka", ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Only 400 and 700 are shipped. Naming them stops a browser from
+   * synthesising an in-between weight, which on a monospace face smears the
+   * stems and looks like a rendering bug. */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}

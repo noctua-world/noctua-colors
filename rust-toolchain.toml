@@ -1,0 +1,8 @@
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy"]
+# The playground compiles to WebAssembly. Declared here so `rustup show`
+# installs it with the toolchain; xtask installs it too, for anyone who
+# bypasses this file.
+targets = ["wasm32-unknown-unknown"]
+profile = "minimal"

@@ -1,0 +1,19 @@
+[package]
+name = "noctua-engine"
+description = "Curve evaluation, contrast-anchored scale solving and palette construction for noctua-colors."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+noctua-core.workspace = true
+noctua-spec.workspace = true
+indexmap.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

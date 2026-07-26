@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>noctua-colors — consuming the generated CSS</title>
+
+<!--
+  The entire integration. One stylesheet, no build step, no dependency, no
+  configuration.
+
+  Light and dark both work immediately: the generated file carries the system
+  preference, a [data-theme] attribute and a .light/.dark class, composed so
+  they never conflict. The button below sets the attribute; removing it hands
+  control back to the operating system.
+-->
+<link rel="stylesheet" href="../../dist/css/balanced.css">
+
+<style>
+  /* Not one color in this file. Every value below is a token, which is the
+     claim the example exists to demonstrate — open it in a browser and the
+     page is fully themed, in both modes, having invented nothing. */
+
+  :root {
+    --gap: 1rem;
+    --radius: 0.5rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: var(--gap);
+    font: 16px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    background: var(--nc-color-surface);
+    color: var(--nc-color-fg);
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: var(--gap);
+    border-bottom: 1px solid var(--nc-color-border);
+  }
+
+  h1 { font-size: 1.1rem; margin: 0; }
+  h2 { font-size: 0.9rem; margin: 2rem 0 0.75rem; color: var(--nc-color-fg-muted); }
+  p  { margin: 0; color: var(--nc-color-fg-muted); }
+
+  main { max-width: 52rem; margin: 0 auto; }
+
+  .row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  button {
+    font: inherit;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--nc-color-border);
+    background: var(--nc-color-surface-raised);
+    color: var(--nc-color-fg);
+    cursor: pointer;
+  }
+
+  button:hover { border-color: var(--nc-color-border-strong); }
+
+  button:focus-visible {
+    outline: 2px solid var(--nc-color-ring);
+    outline-offset: 2px;
+  }
+
+  button.primary {
+    background: var(--nc-color-accent);
+    border-color: var(--nc-color-accent);
+    color: var(--nc-color-on-accent);
+  }
+
+  button.primary:hover { background: var(--nc-color-accent-hover); }
+
+  .card {
+    padding: var(--gap);
+    border-radius: var(--radius);
+    border: 1px solid var(--nc-color-border);
+    background: var(--nc-color-surface-raised);
+  }
+
+  .note {
+    padding: 0.75rem var(--gap);
+    border-radius: var(--radius);
+    border-left: 3px solid;
+  }
+
+  .note.danger  { background: var(--nc-color-danger-bg);  border-color: var(--nc-color-danger);  }
+  .note.warning { background: var(--nc-color-warning-bg); border-color: var(--nc-color-warning); }
+  .note.success { background: var(--nc-color-success-bg); border-color: var(--nc-color-success); }
+  .note.info    { background: var(--nc-color-info-bg);    border-color: var(--nc-color-info);    }
+
+  /* The symbol carries the meaning, not the color. A red note and a green
+     note are the same note to a deuteranope. */
+  .note::before { font-weight: 700; margin-right: 0.5rem; }
+  .note.danger::before  { content: "✕"; color: var(--nc-color-danger);  }
+  .note.warning::before { content: "!"; color: var(--nc-color-warning); }
+  .note.success::before { content: "✓"; color: var(--nc-color-success); }
+  .note.info::before    { content: "i"; color: var(--nc-color-info);    }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--nc-color-border); }
+  th { color: var(--nc-color-fg-muted); font-weight: 400; }
+
+  .chart { display: flex; gap: 2px; align-items: flex-end; height: 6rem; }
+  .chart div { flex: 1; border-radius: 2px 2px 0 0; }
+  .chart div:nth-child(1) { background: var(--nc-chart-1); height: 40%; }
+  .chart div:nth-child(2) { background: var(--nc-chart-2); height: 75%; }
+  .chart div:nth-child(3) { background: var(--nc-chart-3); height: 55%; }
+  .chart div:nth-child(4) { background: var(--nc-chart-4); height: 95%; }
+  .chart div:nth-child(5) { background: var(--nc-chart-5); height: 30%; }
+  .chart div:nth-child(6) { background: var(--nc-chart-6); height: 65%; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>noctua-colors <span style="color: var(--nc-color-fg-muted)">— web consumer</span></h1>
+    <button id="mode" type="button" aria-pressed="false">Toggle dark mode</button>
+  </header>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary" type="button">Primary</button>
+    <button type="button">Secondary</button>
+  </div>
+
+  <h2>Status</h2>
+  <div class="row" style="flex-direction: column">
+    <div class="note danger">Something failed and needs attention.</div>
+    <div class="note warning">Something is close to a limit.</div>
+    <div class="note success">Something completed.</div>
+    <div class="note info">Something is worth knowing.</div>
+  </div>
+
+  <h2>Table</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Token</th><th>Role</th><th>Anchored on</th></tr></thead>
+      <tbody>
+        <tr><td>--nc-color-surface</td><td>page background</td><td>explicit lightness</td></tr>
+        <tr><td>--nc-color-fg</td><td>body text</td><td>APCA against the surface</td></tr>
+        <tr><td>--nc-color-border</td><td>separators</td><td>lightness separation</td></tr>
+        <tr><td>--nc-color-accent</td><td>primary action</td><td>APCA against the surface</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Categorical scale</h2>
+  <div class="card">
+    <div class="chart">
+      <div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+    <p style="margin-top: 0.75rem; font-size: 0.8rem">
+      Six colors, spaced for even perceptual distance and checked for
+      separability under all three dichromacies.
+    </p>
+  </div>
+
+  <h2>How this works</h2>
+  <div class="card">
+    <p>
+      One <code>&lt;link&gt;</code> to <code>dist/css/balanced.css</code>. This
+      page defines no colors of its own — every value above is a token, which
+      is why toggling the mode restyles all of it and why nothing here can
+      drift from the compiled palette.
+    </p>
+  </div>
+</main>
+
+<script>
+  // The only script on the page, and it is optional: without it the page
+  // still follows the operating system's light or dark preference.
+  var button = document.getElementById("mode");
+  button.addEventListener("click", function () {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+    button.setAttribute("aria-pressed", String(!dark));
+  });
+</script>
+</body>
+</html>
