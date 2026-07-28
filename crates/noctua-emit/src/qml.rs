@@ -135,7 +135,7 @@ fn families(out: &mut String, mode: &noctua_engine::ResolvedMode) {
 /// Named stops additionally get a flat property, since `Noctua.magnitudeHigh` is
 /// what a Qt author will write and `Noctua.magnitude[3]` is not.
 fn scales(out: &mut String, mode: &noctua_engine::ResolvedMode) {
-    for (scale, steps) in &mode.scales {
+    for (scale, resolved) in &mode.scales {
         writeln!(out, "\n    // --- {scale} ---").unwrap();
         writeln!(
             out,
@@ -143,11 +143,11 @@ fn scales(out: &mut String, mode: &noctua_engine::ResolvedMode) {
             name::qml_property(scale)
         )
         .unwrap();
-        for step in steps {
+        for step in &resolved.steps {
             writeln!(out, "        \"{}\",", value::hex(step.primary())).unwrap();
         }
         writeln!(out, "    ]").unwrap();
-        for step in steps {
+        for step in &resolved.steps {
             if step.role.chars().all(|c| c.is_ascii_digit()) {
                 continue;
             }

@@ -9,7 +9,7 @@
 //! every problem.
 
 use crate::error::{Problem, did_you_mean};
-use crate::model::{Spec, TargetSpec};
+use crate::model::{Chart, Spec, TargetSpec};
 
 /// Checks a parsed spec, returning every problem found.
 pub(crate) fn check(spec: &Spec) -> Vec<Problem> {
@@ -627,23 +627,80 @@ fn check_themes(spec: &Spec, problems: &mut Vec<Problem>) {
     }
 }
 
+/// The unnamed `[chart]` and every `[[charts]]` entry.
+///
+/// The name rules are here rather than left to fail downstream because a
+/// duplicate would not fail downstream: both charts land in one map keyed by
+/// stem, so the second silently replaces the first and the build succeeds with
+/// a scale missing.
 fn check_chart(spec: &Spec, problems: &mut Vec<Problem>) {
-    let chart = &spec.chart;
+    if spec.chart.name.is_some() {
+        problems
+            .push(Problem::whole_file("`[chart]` cannot be renamed").fix(
+                "it is always emitted as `chart-*`; for another set add a `[[charts]]` block",
+            ));
+    }
+
+    // Every name a scale could already be using. A chart that collides with one
+    // replaces it in the resolved palette.
+    let mut taken: Vec<String> = vec![noctua_chart_stem()];
+    taken.extend(spec.scales.iter().map(|scale| scale.name.clone()));
+
+    for chart in &spec.charts {
+        let Some(name) = chart.name.as_deref() else {
+            problems.push(
+                Problem::whole_file("a chart in `[[charts]]` has no name")
+                    .fix("`name` becomes the token stem, as in `chart-wide-1`"),
+            );
+            continue;
+        };
+
+        if name.is_empty() {
+            problems.push(
+                Problem::whole_file("a chart has an empty name")
+                    .fix("`name` becomes the token stem, as in `chart-wide-1`"),
+            );
+        }
+
+        if taken.iter().any(|other| other == name) {
+            problems.push(
+                Problem::whole_file(format!("`{name}` is already the name of a scale"))
+                    .fix("chart and scale names become token stems, so they have to be distinct"),
+            );
+        }
+        taken.push(name.to_owned());
+    }
+
+    for chart in std::iter::once(&spec.chart).chain(&spec.charts) {
+        check_one_chart(chart, problems);
+    }
+}
+
+/// The stem the unnamed chart occupies.
+///
+/// Repeated from `noctua_engine::CHART_SCALE`, which this crate cannot depend
+/// on. Getting it wrong costs a missed diagnostic, not a wrong palette.
+fn noctua_chart_stem() -> String {
+    "chart".to_owned()
+}
+
+fn check_one_chart(chart: &Chart, problems: &mut Vec<Problem>) {
+    let named = chart
+        .name
+        .as_deref()
+        .map_or_else(|| "chart".to_owned(), |name| format!("chart `{name}`"));
 
     if chart.count == 0 {
         problems.push(
-            Problem::whole_file("the chart scale has no entries")
-                .fix("set `chart.count` to at least 1, or leave it out for the default of 8"),
+            Problem::whole_file(format!("{named} has no entries"))
+                .fix("set `count` to at least 1, or leave it out for the default of 6"),
         );
     }
 
     if !(0.0..=1.0).contains(&chart.cr) {
         problems.push(
-            Problem::whole_file(format!(
-                "chart relative chroma {} is out of range",
-                chart.cr
-            ))
-            .fix("relative chroma must be between 0 and 1"),
+            Problem::whole_file(format!("{named} asks for relative chroma {}", chart.cr))
+                .fix("relative chroma must be between 0 and 1"),
         );
     }
 
@@ -653,7 +710,7 @@ fn check_chart(spec: &Spec, problems: &mut Vec<Problem>) {
     ] {
         if !(0.0..=1.0).contains(&value) {
             problems.push(
-                Problem::whole_file(format!("chart {field} of {value} is out of range"))
+                Problem::whole_file(format!("{named} {field} of {value} is out of range"))
                     .fix("lightness runs from 0 (black) to 1 (white)"),
             );
         }

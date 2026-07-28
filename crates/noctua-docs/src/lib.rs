@@ -35,6 +35,16 @@ pub fn bootstrap_sheet_id() -> &'static str {
     page::BOOTSTRAP_SHEET_ID
 }
 
+/// The global the inline bootstrap parks its palette-JSON fetch on.
+///
+/// Exposed for the same reason as [`bootstrap_sheet_id`]: `site.js` reads it,
+/// and a rename on one side that nothing compares would silently cost the
+/// prefetch — which fails as a slower page rather than as an error.
+#[must_use]
+pub fn theme_fetch_global() -> &'static str {
+    page::THEME_FETCH
+}
+
 /// A file the generator produced.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Output {
@@ -129,6 +139,7 @@ pub fn token_files(palette: &Palette) -> Vec<String> {
     let mut files = vec![
         "css/index.css".to_owned(),
         "css/ramp.css".to_owned(),
+        "css/contexts.css".to_owned(),
         "json/axes.json".to_owned(),
     ];
 

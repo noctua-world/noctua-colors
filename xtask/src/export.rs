@@ -9,9 +9,36 @@
 //! into somebody else's checkout unannounced is not a thing a build tool
 //! should do quietly.
 
-use std::path::Path;
+use std::path::{Component, Path, PathBuf};
 
 use crate::{build, ui};
+
+/// Resolves `..` and `.` lexically, without touching the filesystem.
+///
+/// `Path::starts_with` compares components and does not understand `..`, so
+/// `<root>/../noctua-design` *starts with* `<root>` as far as it is concerned —
+/// which silently disabled the "outside this repository" notice for exactly the
+/// sibling paths it exists to announce. The first `../` consumer registered in
+/// the spec is what surfaced it.
+///
+/// Lexical rather than `fs::canonicalize`, deliberately: a consumer's directory
+/// legitimately does not exist yet on the first export, and `canonicalize` fails
+/// on a path that is not there. The cost is that a symlink is not followed, so a
+/// symlinked consumer inside the repository would be reported as outside — the
+/// safe direction for a notice whose only job is to over-announce.
+fn normalize(path: &Path) -> PathBuf {
+    path.components()
+        .fold(PathBuf::new(), |mut acc, component| {
+            match component {
+                Component::ParentDir => {
+                    acc.pop();
+                }
+                Component::CurDir => {}
+                other => acc.push(other),
+            }
+            acc
+        })
+}
 
 /// Copies each consumer's requested targets into its path.
 ///
@@ -57,7 +84,7 @@ pub(crate) fn run(root: &Path, spec_path: &Path, dry_run: bool) -> Result<(), St
         }
 
         let destination = root.join(&consumer.path);
-        let outside = !destination.starts_with(root);
+        let outside = !normalize(&destination).starts_with(normalize(root));
 
         let emitter_files: Vec<_> = consumer
             .targets
@@ -105,4 +132,63 @@ pub(crate) fn run(root: &Path, spec_path: &Path, dry_run: bool) -> Result<(), St
         ui::ok(&format!("{wrote} file(s) changed"));
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::normalize;
+    use std::path::Path;
+
+    /// The "outside this repository" notice exists so that writing into somebody
+    /// else's checkout is never quiet. It was silently disabled for every
+    /// `../sibling` consumer, because `Path::starts_with` is lexical and does not
+    /// understand `..` — so `<root>/../noctua-design` *started with* `<root>`.
+    ///
+    /// This test found that bug, on the day the first sibling consumer was
+    /// registered in the spec. It compares the way the code does, so it fails
+    /// again if the normalization is ever dropped.
+    #[test]
+    fn a_sibling_consumer_is_recognised_as_outside_the_repository() {
+        let root = Path::new("/w/repos/noctua-colors");
+        let sibling = root.join("../noctua-design/packages/tokens/vendor");
+
+        assert!(
+            sibling.starts_with(root),
+            "the lexical comparison still sees a sibling as inside — \
+             if this ever fails, std changed and the workaround can go"
+        );
+        assert!(
+            !normalize(&sibling).starts_with(normalize(root)),
+            "a sibling consumer must be reported as outside the repository"
+        );
+    }
+
+    /// The notice must not cry wolf: an in-repository consumer, which is the
+    /// common case, has to stay silent — including when its path is written with
+    /// redundant `./` or a `..` that cancels out.
+    #[test]
+    fn an_in_repository_consumer_is_not_reported_as_outside() {
+        let root = Path::new("/w/repos/noctua-colors");
+        for path in [
+            "docs-site/vendor/tokens",
+            "./docs-site/vendor/tokens",
+            "docs-site/../docs-site/vendor/tokens",
+        ] {
+            let destination = normalize(&root.join(path));
+            assert!(
+                destination.starts_with(normalize(root)),
+                "{path} is inside the repository and must not be announced"
+            );
+        }
+    }
+
+    /// `..` past the root must not underflow into an empty path that then
+    /// "starts with" nothing — a consumer pointing above the filesystem root is
+    /// nonsense, and it has to be reported rather than silently accepted.
+    #[test]
+    fn a_path_climbing_past_the_root_is_still_outside() {
+        let root = Path::new("/w/repos/noctua-colors");
+        let escaped = root.join("../../../../../../elsewhere");
+        assert!(!normalize(&escaped).starts_with(normalize(root)));
+    }
 }

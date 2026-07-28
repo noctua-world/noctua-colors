@@ -15,6 +15,7 @@
 //! every mode, and are emitted once — which is what keeps generated CSS from
 //! multiplying out to something nobody can read.
 
+use indexmap::IndexMap;
 use noctua_engine::{ResolvedMode, ResolvedStep};
 
 /// A token that carries a real color.
@@ -167,6 +168,132 @@ pub fn semantic_tokens(mode: &ResolvedMode) -> Vec<AliasToken> {
     tokens
 }
 
+/// A view of something split into what every theme agrees on and what a theme
+/// has to state for itself.
+///
+/// The semantic layer is an *indirection* — `--nc-color-rejected` points at
+/// `--nc-danger-solid`, which is a different colour in every palette but the
+/// same sentence in every one of them. Written per theme it was therefore the
+/// same three hundred and forty lines repeated thirty-nine times: measured,
+/// 97 KB of each 225 KB stylesheet and 58.7 KB of each of the seventy-eight
+/// mode blocks in `palette.json`. At two dozen contexts that was a rounding
+/// error; at three hundred and fifty it is most of the artifact.
+///
+/// Derived from the resolved palette rather than from the spec: a slot is
+/// shared when every theme resolves it to the same family, whatever the reason.
+/// A `[themes.<name>.semantic]` override lands in [`Self::per_theme`]
+/// automatically, and so would any future mechanism that moved one.
+#[derive(Debug, Clone, Default)]
+pub struct ThemeSplit {
+    /// Written once. Every theme resolves these identically.
+    pub shared: Vec<AliasToken>,
+    /// Written per theme, keyed by theme name — only what that theme differs
+    /// on. Themes with nothing to add do not appear.
+    pub per_theme: IndexMap<String, Vec<AliasToken>>,
+}
+
+/// The semantic contract, split by what every theme agrees on.
+///
+/// See [`ThemeSplit`]. Read from each theme's light mode, because the semantic
+/// map does not vary by mode — it is slot to family, and a mode changes what a
+/// family's steps *are*, not which family fills a slot.
+#[must_use]
+pub fn semantic_layer(palette: &noctua_engine::Palette) -> ThemeSplit {
+    split_by_theme(palette, |mode| {
+        semantic_tokens(mode)
+            .into_iter()
+            .map(|alias| (alias.name, alias.target))
+            .collect()
+    })
+}
+
+/// Semantic *slot* to family — the contract one level up from the tokens.
+///
+/// Split the same way and for the same reason. Not derivable from
+/// [`semantic_layer`]: a slot contributes five tokens whose names are not the
+/// slot's, so a consumer that wants to offer "the contexts" needs this one.
+#[must_use]
+pub fn slot_layer(palette: &noctua_engine::Palette) -> ThemeSplit {
+    split_by_theme(palette, |mode| {
+        mode.semantic
+            .iter()
+            .map(|(slot, family)| (slot.clone(), family.clone()))
+            .collect()
+    })
+}
+
+/// Splits a per-theme name-to-target view into shared and per-theme parts.
+///
+/// A name is shared when *every* theme has it and every theme points it at the
+/// same target. Anything else is written out by each theme that has it, which
+/// is what keeps a partial override — a theme that redefines one slot — from
+/// silently dropping the other three hundred.
+fn split_by_theme(
+    palette: &noctua_engine::Palette,
+    of: impl Fn(&ResolvedMode) -> Vec<(String, String)>,
+) -> ThemeSplit {
+    let per_theme: Vec<(&str, IndexMap<String, String>)> = palette
+        .themes
+        .iter()
+        .map(|theme| {
+            (
+                theme.name.as_str(),
+                of(&theme.modes[0]).into_iter().collect(),
+            )
+        })
+        .collect();
+
+    let Some((_, first)) = per_theme.first() else {
+        return ThemeSplit::default();
+    };
+
+    // Order follows the first theme, then anything a later theme adds — so the
+    // output is stable and readable rather than in whatever order a set
+    // iterates. Determinism is invariant 4.
+    let mut names: Vec<&str> = first.keys().map(String::as_str).collect();
+    for (_, tokens) in &per_theme {
+        for name in tokens.keys() {
+            if !names.contains(&name.as_str()) {
+                names.push(name);
+            }
+        }
+    }
+
+    let mut split = ThemeSplit::default();
+    for name in names {
+        let target = first.get(name);
+        let agreed = target.is_some_and(|target| {
+            per_theme
+                .iter()
+                .all(|(_, tokens)| tokens.get(name) == Some(target))
+        });
+
+        if agreed {
+            split.shared.push(AliasToken {
+                name: name.to_owned(),
+                target: target.expect("agreed implies present").clone(),
+            });
+            continue;
+        }
+
+        for (theme, tokens) in &per_theme {
+            let Some(target) = tokens.get(name) else {
+                continue;
+            };
+            split
+                .per_theme
+                .entry((*theme).to_owned())
+                .or_default()
+                .push(AliasToken {
+                    name: name.to_owned(),
+                    target: target.clone(),
+                });
+        }
+    }
+
+    split
+}
+
 /// Every scale entry as `chart-1`, `level-0`, `magnitude-lower`.
 ///
 /// The stem is the step's own label, so a counted scale numbers from zero and a
@@ -175,8 +302,9 @@ pub fn semantic_tokens(mode: &ResolvedMode) -> Vec<AliasToken> {
 pub fn scale_names(mode: &ResolvedMode) -> Vec<String> {
     mode.scales
         .iter()
-        .flat_map(|(scale, steps)| {
-            steps
+        .flat_map(|(scale, resolved)| {
+            resolved
+                .steps
                 .iter()
                 .map(move |step| format!("{scale}-{}", step.role))
         })
@@ -271,6 +399,77 @@ mod tests {
         let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../../specs/noctua.toml");
         let spec: Spec = noctua_spec::load(path).expect("valid spec");
         build(&spec).expect("builds")
+    }
+
+    /// Every shipped slot has to survive every target's name mangling and come
+    /// out a legal identifier there.
+    ///
+    /// The audit that found `readonly` and `required` is not the guard; this
+    /// is. A slot is a name a person types into the spec, and the failure mode
+    /// is not a bad colour — it is a QML singleton that will not parse, taking
+    /// every token in it down, or a Rust module that will not compile. Both are
+    /// silent until something loads the file.
+    #[test]
+    fn every_slot_survives_every_target() {
+        // Words that are not identifiers in a target this project emits.
+        const RUST_KEYWORDS: &[&str] = &[
+            "as", "async", "await", "break", "const", "continue", "crate", "dyn", "else", "enum",
+            "extern", "false", "fn", "for", "if", "impl", "in", "let", "loop", "match", "mod",
+            "move", "mut", "pub", "ref", "return", "self", "static", "struct", "super", "trait",
+            "true", "type", "union", "unsafe", "use", "where", "while", "abstract", "become",
+            "box", "do", "final", "macro", "override", "priv", "try", "typeof", "unsized",
+            "virtual", "yield", "gen",
+        ];
+
+        let palette = shipped();
+        let mode = &palette.themes[0].modes[0];
+        let names: Vec<String> = semantic_tokens(mode)
+            .into_iter()
+            .map(|alias| alias.name)
+            .collect();
+        assert!(names.len() > 1500, "only {} names emitted", names.len());
+
+        for name in &names {
+            // QML: a camel-case property name, escaped away from every keyword.
+            // Checked on the emitted name rather than on the slot, because
+            // `on-{slot}` and `{slot}-bg` are names the singleton declares too.
+            let qml = crate::name::qml_property(name);
+            assert!(
+                !crate::name::is_qml_reserved(&qml),
+                "QML property `{qml}` (from `{name}`) is a reserved word, which \
+                 does not fail the token — it fails the whole singleton"
+            );
+            assert!(
+                qml.chars().all(|c| c.is_ascii_alphanumeric() || c == '_'),
+                "QML property `{qml}` is not an identifier"
+            );
+
+            // Rust: SCREAMING_SNAKE constants, which no keyword collides with —
+            // but only because of the case. The assertion is on that rather
+            // than on today's call sites, so moving a name into a module or a
+            // function fails here first.
+            let konst = crate::name::screaming_snake(name);
+            assert!(
+                konst
+                    .chars()
+                    .all(|c| c.is_ascii_uppercase() || c.is_ascii_digit() || c == '_'),
+                "Rust constant `{konst}` is not screaming snake case, so a keyword \
+                 like `{}` could reach it",
+                RUST_KEYWORDS[0]
+            );
+            assert!(
+                !RUST_KEYWORDS.contains(&konst.as_str()),
+                "Rust constant `{konst}` is a keyword"
+            );
+
+            // CSS and SCSS take the name verbatim after a prefix, and both
+            // accept anything in this alphabet.
+            assert!(
+                name.chars()
+                    .all(|c| c.is_ascii_lowercase() || c.is_ascii_digit() || c == '-'),
+                "`{name}` is not spellable as a custom property"
+            );
+        }
     }
 
     #[test]

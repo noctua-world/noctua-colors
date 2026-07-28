@@ -23,14 +23,27 @@ pub fn camel(kebab: &str) -> String {
     out
 }
 
-/// Words QML's JavaScript dialect will not accept as a property name.
+/// Words QML will not accept as a property name.
 ///
-/// Only the ones a colour token could plausibly be called. `new` is not
-/// hypothetical — it is in the shipped specification, as the context for a
-/// newly-arrived item — and `readonly property color new` is a syntax error, not
-/// a warning: the whole singleton fails to load and every token in it goes with
-/// it.
+/// `new` is not hypothetical — it is in the shipped specification, as the
+/// context for a newly-arrived item — and `readonly property color new` is a
+/// syntax error, not a warning: the whole singleton fails to load and every
+/// token in it goes with it.
+///
+/// **The full keyword set, not a curated one.** This used to hold only "the
+/// ones a colour token could plausibly be called", which was a defensible line
+/// at two dozen contexts and stopped being one at three hundred and fifty: the
+/// spec now ships `readonly` and `required`, both of which are QML property
+/// keywords the JavaScript list below does not contain, and both of which would
+/// have taken the singleton down. Judging plausibility is the part that failed;
+/// the list is cheap, so it is complete.
+///
+/// The second block is QML's own — the words that appear in a property or
+/// object declaration, where a token name lands. `alias`, `property`,
+/// `readonly`, `required`, `signal` and `default` are meaningful exactly there.
 const QML_RESERVED: &[&str] = &[
+    // JavaScript, including the strict-mode and future reserved words.
+    "arguments",
     "await",
     "break",
     "case",
@@ -44,6 +57,7 @@ const QML_RESERVED: &[&str] = &[
     "do",
     "else",
     "enum",
+    "eval",
     "export",
     "extends",
     "false",
@@ -77,7 +91,26 @@ const QML_RESERVED: &[&str] = &[
     "while",
     "with",
     "yield",
+    // QML's own, which a JavaScript keyword list does not cover.
+    "alias",
+    "as",
+    "component",
+    "on",
+    "pragma",
+    "property",
+    "readonly",
+    "required",
+    "signal",
 ];
+
+/// Whether QML would reject this word as a property name.
+///
+/// Exposed so a gate can assert that no *emitted* name is one, rather than
+/// trusting that [`qml_property`] was called everywhere it should have been.
+#[must_use]
+pub fn is_qml_reserved(word: &str) -> bool {
+    QML_RESERVED.contains(&word)
+}
 
 /// A QML property name: camel-case, and never a reserved word.
 ///
@@ -180,6 +213,17 @@ mod tests {
         assert_eq!(qml_property("accent-hover"), "accentHover");
         for word in QML_RESERVED {
             assert_ne!(&qml_property(word), word, "{word} escaped unescaped");
+        }
+    }
+
+    /// The four the shipped spec actually contains. `readonly` and `required`
+    /// are QML property keywords rather than JavaScript ones, so a list built
+    /// from JavaScript alone let them straight through — and `readonly property
+    /// color readonly:` does not fail the token, it fails the file.
+    #[test]
+    fn the_qml_keywords_a_javascript_list_would_miss_are_escaped() {
+        for word in ["readonly", "required", "default", "new"] {
+            assert_eq!(qml_property(word), format!("{word}_"), "{word}");
         }
     }
 

@@ -123,8 +123,70 @@ impl Palette {
 /// Token stem of the untinted dense neutral ramp.
 pub const BASE_NEUTRAL_RAMP: &str = "gray";
 
-/// Key of the categorical scale within [`ResolvedMode::scales`].
+/// Key of the unnamed categorical scale within [`ResolvedMode::scales`].
 pub const CHART_SCALE: &str = "chart";
+
+/// What a scale is for, and therefore how it is read and how it is checked.
+///
+/// Recorded rather than inferred from the name. It used to be `name ==
+/// "chart"`, spelled out in the colour-vision gate, the documentation site and
+/// the site's script — three copies of one fact, and all three wrong the moment
+/// a second categorical set existed.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ScaleKind {
+    /// Hues spread *around the wheel*, told apart from a legend.
+    ///
+    /// Checked pairwise, every entry against every other, because any two of
+    /// them can appear side by side and confusing them loses the meaning.
+    Categorical {
+        /// Whether the spec declares that this set's legend names every entry.
+        ///
+        /// Colour alone cannot separate more than about six generated entries
+        /// under all three dichromacies. Above that the honest report is the
+        /// measured margin as a note, not a warning telling someone to make a
+        /// different choice when no different choice exists.
+        labelled: bool,
+    },
+    /// A hue *path*, walked in order.
+    ///
+    /// Pairwise is the wrong property: confusing `level-2` with `level-7`
+    /// loses precision, not meaning. Checked instead on neighbours being
+    /// separable, ends being opposed, and simulated lightness staying
+    /// monotone.
+    Ordered,
+}
+
+impl ScaleKind {
+    /// Whether this scale is read off a legend rather than in order.
+    #[must_use]
+    pub fn is_categorical(self) -> bool {
+        matches!(self, Self::Categorical { .. })
+    }
+
+    /// Whether the spec declares this set's legend names every entry.
+    #[must_use]
+    pub fn is_labelled(self) -> bool {
+        matches!(self, Self::Categorical { labelled: true })
+    }
+
+    /// The word for this kind, as emitted and as shown.
+    #[must_use]
+    pub fn id(self) -> &'static str {
+        match self {
+            Self::Categorical { .. } => "categorical",
+            Self::Ordered => "ordered",
+        }
+    }
+}
+
+/// One scale, resolved: what it is for, and its stops.
+#[derive(Debug, Clone)]
+pub struct ResolvedScale {
+    /// What this scale is for.
+    pub kind: ScaleKind,
+    /// The stops, in order.
+    pub steps: Vec<ResolvedStep>,
+}
 
 /// One theme, resolved in both modes.
 #[derive(Debug, Clone)]
@@ -154,19 +216,36 @@ pub struct ResolvedMode {
     /// One map rather than a field per scale, because there is nothing special
     /// about any of them: an emitter loops over whatever is here, so adding a
     /// scale to the spec adds it to seven output formats without touching one
-    /// of them.
-    pub scales: IndexMap<String, Vec<ResolvedStep>>,
+    /// of them. Each carries its own [`ScaleKind`], so the one gate that has to
+    /// treat categorical and ordered differently asks the scale rather than
+    /// comparing its name.
+    pub scales: IndexMap<String, ResolvedScale>,
     /// Semantic slot to the family that fills it.
     pub semantic: IndexMap<String, String>,
 }
 
 impl ResolvedMode {
-    /// The categorical chart, for the cases that mean specifically that one —
-    /// the colour-vision gate checks it pairwise, which is wrong for a scale
-    /// that is read in order.
+    /// The unnamed categorical chart, for the cases that mean specifically
+    /// that one — the hero figure on the documentation site, and the golden.
     #[must_use]
     pub fn chart(&self) -> &[ResolvedStep] {
-        self.scales.get(CHART_SCALE).map_or(&[], Vec::as_slice)
+        self.scales
+            .get(CHART_SCALE)
+            .map_or(&[], |scale| scale.steps.as_slice())
+    }
+
+    /// Every categorical scale, in spec order.
+    pub fn categorical(&self) -> impl Iterator<Item = (&String, &ResolvedScale)> {
+        self.scales
+            .iter()
+            .filter(|(_, scale)| scale.kind.is_categorical())
+    }
+
+    /// Every ordered scale, in spec order.
+    pub fn ordered(&self) -> impl Iterator<Item = (&String, &ResolvedScale)> {
+        self.scales
+            .iter()
+            .filter(|(_, scale)| !scale.kind.is_categorical())
     }
 }
 
@@ -716,29 +795,43 @@ fn build_family(
     })
 }
 
-/// Every scale this mode emits: the categorical chart, then the spec's own.
+/// Every scale this mode emits: the categorical sets, then the ordered ones.
 ///
-/// The chart is first and keyed [`CHART_SCALE`] rather than being a field of
-/// its own, so the one gate that must treat it differently says so by name and
-/// everything else just iterates.
+/// All of them in one map keyed by stem, each carrying its own kind, so an
+/// emitter iterates and a gate asks. The unnamed chart keeps [`CHART_SCALE`]
+/// and comes first, so the default set is the one a reader meets.
 fn build_scales(
     spec: &Spec,
     mode: Mode,
     gamuts: &[Gamut],
     fallback_hue: f64,
     theme_chroma: f64,
-) -> IndexMap<String, Vec<ResolvedStep>> {
+) -> IndexMap<String, ResolvedScale> {
     let mut scales = IndexMap::new();
-    scales.insert(
-        CHART_SCALE.to_owned(),
-        build_chart(spec, mode, gamuts, fallback_hue, theme_chroma),
-    );
+
+    for chart in std::iter::once(&spec.chart).chain(&spec.charts) {
+        let name = chart.name.clone().unwrap_or_else(|| CHART_SCALE.to_owned());
+        scales.insert(
+            name,
+            ResolvedScale {
+                kind: ScaleKind::Categorical {
+                    labelled: chart.labelled,
+                },
+                steps: build_chart(chart, mode, gamuts, fallback_hue, theme_chroma),
+            },
+        );
+    }
+
     for scale in &spec.scales {
         scales.insert(
             scale.name.clone(),
-            build_scale(scale, mode, gamuts, theme_chroma),
+            ResolvedScale {
+                kind: ScaleKind::Ordered,
+                steps: build_scale(scale, mode, gamuts, theme_chroma),
+            },
         );
     }
+
     scales
 }
 
@@ -818,13 +911,12 @@ fn build_scale(
 }
 
 fn build_chart(
-    spec: &Spec,
+    chart: &noctua_spec::Chart,
     mode: Mode,
     gamuts: &[Gamut],
     fallback_hue: f64,
     theme_chroma: f64,
 ) -> Vec<ResolvedStep> {
-    let chart = &spec.chart;
     let lightness = if mode == Mode::Light {
         chart.lightness_light
     } else {

@@ -653,6 +653,7 @@ name = "noctua-emit"
 version = "0.1.0"
 dependencies = [
  "blake3",
+ "indexmap",
  "noctua-check",
  "noctua-core",
  "noctua-engine",

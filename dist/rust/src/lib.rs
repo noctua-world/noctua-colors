@@ -1007,6 +1007,96 @@ pub mod ochre_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -1756,6 +1846,96 @@ pub mod ochre_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -2516,6 +2696,96 @@ pub mod ochre_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -3265,6 +3535,96 @@ pub mod ochre_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -4025,6 +4385,96 @@ pub mod ochre_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -4774,6 +5224,96 @@ pub mod ochre_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -5534,6 +6074,96 @@ pub mod amber_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -6283,6 +6913,96 @@ pub mod amber_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -7043,6 +7763,96 @@ pub mod amber_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -7792,6 +8602,96 @@ pub mod amber_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -8552,6 +9452,96 @@ pub mod amber_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -9301,6 +10291,96 @@ pub mod amber_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -10061,6 +11141,96 @@ pub mod lime_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -10810,6 +11980,96 @@ pub mod lime_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -11570,6 +12830,96 @@ pub mod lime_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -12319,6 +13669,96 @@ pub mod lime_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -13079,6 +14519,96 @@ pub mod lime_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -13828,6 +15358,96 @@ pub mod lime_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -14588,6 +16208,96 @@ pub mod jade_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -15337,6 +17047,96 @@ pub mod jade_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -16097,6 +17897,96 @@ pub mod jade_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -16846,6 +18736,96 @@ pub mod jade_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -17606,6 +19586,96 @@ pub mod jade_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -18355,6 +20425,96 @@ pub mod jade_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -19115,6 +21275,96 @@ pub mod teal_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -19864,6 +22114,96 @@ pub mod teal_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -20624,6 +22964,96 @@ pub mod teal_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -21373,6 +23803,96 @@ pub mod teal_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -22133,6 +24653,96 @@ pub mod teal_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -22882,6 +25492,96 @@ pub mod teal_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -23642,6 +26342,96 @@ pub mod azure_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -24391,6 +27181,96 @@ pub mod azure_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -25151,6 +28031,96 @@ pub mod azure_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -25900,6 +28870,96 @@ pub mod azure_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -26660,6 +29720,96 @@ pub mod azure_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -27409,6 +30559,96 @@ pub mod azure_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -28169,6 +31409,96 @@ pub mod blue_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -28918,6 +32248,96 @@ pub mod blue_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -29678,6 +33098,96 @@ pub mod blue_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -30427,6 +33937,96 @@ pub mod blue_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -31187,6 +34787,96 @@ pub mod blue_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -31936,6 +35626,96 @@ pub mod blue_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -32696,6 +36476,96 @@ pub mod indigo_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -33445,6 +37315,96 @@ pub mod indigo_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -34205,6 +38165,96 @@ pub mod indigo_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -34954,6 +39004,96 @@ pub mod indigo_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -35714,6 +39854,96 @@ pub mod indigo_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -36463,6 +40693,96 @@ pub mod indigo_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -37223,6 +41543,96 @@ pub mod violet_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -37972,6 +42382,96 @@ pub mod violet_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -38732,6 +43232,96 @@ pub mod violet_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -39481,6 +44071,96 @@ pub mod violet_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -40241,6 +44921,96 @@ pub mod violet_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -40990,6 +45760,96 @@ pub mod violet_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -41750,6 +46610,96 @@ pub mod magenta_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -42499,6 +47449,96 @@ pub mod magenta_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -43259,6 +48299,96 @@ pub mod magenta_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -44008,6 +49138,96 @@ pub mod magenta_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -44768,6 +49988,96 @@ pub mod magenta_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -45517,6 +50827,96 @@ pub mod magenta_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -46277,6 +51677,96 @@ pub mod rose_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -47026,6 +52516,96 @@ pub mod rose_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -47786,6 +53366,96 @@ pub mod rose_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -48535,6 +54205,96 @@ pub mod rose_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -49295,6 +55055,96 @@ pub mod rose_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -50044,6 +55894,96 @@ pub mod rose_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -50804,6 +56744,96 @@ pub mod clay_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -51553,6 +57583,96 @@ pub mod clay_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -52313,6 +58433,96 @@ pub mod clay_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -53062,6 +59272,96 @@ pub mod clay_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -53822,6 +60122,96 @@ pub mod clay_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -54571,6 +60961,96 @@ pub mod clay_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -55331,6 +61811,96 @@ pub mod umber_balanced {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#1b383b`
+            pub const STOP_1: Color = Color { r: 27, g: 56, b: 59, l: 0.3200, c: 0.0358, h: 205.00, hex: "#1b383b" };
+            /// `#373fb5`
+            pub const STOP_2: Color = Color { r: 55, g: 63, b: 181, l: 0.4400, c: 0.1840, h: 273.19, hex: "#373fb5" };
+            /// `#9f4ab5`
+            pub const STOP_3: Color = Color { r: 159, g: 74, b: 181, l: 0.5600, c: 0.1772, h: 318.91, hex: "#9f4ab5" };
+            /// `#e06e8b`
+            pub const STOP_4: Color = Color { r: 224, g: 110, b: 139, l: 0.6800, c: 0.1445, h: 5.77, hex: "#e06e8b" };
+            /// `#eaaf8b`
+            pub const STOP_5: Color = Color { r: 234, g: 175, b: 139, l: 0.8000, c: 0.0847, h: 52.11, hex: "#eaaf8b" };
+            /// `#c2f7a6`
+            pub const STOP_6: Color = Color { r: 194, g: 247, b: 166, l: 0.9200, c: 0.1190, h: 135.09, hex: "#c2f7a6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#492f19`
+            pub const STOP_1: Color = Color { r: 73, g: 47, b: 25, l: 0.3300, c: 0.0511, h: 59.30, hex: "#492f19" };
+            /// `#484622`
+            pub const STOP_2: Color = Color { r: 72, g: 70, b: 34, l: 0.3864, c: 0.0538, h: 105.44, hex: "#484622" };
+            /// `#385f2b`
+            pub const STOP_3: Color = Color { r: 56, g: 95, b: 43, l: 0.4427, c: 0.0906, h: 138.50, hex: "#385f2b" };
+            /// `#397055`
+            pub const STOP_4: Color = Color { r: 57, g: 112, b: 85, l: 0.4991, c: 0.0737, h: 160.25, hex: "#397055" };
+            /// `#437d88`
+            pub const STOP_5: Color = Color { r: 67, g: 125, b: 136, l: 0.5555, c: 0.0632, h: 210.98, hex: "#437d88" };
+            /// `#4a88c3`
+            pub const STOP_6: Color = Color { r: 74, g: 136, b: 195, l: 0.6118, c: 0.1112, h: 249.19, hex: "#4a88c3" };
+            /// `#868cdb`
+            pub const STOP_7: Color = Color { r: 134, g: 140, b: 219, l: 0.6682, c: 0.1174, h: 279.45, hex: "#868cdb" };
+            /// `#b992e1`
+            pub const STOP_8: Color = Color { r: 185, g: 146, b: 225, l: 0.7245, c: 0.1196, h: 306.07, hex: "#b992e1" };
+            /// `#e09ae7`
+            pub const STOP_9: Color = Color { r: 224, g: 154, b: 231, l: 0.7809, c: 0.1301, h: 323.51, hex: "#e09ae7" };
+            /// `#eeb7d4`
+            pub const STOP_10: Color = Color { r: 238, g: 183, b: 212, l: 0.8373, c: 0.0739, h: 345.43, hex: "#eeb7d4" };
+            /// `#f3d2d6`
+            pub const STOP_11: Color = Color { r: 243, g: 210, b: 214, l: 0.8936, c: 0.0373, h: 9.93, hex: "#f3d2d6" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.04, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#603f24`
+            pub const STOP_1: Color = Color { r: 96, g: 63, b: 36, l: 0.4000, c: 0.0619, h: 59.30, hex: "#603f24" };
+            /// `#4f91a3`
+            pub const STOP_2: Color = Color { r: 79, g: 145, b: 163, l: 0.6200, c: 0.0727, h: 217.31, hex: "#4f91a3" };
+            /// `#e8b7ed`
+            pub const STOP_3: Color = Color { r: 232, g: 183, b: 237, l: 0.8400, c: 0.0920, h: 323.34, hex: "#e8b7ed" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -56080,6 +62650,96 @@ pub mod umber_balanced {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#284f53`
+            pub const STOP_1: Color = Color { r: 40, g: 79, b: 83, l: 0.4000, c: 0.0448, h: 205.00, hex: "#284f53" };
+            /// `#6151cc`
+            pub const STOP_2: Color = Color { r: 97, g: 81, b: 204, l: 0.5200, c: 0.1839, h: 284.14, hex: "#6151cc" };
+            /// `#c758c8`
+            pub const STOP_3: Color = Color { r: 199, g: 88, b: 200, l: 0.6400, c: 0.1941, h: 327.17, hex: "#c758c8" };
+            /// `#e797a5`
+            pub const STOP_4: Color = Color { r: 231, g: 151, b: 165, l: 0.7600, c: 0.0975, h: 8.07, hex: "#e797a5" };
+            /// `#f2d2ab`
+            pub const STOP_5: Color = Color { r: 242, g: 210, b: 171, l: 0.8800, c: 0.0627, h: 72.13, hex: "#f2d2ab" };
+            /// `#d9fad3`
+            pub const STOP_6: Color = Color { r: 217, g: 250, b: 211, l: 0.9500, c: 0.0619, h: 140.73, hex: "#d9fad3" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#4f331c`
+            pub const STOP_1: Color = Color { r: 79, g: 51, b: 28, l: 0.3500, c: 0.0542, h: 59.30, hex: "#4f331c" };
+            /// `#4e4b25`
+            pub const STOP_2: Color = Color { r: 78, g: 75, b: 37, l: 0.4064, c: 0.0562, h: 103.86, hex: "#4e4b25" };
+            /// `#3f642f`
+            pub const STOP_3: Color = Color { r: 63, g: 100, b: 47, l: 0.4627, c: 0.0919, h: 137.00, hex: "#3f642f" };
+            /// `#3d7756`
+            pub const STOP_4: Color = Color { r: 61, g: 119, b: 86, l: 0.5191, c: 0.0810, h: 157.03, hex: "#3d7756" };
+            /// `#47848a`
+            pub const STOP_5: Color = Color { r: 71, g: 132, b: 138, l: 0.5755, c: 0.0642, h: 202.97, hex: "#47848a" };
+            /// `#4f90c5`
+            pub const STOP_6: Color = Color { r: 79, g: 144, b: 197, l: 0.6318, c: 0.1048, h: 245.25, hex: "#4f90c5" };
+            /// `#8a94de`
+            pub const STOP_7: Color = Color { r: 138, g: 148, b: 222, l: 0.6882, c: 0.1087, h: 277.39, hex: "#8a94de" };
+            /// `#bd9ae3`
+            pub const STOP_8: Color = Color { r: 189, g: 154, b: 227, l: 0.7445, c: 0.1100, h: 306.08, hex: "#bd9ae3" };
+            /// `#e1a5e9`
+            pub const STOP_9: Color = Color { r: 225, g: 165, b: 233, l: 0.8009, c: 0.1142, h: 322.51, hex: "#e1a5e9" };
+            /// `#f0c0db`
+            pub const STOP_10: Color = Color { r: 240, g: 192, b: 219, l: 0.8573, c: 0.0652, h: 343.51, hex: "#f0c0db" };
+            /// `#f5dbdf`
+            pub const STOP_11: Color = Color { r: 245, g: 219, b: 223, l: 0.9136, c: 0.0302, h: 6.20, hex: "#f5dbdf" };
+            /// `#f9ebe7`
+            pub const STOP_12: Color = Color { r: 249, g: 235, b: 231, l: 0.9500, c: 0.0166, h: 34.01, hex: "#f9ebe7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#7d5330`
+            pub const STOP_1: Color = Color { r: 125, g: 83, b: 48, l: 0.4800, c: 0.0743, h: 59.30, hex: "#7d5330" };
+            /// `#5fafa7`
+            pub const STOP_2: Color = Color { r: 95, g: 175, b: 167, l: 0.7000, c: 0.0801, h: 187.18, hex: "#5fafa7" };
+            /// `#f4dbf6`
+            pub const STOP_3: Color = Color { r: 244, g: 219, b: 246, l: 0.9200, c: 0.0443, h: 323.29, hex: "#f4dbf6" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -56840,6 +63500,96 @@ pub mod umber_vivid {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#083a3f`
+            pub const STOP_1: Color = Color { r: 8, g: 58, b: 63, l: 0.3200, c: 0.0502, h: 205.00, hex: "#083a3f" };
+            /// `#361fdc`
+            pub const STOP_2: Color = Color { r: 54, g: 31, b: 220, l: 0.4400, c: 0.2581, h: 273.19, hex: "#361fdc" };
+            /// `#ae23ce`
+            pub const STOP_3: Color = Color { r: 174, g: 35, b: 206, l: 0.5600, c: 0.2486, h: 318.91, hex: "#ae23ce" };
+            /// `#f85486`
+            pub const STOP_4: Color = Color { r: 248, g: 84, b: 134, l: 0.6800, c: 0.2026, h: 5.77, hex: "#f85486" };
+            /// `#faa774`
+            pub const STOP_5: Color = Color { r: 250, g: 167, b: 116, l: 0.8000, c: 0.1187, h: 52.11, hex: "#faa774" };
+            /// `#b3fd88`
+            pub const STOP_6: Color = Color { r: 179, g: 253, b: 136, l: 0.9200, c: 0.1668, h: 135.09, hex: "#b3fd88" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#502b07`
+            pub const STOP_1: Color = Color { r: 80, g: 43, b: 7, l: 0.3300, c: 0.0716, h: 59.30, hex: "#502b07" };
+            /// `#4a460b`
+            pub const STOP_2: Color = Color { r: 74, g: 70, b: 11, l: 0.3864, c: 0.0755, h: 105.44, hex: "#4a460b" };
+            /// `#296310`
+            pub const STOP_3: Color = Color { r: 41, g: 99, b: 16, l: 0.4427, c: 0.1271, h: 138.50, hex: "#296310" };
+            /// `#19754e`
+            pub const STOP_4: Color = Color { r: 25, g: 117, b: 78, l: 0.4991, c: 0.1034, h: 160.25, hex: "#19754e" };
+            /// `#1e8190`
+            pub const STOP_5: Color = Color { r: 30, g: 129, b: 144, l: 0.5555, c: 0.0886, h: 210.98, hex: "#1e8190" };
+            /// `#2188dc`
+            pub const STOP_6: Color = Color { r: 33, g: 136, b: 220, l: 0.6118, c: 0.1560, h: 249.19, hex: "#2188dc" };
+            /// `#8286f7`
+            pub const STOP_7: Color = Color { r: 130, g: 134, b: 247, l: 0.6682, c: 0.1647, h: 279.45, hex: "#8286f7" };
+            /// `#c087f8`
+            pub const STOP_8: Color = Color { r: 192, g: 135, b: 248, l: 0.7245, c: 0.1677, h: 306.07, hex: "#c087f8" };
+            /// `#ef8bfa`
+            pub const STOP_9: Color = Color { r: 239, g: 139, b: 250, l: 0.7809, c: 0.1825, h: 323.51, hex: "#ef8bfa" };
+            /// `#fbaed9`
+            pub const STOP_10: Color = Color { r: 251, g: 174, b: 217, l: 0.8373, c: 0.1037, h: 345.43, hex: "#fbaed9" };
+            /// `#fcced4`
+            pub const STOP_11: Color = Color { r: 252, g: 206, b: 212, l: 0.8936, c: 0.0524, h: 9.93, hex: "#fcced4" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.04, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#693a0c`
+            pub const STOP_1: Color = Color { r: 105, g: 58, b: 12, l: 0.4000, c: 0.0869, h: 59.30, hex: "#693a0c" };
+            /// `#2495ae`
+            pub const STOP_2: Color = Color { r: 36, g: 149, b: 174, l: 0.6200, c: 0.1020, h: 217.31, hex: "#2495ae" };
+            /// `#f3adfb`
+            pub const STOP_3: Color = Color { r: 243, g: 173, b: 251, l: 0.8400, c: 0.1291, h: 323.34, hex: "#f3adfb" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -57589,6 +64339,96 @@ pub mod umber_vivid {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#0f5158`
+            pub const STOP_1: Color = Color { r: 15, g: 81, b: 88, l: 0.4000, c: 0.0628, h: 205.00, hex: "#0f5158" };
+            /// `#6436f3`
+            pub const STOP_2: Color = Color { r: 100, g: 54, b: 243, l: 0.5200, c: 0.2579, h: 284.14, hex: "#6436f3" };
+            /// `#db2bdf`
+            pub const STOP_3: Color = Color { r: 219, g: 43, b: 223, l: 0.6400, c: 0.2722, h: 327.17, hex: "#db2bdf" };
+            /// `#fa8aa0`
+            pub const STOP_4: Color = Color { r: 250, g: 138, b: 160, l: 0.7600, c: 0.1367, h: 8.07, hex: "#fa8aa0" };
+            /// `#fccf97`
+            pub const STOP_5: Color = Color { r: 252, g: 207, b: 151, l: 0.8800, c: 0.0879, h: 72.13, hex: "#fccf97" };
+            /// `#cffec7`
+            pub const STOP_6: Color = Color { r: 207, g: 254, b: 199, l: 0.9500, c: 0.0869, h: 140.73, hex: "#cffec7" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#572f08`
+            pub const STOP_1: Color = Color { r: 87, g: 47, b: 8, l: 0.3500, c: 0.0760, h: 59.30, hex: "#572f08" };
+            /// `#514b0d`
+            pub const STOP_2: Color = Color { r: 81, g: 75, b: 13, l: 0.4064, c: 0.0788, h: 103.86, hex: "#514b0d" };
+            /// `#316812`
+            pub const STOP_3: Color = Color { r: 49, g: 104, b: 18, l: 0.4627, c: 0.1290, h: 137.00, hex: "#316812" };
+            /// `#1b7c4d`
+            pub const STOP_4: Color = Color { r: 27, g: 124, b: 77, l: 0.5191, c: 0.1136, h: 157.03, hex: "#1b7c4d" };
+            /// `#208891`
+            pub const STOP_5: Color = Color { r: 32, g: 136, b: 145, l: 0.5755, c: 0.0901, h: 202.97, hex: "#208891" };
+            /// `#2390dc`
+            pub const STOP_6: Color = Color { r: 35, g: 144, b: 220, l: 0.6318, c: 0.1470, h: 245.25, hex: "#2390dc" };
+            /// `#858ff7`
+            pub const STOP_7: Color = Color { r: 133, g: 143, b: 247, l: 0.6882, c: 0.1524, h: 277.39, hex: "#858ff7" };
+            /// `#c590f9`
+            pub const STOP_8: Color = Color { r: 197, g: 144, b: 249, l: 0.7445, c: 0.1543, h: 306.08, hex: "#c590f9" };
+            /// `#ee99fa`
+            pub const STOP_9: Color = Color { r: 238, g: 153, b: 250, l: 0.8009, c: 0.1601, h: 322.51, hex: "#ee99fa" };
+            /// `#fcb9df`
+            pub const STOP_10: Color = Color { r: 252, g: 185, b: 223, l: 0.8573, c: 0.0914, h: 343.51, hex: "#fcb9df" };
+            /// `#fdd7de`
+            pub const STOP_11: Color = Color { r: 253, g: 215, b: 222, l: 0.9136, c: 0.0424, h: 6.20, hex: "#fdd7de" };
+            /// `#fee9e4`
+            pub const STOP_12: Color = Color { r: 254, g: 233, b: 228, l: 0.9500, c: 0.0233, h: 34.01, hex: "#fee9e4" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#884d13`
+            pub const STOP_1: Color = Color { r: 136, g: 77, b: 19, l: 0.4800, c: 0.1042, h: 59.30, hex: "#884d13" };
+            /// `#2db5aa`
+            pub const STOP_2: Color = Color { r: 45, g: 181, b: 170, l: 0.7000, c: 0.1123, h: 187.18, hex: "#2db5aa" };
+            /// `#fad7fd`
+            pub const STOP_3: Color = Color { r: 250, g: 215, b: 253, l: 0.9200, c: 0.0621, h: 323.29, hex: "#fad7fd" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.
@@ -58349,6 +65189,96 @@ pub mod umber_sober {
                 STOP_6,
             ];
         }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#243739`
+            pub const STOP_1: Color = Color { r: 36, g: 55, b: 57, l: 0.3200, c: 0.0240, h: 205.00, hex: "#243739" };
+            /// `#3e4a96`
+            pub const STOP_2: Color = Color { r: 62, g: 74, b: 150, l: 0.4400, c: 0.1234, h: 273.19, hex: "#3e4a96" };
+            /// `#925ca0`
+            pub const STOP_3: Color = Color { r: 146, g: 92, b: 160, l: 0.5600, c: 0.1189, h: 318.91, hex: "#925ca0" };
+            /// `#cb7f8f`
+            pub const STOP_4: Color = Color { r: 203, g: 127, b: 143, l: 0.6800, c: 0.0969, h: 5.77, hex: "#cb7f8f" };
+            /// `#dcb49d`
+            pub const STOP_5: Color = Color { r: 220, g: 180, b: 157, l: 0.8000, c: 0.0568, h: 52.11, hex: "#dcb49d" };
+            /// `#cef1bc`
+            pub const STOP_6: Color = Color { r: 206, g: 241, b: 188, l: 0.9200, c: 0.0798, h: 135.09, hex: "#cef1bc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#433124`
+            pub const STOP_1: Color = Color { r: 67, g: 49, b: 36, l: 0.3300, c: 0.0342, h: 59.30, hex: "#433124" };
+            /// `#47452f`
+            pub const STOP_2: Color = Color { r: 71, g: 69, b: 47, l: 0.3864, c: 0.0361, h: 105.44, hex: "#47452f" };
+            /// `#425b3a`
+            pub const STOP_3: Color = Color { r: 66, g: 91, b: 58, l: 0.4427, c: 0.0607, h: 138.50, hex: "#425b3a" };
+            /// `#4a6c59`
+            pub const STOP_4: Color = Color { r: 74, g: 108, b: 89, l: 0.4991, c: 0.0494, h: 160.25, hex: "#4a6c59" };
+            /// `#567a81`
+            pub const STOP_5: Color = Color { r: 86, g: 122, b: 129, l: 0.5555, c: 0.0424, h: 210.98, hex: "#567a81" };
+            /// `#6088af`
+            pub const STOP_6: Color = Color { r: 96, g: 136, b: 175, l: 0.6118, c: 0.0746, h: 249.19, hex: "#6088af" };
+            /// `#8a90c5`
+            pub const STOP_7: Color = Color { r: 138, g: 144, b: 197, l: 0.6682, c: 0.0787, h: 279.45, hex: "#8a90c5" };
+            /// `#b299ce`
+            pub const STOP_8: Color = Color { r: 178, g: 153, b: 206, l: 0.7245, c: 0.0802, h: 306.07, hex: "#b299ce" };
+            /// `#d4a5d8`
+            pub const STOP_9: Color = Color { r: 212, g: 165, b: 216, l: 0.7809, c: 0.0872, h: 323.51, hex: "#d4a5d8" };
+            /// `#e3bdd1`
+            pub const STOP_10: Color = Color { r: 227, g: 189, b: 209, l: 0.8373, c: 0.0496, h: 345.43, hex: "#e3bdd1" };
+            /// `#ecd6d8`
+            pub const STOP_11: Color = Color { r: 236, g: 214, b: 216, l: 0.8936, c: 0.0250, h: 9.93, hex: "#ecd6d8" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.04, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#594231`
+            pub const STOP_1: Color = Color { r: 89, g: 66, b: 49, l: 0.4000, c: 0.0415, h: 59.30, hex: "#594231" };
+            /// `#648e9a`
+            pub const STOP_2: Color = Color { r: 100, g: 142, b: 154, l: 0.6200, c: 0.0488, h: 217.31, hex: "#648e9a" };
+            /// `#dfbee2`
+            pub const STOP_3: Color = Color { r: 223, g: 190, b: 226, l: 0.8400, c: 0.0617, h: 323.34, hex: "#dfbee2" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+            ];
+        }
         /// Scale `level`.
         pub mod level {
             use crate::Color;
@@ -59098,6 +66028,96 @@ pub mod umber_sober {
                 STOP_4,
                 STOP_5,
                 STOP_6,
+            ];
+        }
+        /// Scale `chart-alt`.
+        pub mod chart_alt {
+            use crate::Color;
+
+            /// `#344d4f`
+            pub const STOP_1: Color = Color { r: 52, g: 77, b: 79, l: 0.4000, c: 0.0300, h: 205.00, hex: "#344d4f" };
+            /// `#625dad`
+            pub const STOP_2: Color = Color { r: 98, g: 93, b: 173, l: 0.5200, c: 0.1233, h: 284.14, hex: "#625dad" };
+            /// `#b56eb5`
+            pub const STOP_3: Color = Color { r: 181, g: 110, b: 181, l: 0.6400, c: 0.1302, h: 327.17, hex: "#b56eb5" };
+            /// `#d7a0a9`
+            pub const STOP_4: Color = Color { r: 215, g: 160, b: 169, l: 0.7600, c: 0.0654, h: 8.07, hex: "#d7a0a9" };
+            /// `#e9d4ba`
+            pub const STOP_5: Color = Color { r: 233, g: 212, b: 186, l: 0.8800, c: 0.0420, h: 72.13, hex: "#e9d4ba" };
+            /// `#e0f6dc`
+            pub const STOP_6: Color = Color { r: 224, g: 246, b: 220, l: 0.9500, c: 0.0415, h: 140.73, hex: "#e0f6dc" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 6] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+            ];
+        }
+        /// Scale `chart-wide`.
+        pub mod chart_wide {
+            use crate::Color;
+
+            /// `#493627`
+            pub const STOP_1: Color = Color { r: 73, g: 54, b: 39, l: 0.3500, c: 0.0363, h: 59.30, hex: "#493627" };
+            /// `#4d4b33`
+            pub const STOP_2: Color = Color { r: 77, g: 75, b: 51, l: 0.4064, c: 0.0377, h: 103.86, hex: "#4d4b33" };
+            /// `#48613e`
+            pub const STOP_3: Color = Color { r: 72, g: 97, b: 62, l: 0.4627, c: 0.0616, h: 137.00, hex: "#48613e" };
+            /// `#4e725c`
+            pub const STOP_4: Color = Color { r: 78, g: 114, b: 92, l: 0.5191, c: 0.0543, h: 157.03, hex: "#4e725c" };
+            /// `#5a8184`
+            pub const STOP_5: Color = Color { r: 90, g: 129, b: 132, l: 0.5755, c: 0.0431, h: 202.97, hex: "#5a8184" };
+            /// `#658eb2`
+            pub const STOP_6: Color = Color { r: 101, g: 142, b: 178, l: 0.6318, c: 0.0703, h: 245.25, hex: "#658eb2" };
+            /// `#8f97c8`
+            pub const STOP_7: Color = Color { r: 143, g: 151, b: 200, l: 0.6882, c: 0.0729, h: 277.39, hex: "#8f97c8" };
+            /// `#b8a1d2`
+            pub const STOP_8: Color = Color { r: 184, g: 161, b: 210, l: 0.7445, c: 0.0737, h: 306.08, hex: "#b8a1d2" };
+            /// `#d6aedb`
+            pub const STOP_9: Color = Color { r: 214, g: 174, b: 219, l: 0.8009, c: 0.0766, h: 322.51, hex: "#d6aedb" };
+            /// `#e6c5d7`
+            pub const STOP_10: Color = Color { r: 230, g: 197, b: 215, l: 0.8573, c: 0.0437, h: 343.51, hex: "#e6c5d7" };
+            /// `#efdde0`
+            pub const STOP_11: Color = Color { r: 239, g: 221, b: 224, l: 0.9136, c: 0.0203, h: 6.20, hex: "#efdde0" };
+            /// `#f6ecea`
+            pub const STOP_12: Color = Color { r: 246, g: 236, b: 234, l: 0.9500, c: 0.0111, h: 34.01, hex: "#f6ecea" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 12] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
+                STOP_4,
+                STOP_5,
+                STOP_6,
+                STOP_7,
+                STOP_8,
+                STOP_9,
+                STOP_10,
+                STOP_11,
+                STOP_12,
+            ];
+        }
+        /// Scale `chart-trio`.
+        pub mod chart_trio {
+            use crate::Color;
+
+            /// `#735741`
+            pub const STOP_1: Color = Color { r: 115, g: 87, b: 65, l: 0.4800, c: 0.0498, h: 59.30, hex: "#735741" };
+            /// `#78aaa4`
+            pub const STOP_2: Color = Color { r: 120, g: 170, b: 164, l: 0.7000, c: 0.0537, h: 187.18, hex: "#78aaa4" };
+            /// `#efdef0`
+            pub const STOP_3: Color = Color { r: 239, g: 222, b: 240, l: 0.9200, c: 0.0297, h: 323.29, hex: "#efdef0" };
+
+            /// Every entry, in order.
+            pub const ALL: [Color; 3] = [
+                STOP_1,
+                STOP_2,
+                STOP_3,
             ];
         }
         /// Scale `level`.

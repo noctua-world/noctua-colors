@@ -552,6 +552,42 @@ h3 {
   font-variant-numeric: tabular-nums;
 }
 
+/* --- Which mode's blocks are on screen -----------------------------------
+ *
+ * The ramp browser and the contrast matrix are emitted for both modes, and
+ * this decides which one is visible. It used to be `hidden` in the markup plus
+ * a script that unhid the right one after load, which meant a dark-mode
+ * visitor painted the *light* table on every reload and watched it be replaced
+ * — colour and layout both moving — and meant the page was wrong in dark mode
+ * with script disabled.
+ *
+ * The cascade below is the same shape the generated tokens use, and in the
+ * same order: light is the default, `[data-theme]` is an explicit choice and
+ * wins outright, and the media query only applies where no choice was made.
+ */
+
+[data-mode="dark"] {
+  display: none;
+}
+
+[data-theme="dark"] [data-mode="light"] {
+  display: none;
+}
+
+[data-theme="dark"] [data-mode="dark"] {
+  display: revert;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-mode="light"] {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) [data-mode="dark"] {
+    display: revert;
+  }
+}
+
 /* --- Palette browser --------------------------------------------------- */
 
 .ramps {
@@ -649,6 +685,49 @@ h3 {
  * its own air; the global heading margin assumes a paragraph above it. */
 #contexts h3 {
   margin-top: 3rem;
+}
+
+/* The contexts are grouped by the family behind them and collapsible, because
+ * three hundred and fifty chips in one grid is a wall rather than a reference.
+ * `<details>` rather than script: the groups work with JavaScript blocked, and
+ * the filter above them is the enhancement. */
+.context-browser {
+  margin-top: 1.5rem;
+}
+
+.context-filter {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1 1 14rem;
+  min-width: 0;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--nc-color-border);
+  border-radius: 0.4rem;
+  background: var(--nc-color-surface-raised);
+  color: var(--nc-color-fg);
+}
+
+.context-group {
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--nc-color-border);
+  padding-top: 0.75rem;
+}
+
+.context-group > summary {
+  cursor: pointer;
+  /* The marker is the only affordance saying this opens, so it stays. */
+  padding: 0.25rem 0;
+}
+
+.context-group > summary code {
+  background: none;
+  padding: 0;
+  font-size: 0.95rem;
 }
 
 /* Every chip is painted from `var(--nc-color-<slot>)` rather than from a hex

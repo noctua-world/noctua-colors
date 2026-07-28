@@ -11,8 +11,16 @@
 //! system that signals "it worked" and "it broke" with two colors a
 //! deuteranope cannot tell apart has failed at the one job color was doing.
 //!
-//! The categorical scale, pairwise. A chart with eight series is only eight
-//! series if all twenty-eight pairs stay apart.
+//! Every categorical scale, pairwise. A chart with eight series is only eight
+//! series if all twenty-eight pairs stay apart. Which scales those are comes
+//! from the scale itself rather than from its name — the spec ships four
+//! categorical sets and two ordered ones, and a name comparison called all but
+//! one of them ordered.
+//!
+//! A set that declares `labelled = true` is measured exactly as thoroughly and
+//! reports one finding per deficiency instead of one per pair: twelve entries
+//! is sixty-six pairs, and publishing each shortfall separately would bury the
+//! findings a reader can act on under two hundred restating one measured limit.
 //!
 //! And every ordinal scale — but **not** pairwise, which would be the wrong
 //! property. Confusing `level-2` with `level-7` loses precision; confusing
@@ -41,7 +49,7 @@
 
 use noctua_core::cvd::{Cvd, separation};
 use noctua_core::delta_e_ok;
-use noctua_engine::{Palette, ResolvedMode};
+use noctua_engine::{Palette, ResolvedMode, ScaleKind};
 
 use indexmap::IndexMap;
 
@@ -218,17 +226,29 @@ pub fn check(palette: &Palette) -> Report {
                 }
             }
 
-            for (name, steps) in &mode.scales {
-                let entries: Vec<noctua_core::Oklab> = steps
+            for (name, scale) in &mode.scales {
+                let entries: Vec<noctua_core::Oklab> = scale
+                    .steps
                     .iter()
                     .map(|step| step.primary().oklch.to_oklab())
                     .collect();
-                let labels: Vec<&str> = steps.iter().map(|step| step.role.as_str()).collect();
+                let labels: Vec<&str> = scale.steps.iter().map(|step| step.role.as_str()).collect();
 
-                if name == noctua_engine::CHART_SCALE {
-                    categorical(&mut report, &mut worst, theme, mode, &entries);
-                } else {
-                    ordinal(
+                // The scale says what it is. This used to compare the name
+                // against `chart`, in three files, which was one fact spelled
+                // three times and wrong the moment a second categorical set
+                // existed.
+                match scale.kind {
+                    ScaleKind::Categorical { labelled } => categorical(
+                        &mut report,
+                        &mut worst,
+                        theme,
+                        mode,
+                        name,
+                        &entries,
+                        labelled,
+                    ),
+                    ScaleKind::Ordered => ordinal(
                         &mut report,
                         &mut worst,
                         theme,
@@ -236,7 +256,7 @@ pub fn check(palette: &Palette) -> Report {
                         name,
                         &entries,
                         &labels,
-                    );
+                    ),
                 }
             }
         }
@@ -253,24 +273,50 @@ pub fn check(palette: &Palette) -> Report {
 ///
 /// Pairwise is the right property here and only here: a chart's series carry
 /// no order, so any two of them may end up side by side in a legend.
+///
+/// # A labelled set reports its worst pair, not all of them
+///
+/// Every pair is measured either way — `report.checked` counts them all, and a
+/// pair below the floor still fails whatever the set declares, because two
+/// colours that are literally the same is a defect at any size. What changes is
+/// how many findings come out. Twelve entries is sixty-six pairs and a hundred
+/// and ninety-eight comparisons, most of them short of a target that no
+/// generated set of that size can reach; publishing each one would bury the
+/// four findings a reader can act on under two hundred restating the same
+/// measured limit. That is the reason `OPPOSED` is curated rather than
+/// exhaustive, and the same reasoning applies here.
+///
+/// So a set that declares `labelled = true` gets one finding per deficiency,
+/// naming its closest pair and the margin. The rest are counted, not printed —
+/// and `dist/reports/colour-vision.md` still publishes every margin, so an
+/// awkward pair stays findable.
 fn categorical(
     report: &mut Report,
     worst: &mut IndexMap<String, Worst>,
     theme: &noctua_engine::ResolvedTheme,
     mode: &ResolvedMode,
+    scale: &str,
     entries: &[noctua_core::Oklab],
+    labelled: bool,
 ) {
-    for (i, a) in entries.iter().enumerate() {
-        for (j, b) in entries.iter().enumerate().skip(i + 1) {
-            for deficiency in Cvd::all() {
+    for deficiency in Cvd::all() {
+        let mut closest: Option<(usize, usize, f64)> = None;
+
+        for (i, a) in entries.iter().enumerate() {
+            for (j, b) in entries.iter().enumerate().skip(i + 1) {
                 report.checked += 1;
                 let apart = separation(*a, *b, deficiency, 1.0);
-                if apart >= CATEGORICAL_TARGET {
+
+                if closest.is_none_or(|(_, _, lowest)| apart < lowest) {
+                    closest = Some((i, j, apart));
+                }
+
+                if labelled || apart >= CATEGORICAL_TARGET {
                     continue;
                 }
                 record(
                     worst,
-                    format!("chart {} vs {} under {}", i + 1, j + 1, deficiency.id()),
+                    format!("{scale} {} vs {} under {}", i + 1, j + 1, deficiency.id()),
                     Worst {
                         theme: theme.name.clone(),
                         mode: mode.mode.id(),
@@ -283,6 +329,29 @@ fn categorical(
                 );
             }
         }
+
+        let Some((i, j, apart)) = closest else {
+            continue;
+        };
+        if !labelled || apart >= CATEGORICAL_TARGET {
+            continue;
+        }
+        record(
+            worst,
+            format!("{scale} closest pair under {}", deficiency.id()),
+            Worst {
+                theme: theme.name.clone(),
+                mode: mode.mode.id(),
+                apart,
+                normal: delta_e_ok(entries[i], entries[j]),
+                target: CATEGORICAL_TARGET,
+                floor: CATEGORICAL_FLOOR,
+                kind: Kind::CategoricalLabelled {
+                    entries: entries.len(),
+                    pair: (i + 1, j + 1),
+                },
+            },
+        );
     }
 }
 
@@ -405,6 +474,18 @@ enum Kind {
     Opposed,
     /// Two entries of a categorical scale.
     Categorical,
+    /// The closest pair of a categorical scale that declares it is labelled.
+    ///
+    /// Worded differently on purpose: telling someone to "label the series"
+    /// when they have already said the series are labelled is advice they have
+    /// taken, and repeating it is how a report teaches people to stop reading
+    /// it.
+    CategoricalLabelled {
+        /// How many entries the set has, which is what makes the limit.
+        entries: usize,
+        /// Which two, numbered as the tokens are.
+        pair: (usize, usize),
+    },
     /// Two neighbouring stops of an ordered scale.
     Ordinal,
 }
@@ -435,8 +516,20 @@ impl Worst {
         };
         let message = match self.kind {
             Kind::Categorical => format!(
-                "only {:.4} apart, wants {:.2}. Reduce chart.count, or label the \
-                 series: past about six entries no generated palette separates them",
+                "only {:.4} apart, wants {:.2}. Reduce the set's `count`, or set \
+                 `labelled = true` and name every series in the legend: past about \
+                 six entries no generated palette separates them",
+                self.apart, self.target
+            ),
+            Kind::CategoricalLabelled {
+                entries,
+                pair: (i, j),
+            } => format!(
+                "{entries} entries, closest pair {i} and {j} at {:.4}, wants {:.2}. \
+                 This is the measured limit rather than a choice — the set declares \
+                 `labelled = true`, so the legend has to name every series. The other \
+                 pairs were measured too and are published in \
+                 dist/reports/colour-vision.md",
                 self.apart, self.target
             ),
             Kind::Ordinal => format!(
@@ -584,33 +677,78 @@ mod tests {
     }
 
     #[test]
-    fn the_categorical_scale_is_checked_pairwise_and_ordinal_scales_are_not() {
+    fn categorical_scales_are_checked_pairwise_and_ordinal_scales_are_not() {
         let palette = shipped();
         let mode = &palette.themes[0].modes[0];
 
-        let chart = mode.chart().len();
-        let chart_pairs = chart * (chart - 1) / 2;
+        // Every categorical set, not just the unnamed one — including the
+        // labelled ones, which report less and measure exactly as much.
+        let categorical: usize = mode
+            .categorical()
+            .map(|(_, scale)| {
+                let n = scale.steps.len();
+                n * (n - 1) / 2
+            })
+            .sum();
+        assert!(
+            mode.categorical().count() > 1,
+            "the spec ships one categorical set, so this proves nothing"
+        );
 
         // An ordered scale is checked on what being ordered promises:
         // every neighbouring pair, the two ends, and every step of the order
         // itself. Linear in the stop count, where pairwise would be quadratic.
         let ordinal: usize = mode
-            .scales
-            .iter()
-            .filter(|(name, _)| *name != noctua_engine::CHART_SCALE)
-            .map(|(_, steps)| (steps.len() - 1) + 1 + (steps.len() - 1))
+            .ordered()
+            .map(|(_, scale)| {
+                let n = scale.steps.len();
+                (n - 1) + 1 + (n - 1)
+            })
             .sum();
 
-        let per_mode = (OPPOSED.len() + chart_pairs + ordinal) * 3;
+        let per_mode = (OPPOSED.len() + categorical + ordinal) * 3;
         assert_eq!(check(&palette).checked, palette.themes.len() * 2 * per_mode);
 
         // The point of the split, stated as a number: eleven stops pairwise
         // would be fifty-five comparisons per deficiency.
-        let level = mode.scales["level"].len();
+        let level = mode.scales["level"].steps.len();
         assert!(
             ordinal < level * (level - 1) / 2,
             "the ordinal checks are supposed to be cheaper than pairwise"
         );
+    }
+
+    /// A labelled set is not a quieter set by accident. Every pair is still
+    /// measured — the count above proves that — and what changes is that the
+    /// findings collapse to the closest pair per deficiency, so a wide chart
+    /// cannot bury the rest of the report under two hundred notes restating one
+    /// measured limit.
+    #[test]
+    fn a_labelled_categorical_set_reports_its_closest_pair_and_no_more() {
+        let palette = shipped();
+        let labelled: Vec<&String> = palette.themes[0].modes[0]
+            .scales
+            .iter()
+            .filter(|(_, scale)| scale.kind.is_labelled())
+            .map(|(name, _)| name)
+            .collect();
+        assert!(
+            !labelled.is_empty(),
+            "the spec ships no labelled set, so this proves nothing"
+        );
+
+        for name in labelled {
+            let findings = check(&palette)
+                .findings
+                .into_iter()
+                .filter(|finding| finding.where_.starts_with(name.as_str()))
+                .count();
+            assert!(
+                findings <= Cvd::all().len(),
+                "{name} produced {findings} findings, one per pair rather than one \
+                 per deficiency"
+            );
+        }
     }
 
     /// Under dichromacy lightness is all that is left, so a scale whose
@@ -620,12 +758,10 @@ mod tests {
         let palette = shipped();
         for theme in &palette.themes {
             for mode in &theme.modes {
-                for (name, steps) in &mode.scales {
-                    if name == noctua_engine::CHART_SCALE {
-                        continue;
-                    }
+                for (name, scale) in mode.ordered() {
                     for deficiency in Cvd::all() {
-                        let lightness: Vec<f64> = steps
+                        let lightness: Vec<f64> = scale
+                            .steps
                             .iter()
                             .map(|step| {
                                 noctua_core::cvd::simulate(

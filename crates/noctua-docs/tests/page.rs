@@ -623,6 +623,162 @@ fn the_bootstrap_and_the_script_build_the_same_stylesheet_path() {
     );
 }
 
+/// The bootstrap restores the palette from a key `site.js` has to have
+/// written. It did not: the write sat inside `if (flatSelect)`, which the
+/// shipped spec never produces — it offers two axis pickers — so the key was
+/// always absent, the whole render-blocking injection above was unreachable,
+/// and every reload painted the default palette and swapped once three
+/// requests had landed. Nothing failed, because nothing compared the two
+/// halves.
+#[test]
+fn the_script_writes_the_palette_key_the_bootstrap_reads() {
+    let html = page();
+    let script = std::fs::read_to_string(root().join("docs-site/js/site.js")).expect("site.js");
+
+    assert!(
+        html.contains("localStorage.getItem('noctua-palette')"),
+        "the bootstrap no longer restores the palette"
+    );
+    assert!(
+        script.contains("palette: \"noctua-palette\""),
+        "site.js no longer knows the key by that name"
+    );
+
+    // The write has to be reachable whatever pickers the spec produces, so it
+    // cannot be nested in the branch that only exists without an accent grid.
+    let flat_branch = script
+        .find("if (flatSelect) remember")
+        .or_else(|| script.find("if (flatSelect)\n      remember"));
+    assert!(
+        flat_branch.is_none(),
+        "the palette key is written only when a flat select exists, which the \
+         accent grid never produces — this is the bug the test exists for"
+    );
+    assert!(
+        script.contains("remember(STORE.palette, theme)"),
+        "site.js never records the resolved theme, so the bootstrap has nothing \
+         to restore before the first paint"
+    );
+}
+
+/// The bootstrap starts the palette JSON while the head is parsing; `site.js`
+/// picks the promise up off a global. A rename on either side costs the
+/// prefetch silently — the page still works, just three requests later.
+#[test]
+fn the_bootstrap_and_the_script_agree_on_the_prefetch() {
+    let html = page();
+    let script = std::fs::read_to_string(root().join("docs-site/js/site.js")).expect("site.js");
+    let global = noctua_docs::theme_fetch_global();
+
+    assert!(
+        html.contains(global),
+        "the bootstrap does not start the palette fetch"
+    );
+    assert!(
+        script.contains(global),
+        "site.js does not read the prefetched palette, so it refetches it"
+    );
+    // Both sides build the same path by concatenation, as with the stylesheet.
+    assert!(
+        html.contains("'tokens/json/themes/' + palette + '.json'"),
+        "{html}"
+    );
+    assert!(script.contains("\"tokens/json/themes/\" + theme + \".json\""));
+}
+
+/// Only the default palette is server-rendered, so a swatch painted with the
+/// value its token *had at generation time* shows the default palette to
+/// everyone — until the JSON lands and the entire grid repaints in front of
+/// the reader. Painting with the token instead follows whatever stylesheet the
+/// bootstrap restored, from the first paint.
+#[test]
+fn every_swatch_is_painted_with_its_token() {
+    let html = page();
+    let script = std::fs::read_to_string(root().join("docs-site/js/site.js")).expect("site.js");
+
+    // Scoped to the swatch. The gamut comparison beside it paints values on
+    // purpose: it exists to show the *same* token rendered in two gamuts, and a
+    // token resolves to whichever one the display supports.
+    let painted = html
+        .matches("class=\"swatch\" style=\"background: var(--nc-")
+        .count();
+    assert!(painted > 100, "only {painted} swatches paint from a token");
+    assert!(
+        !html.contains("class=\"swatch\" style=\"background: oklch("),
+        "a swatch still bakes in the value its token had when the page was built"
+    );
+    assert!(
+        script.contains("\"var(--nc-\" + stem + \")\""),
+        "the client-side renderer paints from the value, so the grid would \
+         change appearance when it replaces the server-rendered one"
+    );
+}
+
+/// Both modes are emitted and the stylesheet picks. Marking one `hidden` and
+/// letting script unhide the other meant a dark-mode visitor painted the light
+/// table first and watched it be replaced on every reload — and meant the page
+/// was simply wrong in dark mode with script blocked.
+#[test]
+fn the_mode_on_screen_is_decided_by_the_stylesheet() {
+    let html = page();
+    let script = std::fs::read_to_string(root().join("docs-site/js/site.js")).expect("site.js");
+    let css = std::fs::read_to_string(root().join("docs-site/css/site.css")).expect("site.css");
+
+    for block in ["ramp-group", "matrix"] {
+        assert!(html.contains(block), "the page lost .{block}");
+    }
+    assert!(
+        !html.contains("data-mode=\"dark\" hidden"),
+        "a mode block is still hidden in the markup"
+    );
+    assert!(
+        !script.contains("syncVisibility"),
+        "site.js still decides which mode is visible, which it cannot do before \
+         the first paint"
+    );
+
+    // Three states, resolved in the cascade: the default, the explicit choice,
+    // and the system preference where no choice was made.
+    assert!(css.contains("[data-mode=\"dark\"]"), "{css}");
+    assert!(css.contains("[data-theme=\"dark\"] [data-mode=\"light\"]"));
+    assert!(css.contains(":root:not([data-theme=\"light\"]) [data-mode=\"dark\"]"));
+}
+
+/// Hiding every `.reveal` — including what the browser had already painted —
+/// made the top of the page vanish the moment the script ran and fade back in
+/// an observer callback later, on every load. Only what is below the fold may
+/// be hidden.
+#[test]
+fn nothing_already_on_screen_is_hidden_to_be_revealed() {
+    let script = std::fs::read_to_string(root().join("docs-site/js/site.js")).expect("site.js");
+
+    assert!(
+        script.contains("getBoundingClientRect().top >= window.innerHeight"),
+        "site.js marks every reveal pending, so above-the-fold content blinks"
+    );
+}
+
+/// `font-display: optional` uses a face only if it is ready by the first
+/// paint. A face the browser does not learn about until `fonts.css` parses
+/// misses that window and falls back for the whole load — inconsistently, load
+/// to load, which reads as the typeface flickering.
+#[test]
+fn every_font_face_is_preloaded() {
+    let fonts =
+        std::fs::read_to_string(root().join("docs-site/assets/fonts/fonts.css")).expect("fonts");
+
+    for (path, html) in all_pages() {
+        for face in ["Regular", "Bold", "Italic"] {
+            let file = format!("NoctuaIosevka-{face}.woff2");
+            assert!(fonts.contains(&file), "fonts.css no longer declares {file}");
+            assert!(
+                html.contains(&format!("rel=\"preload\" href=\"assets/fonts/{file}\"")),
+                "{path} does not preload {file}"
+            );
+        }
+    }
+}
+
 /// The page renders one palette; the rest are built by `site.js`. Two
 /// renderers for one thing only stays honest if they write the same
 /// attributes, so a rename in the Rust must fail here rather than render

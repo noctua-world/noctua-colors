@@ -52,11 +52,28 @@ impl Emitter for JsonTs {
 
         // One file per theme, so a page showing a single palette fetches a
         // single palette. `palette.json` holds every theme and grows with the
-        // grid; at thirty-six palettes it is several megabytes, which is not a
+        // grid; at thirty-nine palettes it is several megabytes, which is not a
         // thing to download in order to recolour a swatch.
+        //
+        // Each one carries the whole contract — the shared map *resolved* with
+        // this theme's overrides — rather than the split. A standalone file
+        // that described itself only by reference to a file it does not name
+        // would be a worse artifact than a slightly larger one.
+        let semantic = tokens::semantic_layer(palette);
+        let slots = tokens::slot_layer(palette);
         for theme in &palette.themes {
-            let mut text =
-                serde_json::to_string_pretty(&theme_json(palette, theme)).expect("serializes");
+            let mut value = theme_json(palette, theme);
+            if let Some(object) = value.as_object_mut() {
+                object.insert(
+                    "semantic".into(),
+                    alias_map(&resolved_for(&semantic, &theme.name)),
+                );
+                object.insert(
+                    "slots".into(),
+                    alias_map(&resolved_for(&slots, &theme.name)),
+                );
+            }
+            let mut text = serde_json::to_string_pretty(&value).expect("serializes");
             text.push('\n');
             files.push(EmittedFile::new(
                 format!("json/themes/{}.json", theme.name),
@@ -132,21 +149,111 @@ fn palette_json(palette: &Palette) -> Value {
     // controls rather than splitting theme names on a hyphen and guessing.
     root.insert("axes".into(), axes_json(palette));
 
+    let semantic = tokens::semantic_layer(palette);
+    let slots = tokens::slot_layer(palette);
+    insert_contract(&mut root, &semantic, &slots);
+
     let mut themes = Map::new();
     for theme in &palette.themes {
-        themes.insert(theme.name.clone(), theme_json(palette, theme));
+        let mut value = theme_json(palette, theme);
+        insert_overrides(&mut value, &theme.name, &semantic, &slots);
+        themes.insert(theme.name.clone(), value);
     }
     root.insert("themes".into(), Value::Object(themes));
 
     Value::Object(root)
 }
 
-/// One theme's modes, families and semantic map.
+/// The semantic contract, written once at the top of a document.
+///
+/// Two different maps, and the difference matters to a consumer. `semantic` is
+/// every emitted token to the palette step it points at — `on-rejected` to
+/// `danger-bg-app`. `slots` is the contract one level up: each *context* to the
+/// family that fills it. The token map cannot be reduced to the slot map,
+/// because a slot contributes five tokens whose names are not the slot's, and a
+/// picker that wants to offer "the contexts" needs the latter.
+fn insert_contract(
+    into: &mut Map<String, Value>,
+    semantic: &tokens::ThemeSplit,
+    slots: &tokens::ThemeSplit,
+) {
+    into.insert("semantic".into(), alias_map(&semantic.shared));
+    into.insert("slots".into(), alias_map(&slots.shared));
+}
+
+/// What one theme states for itself, if anything.
+///
+/// Absent rather than empty when a theme adds nothing, which is every theme in
+/// the shipped spec — an empty object in thirty-nine places says the same thing
+/// as no key at all and costs more to read.
+fn insert_overrides(
+    theme_value: &mut Value,
+    name: &str,
+    semantic: &tokens::ThemeSplit,
+    slots: &tokens::ThemeSplit,
+) {
+    let Some(object) = theme_value.as_object_mut() else {
+        return;
+    };
+    if let Some(overrides) = semantic.per_theme.get(name) {
+        object.insert("semanticOverrides".into(), alias_map(overrides));
+    }
+    if let Some(overrides) = slots.per_theme.get(name) {
+        object.insert("slotOverrides".into(), alias_map(overrides));
+    }
+}
+
+/// The shared contract with one theme's overrides applied over it.
+///
+/// Order follows the shared list, so a theme that redefines a slot keeps it
+/// where a reader expects to find it rather than moving it to the end.
+fn resolved_for(split: &tokens::ThemeSplit, theme: &str) -> Vec<tokens::AliasToken> {
+    let overrides = split.per_theme.get(theme);
+    let mut out: Vec<tokens::AliasToken> = split
+        .shared
+        .iter()
+        .map(|alias| {
+            let replacement = overrides
+                .and_then(|list| list.iter().find(|other| other.name == alias.name))
+                .unwrap_or(alias);
+            replacement.clone()
+        })
+        .collect();
+
+    // Names only this theme has. Nothing in the shipped spec produces one, but
+    // a theme mapping a slot no other theme mentions would otherwise vanish.
+    if let Some(list) = overrides {
+        for alias in list {
+            if !out.iter().any(|other| other.name == alias.name) {
+                out.push(alias.clone());
+            }
+        }
+    }
+    out
+}
+
+fn alias_map(aliases: &[tokens::AliasToken]) -> Value {
+    let mut map = Map::new();
+    for alias in aliases {
+        map.insert(alias.name.clone(), json!(alias.target));
+    }
+    Value::Object(map)
+}
+
+/// One theme's modes and families.
 ///
 /// Split out because it is emitted twice: inside `palette.json` for consumers
 /// that want everything, and alone in `json/themes/<name>.json` for the
 /// documentation site, which shows one palette at a time and would otherwise
 /// have to download every one of them to switch.
+///
+/// `semantic` and `slots` are **not** here. Neither varies by mode — a mode
+/// changes what a family's steps are, not which family fills a slot — and
+/// neither varies by theme unless a `[themes.<name>.semantic]` block moves one.
+/// Written into each of the seventy-eight mode blocks they were 65.6 KB
+/// repeated seventy-eight times per file; they now sit once at the top of the
+/// document, with `semanticOverrides` and `slotOverrides` beside a theme that
+/// differs.
 fn theme_json(palette: &Palette, theme: &noctua_engine::ResolvedTheme) -> Value {
     let mut modes = Map::new();
     for mode in &theme.modes {
@@ -159,24 +266,6 @@ fn theme_json(palette: &Palette, theme: &noctua_engine::ResolvedTheme) -> Value 
                     "steps": resolved.steps.iter().map(step_json).collect::<Vec<_>>(),
                 }),
             );
-        }
-
-        // Two different maps, and the difference matters to a consumer.
-        //
-        // `semantic` is every emitted token to the palette step it points at —
-        // `on-rejected` to `danger-bg-app`. `slots` is the contract one level
-        // up: each *context* to the family that fills it. The token map cannot
-        // be reduced to the slot map, because a slot contributes five tokens
-        // whose names are not the slot's, and a picker that wants to offer
-        // "the contexts" needs the latter.
-        let mut semantic = Map::new();
-        for alias in tokens::semantic_tokens(mode) {
-            semantic.insert(alias.name.clone(), json!(alias.target));
-        }
-
-        let mut slots = Map::new();
-        for (slot, family) in &mode.semantic {
-            slots.insert(slot.clone(), json!(family));
         }
 
         // The gate's own measurements, serialized rather than recomputed. An
@@ -216,11 +305,20 @@ fn theme_json(palette: &Palette, theme: &noctua_engine::ResolvedTheme) -> Value 
             );
         }
 
+        // Each scale carries what it is for as well as its stops. A consumer
+        // that has to know — the documentation site labels them, the gate
+        // checks them differently — would otherwise have to recognise the
+        // categorical ones by name, which is a rule that holds only until a
+        // second one exists.
         let mut scales = Map::new();
-        for (scale, steps) in &mode.scales {
+        for (scale, resolved) in &mode.scales {
             scales.insert(
                 scale.clone(),
-                json!(steps.iter().map(step_json).collect::<Vec<_>>()),
+                json!({
+                    "kind": resolved.kind.id(),
+                    "labelled": resolved.kind.is_labelled(),
+                    "steps": resolved.steps.iter().map(step_json).collect::<Vec<_>>(),
+                }),
             );
         }
 
@@ -228,8 +326,6 @@ fn theme_json(palette: &Palette, theme: &noctua_engine::ResolvedTheme) -> Value 
             mode.mode.id().to_owned(),
             json!({
                 "families": Value::Object(families),
-                "semantic": Value::Object(semantic),
-                "slots": Value::Object(slots),
                 // `chart` stays alongside `scales` for the same reason
                 // `grayRamp` does: it is the one a consumer already reads.
                 "chart": mode.chart().iter().map(step_json).collect::<Vec<_>>(),

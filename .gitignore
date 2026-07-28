@@ -25,3 +25,7 @@ dist/rust/Cargo.lock
 # committed so consumers work via submodule, subtree, sparse checkout, raw copy
 # or direct URL fetch with no build step. `cargo xtask check` verifies they are
 # in sync with the spec.
+
+# The developer's private, machine-specific agent notes. May exist beside any
+# AGENTS.md and is never committed. See NOCTUA.md §3.4.
+AGENTS.local.md

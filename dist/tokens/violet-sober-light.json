@@ -1839,6 +1839,267 @@
       }
     }
   },
+  "chart-alt": {
+    "$type": "color",
+    "1": {
+      "$type": "color",
+      "$value": "#243739",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.32,
+          "c": 0.024,
+          "h": 205.0
+        },
+        "colors.noctua.relativeChroma": 0.4392
+      }
+    },
+    "2": {
+      "$type": "color",
+      "$value": "#3e4a96",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.44,
+          "c": 0.1234,
+          "h": 273.19
+        },
+        "colors.noctua.relativeChroma": 0.4397
+      }
+    },
+    "3": {
+      "$type": "color",
+      "$value": "#925ca0",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.56,
+          "c": 0.1189,
+          "h": 318.91
+        },
+        "colors.noctua.relativeChroma": 0.4399
+      }
+    },
+    "4": {
+      "$type": "color",
+      "$value": "#cb7f8f",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.68,
+          "c": 0.0969,
+          "h": 5.77
+        },
+        "colors.noctua.relativeChroma": 0.4398
+      }
+    },
+    "5": {
+      "$type": "color",
+      "$value": "#dcb49d",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.8,
+          "c": 0.0568,
+          "h": 52.11
+        },
+        "colors.noctua.relativeChroma": 0.4399
+      }
+    },
+    "6": {
+      "$type": "color",
+      "$value": "#cef1bc",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.92,
+          "c": 0.0798,
+          "h": 135.09
+        },
+        "colors.noctua.relativeChroma": 0.4399
+      }
+    }
+  },
+  "chart-wide": {
+    "$type": "color",
+    "1": {
+      "$type": "color",
+      "$value": "#433124",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.33,
+          "c": 0.0342,
+          "h": 59.3
+        },
+        "colors.noctua.relativeChroma": 0.4388
+      }
+    },
+    "2": {
+      "$type": "color",
+      "$value": "#47452f",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.3864,
+          "c": 0.0361,
+          "h": 105.44
+        },
+        "colors.noctua.relativeChroma": 0.4394
+      }
+    },
+    "3": {
+      "$type": "color",
+      "$value": "#425b3a",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.4427,
+          "c": 0.0607,
+          "h": 138.5
+        },
+        "colors.noctua.relativeChroma": 0.4393
+      }
+    },
+    "4": {
+      "$type": "color",
+      "$value": "#4a6c59",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.4991,
+          "c": 0.0494,
+          "h": 160.25
+        },
+        "colors.noctua.relativeChroma": 0.4393
+      }
+    },
+    "5": {
+      "$type": "color",
+      "$value": "#567a81",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.5555,
+          "c": 0.0424,
+          "h": 210.98
+        },
+        "colors.noctua.relativeChroma": 0.4398
+      }
+    },
+    "6": {
+      "$type": "color",
+      "$value": "#6088af",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.6118,
+          "c": 0.0746,
+          "h": 249.19
+        },
+        "colors.noctua.relativeChroma": 0.4399
+      }
+    },
+    "7": {
+      "$type": "color",
+      "$value": "#8a90c5",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.6682,
+          "c": 0.0787,
+          "h": 279.45
+        },
+        "colors.noctua.relativeChroma": 0.4395
+      }
+    },
+    "8": {
+      "$type": "color",
+      "$value": "#b299ce",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.7245,
+          "c": 0.0802,
+          "h": 306.07
+        },
+        "colors.noctua.relativeChroma": 0.4396
+      }
+    },
+    "9": {
+      "$type": "color",
+      "$value": "#d4a5d8",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.7809,
+          "c": 0.0872,
+          "h": 323.51
+        },
+        "colors.noctua.relativeChroma": 0.4395
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": "#e3bdd1",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.8373,
+          "c": 0.0496,
+          "h": 345.43
+        },
+        "colors.noctua.relativeChroma": 0.4398
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": "#ecd6d8",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.8936,
+          "c": 0.025,
+          "h": 9.93
+        },
+        "colors.noctua.relativeChroma": 0.4387
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": "#f6ecea",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.95,
+          "c": 0.0111,
+          "h": 34.04
+        },
+        "colors.noctua.relativeChroma": 0.4382
+      }
+    }
+  },
+  "chart-trio": {
+    "$type": "color",
+    "1": {
+      "$type": "color",
+      "$value": "#594231",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.4,
+          "c": 0.0415,
+          "h": 59.3
+        },
+        "colors.noctua.relativeChroma": 0.4393
+      }
+    },
+    "2": {
+      "$type": "color",
+      "$value": "#648e9a",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.62,
+          "c": 0.0488,
+          "h": 217.31
+        },
+        "colors.noctua.relativeChroma": 0.4399
+      }
+    },
+    "3": {
+      "$type": "color",
+      "$value": "#dfbee2",
+      "$extensions": {
+        "colors.noctua.oklch": {
+          "l": 0.84,
+          "c": 0.0617,
+          "h": 323.34
+        },
+        "colors.noctua.relativeChroma": 0.4396
+      }
+    }
+  },
   "level": {
     "$type": "color",
     "0": {

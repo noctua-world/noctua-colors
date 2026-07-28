@@ -328,12 +328,12 @@ fn write_theme(out: &mut String, palette: &Palette, theme: &noctua_engine::Resol
 
         write_alpha(out, palette, mode);
 
-        for (scale, steps) in &mode.scales {
+        for (scale, resolved) in &mode.scales {
             let module = name::identifier(scale).to_lowercase();
             writeln!(out, "        /// Scale `{scale}`.").expect("write");
             writeln!(out, "        pub mod {module} {{").expect("write");
             writeln!(out, "            use crate::Color;\n").expect("write");
-            for step in steps {
+            for step in &resolved.steps {
                 constant(
                     out,
                     "            ",
@@ -344,10 +344,10 @@ fn write_theme(out: &mut String, palette: &Palette, theme: &noctua_engine::Resol
             writeln!(
                 out,
                 "\n            /// Every entry, in order.\n            pub const ALL: [Color; {}] = [",
-                steps.len()
+                resolved.steps.len()
             )
             .expect("write");
-            for step in steps {
+            for step in &resolved.steps {
                 writeln!(
                     out,
                     "                {},",

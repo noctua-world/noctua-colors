@@ -228,8 +228,7 @@ fn head(locale: Locale) -> Markup {
                      href=(other.page("playground"));
             }
 
-            link rel="preload" href="assets/fonts/NoctuaIosevka-Regular.woff2"
-                 as="font" type="font/woff2" crossorigin;
+            (crate::page::font_preloads())
             link rel="stylesheet" href="assets/fonts/fonts.css";
             link rel="stylesheet" href="tokens/css/index.css";
             link rel="stylesheet" href="css/site.css";

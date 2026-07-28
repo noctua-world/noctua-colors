@@ -11,6 +11,24 @@ source; every color is computed, checked, and regenerated on demand.
 
 ---
 
+## Working on this repository
+
+This repository is part of the **Noctua workspace**, and two rules make the rest
+of the tooling work:
+
+- **Clone it only inside `noctua-workspace/repos/`.** Nothing outside that
+  directory can reach the shared documents or the sibling repositories.
+- **Start your agents only from the `noctua-workspace` root**, never from inside
+  this repository. An agent started here cannot see `noctua-design`, cannot read
+  the master technical reference, and will guess instead of looking. It detects
+  this itself and prints a loud warning — if you see one, close it and reopen it
+  at the workspace root.
+
+The workspace's `NOCTUA.md` is the master technical reference for the whole
+project; this repository's [`AGENTS.md`](AGENTS.md) is its own operating manual.
+
+---
+
 ## Why
 
 Two sibling projects, `noctua-hub` and `noctua-shell`, each keep a `Theme.qml`.
@@ -57,14 +75,14 @@ them.
 ## Palettes come in a grid
 
 Two axes: an accent hue and a saturation. A palette is one point on each, so
-twelve accents and three saturations describe **thirty-six palettes in fifteen
-lines** of specification:
+thirteen accents and three saturations describe **thirty-nine palettes in
+eighteen lines** of specification:
 
 ```toml
 [accents]
 ochre = { hue = { base = 59.3, torsion = -7.0 } }
 blue  = { hue = { base = 250.0, torsion = -8.0 }, hue_correction = [[0.55, 6.5]] }
-# … ten more
+# … eleven more
 
 [saturations]
 balanced = 0.82
@@ -88,21 +106,39 @@ blue-greens rather than a tidy dial.
 
 ## Every context an application needs
 
-Thirty semantic contexts, each emitted as five tokens — the fill, its hover, a
-tinted background, a border, and a foreground to put on the fill:
+**Three hundred and fifty-two semantic contexts**, each emitted as five tokens —
+the fill, its hover, a tinted background, a border, and a foreground to put on
+the fill. Grouped in `specs/noctua.toml` by subject, because that is how a name
+gets looked up:
 
 ```
-success  positive  finished        error  negative  rejected  declined
-warning  delayed   urgent          info   normal
-active   waiting   sent  received  accent highlight  new  experimental
-inactive draft     archived  paused
+severity      critical fatal severe failed alert major caution minor
+              notice hint tip subtle silent debug disabled default
+lifecycle     pending queued scheduled running processing stopping
+              retrying stalled blocked complete done canceled aborted
+work items    open reopened merged solved approved submitted escalated
+              duplicate wontfix dismissed withdrawn revoked
+connectivity  online offline connected reconnecting unreachable degraded
+              outage maintenance healthy unstable stable operational
+release       alpha beta preview canary nightly deprecated legacy retired
+pipeline      deploying building testing passing installed synced verified
+commerce      featured premium trial expiring overdue paid refunded shipped
+              delivered available reserved backordered restocked
+security      secure encrypted signed trusted compromised breached patched
+… and inbox, content, configuration, capacity, magnitude, planning, people
 ```
 
-Ten of those are **families** with a hue of their own; the other twenty are
-**aliases** onto one of them. That split is not a shortcut, it is the economics:
-a family costs a full twelve-role ramp in every theme, mode and gamut — about
-3.5 MiB — while an alias costs about 15 KiB. A family earns a hue only when its
-meaning must be told apart from every other *without a legend*.
+**Ten of these have a hue; the other three hundred and forty-two are aliases.**
+A family costs a full twelve-role ramp in every theme, mode and gamut; an alias
+costs five `var()` references. The wheel has room for ten hues and not for three
+hundred and fifty, so a context earns a family only when its meaning has to be
+told apart from every other *without a legend* — `waiting` beside `active` in a
+job list, `urgent` beside `danger` in an alert feed.
+
+The alias layer is the same in every palette, so it is emitted **once**, into
+`dist/css/contexts.css` and the top of `dist/json/palette.json`, with only what
+a `[themes.<name>.semantic]` block overrides written per theme. Repeated across
+thirty-nine palettes it was 97 KB of every 225 KB stylesheet.
 
 There is also no room for more. Sixteen hues were already occupied by five
 semantic families and twelve accents, and the 158–172° protanopia band is
@@ -158,16 +194,16 @@ What exists today is tested and load-bearing:
 | Spec format | TOML, every field defaulted, `miette` diagnostics that report every problem at once |
 | Engine | monotone cubic Hermite curves, contrast-anchored solving, density-weighted neutral ramp |
 | Emitters | CSS, Tailwind v4, Rust, DTCG, JSON/TS, SCSS, QML, plus compliance reports |
-| Palettes | **36**, generated as a grid: 12 accent hues x 3 saturations, from 15 lines of specification |
-| Contexts | **30** semantic slots over 10 families, plus two ordered scales, three neutral temperatures and a translucency ladder |
+| Palettes | **39**, generated as a grid: 13 accent hues x 3 saturations, from 18 lines of specification |
+| Contexts | **352** semantic slots over 10 families, plus two ordered scales, three neutral temperatures and a translucency ladder |
 | Quality gates | contrast matrix across families, colour-vision margins, perceptual spacing, source invariants, and consumer token references |
 | Documentation site | static, generated from `dist/`, dogfooding its own tokens |
 | Playground | the compiler itself, compiled to WebAssembly and running in the browser |
 | Palette importer | fits an existing palette back to spec parameters and publishes the residual |
 
 Property tests at 2048 cases each, a golden snapshot of the whole palette, a
-`dist/` sync check that fails if a generated file was edited by hand, and **26,568
-palette checks** across every gate — the contrast pairs and the colour-vision
+`dist/` sync check that fails if a generated file was edited by hand, and **48,441
+palette checks** across every gate (`cargo xtask check` prints the current count) — the contrast pairs and the colour-vision
 margins are generated from the semantic contract, so adding a context extends the
 matrix rather than leaving a hole nobody notices.
 
@@ -352,7 +388,7 @@ missing — so this works on a fresh clone with nothing but rustup.
 | `/playground.html` | The compiler itself, compiled to WebAssembly. Edit a spec and every ramp, every gate and every generated file is recomputed by the same Rust that runs on the command line. The URL carries the spec, so a link reproduces exactly what you are looking at |
 | `/index.pt.html`, `/playground.pt.html` | The same pages in Brazilian Portuguese |
 
-Four settings persist across visits: the **accent** (twelve hues), the
+Four settings persist across visits: the **accent** (thirteen hues), the
 **saturation** (`balanced`, `vivid`, `sober`), the **appearance** (light, dark,
 or follow the operating system) and the **language**. Appearance defaults to
 following the system, and is a real third choice rather than the absence of one
@@ -360,7 +396,7 @@ following the system, and is a real third choice rather than the absence of one
 
 The page renders **one** palette and builds the others in the browser from
 `dist/json/themes/<name>.json`, fetching a palette's stylesheet the first time
-it is chosen. Rendering all thirty-six would be a 2.4 MB page with seventeen
+it is chosen. Rendering all thirty-nine would be a 2.4 MB page with seventeen
 thousand nodes; as it is, `index.html` is 96 KB and first paint costs 57 KB of
 CSS, whatever the grid grows to.
 
@@ -394,7 +430,9 @@ checkout, a plain file copy, or a raw URL.
 <summary><b>Plain CSS</b></summary>
 
 ```html
-<link rel="stylesheet" href="dist/css/balanced.css">
+<link rel="stylesheet" href="dist/css/ramp.css">      <!-- the dense grays -->
+<link rel="stylesheet" href="dist/css/contexts.css">  <!-- the contract -->
+<link rel="stylesheet" href="dist/css/ochre-balanced.css">  <!-- the values -->
 ```
 
 That is the whole integration. Light and dark already work three ways — the
@@ -417,20 +455,25 @@ Use the semantic contract rather than raw steps wherever you can:
 .card:focus-visible { outline: 2px solid var(--nc-color-ring); }
 ```
 
-That file is the default theme, named after it: the whole semantic contract plus
-every `--nc-<family>-*` step. Two things live outside it — the dense neutral ramps
-(`--nc-gray-1` … `--nc-gray-24`, and the `-cool` and `-warm` variants) and the
-alternative themes. `index.css` imports everything, and is the one name that does
-not move if a theme is renamed:
+The third file is the default theme, named after it: every `--nc-<family>-*`
+step. The first two are shared by every palette and change only when the spec
+does — `ramp.css` holds the dense neutral ramps (`--nc-gray-1` … `--nc-gray-24`,
+and the `-cool` and `-warm` variants) and `contexts.css` holds the semantic
+contract, which is an indirection onto whichever theme is active and is
+therefore identical in all thirty-nine.
+
+`index.css` imports all three plus every alternative theme, and is the one name
+that does not move if a theme is renamed:
 
 ```html
 <link rel="stylesheet" href="dist/css/index.css">
-<html data-palette="vivid">
+<html data-palette="blue-vivid">
 ```
 
-Reach for `--nc-gray-4` having linked only `balanced.css` and nothing will
-complain: CSS drops an undefined custom property silently and the element keeps
-its inherited color. If you use the raw ramp, link `index.css`.
+Reach for `--nc-gray-4` or `--nc-color-success` having linked only
+`ochre-balanced.css` and nothing will complain: CSS drops an undefined custom
+property silently and the element keeps its inherited color. Link all three, or
+link `index.css`.
 
 **Every name this project emits is prefixed**, the semantic layer included —
 `--nc-color-surface`, not `--color-surface`. The bare `--color-*` namespace is
@@ -464,7 +507,7 @@ prefixed layer, so the contract is defined in exactly one place.
 [dependencies]
 # One feature per palette; the default is the one the CSS binds to `:root`.
 # Every consumer loads the metadata for whatever is compiled in, so a program
-# shipping two palettes should not carry thirty-four it never names.
+# shipping two palettes should not carry thirty-seven it never names.
 noctua-colors-tokens = { path = "../noctua-colors/dist/rust",
                          default-features = false,
                          features = ["ochre_balanced", "blue_vivid"] }
@@ -638,4 +681,8 @@ capability goes behind an existing verb or it does not ship.
 
 ## License
 
-MIT OR Apache-2.0.
+Licensed under either of [Apache License, Version 2.0](LICENSE-APACHE) or the
+[MIT license](LICENSE-MIT), at your option. Unless you explicitly state
+otherwise, any contribution intentionally submitted for inclusion in this
+project shall be dual licensed as above, without any additional terms or
+conditions.

@@ -29,6 +29,22 @@ pub struct Palette {
     #[serde(default)]
     pub axes: Axes,
 
+    /// Emitted token name to the `family-role` stem it points at, for every
+    /// theme that does not override it.
+    ///
+    /// At the top of the document rather than inside each of the seventy-eight
+    /// mode blocks, because it varies by neither: a mode changes what a
+    /// family's steps are, not which family fills a slot. [`Self::parse`]
+    /// pushes it back down into every [`ModePalette`], so nothing downstream
+    /// has to know it was hoisted.
+    #[serde(default)]
+    pub semantic: IndexMap<String, String>,
+
+    /// Semantic *slot* to the family that fills it. Hoisted for the same
+    /// reason as [`Self::semantic`], and resolved the same way.
+    #[serde(default)]
+    pub slots: IndexMap<String, String>,
+
     /// Themes, keyed by name, **in the order the spec declared them**.
     ///
     /// Order is load-bearing: the CSS emitter binds the first theme to
@@ -37,7 +53,7 @@ pub struct Palette {
     /// looked correct for as long as the default theme also sorted first, and
     /// would have silently marked the wrong theme as selected the moment one
     /// sorted ahead of it.
-    pub themes: IndexMap<String, IndexMap<String, ModePalette>>,
+    pub themes: IndexMap<String, Theme>,
 }
 
 impl Palette {
@@ -81,12 +97,31 @@ impl Axes {
     }
 }
 
+/// One theme: its modes, and whatever it states about the contract itself.
+#[derive(Debug, Clone, Deserialize)]
+pub struct Theme {
+    /// Tokens this theme resolves differently from every other.
+    #[serde(rename = "semanticOverrides", default)]
+    pub semantic_overrides: IndexMap<String, String>,
+    /// Slots this theme fills from a different family.
+    #[serde(rename = "slotOverrides", default)]
+    pub slot_overrides: IndexMap<String, String>,
+    /// `light` and `dark`. Flattened, because every remaining key is a mode.
+    #[serde(flatten)]
+    pub modes: IndexMap<String, ModePalette>,
+}
+
 /// One theme in one mode.
 #[derive(Debug, Clone, Deserialize)]
 pub struct ModePalette {
     /// Families, keyed by name, in spec order.
     pub families: IndexMap<String, Family>,
     /// Emitted token name to the `family-role` stem it points at.
+    ///
+    /// Filled in by [`Palette::parse`] from the document's shared contract and
+    /// this theme's overrides, not read from the mode block — see
+    /// [`Palette::semantic`]. Every consumer here still sees a complete map.
+    #[serde(default)]
     pub semantic: IndexMap<String, String>,
     /// Semantic *slot* to the family that fills it, in spec order.
     ///
@@ -96,13 +131,37 @@ pub struct ModePalette {
     #[serde(default)]
     pub slots: IndexMap<String, String>,
     /// Scales, keyed by stem, with the categorical `chart` first.
-    pub scales: IndexMap<String, Vec<Step>>,
+    pub scales: IndexMap<String, Scale>,
     /// The translucency ladder, keyed by stem — `neutral-a1`.
     #[serde(default)]
     pub alpha: IndexMap<String, AlphaStop>,
     /// Every gated pair, measured.
     #[serde(default)]
     pub contrast: Vec<ContrastRow>,
+}
+
+/// One scale: what it is for, and its stops.
+///
+/// The kind is read rather than inferred from the name. A page that decided
+/// "categorical" by testing the stem against `chart` was right for exactly as
+/// long as there was one categorical set.
+#[derive(Debug, Clone, Deserialize)]
+pub struct Scale {
+    /// `categorical` or `ordered`.
+    pub kind: String,
+    /// Whether the spec declares this set's legend names every entry.
+    #[serde(default)]
+    pub labelled: bool,
+    /// The stops, in order.
+    pub steps: Vec<Step>,
+}
+
+impl Scale {
+    /// Whether this scale is read off a legend rather than in order.
+    #[must_use]
+    pub fn is_categorical(&self) -> bool {
+        self.kind == "categorical"
+    }
 }
 
 /// One stop of the translucency ladder.
@@ -209,8 +268,28 @@ impl Palette {
     ///
     /// Malformed or unreadable JSON.
     pub fn parse(json: &str) -> Result<Self, String> {
-        serde_json::from_str(json)
-            .map_err(|error| format!("dist/json/palette.json is not readable: {error}"))
+        let mut palette: Self = serde_json::from_str(json)
+            .map_err(|error| format!("dist/json/palette.json is not readable: {error}"))?;
+        palette.resolve_contract();
+        Ok(palette)
+    }
+
+    /// Pushes the document's shared contract back down into every mode.
+    ///
+    /// The emitter hoists `semantic` and `slots` out of the seventy-eight mode
+    /// blocks they used to be repeated in — neither varies by mode, and neither
+    /// varies by theme unless a theme says so. Resolving them here rather than
+    /// at every use site means the hoist is a fact about the file format and
+    /// not about the twenty places that read these maps.
+    fn resolve_contract(&mut self) {
+        for theme in self.themes.values_mut() {
+            let semantic = merged(&self.semantic, &theme.semantic_overrides);
+            let slots = merged(&self.slots, &theme.slot_overrides);
+            for mode in theme.modes.values_mut() {
+                mode.semantic.clone_from(&semantic);
+                mode.slots.clone_from(&slots);
+            }
+        }
     }
 
     /// Theme names, in a stable order.
@@ -230,8 +309,23 @@ impl Palette {
     /// One theme and mode, if it exists.
     #[must_use]
     pub fn mode(&self, theme: &str, mode: &str) -> Option<&ModePalette> {
-        self.themes.get(theme)?.get(mode)
+        self.themes.get(theme)?.modes.get(mode)
     }
+}
+
+/// A shared map with one theme's overrides applied over it, in shared order.
+fn merged(
+    shared: &IndexMap<String, String>,
+    overrides: &IndexMap<String, String>,
+) -> IndexMap<String, String> {
+    if overrides.is_empty() {
+        return shared.clone();
+    }
+    let mut out = shared.clone();
+    for (name, target) in overrides {
+        out.insert(name.clone(), target.clone());
+    }
+    out
 }
 
 #[cfg(test)]
@@ -273,11 +367,11 @@ mod tests {
         let index = std::fs::read_to_string(css).expect("dist/css/index.css");
 
         // `index.css` imports the default theme's bare file name first, after
-        // the shared ramp.
+        // the two shared files — the ramp and the semantic contract.
         let default_import = index
             .lines()
             .filter(|line| line.starts_with("@import"))
-            .find(|line| !line.contains("ramp.css"))
+            .find(|line| !line.contains("ramp.css") && !line.contains("contexts.css"))
             .expect("a theme import");
 
         assert!(

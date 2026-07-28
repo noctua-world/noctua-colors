@@ -7,7 +7,7 @@
 
 use maud::{Markup, PreEscaped, html};
 
-use crate::data::{ModePalette, Palette, Step};
+use crate::data::{ModePalette, Palette, Scale, Step};
 use crate::i18n::{Locale, t};
 
 /// The opening statement.
@@ -297,6 +297,11 @@ pub fn palette_browser(palette: &Palette, locale: Locale) -> Markup {
                 div id="ramp-browser"
                     data-label-hue=(t(locale, "hue", "matiz"))
                     data-label-chart=(t(locale, "categorical", "categórica"))
+                    data-label-chart-labelled=(t(
+                        locale,
+                        "categorical, labelled",
+                        "categórica, rotulada",
+                    ))
                     data-label-ordered=(t(locale, "ordered", "ordenada"))
                     data-label-roles=(t(
                         locale,
@@ -310,12 +315,17 @@ pub fn palette_browser(palette: &Palette, locale: Locale) -> Markup {
                         "gamuts emitidos por token.",
                     ))
                     data-gamut-count=(palette.gamuts.len()) {
+                    // Both modes are emitted and CSS decides which one shows —
+                    // see `[data-mode]` in `site.css`. Marking the dark group
+                    // `hidden` and letting script unhide it meant a dark-mode
+                    // visitor painted the *light* table first and watched it be
+                    // replaced on every reload, and meant the page was simply
+                    // wrong in dark mode with script off.
                     @for mode_name in ["light", "dark"] {
                         @if let Some(mode) = palette.mode(theme, mode_name) {
                             div class="ramp-group reveal"
                                 data-theme-name=(theme)
-                                data-mode=(mode_name)
-                                hidden[mode_name != "light"] {
+                                data-mode=(mode_name) {
                                 (ramp_table(mode, palette, locale))
                             }
                         }
@@ -354,7 +364,7 @@ pub fn palette_browser(palette: &Palette, locale: Locale) -> Markup {
                     h4 class="reveal ramp-name" { code { "--" (palette.prefix) "-" (ramp) "-*" } }
                     div class="gray-ramp reveal" {
                         @for step in steps {
-                            (swatch(step, ramp, step.index.to_string().as_str()))
+                            (swatch(step, ramp, step.index.to_string().as_str(), &palette.prefix))
                         }
                     }
                 }
@@ -368,11 +378,17 @@ pub fn palette_browser(palette: &Palette, locale: Locale) -> Markup {
 /// The difference is not cosmetic: a chart spreads hues *around the wheel* so a
 /// legend can tell six series apart, while an ordered scale walks a hue *path*
 /// so a reader can tell which of two stops is worse without one.
-fn scale_kind(scale: &str, locale: Locale) -> &'static str {
-    if scale == "chart" {
-        t(locale, "categorical", "categórica")
-    } else {
+///
+/// Read off the scale rather than guessed from its name. Testing the stem
+/// against `chart` was correct until a second categorical set existed, at which
+/// point it labelled every one of them "ordered".
+fn scale_kind(scale: &Scale, locale: Locale) -> &'static str {
+    if !scale.is_categorical() {
         t(locale, "ordered", "ordenada")
+    } else if scale.labelled {
+        t(locale, "categorical, labelled", "categórica, rotulada")
+    } else {
+        t(locale, "categorical", "categórica")
     }
 }
 
@@ -393,20 +409,20 @@ fn ramp_table(mode: &ModePalette, palette: &Palette, locale: Locale) -> Markup {
                     }
                     div class="ramp-steps" {
                         @for step in &resolved.steps {
-                            (swatch(step, family, &step.role))
+                            (swatch(step, family, &step.role, &palette.prefix))
                         }
                     }
                 }
             }
-            @for (scale, steps) in &mode.scales {
+            @for (name, scale) in &mode.scales {
                 div class="ramp" {
                     div class="ramp-head" {
-                        h4 { (scale) }
+                        h4 { (name) }
                         span class="muted small" { (scale_kind(scale, locale)) }
                     }
                     div class="ramp-steps" {
-                        @for step in steps {
-                            (swatch(step, scale, &step.role))
+                        @for step in &scale.steps {
+                            (swatch(step, name, &step.role, &palette.prefix))
                         }
                     }
                 }
@@ -428,13 +444,21 @@ fn ramp_table(mode: &ModePalette, palette: &Palette, locale: Locale) -> Markup {
 }
 
 /// One swatch, carrying everything the detail panel needs.
-fn swatch(step: &Step, family: &str, role: &str) -> Markup {
+///
+/// Painted with its own token rather than with the colour that token resolved
+/// to when the page was generated. Only the default palette is server-rendered,
+/// so a baked value meant every tile in this grid showed the *default* palette
+/// on reload — the visitor's choice arrived with the JSON, three requests
+/// later, and the whole browser repainted in front of them. The token follows
+/// whichever stylesheet the bootstrap restored, so the colours are right at
+/// first paint and the JSON only refreshes the numbers.
+fn swatch(step: &Step, family: &str, role: &str, prefix: &str) -> Markup {
     let color = step.primary();
     let stem = format!("{family}-{role}");
     html! {
         button type="button"
                class="swatch"
-               style=(format!("background: {}", color.css))
+               style=(format!("background: var(--{prefix}-{stem})"))
                data-stem=(stem)
                data-hex=(color.hex)
                data-css=(color.css)
@@ -494,7 +518,8 @@ pub fn contexts(palette: &Palette, locale: Locale) -> Markup {
                     ))
                 }
 
-                (context_chips(mode, &palette.prefix))
+                (context_chips(mode, &palette.prefix, locale))
+                (categorical_scales(mode, &palette.prefix, locale))
                 (ordered_scales(mode, &palette.prefix, locale))
                 (translucency(mode, &palette.prefix, locale))
             }
@@ -503,27 +528,78 @@ pub fn contexts(palette: &Palette, locale: Locale) -> Markup {
 }
 
 /// One chip per context, filled with the token rather than with a hex string.
-fn context_chips(mode: Option<&ModePalette>, prefix: &str) -> Markup {
+///
+/// Grouped by the family behind them, and collapsed into a `<details>` per
+/// group. Three hundred and fifty chips in one grid is a wall a reader
+/// scrolls past rather than reads, and the grouping answers the question they
+/// actually arrive with — not "which contexts exist" but "which other names
+/// share this colour", which is the thing that decides whether two states in
+/// the same view can be told apart.
+///
+/// `<details>` rather than script, so the groups open and close with this file
+/// blocked. The filter above them is the enhancement.
+fn context_chips(mode: Option<&ModePalette>, prefix: &str, locale: Locale) -> Markup {
     // Contexts only. A `neutral*` slot is the page itself — its tokens are the
     // surfaces and text this section is already drawn with.
-    let slots: Vec<&String> = mode
-        .map(|m| {
-            m.slots
-                .keys()
-                .filter(|slot| !is_surface_slot(slot))
-                .collect()
-        })
-        .unwrap_or_default();
+    let mut groups: indexmap::IndexMap<&str, Vec<&str>> = indexmap::IndexMap::new();
+    if let Some(m) = mode {
+        for (slot, family) in &m.slots {
+            if is_surface_slot(slot) {
+                continue;
+            }
+            groups
+                .entry(family.as_str())
+                .or_default()
+                .push(slot.as_str());
+        }
+    }
+    let total: usize = groups.values().map(Vec::len).sum();
 
     html! {
-        ul class="context-grid reveal" {
-            @for slot in slots {
-                li class="context-chip"
-                   style=(format!(
-                       "background: var(--{prefix}-color-{slot}); \
-                        color: var(--{prefix}-color-on-{slot});"
-                   )) {
-                    code { (slot) }
+        div class="context-browser reveal" {
+            div class="context-filter" {
+                label class="visually-hidden" for="context-filter" {
+                    (t(locale, "Filter contexts", "Filtrar contextos"))
+                }
+                input type="search" id="context-filter" class="input"
+                      placeholder=(t(locale, "Filter contexts…", "Filtrar contextos…"))
+                      // The script writes a count into the status line beside
+                      // this, and takes its wording from here rather than from
+                      // a string of its own — the page is built once per
+                      // language and nothing a script writes may be in the
+                      // wrong one.
+                      data-label-matches=(t(locale, "matching", "correspondentes"))
+                      data-label-none=(t(
+                          locale,
+                          "no context matches",
+                          "nenhum contexto corresponde",
+                      ));
+                p id="context-count" class="muted small" role="status" aria-live="polite" {
+                    (format!("{total} "))
+                    (t(locale, "contexts", "contextos"))
+                }
+            }
+
+            @for (family, slots) in &groups {
+                details class="context-group" open {
+                    summary {
+                        code { (family) }
+                        span class="muted small" {
+                            (format!(" · {} ", slots.len()))
+                            (t(locale, "contexts", "contextos"))
+                        }
+                    }
+                    ul class="context-grid" {
+                        @for slot in slots {
+                            li class="context-chip" data-slot=(slot)
+                               style=(format!(
+                                   "background: var(--{prefix}-color-{slot}); \
+                                    color: var(--{prefix}-color-on-{slot});"
+                               )) {
+                                code { (slot) }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -548,22 +624,69 @@ fn ordered_scales(mode: Option<&ModePalette>, prefix: &str, locale: Locale) -> M
             ))
         }
         @if let Some(m) = mode {
-            @for (scale, steps) in &m.scales {
-                @if scale != "chart" {
-                    div class="scale-strip reveal" {
-                        span class="scale-name" { code { (scale) } }
-                        @for step in steps {
-                            span class="scale-stop"
-                                 style=(format!(
-                                     "background: var(--{prefix}-{scale}-{});",
-                                     step.role
-                                 ))
-                                 data-ink=(ink(step))
-                                 title=(format!("{scale}-{}", step.role)) {
-                                (step.role)
-                            }
-                        }
-                    }
+            @for (name, scale) in m.scales.iter().filter(|(_, s)| !s.is_categorical()) {
+                (scale_strip(name, scale, prefix))
+            }
+        }
+    }
+}
+
+/// The categorical sets, as strips.
+///
+/// Separate from the ordered ones because they answer a different question. A
+/// reader looking for "which colour is series three" wants a set laid out for a
+/// legend; a reader looking for "is this worse than that" wants a path. Showing
+/// them together invited each to be read as the other.
+fn categorical_scales(mode: Option<&ModePalette>, prefix: &str, locale: Locale) -> Markup {
+    html! {
+        h3 class="reveal" { (t(locale, "Categorical scales", "Escalas categóricas")) }
+        p class="section-lead reveal" {
+            (t(
+                locale,
+                "Hues spread around the wheel rather than along a path, at equal perceptual \
+                 intervals rather than equal angles — a fixed rotation through the greens \
+                 changes appearance far less than the same rotation through the blues. Each \
+                 set also spans a range of lightness, because hue is precisely the axis a \
+                 dichromat is missing, and lightness is what is left.",
+                "Matizes distribuídas ao redor do círculo, não ao longo de um caminho, em \
+                 intervalos perceptuais iguais e não em ângulos iguais — uma rotação fixa pelos \
+                 verdes muda muito menos a aparência que a mesma rotação pelos azuis. Cada \
+                 conjunto também percorre uma faixa de luminosidade, porque a matiz é \
+                 exatamente o eixo que falta a um dicromata, e a luminosidade é o que sobra.",
+            ))
+        }
+        p class="section-lead reveal" {
+            (t(
+                locale,
+                "Six is what a generated set can keep apart under all three dichromacies. A \
+                 set marked labelled goes past that deliberately and says so: its legend has \
+                 to name every series, and the measured margins are published in \
+                 dist/reports/colour-vision.md rather than assumed away.",
+                "Seis é o que um conjunto gerado consegue manter distinguível sob as três \
+                 dicromacias. Um conjunto marcado como rotulado passa disso de propósito e diz \
+                 isso: sua legenda precisa nomear cada série, e as margens medidas são \
+                 publicadas em dist/reports/colour-vision.md em vez de ignoradas.",
+            ))
+        }
+        @if let Some(m) = mode {
+            @for (name, scale) in m.scales.iter().filter(|(_, s)| s.is_categorical()) {
+                (scale_strip(name, scale, prefix))
+            }
+        }
+    }
+}
+
+/// One scale as a row of stops, painted from its own tokens.
+fn scale_strip(name: &str, scale: &Scale, prefix: &str) -> Markup {
+    html! {
+        div class="scale-strip reveal" {
+            span class="scale-name" { code { (name) } }
+            @for step in &scale.steps {
+                span class="scale-stop"
+                     style=(format!("background: var(--{prefix}-{name}-{});", step.role))
+                     data-ink=(ink(step))
+                     title=(format!("{name}-{}", step.role)) {
+                    (step.role)
                 }
             }
         }
@@ -688,10 +811,10 @@ pub fn contrast_matrix(palette: &Palette, locale: Locale) -> Markup {
                     ))
                 }
 
+                // As with the ramp groups above: both emitted, CSS picks.
                 @for mode_name in ["light", "dark"] {
                     @if let Some(mode) = palette.mode(theme, mode_name) {
-                        div class="matrix reveal" data-mode=(mode_name)
-                            hidden[mode_name != "light"] {
+                        div class="matrix reveal" data-mode=(mode_name) {
                             (pair_grid(mode, locale))
                         }
                     }
@@ -1033,11 +1156,14 @@ pub fn integration(locale: Locale) -> Markup {
         (
             "Plain CSS",
             "css",
-            r#"<!-- the default theme: 29 semantic tokens, 468 palette steps -->
-<link rel="stylesheet" href="dist/css/balanced.css">
+            r#"<!-- three files: the dense grays, the semantic contract, and
+     the default theme's values -->
+<link rel="stylesheet" href="dist/css/ramp.css">
+<link rel="stylesheet" href="dist/css/contexts.css">
+<link rel="stylesheet" href="dist/css/ochre-balanced.css">
 
-<!-- or index.css: every theme, the gray ramp, and a name that survives
-     a theme being renamed -->
+<!-- or index.css: all of the above plus every other theme, and a name
+     that survives a theme being renamed -->
 
 .card {
   background: var(--nc-color-surface-raised);

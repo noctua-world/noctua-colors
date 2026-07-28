@@ -61,12 +61,11 @@
     return stored === "light" || stored === "dark" ? stored : "system";
   }
 
-  /* The mode actually on screen, which never is. */
-  function effectiveMode() {
-    var chosen = chosenMode();
-    if (chosen !== "system") return chosen;
-    return systemPrefersDark.matches ? "dark" : "light";
-  }
+  /* There is deliberately no `effectiveMode()` here any more. Resolving
+   * 'system' to a concrete mode in script means the answer only exists after
+   * this file has run, and anything that depended on it was therefore wrong
+   * for the first paint. The stylesheet resolves the same three states in the
+   * cascade, where the answer exists before anything is painted. */
 
   function applyMode(mode) {
     root.classList.add("theme-switching");
@@ -82,7 +81,6 @@
       root.classList.remove("theme-switching");
     }, 260);
     syncModeControl();
-    syncVisibility();
     measureContrast();
   }
 
@@ -174,27 +172,49 @@
     if (status) status.textContent = text;
   }
 
-  function applyPalette() {
+  /* `animate` is false when this is restoring a stored choice rather than
+   * acting on one. A 220ms cross-fade is right when a visitor turns a dial and
+   * wrong on load, where it draws the eye to exactly the repaint this whole
+   * file is trying to make invisible. */
+  function applyPalette(animate) {
     var theme = resolveTheme();
     if (!theme) return;
 
-    root.classList.add("theme-switching");
+    /* Written on every path, not just the flat-select one.
+     *
+     * This is the key the inline bootstrap in the document head reads to
+     * restore the palette before the first paint. With two axis pickers —
+     * which is what the shipped spec produces — `flatSelect` is null, so it
+     * was never written, the bootstrap always found nothing, and the whole
+     * render-blocking injection it performs was unreachable. Every reload
+     * painted the default palette and swapped once three requests had landed.
+     *
+     * The two axis values are stored as well, because they are what the two
+     * pickers restore; this is the resolved answer, which is what the
+     * bootstrap needs and cannot compute for itself. */
+    remember(STORE.palette, theme);
+    if (accentSelect) remember(STORE.accent, accentSelect.value);
+    if (saturationSelect) remember(STORE.saturation, saturationSelect.value);
+
+    if (animate) root.classList.add("theme-switching");
     ensureStylesheet(theme, function () {
       root.setAttribute("data-palette", theme);
-      window.setTimeout(function () {
-        root.classList.remove("theme-switching");
-      }, 260);
+      if (animate) {
+        window.setTimeout(function () {
+          root.classList.remove("theme-switching");
+        }, 260);
+      }
       renderRamps(theme);
       measureContrast();
     });
-
-    if (accentSelect) remember(STORE.accent, accentSelect.value);
-    if (saturationSelect) remember(STORE.saturation, saturationSelect.value);
-    if (flatSelect) remember(STORE.palette, flatSelect.value);
   }
 
   [accentSelect, saturationSelect, flatSelect].forEach(function (select) {
-    if (select) select.addEventListener("change", applyPalette);
+    if (select) {
+      select.addEventListener("change", function () {
+        applyPalette(true);
+      });
+    }
   });
 
   /* --- Language ----------------------------------------------------------
@@ -215,20 +235,15 @@
   // navigated deliberately is not redirected away on the next visit.
   remember(STORE.locale, root.getAttribute("lang"));
 
-  /* Shows the ramp table and matrix for whichever mode is live.
+  /* Which mode's blocks are on screen is decided by CSS — see `[data-mode]`
+   * in `site.css`. It was decided here, after load, which meant a dark-mode
+   * visitor watched the light ramp table and the light matrix paint and then
+   * disappear on every reload, and meant the page was wrong in dark mode with
+   * this file blocked. Both groups are always in the document; only one is
+   * ever displayed, from the first paint onward.
    *
-   * Only one theme's groups exist at a time now, so this is a mode filter. */
-  function syncVisibility() {
-    var mode = effectiveMode();
-
-    document.querySelectorAll("[data-theme-name]").forEach(function (group) {
-      group.hidden = group.getAttribute("data-mode") !== mode;
-    });
-
-    document.querySelectorAll(".matrix[data-mode]").forEach(function (matrix) {
-      matrix.hidden = matrix.getAttribute("data-mode") !== mode;
-    });
-  }
+   * Client-built groups carry the same `data-mode`, so they are covered by the
+   * same rules with nothing to synchronise. */
 
   /* --- The palette browser, built here for every theme but the first -------
    *
@@ -257,7 +272,11 @@
     var button = document.createElement("button");
     button.type = "button";
     button.className = "swatch";
-    button.style.background = color.css;
+    // The token, not the value it resolved to — matching `swatch` in
+    // `sections.rs`, which paints the same way and for the same reason. Using
+    // the value here would make the grid change appearance when this replaces
+    // the server-rendered one.
+    button.style.background = "var(--nc-" + stem + ")";
     button.dataset.stem = stem;
     button.dataset.hex = color.hex;
     button.dataset.css = color.css;
@@ -332,16 +351,24 @@
       );
     });
 
-    /* Every scale, keyed by stem. `chart` is categorical — hues spread around
-     * the wheel so a legend tells six series apart — and everything else is
-     * ordered: a hue path walked so a reader can tell which stop is worse. */
-    Object.keys(mode.scales).forEach(function (scale) {
+    /* Every scale, keyed by stem. A categorical set spreads hues around the
+     * wheel so a legend tells its series apart; an ordered one walks a hue path
+     * so a reader can tell which stop is worse without one.
+     *
+     * The kind comes from the palette, not from the name. Testing the stem
+     * against `chart` was right until a second categorical set existed, and
+     * then labelled every one of them "ordered" — which is the one thing the
+     * label is there to prevent. */
+    Object.keys(mode.scales).forEach(function (name) {
+      var scale = mode.scales[name];
       var kind =
-        scale === "chart"
-          ? labelOf("chart", "categorical")
-          : labelOf("ordered", "ordered");
+        scale.kind !== "categorical"
+          ? labelOf("ordered", "ordered")
+          : scale.labelled
+            ? labelOf("chart-labelled", "categorical, labelled")
+            : labelOf("chart", "categorical");
       ramps.appendChild(
-        buildRamp(scale, kind, mode.scales[scale], function (step) {
+        buildRamp(name, kind, scale.steps, function (step) {
           return step.role;
         })
       );
@@ -384,25 +411,45 @@
     }
   }
 
+  /* The palette JSON, from wherever it is furthest along.
+   *
+   * The inline bootstrap starts this request while the head is still parsing,
+   * because this file cannot ask for it until it has resolved the palette out
+   * of `axes.json` — which put three requests in series, every one of them
+   * after the first paint. `theme` is checked rather than assumed: the stored
+   * choice can be stale, and the wrong palette's numbers are worse than late
+   * ones. A prefetch that failed resolves to null and is refetched here, where
+   * a failure has somewhere to be reported.
+   */
+  function themeData(theme) {
+    var prefetched = window.__noctuaThemeFetch;
+    if (prefetched && prefetched.theme === theme && prefetched.data) {
+      return prefetched.data.then(function (data) {
+        return data || fetchTheme(theme);
+      });
+    }
+    return fetchTheme(theme);
+  }
+
+  function fetchTheme(theme) {
+    return fetch("tokens/json/themes/" + theme + ".json").then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    });
+  }
+
   function renderRamps(theme) {
     if (!browser) return;
 
     var existing = browser.querySelector("[data-theme-name]");
-    if (existing && existing.getAttribute("data-theme-name") === theme) {
-      syncVisibility();
-      return;
-    }
+    if (existing && existing.getAttribute("data-theme-name") === theme) return;
 
     if (themeCache[theme]) {
       paint(themeCache[theme]);
       return;
     }
 
-    fetch("tokens/json/themes/" + theme + ".json")
-      .then(function (response) {
-        if (!response.ok) throw new Error(String(response.status));
-        return response.json();
-      })
+    themeData(theme)
       .then(function (data) {
         themeCache[theme] = data;
         paint(data);
@@ -419,7 +466,6 @@
           browser.appendChild(buildGroup(theme, modeName, data[modeName]));
         }
       });
-      syncVisibility();
     }
   }
 
@@ -700,6 +746,69 @@
     if (event.key === "Escape") closeDetail();
   });
 
+  /* --- Context filter ----------------------------------------------------
+   *
+   * Three hundred and fifty contexts is more than a reader scans. This narrows
+   * them by substring and hides a group that has nothing left, so the answer to
+   * "is there a context called X" takes one keystroke rather than a scroll.
+   *
+   * An enhancement, like everything else here: without it the groups are all
+   * open and every chip is on the page. Its wording comes off the input as data
+   * attributes, because the page is built once per language and a string in
+   * this file would be English on both.
+   */
+
+  var contextFilter = document.getElementById("context-filter");
+  var contextCount = document.getElementById("context-count");
+
+  if (contextFilter) {
+    var chips = Array.prototype.slice.call(
+      document.querySelectorAll(".context-chip[data-slot]")
+    );
+    var groups = Array.prototype.slice.call(
+      document.querySelectorAll(".context-group")
+    );
+    var countTemplate = contextCount ? contextCount.textContent : "";
+
+    contextFilter.addEventListener("input", function () {
+      var query = contextFilter.value.trim().toLowerCase();
+      var shown = 0;
+
+      chips.forEach(function (chip) {
+        var matches =
+          !query || chip.getAttribute("data-slot").indexOf(query) !== -1;
+        chip.hidden = !matches;
+        if (matches) shown += 1;
+      });
+
+      groups.forEach(function (group) {
+        var any = Array.prototype.some.call(
+          group.querySelectorAll(".context-chip[data-slot]"),
+          function (chip) {
+            return !chip.hidden;
+          }
+        );
+        group.hidden = !any;
+        // A filtered group opens itself, so a match is never hidden behind a
+        // closed summary the reader has to think to expand.
+        if (any && query) group.open = true;
+      });
+
+      if (!contextCount) return;
+      if (!query) {
+        contextCount.textContent = countTemplate;
+      } else if (shown === 0) {
+        contextCount.textContent =
+          contextFilter.getAttribute("data-label-none") || "no match";
+      } else {
+        contextCount.textContent =
+          shown +
+          " " +
+          (contextFilter.getAttribute("data-label-matches") || "matching");
+      }
+    });
+  }
+
   /* --- Integration tabs --------------------------------------------------
    *
    * Full keyboard support, per the ARIA tabs pattern: arrows move between
@@ -743,11 +852,20 @@
    *
    * The pending state is applied here rather than in CSS. Set in the
    * stylesheet, a script failure would leave the whole page invisible.
+   *
+   * Only what is below the fold is ever hidden. Marking every `.reveal`
+   * pending — including the ones the browser had already painted — made the
+   * top of the page vanish the moment this file ran and fade back in one
+   * observer callback later, on every single load. An element already on
+   * screen has nothing to reveal: it has been seen.
    */
 
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
 
   if ("IntersectionObserver" in window) {
+    reveals = reveals.filter(function (element) {
+      return element.getBoundingClientRect().top >= window.innerHeight;
+    });
     reveals.forEach(function (element) {
       element.dataset.reveal = "pending";
     });
@@ -772,7 +890,6 @@
   /* --- Start ------------------------------------------------------------- */
 
   syncModeControl();
-  syncVisibility();
   measureContrast();
 
   /* The palette grid, and the visitor's stored choice.
@@ -819,8 +936,20 @@
           flatSelect.value = storedPalette;
         }
 
+        /* Recorded even when nothing changed. This is the key the inline
+         * bootstrap reads to restore the palette before the first paint, and a
+         * visitor who never touches a control would otherwise never have one —
+         * so the *next* reload would have nothing to restore and would paint
+         * the default. Writing the resolved name here means one visit is
+         * enough. `applyPalette` writes it too, for the path where a choice is
+         * actually made. */
+        var resolved = resolveTheme();
+        if (resolved) remember(STORE.palette, resolved);
+
         // Only repaint when the stored choice differs from what was rendered.
-        if (changed) applyPalette();
+        // Never animated: this is a restore, not a decision, and cross-fading
+        // it turns an invisible correction into a visible one.
+        if (changed) applyPalette(false);
       });
   }
 
@@ -829,7 +958,6 @@
   // matters while 'system' is the chosen mode.
   systemPrefersDark.addEventListener("change", function () {
     if (chosenMode() === "system") {
-      syncVisibility();
       measureContrast();
     }
   });

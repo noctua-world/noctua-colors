@@ -46,10 +46,10 @@ impl Emitter for Dtcg {
                     root.insert(family.clone(), Value::Object(group));
                 }
 
-                for (scale, steps) in &mode.scales {
+                for (scale, resolved) in &mode.scales {
                     let mut group = Map::new();
                     group.insert("$type".into(), "color".into());
-                    for step in steps {
+                    for step in &resolved.steps {
                         group.insert(step.role.clone(), token(step));
                     }
                     root.insert(scale.clone(), Value::Object(group));

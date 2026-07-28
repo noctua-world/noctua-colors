@@ -67,8 +67,8 @@ impl Emitter for Scss {
                     writeln!(out, "${prefix}-{key}: {hex};").unwrap();
                     entries.push((key, hex));
                 }
-                for (scale, steps) in &mode.scales {
-                    for step in steps {
+                for (scale, resolved) in &mode.scales {
+                    for step in &resolved.steps {
                         let key =
                             format!("{}-{}-{scale}-{}", theme.name, mode.mode.id(), step.role);
                         let hex = value::hex(step.primary());

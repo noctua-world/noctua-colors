@@ -71,10 +71,11 @@ impl Emitter for Css {
     }
 
     fn emit(&self, palette: &Palette) -> Vec<EmittedFile> {
-        let mut files = vec![ramp_file(palette)];
+        let semantic = tokens::semantic_layer(palette);
+        let mut files = vec![ramp_file(palette), contexts_file(palette, &semantic)];
 
         for (index, theme) in palette.themes.iter().enumerate() {
-            files.push(theme_file(palette, theme, index == 0));
+            files.push(theme_file(palette, theme, index == 0, &semantic));
         }
 
         files.push(index_file(palette));
@@ -182,8 +183,8 @@ fn block(
         )
         .expect("string write");
     }
-    for (scale, steps) in &mode.scales {
-        for step in steps {
+    for (scale, resolved) in &mode.scales {
+        for step in &resolved.steps {
             writeln!(
                 out,
                 "{indent}  --{prefix}-{scale}-{}: {};",
@@ -226,6 +227,7 @@ fn theme_file(
     palette: &Palette,
     theme: &noctua_engine::ResolvedTheme,
     is_default: bool,
+    semantic: &tokens::ThemeSplit,
 ) -> EmittedFile {
     let prefix = &palette.prefix;
     let selectors = selectors(&theme.name, is_default);
@@ -298,9 +300,13 @@ fn theme_file(
 
     writeln!(
         out,
-        "\n/* --- Aliases and the semantic contract ---\n\
+        "\n/* --- Aliases and the translucency ladder ---\n\
         \x20  Indirections, so they are written once and follow whichever mode\n\
-        \x20  and gamut layer is active. */\n"
+        \x20  and gamut layer is active.\n\
+        \x20\n\
+        \x20  The semantic contract is NOT here: every theme resolves it\n\
+        \x20  identically, so it is written once in contexts.css and only what\n\
+        \x20  this theme overrides appears below. */\n"
     )
     .expect("string write");
     writeln!(out, "{} {{", selectors.light).expect("string write");
@@ -312,14 +318,17 @@ fn theme_file(
         )
         .expect("string write");
     }
-    writeln!(out).expect("string write");
-    for alias in tokens::semantic_tokens(light) {
-        writeln!(
-            out,
-            "  --{prefix}-color-{}: var(--{prefix}-{});",
-            alias.name, alias.target
-        )
-        .expect("string write");
+
+    if let Some(overrides) = semantic.per_theme.get(&theme.name) {
+        writeln!(out).expect("string write");
+        for alias in overrides {
+            writeln!(
+                out,
+                "  --{prefix}-color-{}: var(--{prefix}-{});",
+                alias.name, alias.target
+            )
+            .expect("string write");
+        }
     }
 
     // The translucency ladder. One definition covers both modes and every gamut
@@ -344,6 +353,59 @@ fn theme_file(
         format!("css/{}", theme_file_name(&theme.name, is_default)),
         out,
     )
+}
+
+/// The semantic contract, which does not vary by theme.
+///
+/// `--nc-color-rejected: var(--nc-danger-solid)` is the same sentence in every
+/// palette — the colour behind it changes, the sentence does not. Written into
+/// each theme's stylesheet it was 97 KB of every 225 KB file, thirty-nine times
+/// over; here it is written once.
+///
+/// # Two things make the layering work
+///
+/// **`:where(:root)` rather than `:root`.** `:where()` contributes zero
+/// specificity, so a theme that *does* override a slot wins from its
+/// `[data-palette="…"]` block whatever order the two files are linked in.
+/// Written as a plain `:root` the two would tie at (0,1,0) and source order
+/// would decide, which makes the correctness of an override depend on how a
+/// consumer wrote their `<link>` tags.
+///
+/// **Everything it references is a token, not a value.** A consumer therefore
+/// links this once and switches palettes without touching it. The cost is one
+/// more file that has to be linked: asking for `--nc-color-rejected` with only
+/// a theme stylesheet linked fails *silently*, because CSS drops an undefined
+/// custom property. `noctua_check::references` catches that inside this
+/// repository; outside it, `index.css` imports everything and is the answer.
+fn contexts_file(palette: &Palette, semantic: &tokens::ThemeSplit) -> EmittedFile {
+    let prefix = &palette.prefix;
+    let mut out = header(spec_path(), CommentStyle::Block);
+    writeln!(
+        out,
+        "\n/* The semantic contract: the names an application codes against.\n\
+        \x20\n\
+        \x20  Every one of these is an indirection onto a palette token, so this\n\
+        \x20  file is the same for every theme and is emitted once. Link it\n\
+        \x20  alongside ramp.css and a theme, or import index.css and get all\n\
+        \x20  three.\n\
+        \x20\n\
+        \x20  :where() so that a theme overriding a slot always wins, whatever\n\
+        \x20  order the stylesheets are linked in. */\n"
+    )
+    .expect("string write");
+
+    writeln!(out, ":where(:root) {{").expect("string write");
+    for alias in &semantic.shared {
+        writeln!(
+            out,
+            "  --{prefix}-color-{}: var(--{prefix}-{});",
+            alias.name, alias.target
+        )
+        .expect("string write");
+    }
+    writeln!(out, "}}").expect("string write");
+
+    EmittedFile::new("css/contexts.css", out)
 }
 
 /// The dense neutral ramp, which does not vary by theme or mode.
@@ -414,13 +476,19 @@ fn index_file(palette: &Palette) -> EmittedFile {
     let mut out = header(spec_path(), CommentStyle::Block);
     writeln!(
         out,
-        "\n/* Everything: the neutral ramp and every theme.\n\
-        \x20  For just the default theme, import {}.css instead. */\n",
-        palette.themes[0].name
+        "\n/* Everything: the neutral ramp, the semantic contract, and every\n\
+        \x20  theme.\n\
+        \x20\n\
+        \x20  For one theme, import ramp.css, contexts.css and {}.css —\n\
+        \x20  all three. A theme file alone defines no --{}-gray-* and no\n\
+        \x20  --{}-color-*, and CSS drops an undefined custom property\n\
+        \x20  without saying so. */\n",
+        palette.themes[0].name, palette.prefix, palette.prefix
     )
     .expect("string write");
 
     writeln!(out, "@import \"./ramp.css\";").expect("string write");
+    writeln!(out, "@import \"./contexts.css\";").expect("string write");
     for (index, theme) in palette.themes.iter().enumerate() {
         let file = theme_file_name(&theme.name, index == 0);
         writeln!(out, "@import \"./{file}\";").expect("string write");
@@ -452,12 +520,14 @@ mod tests {
     }
 
     #[test]
-    fn one_file_per_theme_plus_the_ramp_and_an_index() {
+    fn one_file_per_theme_plus_the_two_shared_ones_and_an_index() {
         let palette = shipped();
         let files = Css.emit(&palette);
-        assert_eq!(files.len(), palette.themes.len() + 2);
-        assert!(files.iter().any(|f| f.path == "css/ramp.css"));
-        assert!(files.iter().any(|f| f.path == "css/index.css"));
+        // The ramp, the semantic contract, an index, and one file per theme.
+        assert_eq!(files.len(), palette.themes.len() + 3);
+        for shared in ["css/ramp.css", "css/contexts.css", "css/index.css"] {
+            assert!(files.iter().any(|f| f.path == shared), "{shared} missing");
+        }
         assert!(files.iter().any(|f| f.path == "css/ochre-balanced.css"));
     }
 
@@ -566,17 +636,59 @@ mod tests {
 
     #[test]
     fn aliases_and_semantics_are_indirections_written_once() {
-        let css = file("css/ochre-balanced.css");
-        assert!(css.contains("--nc-accent-9: var(--nc-accent-solid);"));
-        assert!(css.contains("--nc-color-accent: var(--nc-accent-solid);"));
-        assert!(css.contains("--nc-color-surface: var(--nc-neutral-bg-app);"));
-        assert_eq!(css.matches("--nc-color-accent: var(").count(), 1);
+        let theme = file("css/ochre-balanced.css");
+        let contexts = file("css/contexts.css");
 
-        // The unprefixed namespace belongs to Tailwind, and this file is not
-        // the Tailwind target.
+        // Numeric aliases stay with the theme: they name that theme's own
+        // ramp, and there are a hundred and forty-four of them however many
+        // contexts the spec grows.
+        assert!(theme.contains("--nc-accent-9: var(--nc-accent-solid);"));
+
+        // The semantic contract does not. Every theme resolved it identically
+        // and every theme therefore carried the same 97 KB.
+        assert!(contexts.contains("--nc-color-accent: var(--nc-accent-solid);"));
+        assert!(contexts.contains("--nc-color-surface: var(--nc-neutral-bg-app);"));
+        assert_eq!(contexts.matches("--nc-color-accent: var(").count(), 1);
         assert!(
-            !css.contains("\n  --color-"),
-            "the plain layer must not define Tailwind's theme namespace"
+            !theme.contains("--nc-color-accent: var("),
+            "the theme file still carries a slot no theme overrides"
+        );
+
+        // Zero specificity, so a theme that *does* override a slot wins from
+        // its own block whatever order the two files are linked in.
+        assert!(
+            contexts.contains(":where(:root) {"),
+            "the shared contract is not at zero specificity, so an override \
+             would depend on link order"
+        );
+
+        // The unprefixed namespace belongs to Tailwind, and neither of these
+        // is the Tailwind target.
+        for css in [&theme, &contexts] {
+            assert!(
+                !css.contains("\n  --color-"),
+                "the plain layer must not define Tailwind's theme namespace"
+            );
+        }
+    }
+
+    /// Every theme in the shipped spec resolves the contract identically, so
+    /// nothing should be written per theme. A theme that *did* override a slot
+    /// must still get its own line — that is the whole reason the split is
+    /// derived from the resolved palette rather than assumed.
+    #[test]
+    fn the_shared_contract_covers_every_shipped_theme() {
+        let palette = shipped();
+        let split = tokens::semantic_layer(&palette);
+        assert!(
+            split.per_theme.is_empty(),
+            "no shipped theme overrides a slot, so nothing should be per-theme: {:?}",
+            split.per_theme.keys().collect::<Vec<_>>()
+        );
+        assert!(
+            split.shared.len() > 1500,
+            "only {} shared tokens",
+            split.shared.len()
         );
     }
 

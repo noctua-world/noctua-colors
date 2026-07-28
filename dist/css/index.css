@@ -6,10 +6,16 @@
    * Edits to this file will be overwritten. Change the spec instead.
    */
 
-/* Everything: the neutral ramp and every theme.
-   For just the default theme, import ochre-balanced.css instead. */
+/* Everything: the neutral ramp, the semantic contract, and every
+   theme.
+ 
+   For one theme, import ramp.css, contexts.css and ochre-balanced.css —
+   all three. A theme file alone defines no --nc-gray-* and no
+   --nc-color-*, and CSS drops an undefined custom property
+   without saying so. */
 
 @import "./ramp.css";
+@import "./contexts.css";
 @import "./ochre-balanced.css";
 @import "./theme-ochre-vivid.css";
 @import "./theme-ochre-sober.css";

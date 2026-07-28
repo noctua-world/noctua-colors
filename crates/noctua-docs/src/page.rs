@@ -44,11 +44,7 @@ pub fn render(palette: &Palette, locale: Locale) -> String {
                     link rel="alternate" hreflang=(other.tag()) href=(other.page("index"));
                 }
 
-                // Preloaded before the stylesheets ask for it, and only the
-                // face used for first paint. Preloading all three would delay
-                // the one that matters.
-                link rel="preload" href="assets/fonts/NoctuaIosevka-Regular.woff2"
-                     as="font" type="font/woff2" crossorigin;
+                (font_preloads())
 
                 link rel="stylesheet" href="assets/fonts/fonts.css";
                 // The generated tokens. Everything the page paints with comes
@@ -61,6 +57,10 @@ pub fn render(palette: &Palette, locale: Locale) -> String {
                 // then puts an injected sheet after this one, which is exactly
                 // what the `[data-palette]` scheme relies on.
                 link rel="stylesheet" href="tokens/css/ramp.css";
+                // The semantic contract, emitted once because every theme
+                // resolves it identically. Before the theme file, so a theme
+                // that overrides a slot still wins.
+                link rel="stylesheet" href="tokens/css/contexts.css";
                 link rel="stylesheet" id="palette-stylesheet"
                      href=(format!("tokens/css/{}.css", palette.default_theme()));
                 link rel="stylesheet" href="css/site.css";
@@ -96,12 +96,44 @@ pub fn render(palette: &Palette, locale: Locale) -> String {
     format!("{}\n", markup.into_string())
 }
 
+/// The three faces `fonts.css` declares, in the order they are preloaded.
+pub(crate) const FONT_FACES: [&str; 3] = ["Regular", "Bold", "Italic"];
+
+/// Preloads every webfont face, ahead of the stylesheet that asks for them.
+///
+/// All three, not just the one first paint needs. `font-display: optional` uses
+/// a face only if it is ready by the first paint and never swaps afterwards, so
+/// a face the browser does not learn about until `fonts.css` parses routinely
+/// misses that window and renders in the platform monospace *for that load*.
+/// Preloading only the regular therefore left bold and italic falling back
+/// inconsistently from one reload to the next, which reads as the typeface
+/// flickering. The three are subset and total 34 KB, so preloading the lot
+/// costs less than the one late request it removes.
+///
+/// Shared by both page shells: two lists of faces would drift the moment a
+/// fourth was added.
+pub(crate) fn font_preloads() -> Markup {
+    html! {
+        @for face in FONT_FACES {
+            link rel="preload" href=(format!("assets/fonts/NoctuaIosevka-{face}.woff2"))
+                 as="font" type="font/woff2" crossorigin;
+        }
+    }
+}
+
 /// The id given to the stylesheet the bootstrap injects.
 ///
 /// `site.js` looks for it so it does not append the same sheet a second time.
 /// Shared through `data-` attributes would be tidier, but this runs before the
 /// body exists.
 pub(crate) const BOOTSTRAP_SHEET_ID: &str = "palette-stylesheet-restored";
+
+/// Where the bootstrap parks the palette JSON it started fetching.
+///
+/// `site.js` picks it up from `window`. A global is not elegant; it is the only
+/// channel between a script that runs while the head is parsing and one that
+/// runs after the body exists.
+pub(crate) const THEME_FETCH: &str = "__noctuaThemeFetch";
 
 /// Restores the visitor's choices before the first paint.
 ///
@@ -152,6 +184,23 @@ pub(crate) fn theme_bootstrap(default_theme: Option<&str>) -> String {
         sheet.setAttribute('blocking', 'render');
         sheet.href = 'tokens/css/theme-' + palette + '.css';
         document.head.appendChild(sheet);
+
+        // Started here rather than in `site.js`, which cannot ask for it until
+        // it has resolved the palette from `axes.json` — three requests in
+        // series, all of them after the first paint. This one leaves with the
+        // stylesheet, so the numbers in the ramp browser land about as early as
+        // they can. `site.js` reads the promise off `{THEME_FETCH}` and only
+        // fetches for itself when the name does not match.
+        if (typeof fetch === 'function') {{
+          window.{THEME_FETCH} = {{
+            theme: palette,
+            data: fetch('tokens/json/themes/' + palette + '.json')
+              .then(function (r) {{ return r.ok ? r.json() : null; }})
+              // Swallowed on purpose: a failure here is not an error, it is a
+              // missed optimisation, and `site.js` refetches and reports.
+              .catch(function () {{ return null; }}),
+          }};
+        }}
       }}"
         )
     });

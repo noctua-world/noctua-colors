@@ -54,16 +54,23 @@ fn the_readme_integration_examples_still_resolve() {
         std::fs::read_to_string(dist.join(relative)).unwrap_or_else(|e| panic!("{relative}: {e}"))
     };
 
-    // Plain CSS.
-    let css = read("css/ochre-balanced.css");
+    // Plain CSS. The semantic contract lives in `contexts.css` — every theme
+    // resolved it identically, so it is written once — and the theme file
+    // carries the values it points at. The README says to link both.
+    let contexts = read("css/contexts.css");
     for token in [
         "--nc-color-surface-raised:",
         "--nc-color-fg:",
         "--nc-color-border:",
         "--nc-color-ring:",
     ] {
-        assert!(css.contains(token), "README promises {token}");
+        assert!(contexts.contains(token), "README promises {token}");
     }
+    let css = read("css/ochre-balanced.css");
+    assert!(
+        css.contains("--nc-neutral-bg-element:"),
+        "the theme file must carry the values the contract points at"
+    );
 
     // Tailwind.
     let tailwind = read("tailwind/theme.css");

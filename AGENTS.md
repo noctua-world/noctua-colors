@@ -8,6 +8,94 @@
 > artifacts* in it. This diverges from the rest of the `noctua-*` fleet, which is
 > pt-BR. The divergence is deliberate; do not "correct" it.
 
+## Before anything else: are you in the right place?
+
+This repository lives inside **`noctua-workspace`**, and agents must be started at
+the workspace root — not here. From inside this repository the other repositories
+are invisible, so an agent cannot read the shared colour contract, edit a
+design-system component, or consult the master technical reference.
+
+Run this **once, at the start of the session, before any other work.** Do not
+re-run it per task.
+
+```sh
+d=$PWD; found=
+while :; do
+  [ -f "$d/.noctua-workspace" ] && { found=$d; break; }
+  [ "$d" = / ] && break
+  d=$(dirname "$d")
+done
+if [ -z "$found" ]; then
+  echo "NOCTUA_WS=outside"
+elif [ "$found" = "$PWD" ]; then
+  echo "NOCTUA_WS=root"
+else
+  case $PWD in
+    "$found"/repos/*) echo "NOCTUA_WS=inside-repo:$found" ;;
+    *)                echo "NOCTUA_WS=inside-workspace:$found" ;;
+  esac
+fi
+```
+
+- **`root`** → proceed silently. Print nothing.
+- **`inside-repo:…`** → print **ALARM A** below verbatim, stop, and ask whether to
+  continue or abort. Touch nothing until answered.
+- **`outside`** → print **ALARM B** below verbatim, and stop the same way.
+- **`inside-workspace:…`** → not an alarm. Print the one-line correction, then
+  continue, resolving paths against the workspace root.
+
+**ALARM A — wrong starting directory:**
+
+```
+🚨🚨🚨 STOP — WRONG DIRECTORY 🚨🚨🚨
+
+⛔ THIS AGENT WAS NOT STARTED FROM THE NOCTUA WORKSPACE. ⛔
+
+YOU ARE INSIDE A SINGLE REPOSITORY. FROM HERE I CANNOT SEE THE OTHER
+NOCTUA REPOSITORIES, SO I WILL NOT BE ABLE TO READ THE SHARED COLOUR
+TOKENS, EDIT A DESIGN-SYSTEM COMPONENT, OR CHECK THE MASTER TECHNICAL
+REFERENCE. I WILL GUESS, AND MY GUESSES WILL BE WRONG. 🙈
+
+✅ WHAT TO DO: STOP WHAT YOU ARE DOING, CLOSE THIS AGENT, AND REOPEN IT AT:
+
+    /home/noctua/main/prjs/noctua-workspace
+
+❓ DO YOU WANT ME TO CONTINUE ANYWAY, OR ABORT THE CURRENT WORK?
+   I WILL NOT TOUCH ANYTHING UNTIL YOU ANSWER. 🛑
+```
+
+**ALARM B — repository outside the workspace:**
+
+```
+🚨🚨🚨 STOP — REPOSITORY IN THE WRONG PLACE 🚨🚨🚨
+
+⛔ THIS REPOSITORY IS NOT INSIDE THE NOCTUA WORKSPACE. ⛔
+
+I SEARCHED EVERY PARENT DIRECTORY AND FOUND NO `.noctua-workspace`
+MARKER. THIS CLONE IS SOMEWHERE IT SHOULD NOT BE, SO NOTHING SHARED —
+COLOUR TOKENS, THE DESIGN SYSTEM, THE MASTER TECHNICAL REFERENCE — IS
+REACHABLE FROM HERE. 🙈
+
+✅ WHAT TO DO: STOP, AND RE-CLONE THIS REPOSITORY INSIDE:
+
+    /home/noctua/main/prjs/noctua-workspace/repos/
+
+   THEN REOPEN THE AGENT AT THE WORKSPACE ROOT, NOT INSIDE THE REPOSITORY.
+
+❓ DO YOU WANT ME TO CONTINUE ANYWAY, OR ABORT THE CURRENT WORK?
+   I WILL NOT TOUCH ANYTHING UNTIL YOU ANSWER. 🛑
+```
+
+**The correction (not an alarm):**
+
+```
+⚠️ Started in a workspace subdirectory, not at the workspace root.
+   Working from <path> instead. Everything is reachable, so continuing.
+```
+
+These texts are authored once, in `NOCTUA.md §3.6`, and copied here verbatim so
+they cannot drift. If one changes, change it there and propagate.
+
 ## What this is
 
 A **color system compiler**. A small declarative spec goes in; every artifact
@@ -25,8 +113,14 @@ not the colors.** No hand-picked hex exists in the source. Two ideas carry it:
 
 ## Status
 
-Complete, end to end. **Nothing is committed yet** — the tree is untracked,
-awaiting the first commit.
+Complete, end to end, and committed. It has no remote yet — see **Publishing**
+below and `NOCTUA.md §5.3`.
+
+**Counts rot; commands do not.** For the current shape read `dist/MANIFEST.json`
+(every generated file plus the spec's hash), `dist/json/axes.json` (the accent ×
+saturation grid) and `dist/json/palette.json` (roles, gamuts, ramps, the semantic
+map, the slots). Prose in this repository that states a number is a convenience
+and `dist/` is the truth.
 
 ## Repository map
 
@@ -84,7 +178,10 @@ Breaking any of these is a defect, not a tradeoff.
 7. **Out of scope, permanently:** spectral data, chromatic adaptation,
    viewing-condition models, tone mapping. No stubs for them either.
 8. **A context is an alias until proven otherwise.** A new `[families.*]` costs
-   a hue the wheel has not got and 3.5 MiB; a `[semantic]` line costs 15 KiB.
+   a hue the wheel has not got and 3.5 MiB; a `[semantic]` line costs five
+   `var()` references written **once**, because the semantic layer is shared —
+   see the entry on `contexts.css`. Three hundred and fifty-two contexts on ten
+   families is the shipped ratio.
 
 ## Commands
 
@@ -108,9 +205,19 @@ palette authored for P3 has colors sRGB cannot show, and `cr` cannot exceed 1.
 
 ## Recipes
 
-**Add a context.** One line in `[semantic]` mapping it to an existing family, and
-it reaches every target. Read the hue-wheel entry below before adding a
-`[families.*]` instead — the answer is almost always an alias.
+**Add a context.** One line in `[semantic]` mapping it to an existing family, in
+the subject group it belongs to, and it reaches every target. Read the hue-wheel
+entry below before adding a `[families.*]` instead — the answer is almost always
+an alias, and at three hundred and fifty-two contexts it is always an alias.
+
+**Add a categorical set.** One `[[charts]]` block with a `name`. Past about six
+entries no generated set separates under all three dichromacies; `labelled =
+true` says the legend names every series, and turns the gate's report into one
+measured note per deficiency instead of one per pair. It does not lower the
+floor — two entries inside a JND still fail. **Measure rather than
+interpolate:** the placement is not monotone in the lightness centres, and the
+band is clamped into 0.08–0.95, so a spread that runs off the top piles entries
+onto each other. See `[[charts]] name = "chart-wide"` for the numbers.
 
 **Add a family.** One block with a `hue`; the rest defaults. Rebuild `dist/` and
 the golden, then read the new CVD margins.
@@ -187,8 +294,12 @@ search over every shift combination: the best worst-case separation a six-family
 set reaches is **0.0163**, under one JND, and there are now ten families. Hue is
 the axis dichromacy removes and there is not enough lightness left to replace
 it. The gate reports margins and warns, failing only on identical colors — and
-reports **one finding per pair**, naming the worst palette, or thirty-six
-palettes would bury every other gate. Never "fix" this by raising the shifts or
+reports **one finding per pair**, naming the worst palette, or thirty-nine
+palettes would bury every other gate. A categorical set declaring `labelled =
+true` collapses further, to one finding per deficiency: twelve entries is
+sixty-six pairs, and publishing each shortfall would bury the report in two
+hundred notes restating one measured limit. Every pair is still measured, and a
+pair below the floor still fails. Never "fix" this by raising the shifts or
 lowering the target.
 
 **`OPPOSED` is curated; `margins` measures everything.** Forty-five pairs gated
@@ -261,9 +372,16 @@ Lc 58 against a dark ground means lightness 0.75. Text targets stay near-equal.
 is **ARGB**, not RGBA: alpha leads, which is why `value::hex_argb` and
 `hex_rgba` are two functions rather than one with a flag. The same eight digits
 read as two different colours, so a mistake there produces a plausible result
-instead of an error. Qt also rejects a JavaScript reserved word as a property
-name and takes the whole singleton down with it — `new` is a real context in the
-shipped spec, so `name::qml_property` escapes it. Tailwind's `@theme` must be
+instead of an error. Qt also rejects a reserved word as a property name and takes
+the **whole singleton** down with it — `new` is a real context in the shipped
+spec, so `name::qml_property` escapes it. **`QML_RESERVED` is the full keyword
+set, not a curated one:** it used to hold "the ones a colour token could
+plausibly be called", which was defensible at two dozen contexts and stopped
+being so at three hundred and fifty — `readonly` and `required` are QML property
+keywords that no JavaScript list contains, and both are shipped contexts. Judging
+plausibility is the part that failed; the list is cheap, so it is complete, and
+`every_slot_survives_every_target` checks the emitted names rather than trusting
+that the escape was called. Tailwind's `@theme` must be
 `@theme inline`, because a plain `@theme` bakes the value at build time and the
 dark-mode override never applies; the utilities then look right in light mode and
 are frozen there.
@@ -293,12 +411,16 @@ nothing reports a pair nobody thought of. Four of twenty-three tokens were
 ungated exactly that way (every `*-border`). `contrast::pairs` groups rows by
 family, so four aliases of `danger` do not report one failure four times.
 
-**A scale is not a chart, and three facts about ordered scales cost measurement.**
-`[chart]` spreads hues *around the wheel* for a legend and is checked pairwise;
-`[[scales]]` walks a hue *path* to be read in order, where pairwise is the wrong
-property (confusing `level-2` with `level-7` loses precision, not meaning) and the
-checks are instead neighbours separable, ends opposed, simulated lightness
-monotone. Both live in one `ResolvedMode::scales` map keyed by stem, so an emitter
+**A scale is not a chart, and a scale says which it is rather than being
+recognised by name.** A categorical set spreads hues *around the wheel* for a
+legend and is checked pairwise; an ordered one walks a hue *path* to be read in
+order, where pairwise is the wrong property (confusing `level-2` with `level-7`
+loses precision, not meaning) and the checks are instead neighbours separable,
+ends opposed, simulated lightness monotone. That distinction used to be
+`name == "chart"`, spelled out in the colour-vision gate, `sections.rs` and
+`site.js` — one fact in three places, and all three wrong the moment a second
+categorical set existed. `ResolvedScale::kind` carries it now and the JSON emits
+it, so a consumer reads rather than guesses. Both live in one `ResolvedMode::scales` map keyed by stem, so an emitter
 loops. **Hue and lightness are placed separately** — `ordinal::place` by arc
 length on one lightness slice, lightness by *stop index* — because one combined
 measure lets them trade and bunches stops exactly where hue does the most work and
@@ -313,11 +435,22 @@ build output skipped.** Without the `[workspace]`, `cargo build` inside
 `dist/rust` fails and vendoring it absorbs it into the consumer's workspace. The
 features are not about compile time — half a second for the lot — but `.rmeta`,
 which every consumer naming the crate loads for whatever is compiled in:
-megabytes at thirty-six palettes, where `examples/consumer-rust` uses four. The
+megabytes at thirty-nine palettes, where `examples/consumer-rust` uses four. The
 default is the first theme, the one the CSS binds to `:root`. And compiling it
 leaves `target/` and `Cargo.lock` inside `dist/` — byproducts of *using* the
 artifacts — so the sync check skips both, or one `cargo build` reports hundreds
 of stale files.
+
+**`Path::starts_with` does not understand `..`, and that silently disabled a
+safety notice.** `export` announces "outside this repository" before writing into
+a sibling checkout, because writing into somebody else's tree unannounced is not a
+thing a build tool should do quietly. The check was
+`destination.starts_with(root)` — purely lexical, so `<root>/../noctua-design`
+*starts with* `<root>` and the notice never fired for exactly the paths it exists
+to announce. It went unnoticed until the first `../` consumer was registered.
+`export::normalize` resolves `..` and `.` lexically first. Lexical rather than
+`fs::canonicalize` on purpose: a consumer's directory legitimately does not exist
+before the first export, and `canonicalize` fails on a path that is not there.
 
 **Two workspace facts.** `clippy::float_cmp` is allowed in test modules only,
 where assertions compare against literal sentinels the functions return verbatim
@@ -405,7 +538,7 @@ needs *more* than cool because the base tint is itself warm. `spacing.rs` has th
 argument and now gates the peak, failing under a JND.
 
 **The docs page renders one palette and builds the rest in the browser.** All
-thirty-six would be a 2.4 MB page of seventeen thousand nodes. `sections.rs` emits
+thirty-nine would be a 2.4 MB page of seventeen thousand nodes. `sections.rs` emits
 the default; `renderRamps` in `site.js` mirrors `ramp_table`/`swatch` for the
 others, from `tokens/json/themes/<name>.json`. Two renderers is the cost, and
 `the_two_ramp_renderers_agree` fails the build if the Rust grows a `data-`
@@ -420,32 +553,75 @@ layer in the plain CSS would claim 150-odd names in Tailwind's namespace for a
 consumer who never installed it. Tailwind maps
 `--color-surface: var(--nc-color-surface)`, so the contract is defined once.
 
-**A theme file is one palette, and renaming a theme renames it.**
-`ochre-balanced.css` carries the semantic layer plus every `--nc-<family>-*`; the
-dense ramps (`--nc-gray*-*`) are in `ramp.css` and the other palettes in files of
-their own, and `index.css` imports all thirty-six, which is two megabytes. Asking
-for `--nc-gray-4` having linked only a theme file fails *silently*, because CSS
-drops an undefined custom property — the `references` gate catches that in-repo.
-And a rename moves the file, so `README.md`, `examples/`, the integration snippet
-in `sections.rs` and `noctua_docs::token_files` must move with it.
-`dist/css/index.css` is the one name that never does.
+**A theme file is one palette's *values*, and renaming a theme renames it.**
+`ochre-balanced.css` carries every `--nc-<family>-*` and nothing else that is
+shared; the dense ramps (`--nc-gray*-*`) are in `ramp.css`, the semantic contract
+is in `contexts.css`, and the other palettes are in files of their own.
+`index.css` imports all of it. Asking for `--nc-gray-4` or `--nc-color-success`
+having linked only a theme file fails *silently*, because CSS drops an undefined
+custom property — the `references` gate catches that in-repo, and **the trap is
+now two files wide**. A rename moves the file, so `README.md`, `examples/`, the
+integration snippet in `sections.rs` and `noctua_docs::token_files` must move
+with it. `dist/css/index.css` is the one name that never does.
 
-**Restoring `data-palette` is not restoring the palette.** The inline bootstrap
-sets the attribute before the first paint, but the sheet that *defines*
-`[data-palette="umber-balanced"]` is a separate file — so for two milestones the
-page painted in the default theme and snapped over when `site.js` fetched the
-right one, on every reload. The bootstrap now injects that sheet itself, and
-**`blocking="render"` on it is load-bearing**: a stylesheet inserted by script is
-*not* render-blocking by default, and Chrome says so through
-`PerformanceResourceTiming.renderBlockingStatus` — "non-blocking" without the
-attribute, "blocking" with it. Without it the injection changes nothing visible.
+**The semantic layer is emitted once, not per theme.** `--nc-color-rejected:
+var(--nc-danger-solid)` is the same sentence in every palette — the colour behind
+it changes, the sentence does not — so it lives in `dist/css/contexts.css` and at
+the top of `palette.json`, and a theme file carries only what a
+`[themes.<name>.semantic]` block overrides. Measured before the split: 97 KB of
+each 225 KB stylesheet and 58.7 KB of each of the seventy-eight mode blocks,
+which at three hundred and fifty-two contexts was most of `dist/`. Two details
+are load-bearing. The shared block is **`:where(:root)`**, at zero specificity,
+so a theme's own `[data-palette="…"]` override wins whatever order a consumer
+linked the files in; a plain `:root` would tie at (0,1,0) and let link order
+decide. And the split is **derived from the resolved palette** — a slot is shared
+because every theme resolved it alike, not because the spec was read a
+particular way — so any future mechanism that moves a slot lands in `per_theme`
+without this knowing about it. `tokens::semantic_layer` owns it; every emitter
+asks.
 
-**Webfonts are `font-display: optional`, not `swap`.** Both avoid blocking on the
-download; only `optional` avoids the reflow afterwards, and on a page that is
-mostly tables of hex values a swap moves every column. The faces are preloaded
-and total 34 KB, so the browser has them in time on every visit but the first
-with a cold cache — and that one renders in a platform monospace, which is what
-the fallback stack is for.
+**Restoring `data-palette` is not restoring the palette, and the restore is only
+as good as the key it reads.** The inline bootstrap sets the attribute before the
+first paint, but the sheet that *defines* `[data-palette="umber-balanced"]` is a
+separate file — so for two milestones the page painted in the default theme and
+snapped over when `site.js` fetched the right one, on every reload. The bootstrap
+injects that sheet itself, and **`blocking="render"` on it is load-bearing**: a
+stylesheet inserted by script is *not* render-blocking by default, and Chrome
+says so through `PerformanceResourceTiming.renderBlockingStatus` —
+"non-blocking" without the attribute, "blocking" with it.
+
+**And then the whole mechanism sat unreachable for a milestone,** because
+`site.js` wrote `noctua-palette` only inside `if (flatSelect)` — a control the
+accent grid never renders. The key the bootstrap reads was never written, so
+every reload painted the default and repainted after three requests in series.
+Nothing failed: two halves of one contract, and nothing compared them.
+`the_script_writes_the_palette_key_the_bootstrap_reads` does now. The bootstrap
+also starts the palette JSON itself and parks the promise on
+`window.__noctuaThemeFetch`, because `site.js` cannot ask for it until it has
+resolved the palette out of `axes.json`.
+
+**Three more things flashed on reload, each independently.** *Swatches* were
+painted with `style="background: <the value that token had at generation time>"`
+— only the default palette is server-rendered, so every tile in the browser
+showed ochre until the JSON landed; they paint from `var(--nc-<stem>)` now and
+the JSON only refreshes the numbers. *Mode-dependent blocks* were `hidden` in the
+markup and unhidden by script, so a dark-mode visitor painted the light ramp
+table and watched it be replaced — and saw the wrong one entirely with script
+off; `[data-mode]` in `site.css` decides now, and `syncVisibility` is gone.
+*Every `.reveal`* was marked `pending` including the ones already painted, so the
+top of the page vanished the moment the script ran and faded back in an observer
+callback later; only elements below the fold are marked now.
+
+**Webfonts are `font-display: optional`, not `swap`, and *all three* faces are
+preloaded.** Both display modes avoid blocking on the download; only `optional`
+avoids the reflow afterwards, and on a page that is mostly tables of hex values a
+swap moves every column. But `optional` uses a face only if it is ready by the
+first paint and never swaps after — so a face the browser does not learn about
+until `fonts.css` parses misses that window and falls back *for that load*. Only
+the regular was preloaded, which left bold and italic falling back
+inconsistently from one reload to the next: the typeface appearing to flicker.
+All three total 34 KB and come from `page::font_preloads`, shared by both page
+shells.
 
 **The site is built once per language, not translated at runtime.** Strings are
 inline `t(locale, "English", "Português")` calls, so both exist or neither
@@ -479,6 +655,30 @@ true italic, not the slanted roman. `SIL OFL 1.1` must travel with the files and
 does, in `OFL.md`. The `pyftsubset` invocation and the reasoning are in
 `ATTRIBUTION.md`; source is `noctua-font/noctua-iosevka/`. `.TEMP/` is the landing
 area for future hand-vendored inputs — contents gitignored, `.gitkeep` tracked.
+
+## Local notes
+
+An **`AGENTS.local.md`** may exist beside this file: the developer's private,
+machine-specific notes. **Look for one.** It is gitignored and is never committed.
+The same convention holds in every repository of the workspace — `NOCTUA.md §3.4`.
+
+## Publishing
+
+This repository has **no git remote yet**, and `noctua-design` therefore consumes
+it by local path (`NOCTUA.md §5.3`, §8.6). When a URL arrives, publishing is:
+
+1. `git remote add origin <url>` and push `main`.
+2. Confirm CI is green **on the remote** — the workflow runs `cargo xtask check`,
+   the same command a developer runs, plus a byte-identical-rebuild job.
+3. `cargo xtask release <version>`, which writes the version everywhere it
+   appears. **Committing is left to a human** (`NOCTUA.md §2.6`).
+4. Tag and push tags.
+5. Switch consumers from the path dependency to the git-tag form. The path form in
+   each consumer carries the git form in a comment directly above it, so this is a
+   one-line change per consumer.
+
+Nothing is published to crates.io or npm. `dist/` is generated **and committed**,
+so a git dependency needs no build step and no registry.
 
 ## Maintaining this file
 

@@ -95,6 +95,15 @@ pub struct Spec {
     #[serde(default)]
     pub chart: Chart,
 
+    /// Further categorical scales, each under a name of its own.
+    ///
+    /// One chart is enough until a page needs two — a second series set beside
+    /// the first, or a set wide enough that its legend names every entry. Each
+    /// entry here is an ordinary [`Chart`] plus a `name`, and produces
+    /// `<name>-1`, `<name>-2` and so on.
+    #[serde(default)]
+    pub charts: Vec<Chart>,
+
     /// Export destinations.
     #[serde(default)]
     pub consumers: Vec<Consumer>,
@@ -505,6 +514,31 @@ pub struct FamilyOverride {
 #[derive(Debug, Clone, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Chart {
+    /// Token stem, for an entry in `[[charts]]`.
+    ///
+    /// `None` on the unnamed `[chart]`, which is always emitted as `chart-*`.
+    /// One struct rather than a `Chart` and a `NamedChart` that repeat ten
+    /// fields between them: `#[serde(flatten)]` would have been the other way
+    /// to share them, and it silently disables `deny_unknown_fields`, which
+    /// this format relies on. The two shapes that would be wrong — a name on
+    /// `[chart]`, no name in `[[charts]]` — are caught by
+    /// [`crate::validate`], with a span and a fix.
+    #[serde(default)]
+    pub name: Option<String>,
+
+    /// Whether this set is documented as needing a labelled legend.
+    ///
+    /// Six generated colors can be kept apart under all three dichromacies;
+    /// twelve cannot, and no arrangement of hue and lightness changes that.
+    /// Setting this says the limit is understood and the legend names every
+    /// entry, so the colour-vision gate reports the measured margins as notes
+    /// rather than as warnings — the difference being that a warning means *a
+    /// different choice would fix this* and a note means *this is the measured
+    /// limit*. It never silences a finding, and it never lowers the floor:
+    /// two entries that are literally the same colour still fail.
+    #[serde(default)]
+    pub labelled: bool,
+
     /// How many colors to generate.
     #[serde(default = "default_chart_count")]
     pub count: usize,
@@ -674,6 +708,8 @@ impl Default for Theme {
 impl Default for Chart {
     fn default() -> Self {
         Self {
+            name: None,
+            labelled: false,
             count: default_chart_count(),
             spread: Spread::default(),
             cr: default_chart_cr(),

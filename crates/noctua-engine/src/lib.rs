@@ -21,6 +21,6 @@ pub use error::EngineError;
 pub use fit::{Fit, fit_family};
 pub use palette::{
     AlphaScale, BASE_NEUTRAL_RAMP, CHART_SCALE, Palette, ResolvedColor, ResolvedFamily,
-    ResolvedMode, ResolvedStep, ResolvedTheme, build,
+    ResolvedMode, ResolvedScale, ResolvedStep, ResolvedTheme, ScaleKind, build,
 };
 pub use solve::Mode;

@@ -161,12 +161,26 @@ hue_correction = [[0.25, 3.5], [0.55, 5.5], [0.85, 1.5]]
 # Slot on the left, family on the right. A slot named after a family is mapped
 # to it automatically, so only the names that differ appear here.
 #
-# Declared once rather than per theme: with thirty-six palettes, repeating two
-# dozen aliases in each would be the largest and least informative part of this
-# file. A `[themes.<name>.semantic]` block still overrides one palette.
+# Declared once rather than per theme: with thirty-nine palettes, repeating
+# three hundred aliases in each would be the largest and least informative part
+# of this file. A `[themes.<name>.semantic]` block still overrides one palette,
+# and only what it overrides is written per theme — everything below is emitted
+# once, into `dist/css/contexts.css` and its equivalents.
 #
 # Every slot emits five tokens — `--nc-color-rejected`, `-hover`, `-bg`,
 # `-border`, and `--nc-color-on-rejected`.
+#
+# **Every one of these is an alias, and that is the whole design.** A family
+# costs a full twelve-role ramp in every theme, mode and gamut; an alias costs
+# five `var()` references, written once. Ten families carry three hundred and
+# fifty contexts because the wheel has room for ten hues and not for three
+# hundred and fifty — see the note above `[families.urgent]`. A context earns a
+# family only when its meaning has to be told apart from every other *without a
+# legend*, and none of the ones below does.
+#
+# The groups are how a reader looks a name up, so they are by subject rather
+# than by family. Within a group the aliases are ordered by family, because
+# what a reader checks next is which other names share a colour.
 
 [semantic]
 # Done, and done well.
@@ -205,6 +219,401 @@ paused = "neutral"
 # In flight, in both directions.
 sent = "progress"
 received = "progress"
+
+# Severity and emphasis.
+# How loud a message is, from `fatal` down to `debug`. `default` is
+# deliberately the same blue as `normal` and `info`: a system that gives
+# "nothing special" its own colour has coloured the background noise.
+critical = "danger"
+fatal    = "danger"
+severe   = "danger"
+failed   = "danger"
+failing  = "danger"
+alert    = "urgent"
+major    = "urgent"
+caution  = "warning"
+minor    = "warning"
+default  = "info"
+notice   = "info"
+hint     = "info"
+tip      = "info"
+subtle   = "neutral"
+silent   = "neutral"
+debug    = "neutral"
+disabled = "neutral"
+
+# Lifecycle of a job.
+# A job, from queued to finished. The four families that exist only for
+# this — waiting, active, progress, urgent — are why: `queued` beside
+# `running` beside `stalled` has to be readable without a legend.
+pending      = "waiting"
+queued       = "waiting"
+scheduled    = "waiting"
+standby      = "waiting"
+idle         = "waiting"
+loading      = "progress"
+initializing = "progress"
+starting     = "progress"
+stopping     = "progress"
+retrying     = "progress"
+processing   = "progress"
+recovering   = "progress"
+running      = "active"
+busy         = "active"
+ready        = "active"
+resumed      = "active"
+stopped      = "neutral"
+skipped      = "neutral"
+partial      = "neutral"
+stalled      = "urgent"
+blocked      = "urgent"
+timeout      = "urgent"
+expired      = "urgent"
+retried      = "urgent"
+complete     = "success"
+done         = "success"
+resolved     = "success"
+restored     = "success"
+canceled     = "danger"
+aborted      = "danger"
+terminated   = "danger"
+unresolved   = "warning"
+
+# Work items: issues, reviews, tickets.
+# Issues, reviews and tickets. `open` is informational rather than a
+# warning: most things are open, and colouring the common case makes the
+# uncommon one invisible.
+open        = "info"
+reopened    = "info"
+answered    = "info"
+duplicate   = "info"
+needsinfo   = "info"
+closed      = "neutral"
+dismissed   = "neutral"
+wontfix     = "neutral"
+ignored     = "neutral"
+unanswered  = "neutral"
+merged      = "success"
+solved      = "success"
+approved    = "success"
+accepted    = "success"
+submitted   = "waiting"
+resubmitted = "waiting"
+review      = "waiting"
+appealed    = "waiting"
+escalated   = "urgent"
+disputed    = "urgent"
+flagged     = "urgent"
+reported    = "urgent"
+withdrawn   = "danger"
+revoked     = "danger"
+suspended   = "danger"
+banned      = "danger"
+conflict    = "warning"
+
+# Access and visibility.
+# What may be reached, and by whom. Locked is grey rather than red:
+# a locked record is a normal state, not a problem.
+locked       = "neutral"
+unlocked     = "neutral"
+frozen       = "neutral"
+hidden       = "neutral"
+private      = "neutral"
+internal     = "neutral"
+restricted   = "neutral"
+readonly     = "neutral"
+editable     = "neutral"
+enabled      = "success"
+visible      = "success"
+public       = "success"
+shared       = "success"
+external     = "success"
+authorized   = "success"
+forbidden    = "danger"
+unauthorized = "danger"
+
+# Connectivity and service health.
+# Reachability and service health. `degraded` warns and `outage`
+# alarms — the pair is the difference between slow and gone.
+online       = "active"
+connected    = "active"
+live         = "active"
+realtime     = "active"
+offline      = "neutral"
+disconnected = "neutral"
+dormant      = "neutral"
+lapsed       = "neutral"
+reconnecting = "progress"
+unreachable  = "danger"
+outage       = "danger"
+degraded     = "warning"
+unstable     = "warning"
+unhealthy    = "warning"
+maintenance  = "info"
+healthy      = "success"
+stable       = "success"
+operational  = "success"
+
+# Release maturity.
+# How finished a thing is. The unreleased end takes the brand, because a
+# preview is something to point at; the retired end is grey, because it
+# is not.
+alpha        = "accent"
+beta         = "accent"
+preview      = "accent"
+canary       = "accent"
+nightly      = "accent"
+prerelease   = "accent"
+launched     = "accent"
+deprecated   = "warning"
+outdated     = "warning"
+downgraded   = "warning"
+legacy       = "neutral"
+obsolete     = "neutral"
+retired      = "neutral"
+discontinued = "neutral"
+unreleased   = "neutral"
+reverted     = "neutral"
+rollback     = "neutral"
+unsupported  = "danger"
+supported    = "success"
+updated      = "success"
+upgraded     = "success"
+migrated     = "success"
+released     = "success"
+restocked    = "success"
+migrating    = "progress"
+staged       = "progress"
+
+# Build, test, deploy.
+# Build, test, deploy. The verb forms are in flight and the past
+# participles have landed, which is the whole distinction these carry.
+deploying   = "progress"
+building    = "progress"
+testing     = "progress"
+installing  = "progress"
+updating    = "progress"
+syncing     = "progress"
+uploading   = "progress"
+downloading = "progress"
+deployed    = "success"
+built       = "success"
+tested      = "success"
+passing     = "success"
+installed   = "success"
+synced      = "success"
+uploaded    = "success"
+downloaded  = "success"
+verified    = "success"
+validated   = "success"
+valid       = "success"
+confirmed   = "success"
+invalid     = "danger"
+uninstalled = "neutral"
+unsynced    = "neutral"
+unverified  = "neutral"
+unconfirmed = "neutral"
+
+# Commerce, catalogue and fulfilment.
+# Catalogue, payment and fulfilment. Money that has not arrived warns
+# rather than alarms until it is actually reversed.
+featured    = "accent"
+pinned      = "accent"
+starred     = "accent"
+favorite    = "accent"
+bookmarked  = "accent"
+recommended = "accent"
+popular     = "accent"
+trending    = "accent"
+top         = "accent"
+limited     = "accent"
+exclusive   = "accent"
+premium     = "accent"
+pro         = "accent"
+free        = "info"
+trial       = "info"
+quoted      = "info"
+invoiced    = "info"
+billed      = "info"
+expiring    = "warning"
+overdue     = "warning"
+unpaid      = "warning"
+backordered = "warning"
+renewed     = "success"
+paid        = "success"
+settled     = "success"
+captured    = "success"
+delivered   = "success"
+available   = "success"
+preorder    = "success"
+chargeback  = "danger"
+voided      = "danger"
+refunded    = "danger"
+undelivered = "danger"
+unavailable = "danger"
+shipped     = "progress"
+transit     = "progress"
+dispatched  = "progress"
+packing     = "progress"
+ordered     = "progress"
+returned    = "progress"
+reserved    = "waiting"
+booked      = "waiting"
+occupied    = "waiting"
+vacant      = "neutral"
+unclaimed   = "neutral"
+unassigned  = "neutral"
+unselected  = "neutral"
+
+# Assignment and inbox.
+# Who has it, and what has been looked at. `read` is grey on
+# purpose: an inbox where everything is coloured has no unread state.
+assigned  = "active"
+claimed   = "active"
+joined    = "active"
+focused   = "active"
+selected  = "active"
+invited   = "waiting"
+snoozed   = "waiting"
+unread    = "waiting"
+unseen    = "waiting"
+read      = "neutral"
+seen      = "neutral"
+replied   = "neutral"
+forwarded = "neutral"
+bounced   = "danger"
+spam      = "danger"
+
+# Content and documents.
+# Documents and their edit state. `stale` warns and `fresh` reads as live,
+# which is the pair a cache has to be able to show.
+created     = "success"
+published   = "success"
+duplicated  = "success"
+edited      = "info"
+modified    = "info"
+renamed     = "info"
+moved       = "info"
+imported    = "info"
+exported    = "info"
+unchanged   = "neutral"
+unpublished = "neutral"
+deleted     = "neutral"
+empty       = "neutral"
+truncated   = "neutral"
+collapsed   = "neutral"
+expanded    = "neutral"
+filled      = "neutral"
+full        = "neutral"
+overflow    = "warning"
+stale       = "warning"
+fresh       = "active"
+cached      = "active"
+
+# Configuration.
+# Settings and form fields. Only `required` carries alarm; the rest
+# are grey, because a form where every field is coloured has no
+# required field.
+required      = "urgent"
+mandatory     = "urgent"
+optional      = "neutral"
+inherited     = "neutral"
+custom        = "neutral"
+system        = "neutral"
+automatic     = "neutral"
+manual        = "neutral"
+overridden    = "neutral"
+indeterminate = "neutral"
+unchecked     = "neutral"
+checked       = "success"
+
+# Capacity and performance.
+# Load and throughput. The restraints — throttled, quarantined — are
+# urgent rather than danger: something is being held back, not broken.
+quarantined = "urgent"
+isolated    = "urgent"
+throttled   = "urgent"
+ratelimited = "urgent"
+overloaded  = "urgent"
+congested   = "urgent"
+sandboxed   = "neutral"
+slow        = "warning"
+suboptimal  = "warning"
+decreased   = "warning"
+falling     = "warning"
+optimal     = "success"
+increased   = "success"
+rising      = "success"
+steady      = "success"
+peak        = "success"
+
+# Magnitude.
+# Three levels, as a traffic light. These are contexts, not the
+# `magnitude` scale below: a badge reading `high` and a five-stop ordered
+# scale are different things, and neither should have to be explained as
+# the other.
+high   = "danger"
+medium = "warning"
+low    = "success"
+
+# Security and compliance.
+# Posture and compliance. Unsigned and untrusted warn while breached and
+# compromised alarm, which is the difference between unproven and known
+# bad.
+safe         = "success"
+secure       = "success"
+encrypted    = "success"
+signed       = "success"
+trusted      = "success"
+patched      = "success"
+compliant    = "success"
+certified    = "success"
+licensed     = "success"
+unsafe       = "danger"
+insecure     = "danger"
+compromised  = "danger"
+breached     = "danger"
+vulnerable   = "danger"
+unsigned     = "warning"
+untrusted    = "warning"
+noncompliant = "warning"
+unlicensed   = "warning"
+
+# Planning and schedule.
+# Schedule against plan. `final` is informational rather than
+# celebratory — a final decision is not necessarily a good one.
+ontrack     = "success"
+ahead       = "success"
+concluded   = "success"
+offtrack    = "warning"
+behind      = "warning"
+postponed   = "warning"
+rescheduled = "warning"
+onhold      = "waiting"
+upcoming    = "waiting"
+provisional = "waiting"
+tentative   = "waiting"
+waitlist    = "waiting"
+ongoing     = "active"
+final       = "info"
+pilot       = "accent"
+prototype   = "accent"
+earlyaccess = "accent"
+
+# People and roles.
+# Accounts and roles. Elevated roles take the brand, because they are a
+# capability rather than a state.
+onboarding  = "progress"
+offboarding = "progress"
+anonymous   = "neutral"
+guest       = "neutral"
+deactivated = "neutral"
+silenced    = "neutral"
+member      = "info"
+returning   = "info"
+admin       = "accent"
+owner       = "accent"
+moderator   = "accent"
 
 
 # --- Neutral ------------------------------------------------------------
@@ -289,7 +698,7 @@ density = [
 # Every hue here sits at least 14 degrees from every semantic family — danger
 # 30.8, warning 89.7, success 144.0, info 232.0 — so a chosen accent is never
 # mistakable for a status colour. Spacing is therefore deliberately uneven:
-# these are twelve named choices, not a generated scale.
+# these are thirteen named choices, not a generated scale.
 #
 # One band is missing on purpose. Measured by sweeping the arc in 2.5-degree
 # steps, an accent between roughly 158 and 172 degrees collapses onto `danger`
@@ -347,7 +756,11 @@ vivid = 1.15
 sober = 0.55
 
 
-# --- Categorical scale --------------------------------------------------
+# --- Categorical scales --------------------------------------------------
+#
+# The default set is `[chart]`; every other is a `[[charts]]` block with a name.
+# They are all built the same way and differ only in where they start, how many
+# entries they have, and whether they admit to needing a legend.
 
 [chart]
 # Six rather than eight. Eight generated colours cannot be kept apart under
@@ -364,6 +777,73 @@ cr = 0.80
 # Entries span this much lightness. Hue alone cannot separate a categorical
 # scale for a dichromat: hue is the axis their vision is missing.
 lightness_spread = 0.60
+
+[[charts]]
+# The same six, starting from the opposite side of the wheel. Two sets on one
+# page — actual against forecast, this quarter against last — need to be told
+# apart from each other as well as within themselves, and starting `chart` twice
+# would produce two sets of the same six colours.
+#
+# `hue_start` is absolute here rather than inherited: the default set leads with
+# whichever accent the palette was installed with, so a second set defined as an
+# offset from it would move whenever the accent did, and its relationship to
+# the first would be the only thing that stayed fixed.
+name = "chart-alt"
+hue_start = 205.0
+count = 6
+spread = "even-delta-e"
+cr = 0.80
+lightness_spread = 0.60
+
+[[charts]]
+# Twelve, and the reason `labelled` exists.
+#
+# Colour alone does not separate twelve entries under all three dichromacies,
+# and no arrangement of hue and lightness changes that — six is roughly where a
+# generated set runs out. This one goes past it on purpose, for the case where
+# the legend names every series and colour is the secondary channel rather than
+# the only one. The gate still measures every pair and still fails on any two
+# that land inside a just-noticeable difference; what `labelled` changes is that
+# the shortfall is reported as the measured limit it is, once per deficiency,
+# instead of as sixty-six warnings advising a different choice that does not
+# exist. Measured here: **0.0331 at the closest pair**, against a floor of 0.02
+# and a target of 0.05.
+#
+# **The lightness centres are the load-bearing setting, not the spread, and
+# neither is smooth.** Entries are placed at `centre ± spread/2` and then
+# clamped into 0.08 to 0.95, so a band that runs off the top does not stop — it
+# piles up, and the entries that pile up are separated by hue alone, which is
+# what dichromacy removes. At the default dark centre of 0.70 with a spread of
+# 0.70 the last pair came out **0.0009 apart under tritanopia**: the same
+# colour.
+#
+# Lowering the centres fixes that, but the response is nowhere near monotone,
+# because `chart::hues` places hue by arc length on *one* lightness slice while
+# lightness is placed by index — move the slice and the hue spacing moves with
+# it. Measured across the neighbourhood, at count 12 and spread 0.62: centres
+# 0.60/0.66 give 0.0229, 0.62/0.66 give 0.0298, 0.64/0.66 give 0.0331. Holding
+# the centres and moving the spread instead barely helps — 0.60 and 0.64 give
+# 0.0261 and 0.0282 against 0.62's 0.0298. **Re-measure rather than
+# interpolate**; the surface has no slope worth following.
+name = "chart-wide"
+labelled = true
+count = 12
+spread = "even-delta-e"
+cr = 0.80
+lightness_light = 0.64
+lightness_dark = 0.66
+lightness_spread = 0.62
+
+[[charts]]
+# Three entries, well clear of each other, for the chart that has three series
+# and does not need a legend at all. Fewer entries means more room, so this is
+# the one categorical set with margin to spare — measure it and it should stay
+# far above the target where the others sit near it.
+name = "chart-trio"
+count = 3
+spread = "even-delta-e"
+cr = 0.80
+lightness_spread = 0.44
 
 
 # --- Ordered scales -----------------------------------------------------
@@ -422,10 +902,27 @@ lightness_spread = -0.34
 # --- Consumers ----------------------------------------------------------
 #
 # Where `cargo xtask export` copies generated output. Add three lines per
-# project; nothing else needs configuring. No sibling repository is registered
-# yet — output stays inside this one until real paths are added here.
+# project; nothing else needs configuring.
 
 [[consumers]]
 name = "docs-site"
 path = "docs-site/vendor/tokens"
 targets = ["css", "json-ts"]
+
+# The design system. Its path is relative to this repository, so it resolves
+# only inside the workspace layout — which is the layout every agent and every
+# developer is required to use (see AGENTS.md, and NOCTUA.md §3).
+#
+# It takes four targets and not the rest: `css` and `tailwind` are what the
+# components and the docs site style against, `json-ts` feeds the docs site's
+# palette browser, and `rust` is what the Dioxus package compiles in. It does
+# not take `scss`, `qml`, `dtcg` or `reports` — nothing there consumes them, and
+# an unused target is payload plus review surface.
+#
+# Until noctua-design exists (NOCTUA-PLAN.md Stage 3), `cargo xtask export`
+# reports this consumer and writes nothing new; the directory is created on the
+# first real export.
+[[consumers]]
+name = "noctua-design"
+path = "../noctua-design/packages/tokens/vendor"
+targets = ["css", "tailwind", "json-ts", "rust"]

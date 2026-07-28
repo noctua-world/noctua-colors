@@ -9,6 +9,7 @@ license.workspace = true
 # This crate performs NO color math. It consumes resolved, quantized colors and
 # formats them. See AGENTS.md ("Invariants").
 [dependencies]
+indexmap.workspace = true
 noctua-core.workspace = true
 noctua-engine.workspace = true
 noctua-spec.workspace = true
