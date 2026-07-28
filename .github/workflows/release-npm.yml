@@ -80,8 +80,26 @@ jobs:
             console.log(`unpacked ${(unpackedSize / 1048576).toFixed(1)} MiB, ${files.length} files`);
           '
 
+      # Publishing the same version twice is an error, and there are two
+      # ordinary ways to arrive here having already published: the bootstrap
+      # release, which must be published by hand because npm has no
+      # pending-publisher and a trusted publisher cannot be configured for a
+      # package that does not exist yet; and a re-run after a transient failure.
+      # Neither is a problem worth a red X, so this skips instead.
+      - name: Is this version already on the registry?
+        id: existing
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if npm view "@noctua-world/colors@${version}" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::@noctua-world/colors@${version} is already published; nothing to do"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # `--provenance` as well as publishConfig.provenance: the docs say OIDC
       # makes it automatic, practitioners report otherwise, and setting both
       # costs nothing.
       - name: Publish
+        if: steps.existing.outputs.published == 'false'
         run: npm publish --provenance --access public
