@@ -571,10 +571,26 @@ fn every_theme_ships_a_stylesheet_and_a_palette_file() {
             "{theme} has no palette file copied"
         );
 
-        // And they must actually exist where the site expects them.
+        // And the file the site copies has to exist to be copied.
+        //
+        // Probed in `dist/`, deliberately, not in `docs-site/public/`. The
+        // rendered site is gitignored and is written by `cargo xtask build`,
+        // while `cargo xtask check` never writes anything — so probing the
+        // rendered site made this test pass only on a machine that happened to
+        // have built recently, and fail on every fresh clone. It went unnoticed
+        // until the repository first had CI.
+        //
+        // Whether the copy actually happened is the site builder's business, and
+        // `xtask::site` is where that belongs; a test in this crate can only
+        // honestly assert what this crate decides, which is the list above and
+        // the existence of its sources.
         for file in [&stylesheet, &format!("json/themes/{theme}.json")] {
-            let path = root().join("docs-site/public/tokens").join(file);
-            assert!(path.exists(), "{} was never written", path.display());
+            let path = root().join("dist").join(file);
+            assert!(
+                path.exists(),
+                "{} is listed for the site but does not exist",
+                path.display()
+            );
         }
     }
 }
