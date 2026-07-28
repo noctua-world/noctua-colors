@@ -73,13 +73,22 @@ jobs:
             const { files, unpackedSize } =
               Array.isArray(parsed) ? parsed[0] : Object.values(parsed)[0];
             const leaked = files.filter(f =>
-              /^dist\/(ts|rust|qml|reports)\//.test(f.path) ||
-              /^dist\/json\/(palette|themes)/.test(f.path));
+              /^system\/(ts|rust|qml|reports)\//.test(f.path) ||
+              /^system\/json\/(palette|themes)/.test(f.path));
             if (leaked.length) {
               console.error("::error::excluded paths in the tarball:", leaked.map(f => f.path));
               process.exit(1);
             }
-            const limit = 20 * 1024 * 1024;
+            // A ceiling, not a target. It exists to catch the whole 79 MB tree
+            // leaking in, which is what happens when `files` is deleted or a
+            // path is mistyped — not to police ordinary growth.
+            //
+            // Raised from 20 to 32 MiB in 0.2.0, when the 39 per-palette
+            // stylesheets and their Tailwind entries took the package from
+            // 13.5 to 22.2 MiB. That is a deliberate trade: the whole point of
+            // those files is that a consumer downloads *one* of them, so the
+            // package is bigger and every real install is far smaller.
+            const limit = 32 * 1024 * 1024;
             if (unpackedSize > limit) {
               console.error(`::error::unpacked ${unpackedSize} exceeds ${limit}`);
               process.exit(1);

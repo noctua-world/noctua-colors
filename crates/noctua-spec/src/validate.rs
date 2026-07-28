@@ -24,8 +24,57 @@ pub(crate) fn check(spec: &Spec) -> Vec<Problem> {
     check_chart(spec, &mut problems);
     check_scales(spec, &mut problems);
     check_alpha(spec, &mut problems);
+    check_system(spec, &mut problems);
 
     problems
+}
+
+/// The colour system's declared version must be usable as one.
+///
+/// It is stamped into `package.json`, the generated crate's `Cargo.toml` and
+/// the manifest, and both registries reject a malformed version — but only
+/// after a tag has been pushed and a release workflow has started. Catching it
+/// here costs nothing and turns a failed publish into a failed `check`.
+///
+/// Deliberately not a full semver parser: this rejects the shapes that are
+/// certainly wrong rather than ruling on every shape that is right, because
+/// pre-release and build metadata are legitimate and this crate takes no
+/// dependency to know it.
+fn check_system(spec: &Spec, problems: &mut Vec<Problem>) {
+    let version = spec.system.version.trim();
+
+    if version.is_empty() {
+        problems.push(
+            Problem::whole_file("[system] has no version")
+                .fix("give it one, as in `version = \"0.2.0\"`"),
+        );
+        return;
+    }
+
+    let core = version
+        .split_once(['-', '+'])
+        .map_or(version, |(core, _)| core);
+    let numeric = core.split('.').collect::<Vec<_>>();
+
+    if numeric.len() != 3
+        || numeric
+            .iter()
+            .any(|part| part.is_empty() || !part.bytes().all(|b| b.is_ascii_digit()))
+    {
+        problems.push(
+            Problem::whole_file(format!(
+                "[system] version \"{version}\" is not major.minor.patch"
+            ))
+            .fix("both registries this publishes to require SemVer, as in `version = \"0.2.0\"`"),
+        );
+    }
+
+    if spec.system.name.trim().is_empty() {
+        problems.push(
+            Problem::whole_file("[system] has an empty name")
+                .fix("generated package metadata needs one, as in `name = \"noctua-colors\"`"),
+        );
+    }
 }
 
 /// Every family a semantic slot may point at, including the synthesized ones.

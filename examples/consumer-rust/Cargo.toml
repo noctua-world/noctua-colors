@@ -20,7 +20,7 @@ publish = false
 # palettes should not carry thirty-two it never mentions. `default-features =
 # false` drops even the default palette unless it is listed here — and
 # `ochre_balanced` is, because this example uses it.
-noctua-colors-tokens = { path = "../../dist/rust", default-features = false, features = [
+noctua-colors-tokens = { path = "../../system/rust", default-features = false, features = [
   "ochre_balanced",
   "ochre_vivid",
   "ochre_sober",

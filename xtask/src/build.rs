@@ -9,7 +9,7 @@ use crate::{site, ui};
 /// Loads the spec and builds the palette, touching nothing on disk.
 ///
 /// Separate from [`write`] for one important reason: `check` must **not**
-/// rewrite `dist/` before inspecting it. When these were one function, running
+/// rewrite `system/` before inspecting it. When these were one function, running
 /// `check` silently regenerated the artifacts and then compared them against
 /// themselves, so the hand-edit guard could never fire — the check reported
 /// "in sync" immediately after a file had been edited by hand.
@@ -42,29 +42,58 @@ pub(crate) fn palette(root: &Path, spec_path: &Path) -> Result<Palette, String> 
     Ok(palette)
 }
 
-/// Builds the palette and writes `dist/`.
+/// Where the **published** colour system lives.
+///
+/// Committed, and public API: consumers reach it by CDN URL, by Nix `src`, by
+/// submodule and by plain copy. Only `build --system` and `release` write here.
+pub(crate) const SYSTEM: &str = "system";
+
+/// Where an ordinary build writes.
+///
+/// Inside `target/`, so it is already gitignored, and so the everyday loop —
+/// edit the spec, build, look at the site — **cannot dirty the published
+/// system**. That separation is the point: before it existed, testing a hue
+/// rewrote the shipped colours, and the only thing between that and a commit
+/// was noticing a 250-file diff.
+pub(crate) const SCRATCH: &str = "target/system";
+
+/// The directory a build writes to.
+#[must_use]
+pub(crate) fn destination(root: &Path, publish: bool) -> std::path::PathBuf {
+    root.join(if publish { SYSTEM } else { SCRATCH })
+}
+
+/// Builds the palette and writes it.
+///
+/// `publish` chooses between the committed `system/` and the scratch tree. It is
+/// deliberately a parameter with no default here — the default belongs to the
+/// CLI, where a reader can see it.
 ///
 /// # Errors
 ///
 /// Any spec problem, unreachable colour target, or filesystem failure.
-pub(crate) fn run(root: &Path, spec_path: &Path) -> Result<Palette, String> {
+pub(crate) fn run(root: &Path, spec_path: &Path, publish: bool) -> Result<Palette, String> {
     let relative = relative_to(root, spec_path);
     let palette = palette(root, spec_path)?;
 
     let spec_text = std::fs::read_to_string(spec_path)
         .map_err(|error| format!("could not read {relative}: {error}"))?;
 
-    let dist = root.join("dist");
-    let written = noctua_emit::dist::write(&dist, &palette, &relative, &spec_text)
-        .map_err(|error| format!("could not write dist/: {error}"))?;
+    let destination = destination(root, publish);
+    let label = if publish { SYSTEM } else { SCRATCH };
+    let written = noctua_emit::output::write(&destination, &palette, &relative, &spec_text)
+        .map_err(|error| format!("could not write {label}/: {error}"))?;
 
-    ui::ok(&format!("wrote {} files to dist/", written.len()));
+    ui::ok(&format!("wrote {} files to {label}/", written.len()));
+    if !publish {
+        ui::detail("a scratch build; `--system` writes the published colour system");
+    }
     Ok(palette)
 }
 
 /// The spec path as written in generated headers.
 ///
-/// Always repository-relative with forward slashes, so `dist/` is identical
+/// Always repository-relative with forward slashes, so `system/` is identical
 /// no matter where the build ran from or on which platform.
 pub(crate) fn relative_to(root: &Path, path: &Path) -> String {
     path.strip_prefix(root)
@@ -78,10 +107,18 @@ pub(crate) fn relative_to(root: &Path, path: &Path) -> String {
 /// # Errors
 ///
 /// Any spec, colour or filesystem problem.
-pub(crate) fn all(root: &Path, spec_path: &Path, with_site: bool) -> Result<Palette, String> {
-    let palette = run(root, spec_path)?;
+pub(crate) fn all(
+    root: &Path,
+    spec_path: &Path,
+    with_site: bool,
+    publish: bool,
+) -> Result<Palette, String> {
+    let palette = run(root, spec_path, publish)?;
     if with_site {
-        let written = site::build(root)?;
+        // The site renders from whatever this build just wrote, so a scratch
+        // build previews the scratch colours. That is the whole reason the loop
+        // is safe: you can look at a change before deciding to publish it.
+        let written = site::build(root, &destination(root, publish))?;
         site::report(root, written);
     }
     Ok(palette)

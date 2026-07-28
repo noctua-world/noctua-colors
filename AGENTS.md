@@ -98,12 +98,28 @@ they cannot drift. If one changes, change it there and propagate.
 
 ## What this is
 
-A **color system compiler**. A small declarative spec goes in; every artifact
-other projects consume comes out — CSS custom properties, a Tailwind v4 theme,
-Rust constants, DTCG tokens, JSON/TypeScript, SCSS, and a QML singleton.
+**Two products, and confusing them is the mistake this section exists to
+prevent.**
 
-It is not a palette and not a UI library. **The repository versions the curves,
-not the colors.** No hand-picked hex exists in the source. Two ideas carry it:
+1. **A colour system** — 39 palettes, 1,767 semantic names, published to npm and
+   crates.io and consumed by CDN, Nix, submodule and copy. *This is the
+   product.* It is what almost everyone who arrives here wants, it is what a tag
+   means, and it is what `TOKEN-POLICY.md` governs.
+2. **The compiler that produced it** — a declarative spec goes in; CSS custom
+   properties, a Tailwind v4 theme, Rust constants, DTCG tokens, JSON/TypeScript,
+   SCSS and a QML singleton come out. *This is the proof, not the pitch.* It is
+   not a tool other people run on their own spec, and the code says so: the crate
+   name `noctua-colors-tokens` and this repository's URL are hardcoded in
+   `rust.rs`.
+
+The repository was framed for a long time as only the second, and everything
+downstream failed in the same direction — a README that opened with `git clone`,
+a documentation site that opened with technical reference, and no way to install
+one palette without downloading thirty-nine. If you are writing anything
+user-facing here, lead with the colours.
+
+**The repository versions the curves, not the colors.** No hand-picked hex
+exists in the source. Two ideas carry it:
 
 - **Relative chroma.** Chroma is a fraction `cr ∈ [0,1]` of what the target gamut
   can show at that lightness and hue, so one definition renders correctly on sRGB
@@ -116,11 +132,11 @@ not the colors.** No hand-picked hex exists in the source. Two ideas carry it:
 Complete, end to end, and committed. It has no remote yet — see **Publishing**
 below and `NOCTUA.md §5.3`.
 
-**Counts rot; commands do not.** For the current shape read `dist/MANIFEST.json`
-(every generated file plus the spec's hash), `dist/json/axes.json` (the accent ×
-saturation grid) and `dist/json/palette.json` (roles, gamuts, ramps, the semantic
+**Counts rot; commands do not.** For the current shape read `system/MANIFEST.json`
+(every generated file plus the spec's hash), `system/json/axes.json` (the accent ×
+saturation grid) and `system/json/palette.json` (roles, gamuts, ramps, the semantic
 map, the slots). Prose in this repository that states a number is a convenience
-and `dist/` is the truth.
+and `system/` is the truth.
 
 ## Repository map
 
@@ -130,14 +146,16 @@ crates/noctua-core/   colour math: space, gamut + cubic (analytic chroma
                       reporting), diff, cvd (Brettel 1997), matrix
 crates/noctua-spec/   TOML model, defaults, validation, miette diagnostics
 crates/noctua-engine/ curves, contrast-anchored solving, palette construction
-crates/noctua-emit/   the eight output targets, plus dist/ write and sync
+crates/noctua-emit/   the eight output targets, plus system/ write and sync
 crates/noctua-check/  gates: contrast, colour vision, spacing, source literals,
                       consumer token references
-crates/noctua-docs/   site generator (maud), two locales. Reads dist/ only
+crates/noctua-docs/   site generator (maud), two locales. Reads system/ only
 crates/noctua-wasm/   browser bindings over the engine, for the playground
 xtask/                the six verbs, plus the wasm bundle build
 specs/noctua.toml     the spec — the only file a developer edits
-dist/                 generated artifacts. COMMITTED. Never hand-edited.
+system/               the published colour system. COMMITTED. Never hand-edited,
+                      and only `build --system` or `release` writes here
+target/system/        where an ordinary `build` writes. Gitignored scratch
 docs-site/            site sources. public/ is build output and gitignored
 examples/             consumer-rust and consumer-web, outside the workspace
 tests/golden/         snapshot of the built palette
@@ -161,7 +179,7 @@ Breaking any of these is a defect, not a tradeoff.
    reference constants** cited in a comment. Enforced by `noctua_check::source`,
    not by remembering — a literal needs an `// allow-literal: <reason>` marker on
    its line, which puts every exception in front of a reviewer. Golden files and
-   `dist/` are exempt and both are tool-generated.
+   `system/` are exempt and both are tool-generated.
 2. **Never clip per channel to fit a gamut** — it shifts hue silently. Use
    `map::map_into_gamut`. The one exception is `cvd::simulate`; see Gotchas.
 3. **APCA is the design criterion. WCAG 2.x is reporting only.** No solver and
@@ -186,17 +204,39 @@ Breaking any of these is a defect, not a tradeoff.
 ## Commands
 
 ```bash
-cargo xtask build     # compile the spec into every target under dist/
-cargo xtask check     # the single gate: spec, gates, dist sync, fmt, lints, tests
+cargo xtask build           # compile the spec into target/system/ — scratch
+cargo xtask build --system  # ...into system/, the published colour system
+cargo xtask check     # the single gate: spec, gates, system sync, fmt, lints, tests
 cargo xtask dev       # watch the spec, rebuild, serve with live reload
-cargo xtask export    # copy dist/ into every registered consumer
+cargo xtask export    # copy system/ into every registered consumer
 cargo xtask import    # fit an existing palette back to spec parameters
-cargo xtask release   # prepare a version ```
+cargo xtask release   # prepare a version of the colour system
+cargo xtask release --tool   # ...of the compiler instead ```
+
+**Two versions, and they are not interchangeable.** The colour system's lives in
+`specs/noctua.toml`'s `[system]` table — it is what a tag means, what both
+registries publish, and what `TOKEN-POLICY.md` governs. The compiler's lives in
+`Cargo.toml` and is published nowhere. `MANIFEST.json` carries both:
+`systemVersion` is the colours, `version` is the compiler. Do not merge them
+back: one number could not distinguish a refactor from a colour change, and only
+one of those is a reason for a consumer to upgrade.
 
 `cargo xtask check` is what CI runs — the same command, not a reimplementation in
 YAML. `--colors-only` skips fmt, lints and tests for a fast loop; CI never passes
 it. `just` offers one-word aliases and is never the only path. New capability goes
 behind an existing verb or it does not ship.
+
+**Why `build` does not write `system/`.** `system/` is the published product:
+people link it by CDN URL, pin it as a Nix `src`, vendor it as a submodule. It
+used to be the same directory the build wrote every time, which meant trying a
+hue out rewrote the shipped colours, and the only thing between that and a
+commit was noticing a 250-file diff. So the everyday loop — edit, build, look —
+now writes `target/system/`, already gitignored, and `dev` serves from there.
+Publishing is a separate, typed intent: `--system`.
+
+The safety net is symmetric. `check` still verifies **`system/`** against the
+spec, so the opposite mistake — meaning a change and forgetting to publish it —
+fails locally and in CI. Neither direction is left to memory.
 
 `import` reads color literals out of CSS, SCSS, QML, JSON or plain text, groups
 them into ramps by name, and reports how closely the curve model expresses each.
@@ -208,7 +248,7 @@ palette authored for P3 has colors sRGB cannot show, and `cr` cannot exceed 1.
 **Add a context.** One line in `[semantic]` mapping it to an existing family, in
 the subject group it belongs to, and it reaches every target. Read the hue-wheel
 entry below before adding a `[families.*]` instead — the answer is almost always
-an alias, and at three hundred and fifty-two contexts it is always an alias.
+an alias, and at three hundred and forty-nine subjects it is always an alias.
 
 **Add a categorical set.** One `[[charts]]` block with a `name`. Past about six
 entries no generated set separates under all three dichromacies; `labelled =
@@ -219,7 +259,7 @@ interpolate:** the placement is not monotone in the lightness centres, and the
 band is clamped into 0.08–0.95, so a spread that runs off the top piles entries
 onto each other. See `[[charts]] name = "chart-wide"` for the numbers.
 
-**Add a family.** One block with a `hue`; the rest defaults. Rebuild `dist/` and
+**Add a family.** One block with a `hue`; the rest defaults. Rebuild `system/` and
 the golden, then read the new CVD margins.
 
 **Add a scale.** One `[[scales]]` block. `stops` is a count or a list of names;
@@ -281,7 +321,7 @@ protanope returns red ≈ −0.32), and mapping cannot rescue a colour with no
 meaningful hue to preserve. The cost: simulation is only *near*-idempotent, so
 the tests scope that law to projections landing in gamut.
 
-**Two ways a gate can be quietly useless.** `check` must never write `dist/`
+**Two ways a gate can be quietly useless.** `check` must never write `system/`
 before inspecting it — it once compared the artifacts against themselves, so the
 hand-edit guard said "in sync" right after a hand edit (`build::palette` compiles
 without touching disk; `build::run` writes). A gate never *called* checks nothing:
@@ -306,7 +346,7 @@ lowering the target.
 would be a hundred warnings restating the entry above, so the gate lists only
 pairs whose confusion changes what the interface *said* — "it worked" for "it
 broke", waiting for running. `margins` returns every pair and
-`dist/reports/colour-vision.md` publishes it, so an awkward collision stays
+`system/reports/colour-vision.md` publishes it, so an awkward collision stays
 findable without burying a dangerous one. Extend `OPPOSED` for a meaning, never
 for tidiness.
 
@@ -432,12 +472,12 @@ deficiency *adding* to each step (0.0447) where ascending has it cancelling
 
 **The generated Rust crate: its own `[workspace]`, one feature per theme, and its
 build output skipped.** Without the `[workspace]`, `cargo build` inside
-`dist/rust` fails and vendoring it absorbs it into the consumer's workspace. The
+`system/rust` fails and vendoring it absorbs it into the consumer's workspace. The
 features are not about compile time — half a second for the lot — but `.rmeta`,
 which every consumer naming the crate loads for whatever is compiled in:
 megabytes at thirty-nine palettes, where `examples/consumer-rust` uses four. The
 default is the first theme, the one the CSS binds to `:root`. And compiling it
-leaves `target/` and `Cargo.lock` inside `dist/` — byproducts of *using* the
+leaves `target/` and `Cargo.lock` inside `system/` — byproducts of *using* the
 artifacts — so the sync check skips both, or one `cargo build` reports hundreds
 of stale files.
 
@@ -531,9 +571,10 @@ Independence nobody compares is just drift.
 **Three ways your own tooling lies to you.** `cargo fmt` can separate an
 `allow-literal:` marker from the literal it excuses, so the source gate fails a
 file that was passing — bind fixtures to one-line `let`s. A stale `cargo xtask
-dev` rewrites `dist/` with an old binary while you debug why your edit "did
-nothing"; `pkill -f xtask` (not `xtask dev`, which misses a `setsid`-detached one)
-before trusting a build. And the shell here is **zsh**, which does not word-split
+dev` rewrites `target/system/` with an old binary while you debug why your edit
+"did nothing" — it can no longer corrupt `system/`, but it still feeds the site
+you are staring at; `pkill -f xtask` (not `xtask dev`, which misses a
+`setsid`-detached one) before trusting a build. And the shell here is **zsh**, which does not word-split
 an unquoted `$var` — a sweep script that relied on it silently wrote a malformed
 spec and every reading came back identical.
 
@@ -590,15 +631,16 @@ having linked only a theme file fails *silently*, because CSS drops an undefined
 custom property — the `references` gate catches that in-repo, and **the trap is
 now two files wide**. A rename moves the file, so `README.md`, `examples/`, the
 integration snippet in `sections.rs` and `noctua_docs::token_files` must move
-with it. `dist/css/index.css` is the one name that never does.
+with it. `system/css/index.css` is the one name that never does.
 
 **The semantic layer is emitted once, not per theme.** `--nc-color-rejected:
 var(--nc-danger-solid)` is the same sentence in every palette — the colour behind
-it changes, the sentence does not — so it lives in `dist/css/contexts.css` and at
+it changes, the sentence does not — so it lives in `system/css/contexts.css` and at
 the top of `palette.json`, and a theme file carries only what a
 `[themes.<name>.semantic]` block overrides. Measured before the split: 97 KB of
 each 225 KB stylesheet and 58.7 KB of each of the seventy-eight mode blocks,
-which at three hundred and fifty-two contexts was most of `dist/`. Two details
+which at one thousand seven hundred and sixty-seven names was most of `system/`.
+Two details
 are load-bearing. The shared block is **`:where(:root)`**, at zero specificity,
 so a theme's own `[data-palette="…"]` override wins whatever order a consumer
 linked the files in; a plain `:root` would tie at (0,1,0) and let link order
@@ -694,21 +736,21 @@ The same convention holds in every repository of the workspace — `NOCTUA.md §
 
 **Remote:** `git@github.com:noctua-world/noctua-colors.git`, public.
 
-Consumers reach this project through many channels. `dist/` is generated **and
+Consumers reach this project through many channels. `system/` is generated **and
 committed**, which is what lets every one of them work with no build step:
 
 | Channel | Artifact | Published by |
 |---|---|---|
 | npm `@noctua-world/colors` | the **curated** set — css, tokens, scss, tailwind, `axes.json` | `release-npm.yml` |
-| crates.io `noctua-colors-tokens` | the generated crate from `dist/rust` | `release-crate.yml` |
+| crates.io `noctua-colors-tokens` | the generated crate from `system/rust` | `release-crate.yml` |
 | crates.io `noctua-colors` | the facade crate that holds the name | `release-crate.yml` |
-| GitHub Release | the **complete** `dist/` as tarball + zip + `SHA256SUMS` | `release-github.yml` |
+| GitHub Release | the **complete** `system/` as tarball + zip + `SHA256SUMS` | `release-github.yml` |
 | jsDelivr / unpkg | both npm-backed and `gh`-backed | nothing — automatic |
-| Cargo git dependency, Nix flake, submodule, copy | the complete `dist/` | nothing — the tag is enough |
+| Cargo git dependency, Nix flake, submodule, copy | the complete `system/` | nothing — the tag is enough |
 | GitHub Pages | the docs site | `pages.yml`, on push to `main` |
 
 **Cutting a release.** `cargo xtask release <version>` runs the gate, writes the
-version into `Cargo.toml` **and `package.json`**, rebuilds so `dist/MANIFEST.json`
+version into `Cargo.toml` **and `package.json`**, rebuilds so `system/MANIFEST.json`
 and the generated crate's manifest follow, and warns if `CHANGELOG.md` has no
 entry. It stops there. Then, by hand:
 

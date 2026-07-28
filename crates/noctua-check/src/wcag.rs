@@ -54,7 +54,7 @@ pub fn rows(palette: &Palette) -> Vec<Row> {
         .collect()
 }
 
-/// Renders the report as Markdown for `dist/reports/`.
+/// Renders the report as Markdown for `system/reports/`.
 #[must_use]
 pub fn render(palette: &Palette) -> String {
     use std::fmt::Write as _;

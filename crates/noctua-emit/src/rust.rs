@@ -5,7 +5,7 @@
 //! path juggling:
 //!
 //! ```toml
-//! noctua-colors-tokens = { path = "../noctua-colors/dist/rust" }
+//! noctua-colors-tokens = { path = "../noctua-colors/system/rust" }
 //! ```
 //!
 //! Everything is `const`, so there is no runtime cost and no allocation. The
@@ -52,10 +52,18 @@ fn theme_feature(theme: &str) -> String {
 
 fn cargo_toml(palette: &Palette) -> String {
     let mut out = header("specs/noctua.toml", CommentStyle::Line("#"));
-    // The version tracks this compiler's, because the tokens are only meaningful
-    // as the output of a particular version of it. It used to be a string
-    // literal here, which meant `cargo xtask release` bumped the workspace and
-    // left the one *publishable* artifact pinned at 0.1.0 forever.
+    // The version is the **colour system's**, from the spec's `[system]` table.
+    //
+    // Two earlier answers were both wrong. A string literal here meant `cargo
+    // xtask release` bumped the workspace and left the one publishable artifact
+    // pinned at 0.1.0 forever. Replacing it with `env!("CARGO_PKG_VERSION")`
+    // fixed that but tied the crate to the *compiler's* version — so a
+    // refactor that touched no colour still published a new release of the
+    // tokens, and a reader could not tell the two apart.
+    //
+    // What a consumer of this crate depends on is the colours, so what they
+    // version against is the colours. The compiler's version is in
+    // MANIFEST.json for anyone who wants to know which build produced this.
     writeln!(
         out,
         "\n[package]\n\
@@ -76,7 +84,7 @@ fn cargo_toml(palette: &Palette) -> String {
          documentation = \"https://docs.rs/noctua-colors-tokens\"\n\
          keywords = [\"design-tokens\", \"color\", \"oklch\", \"theme\", \"palette\"]\n\
          categories = [\"gui\", \"graphics\", \"no-std\"]",
-        env!("CARGO_PKG_VERSION")
+        palette.identity.version
     )
     .expect("write");
     out.push_str(
@@ -248,7 +256,7 @@ fn readme(palette: &Palette) -> String {
          \n\
          MIT OR Apache-2.0.",
         crate::REGENERATE,
-        version = env!("CARGO_PKG_VERSION"),
+        version = palette.identity.version,
     )
     .expect("write");
 
@@ -519,7 +527,7 @@ mod tests {
 
     /// A generated crate that cannot be built is not a deliverable.
     ///
-    /// Without its own `[workspace]`, `cargo build` inside `dist/rust` fails
+    /// Without its own `[workspace]`, `cargo build` inside `system/rust` fails
     /// outright — the crate sits under this repository's workspace root and
     /// cargo refuses to build a package that "believes it's in a workspace
     /// when it's not". Vendoring it into a consumer would have the same effect

@@ -20,7 +20,7 @@ pub mod solve;
 pub use error::EngineError;
 pub use fit::{Fit, fit_family};
 pub use palette::{
-    AlphaScale, BASE_NEUTRAL_RAMP, CHART_SCALE, Palette, ResolvedColor, ResolvedFamily,
+    AlphaScale, BASE_NEUTRAL_RAMP, CHART_SCALE, Identity, Palette, ResolvedColor, ResolvedFamily,
     ResolvedMode, ResolvedScale, ResolvedStep, ResolvedTheme, ScaleKind, build,
 };
 pub use solve::Mode;

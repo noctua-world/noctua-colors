@@ -6,7 +6,7 @@ built only because the workspace resolved something for it would prove nothing.
 
 ## `consumer-rust`
 
-One path dependency on `dist/rust`, then `use`. No build script, no macro, no
+One path dependency on `system/rust`, then `use`. No build script, no macro, no
 runtime — every color is a `const`.
 
 ```bash
@@ -19,7 +19,7 @@ than only the manifest.
 
 ## `consumer-web`
 
-Three `<link>` tags — `dist/css/ramp.css`, `contexts.css` and the default theme,
+Three `<link>` tags — `system/css/ramp.css`, `contexts.css` and the default theme,
 which is the whole integration and the reason all three are needed: a theme file
 alone defines no `--nc-gray-*` and no `--nc-color-*`, and CSS drops an undefined
 custom property without saying so. Open `index.html` in a browser — there is

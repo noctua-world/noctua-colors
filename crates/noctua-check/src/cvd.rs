@@ -38,7 +38,7 @@
 //! the interface *said*.
 //!
 //! Every pair is still measured. [`margins`] returns all of them and
-//! `dist/reports/colour-vision.md` publishes the table, so a collision that is
+//! `system/reports/colour-vision.md` publishes the table, so a collision that is
 //! merely awkward rather than dangerous is visible without burying the ones
 //! that are.
 //!
@@ -189,7 +189,7 @@ fn solid_of(mode: &ResolvedMode, slot: &str) -> Option<noctua_core::Oklab> {
 /// has to design around, and it names the palette it came from so it can be
 /// reproduced. Every measurement is still made — `checked` counts them all —
 /// and the full per-palette table is published by [`margins`] into
-/// `dist/reports/colour-vision.md`.
+/// `system/reports/colour-vision.md`.
 #[must_use]
 pub fn check(palette: &Palette) -> Report {
     let mut report = Report::default();
@@ -288,7 +288,7 @@ pub fn check(palette: &Palette) -> Report {
 ///
 /// So a set that declares `labelled = true` gets one finding per deficiency,
 /// naming its closest pair and the margin. The rest are counted, not printed —
-/// and `dist/reports/colour-vision.md` still publishes every margin, so an
+/// and `system/reports/colour-vision.md` still publishes every margin, so an
 /// awkward pair stays findable.
 fn categorical(
     report: &mut Report,
@@ -529,7 +529,7 @@ impl Worst {
                  This is the measured limit rather than a choice — the set declares \
                  `labelled = true`, so the legend has to name every series. The other \
                  pairs were measured too and are published in \
-                 dist/reports/colour-vision.md",
+                 system/reports/colour-vision.md",
                 self.apart, self.target
             ),
             Kind::Ordinal => format!(

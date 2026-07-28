@@ -22,7 +22,7 @@
 
           # Only the generated artifacts. The compiler is not what a consumer
           # wants from Nix — the output is.
-          src = ./dist;
+          src = ./system;
 
           # `src` is a directory, not an archive, and there is nothing to
           # configure or build: these files were compiled from the spec before

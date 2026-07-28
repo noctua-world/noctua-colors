@@ -35,7 +35,7 @@ to steal. crates.io's is revoked automatically when the job ends.
 |---|---|
 | npm tarball | npm provenance, Sigstore-signed, tying the tarball to the commit and workflow |
 | GitHub Release assets | SLSA build provenance via `actions/attest` |
-| Every generated file | BLAKE3 hash in `dist/MANIFEST.json`, alongside the spec's own hash |
+| Every generated file | BLAKE3 hash in `system/MANIFEST.json`, alongside the spec's own hash |
 
 **Reproducible output.** The compiler is deterministic: the same spec and version
 produce byte-identical artifacts, and CI proves it by building twice and diffing.
@@ -51,12 +51,12 @@ repository. Small tarballs are auditable tarballs.
 npm audit signatures
 
 # A release asset
-gh attestation verify noctua-colors-v0.1.0-dist.tar.gz \
+gh attestation verify noctua-colors-v0.2.0-system.tar.gz \
   --repo noctua-world/noctua-colors
 sha256sum -c SHA256SUMS
 
 # Any generated file, against the manifest it shipped with
-b3sum dist/css/index.css   # compare with dist/MANIFEST.json
+b3sum system/css/index.css   # compare with system/MANIFEST.json
 ```
 
 ## Supported versions

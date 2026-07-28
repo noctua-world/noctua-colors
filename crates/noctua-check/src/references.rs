@@ -12,7 +12,7 @@
 //!
 //! Only *this* repository's own consumers are checked — the docs site and the
 //! examples. Sibling projects are checked when they build, against whichever
-//! version of `dist/` they have.
+//! version of `system/` they have.
 //!
 //! # What this does and does not prove
 //!
@@ -51,7 +51,7 @@ pub fn check<'a>(root: &Path, stylesheets: impl IntoIterator<Item = &'a str>) ->
         report.findings.push(Finding {
             gate: GATE,
             severity: Severity::Fail,
-            where_: "dist/css".to_owned(),
+            where_: "system/css".to_owned(),
             message: "no custom properties found; the stylesheets did not build".to_owned(),
             margin: None,
         });
@@ -324,10 +324,10 @@ mod tests {
     #[test]
     fn every_consumer_reference_resolves() {
         let root = Path::new(concat!(env!("CARGO_MANIFEST_DIR"), "/../.."));
-        let sheets = read_stylesheets(&root.join("dist/css"));
+        let sheets = read_stylesheets(&root.join("system/css"));
         assert!(
             !sheets.is_empty(),
-            "dist/ must exist — run `cargo xtask build`"
+            "system/ must exist — run `cargo xtask build`"
         );
 
         let report = check(root, sheets.iter().map(String::as_str));

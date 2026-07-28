@@ -1,4 +1,4 @@
-//! `cargo xtask export` — copy `dist/` into every registered consumer.
+//! `cargo xtask export` — copy `system/` into every registered consumer.
 //!
 //! A consumer is three lines in the spec: a name, a path, and which targets it
 //! wants. Nothing else needs configuring, and adding a project never means
@@ -48,7 +48,10 @@ fn normalize(path: &Path) -> PathBuf {
 pub(crate) fn run(root: &Path, spec_path: &Path, dry_run: bool) -> Result<(), String> {
     let spec = noctua_spec::load(spec_path)
         .map_err(|error| format!("{:?}", miette::Report::new(error)))?;
-    let palette = build::run(root, spec_path)?;
+    // Publishes, deliberately: `export` writes into *other people's*
+    // checkouts, and what they receive must be what ships rather than whatever
+    // was last being tried out.
+    let palette = build::run(root, spec_path, true)?;
 
     if spec.consumers.is_empty() {
         ui::gap();

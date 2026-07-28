@@ -3,7 +3,7 @@ resolver = "3"
 members = ["crates/*", "xtask"]
 
 # The generated token crate is its own workspace root and is never a member.
-exclude = ["dist/rust"]
+exclude = ["system/rust"]
 
 [workspace.package]
 version = "0.1.1"

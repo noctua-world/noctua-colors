@@ -547,7 +547,7 @@ fn render(palette: &Palette) -> String {
 /// UPDATE_GOLDEN=1 cargo test -p noctua-engine --test palette
 /// ```
 ///
-/// This folds into `cargo xtask build` in milestone 3, when `dist/` becomes
+/// This folds into `cargo xtask build` in milestone 3, when `system/` becomes
 /// the single golden mechanism with a single update command.
 #[test]
 fn the_shipped_palette_matches_its_golden_file() {

@@ -10,7 +10,7 @@ license.workspace = true
 # formats them. See AGENTS.md ("Invariants").
 
 # Internal to the compiler. The only publishable artifacts are the generated
-# `noctua-colors-tokens` crate under dist/rust and the `noctua-colors` facade.
+# `noctua-colors-tokens` crate under system/rust and the `noctua-colors` facade.
 publish = false
 
 [dependencies]

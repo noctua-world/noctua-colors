@@ -12,6 +12,119 @@ meet contrast?** Generated release notes list commits. They do not list that.
 
 ## [Unreleased]
 
+## [0.2.0]
+
+**The reframing.** This release changes almost nothing about the colours and
+almost everything about how they are presented, installed and versioned. Of the
+250 generated files that existed at 0.1.1, **245 are byte-identical**; the five
+that differ carry the spec hash or a path in a comment, and not one changed line
+contains a colour.
+
+### Added
+
+- **A self-contained stylesheet for every palette**, at
+  `system/css/palette/<name>.css`. One `<link>` and you are done: it carries the
+  neutral ramp, the semantic contract and that palette's values, bound to
+  `:root`, with light and dark both working from the one file.
+
+  This is the difference between linking **29 KB gzip and 741 KB gzip** — 25×.
+  The only entry point that existed carried all 39 palettes, because it has to
+  serve someone who switches at runtime; someone who had settled on one palette
+  was downloading the other 38.
+
+  | | raw | gzip |
+  |---|---|---|
+  | `css/palette/blue-vivid.css` | 229 KB | **29 KB** |
+  | every palette (`index.css` and its imports) | 5.0 MB | 741 KB |
+
+- **`system/tailwind/palette/<name>.css`** — the same, for Tailwind v4. Two
+  `@import` lines each. Compiled against Tailwind 4.3.3 it produces **byte-for-byte
+  the same utility rules** as the all-palettes entry, at 31 KB gzip instead of
+  702 KB, `dark:` variant included.
+- **`system/tailwind/bridge.css`** — the `@theme inline` mapping, lifted out of
+  `theme.css` so it is written once rather than 40 times. It is palette-independent:
+  the `--color-*` names never vary, only the values behind them. Inlining it into
+  each entry would have cost ~4.3 MB of byte-identical text.
+- npm subpaths for all of it: `./palette/*.css`, `./css/palette/*.css`,
+  `./tailwind/palette/*.css`, `./tailwind/bridge.css`.
+- **An `Install` section on the documentation site**, which it did not have. The
+  site opened straight into an explanation of relative chroma; someone who
+  wanted a stylesheet had no way to get one without reading the model first.
+- **`/how-it-works.html`** — the compiler's own page, in both locales. The site
+  was one page on the reasoning that a reference is scrolled rather than
+  navigated. That was right about the reference and wrong about the audience.
+  Nothing was cut: the engineering material moved and gained room, including a
+  new section on what the quality gates measured *and could not fix*.
+
+### Removed
+
+- `package-lock.json`, now gitignored. A lockfile for a package with **zero**
+  dependencies records nothing, and it was a sixth place a version could drift —
+  it already had: it said `0.1.0` while every other artifact said `0.1.1`.
+  Nothing wrote it and nothing read it.
+
+### Changed
+
+- **The colour system and the compiler now have separate versions.** The one you
+  install — npm, crates.io, the tag — is the **colour system's**, declared in
+  `specs/noctua.toml`'s new `[system]` table. The compiler keeps its own in
+  `Cargo.toml`, where nothing publishes from it.
+
+  One number could not say both "the compiler was refactored" and "a colour
+  moved", and only the second is a reason for anyone to upgrade or is bound by
+  `TOKEN-POLICY.md`. `MANIFEST.json` now carries both: `systemVersion` is new and
+  is the colours; **`version` still means the compiler's**, unchanged, because
+  `TOKEN-POLICY.md` tells consumers to diff that file.
+
+  `cargo xtask release <version>` bumps the colour system; `--tool <version>`
+  bumps the compiler.
+- **The framing.** This repository was described as a *colour system compiler* —
+  a tool. That was half the truth, and the half that does not matter to almost
+  anyone who arrives. It publishes **two** things: a colour system, which is the
+  product, and the compiler that produced it, which is the proof. `README.md` is
+  rewritten from zero around the first; the engineering material moved intact to
+  [`docs/COMPILER.md`](docs/COMPILER.md) and gained room rather than losing it.
+  Contributor material moved to `CONTRIBUTING.md`.
+- **`dist/` is now `system/`.** Breaking for the routes that name the directory,
+  which is every route except npm. See below for exactly who this reaches.
+- **`tailwind/theme.css` is now two `@import` lines** rather than the mapping
+  inline. Same tokens, same utilities, same `dark:` variant — verified against
+  Tailwind 4.3.3 — because the mapping it used to carry now lives in
+  `bridge.css`, which it imports.
+- The npm package is **22.2 MiB unpacked, 2.38 MiB packed** (was 13.5 / 1.33),
+  entirely because of the 78 new per-palette files. The CI size ceiling moved
+  from 20 to 32 MiB to match; it exists to catch the whole tree leaking in, not
+  to police deliberate growth.
+- **`cargo xtask build` no longer writes the published colour system.** It writes
+  `target/system/`, a gitignored scratch tree, and `cargo xtask dev` serves from
+  there. Publishing is now a typed intent: `cargo xtask build --system`.
+
+  This closes a real hole rather than a hypothetical one. `dist/` was both the
+  product people install *and* the directory every build overwrote, so trying a
+  hue out rewrote the shipped colours in the working tree, and the only thing
+  between that and a commit was noticing a 250-file diff. The guard is symmetric:
+  `cargo xtask check` still verifies `system/` against the spec, so the opposite
+  mistake — meaning a change and forgetting to publish it — fails in CI.
+
+  No colour moved. Of the 250 generated files, 245 are byte-identical to 0.1.1;
+  the five that differ carry the spec hash or a path in a comment, and not one
+  changed line contains a colour.
+
+#### Who the rename reaches
+
+| Route | Affected? |
+|---|---|
+| npm, and CDNs resolving through npm's `exports` | **No.** `@noctua-world/colors/css/index.css` never named the directory |
+| crates.io `noctua-colors-tokens` | **No.** The crate is published from the directory, not by it |
+| jsDelivr / unpkg **by path** | Yes — `.../dist/css/…` becomes `.../system/css/…` |
+| Nix `src`, submodule, subtree, plain copy | Yes |
+| Cargo path or git dependency on the generated crate | Yes — `dist/rust` becomes `system/rust` |
+| GitHub Release assets | Renamed `…-dist.tar.gz` → `…-system.tar.gz` |
+
+Every affected route is version-pinned, so **`v0.1.0` and `v0.1.1` keep serving
+`dist/` for as long as those tags exist.** Nothing that works today stops
+working; only new tags move.
+
 ## [0.1.1]
 
 No colour changed. This release exists to prove the automated publishing path
@@ -111,5 +224,7 @@ what changed, since there is nothing before it.
   that had no trusted publisher yet. The artifacts are correct and verified — see
   the release assets' checksums and `npm audit signatures`.
 
-[Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/noctua-world/noctua-colors/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/noctua-world/noctua-colors/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/noctua-world/noctua-colors/releases/tag/v0.1.0

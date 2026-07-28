@@ -21,6 +21,13 @@ use crate::curve::{CurveSpec, HueSpec};
 #[derive(Debug, Clone, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Spec {
+    /// What the colour system calls itself, and which version it is at.
+    ///
+    /// Distinct from the compiler's version in `[workspace.package]`. See
+    /// [`System`].
+    #[serde(default)]
+    pub system: System,
+
     /// Gamut and naming settings.
     #[serde(default)]
     pub output: Output,
@@ -107,6 +114,58 @@ pub struct Spec {
     /// Export destinations.
     #[serde(default)]
     pub consumers: Vec<Consumer>,
+}
+
+/// The colour system's own identity, independent of the compiler's.
+///
+/// This repository publishes two products on two clocks. The colour system —
+/// the palettes, the token names, the values — is what people install, and it
+/// is versioned *here*, in the spec, because the spec is the colour system.
+/// The compiler that turns this file into those artifacts is versioned in
+/// `Cargo.toml`'s `[workspace.package]`.
+///
+/// They were one number through 0.1.x, and `rust.rs` used to carry a comment
+/// arguing they should stay that way. That was wrong for a reason worth
+/// recording: one number cannot distinguish "the compiler was refactored" from
+/// "a colour moved", and only the second is a reason for anyone to upgrade or
+/// is bound by `TOKEN-POLICY.md`. Under one number every internal cleanup
+/// looked, from the outside, exactly like a change to the colours.
+#[derive(Debug, Clone, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct System {
+    /// The published version, stamped on every artifact.
+    #[serde(default = "default_system_version")]
+    pub version: String,
+
+    /// The name generated package metadata uses.
+    #[serde(default = "default_system_name")]
+    pub name: String,
+
+    /// One line, for the same metadata.
+    #[serde(default = "default_system_description")]
+    pub description: String,
+}
+
+impl Default for System {
+    fn default() -> Self {
+        Self {
+            version: default_system_version(),
+            name: default_system_name(),
+            description: default_system_description(),
+        }
+    }
+}
+
+fn default_system_version() -> String {
+    "0.0.0".to_owned()
+}
+
+fn default_system_name() -> String {
+    "noctua-colors".to_owned()
+}
+
+fn default_system_description() -> String {
+    "A generated colour system, solved in OKLCH against APCA contrast targets.".to_owned()
 }
 
 /// Gamut and naming settings.

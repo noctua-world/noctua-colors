@@ -1,8 +1,19 @@
 //! The page shell: head, navigation, footer.
 //!
-//! One page. The site is a reference you scroll and search, not a hierarchy
-//! you navigate — splitting it across routes would mean a visitor hunting for
-//! "what is relative chroma" has to guess which page it is on.
+//! **Two content pages, one shell.** The site used to be a single page, on the
+//! reasoning that a reference is scrolled rather than navigated. That was right
+//! about the reference and wrong about the audience: almost everyone who
+//! arrives wants the colours, and they were landing in the middle of an
+//! explanation of relative chroma.
+//!
+//! So `/` is the product — what this is, how to install it, every palette — and
+//! `/how-it-works.html` is the compiler, at the depth it deserves and out of the
+//! way of someone who just wants a stylesheet. The playground is a third route
+//! because it costs a WebAssembly module.
+//!
+//! The shell is shared, which is the point: one `<head>`, one navigation, one
+//! footer, so the two pages cannot drift apart on the theme bootstrap, the
+//! asset paths, or the language switcher.
 
 use maud::{DOCTYPE, Markup, html};
 
@@ -11,37 +22,119 @@ use crate::controls;
 use crate::i18n::{Locale, t};
 use crate::sections;
 
-/// Renders the whole page in one locale.
+/// Which content page a shell is wrapping.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Kind {
+    /// `/` — the colour system.
+    Product,
+    /// `/how-it-works.html` — the compiler that produced it.
+    HowItWorks,
+}
+
+impl Kind {
+    /// The file stem, which is also what `Locale::page` takes.
+    pub(crate) fn stem(self) -> &'static str {
+        match self {
+            Self::Product => "index",
+            Self::HowItWorks => "how-it-works",
+        }
+    }
+
+    fn title(self, locale: Locale) -> String {
+        match self {
+            Self::Product => t(
+                locale,
+                "noctua-colors — a colour system, solved rather than picked",
+                "noctua-colors — um sistema de cores, resolvido em vez de escolhido",
+            ),
+            Self::HowItWorks => t(
+                locale,
+                "How it works — noctua-colors",
+                "Como funciona — noctua-colors",
+            ),
+        }
+        .to_owned()
+    }
+
+    fn description(self, locale: Locale) -> String {
+        match self {
+            Self::Product => t(
+                locale,
+                "39 palettes and 1,767 semantic names, solved in OKLCH against APCA contrast \
+                 targets rather than hand-picked. Light and dark from one stylesheet, and one \
+                 palette costs 29 KB.",
+                "39 paletas e 1.767 nomes semânticos, resolvidos em OKLCH contra alvos de \
+                 contraste APCA em vez de escolhidos à mão. Claro e escuro a partir de uma \
+                 única folha de estilo, e uma paleta custa 29 KB.",
+            ),
+            Self::HowItWorks => t(
+                locale,
+                "How these colours were made: relative chroma, contrast-anchored lightness, an \
+                 analytically solved gamut boundary, and what the quality gates found but could \
+                 not fix.",
+                "Como estas cores foram feitas: croma relativo, luminosidade ancorada em \
+                 contraste, uma fronteira de gamut resolvida analiticamente, e o que os portões \
+                 de qualidade encontraram mas não puderam corrigir.",
+            ),
+        }
+        .to_owned()
+    }
+}
+
+/// Renders the product page in one locale.
 #[must_use]
 pub fn render(palette: &Palette, locale: Locale) -> String {
+    shell(
+        palette,
+        locale,
+        Kind::Product,
+        &html! {
+            (sections::hero(palette, locale))
+            (sections::install(palette, locale))
+            (sections::palette_browser(palette, locale))
+            (sections::contexts(palette, locale))
+            (sections::previews(palette, locale))
+            (sections::integration(locale))
+            (sections::trust(palette, locale))
+        },
+    )
+}
+
+/// Renders the compiler page in one locale.
+#[must_use]
+pub fn render_how_it_works(palette: &Palette, locale: Locale) -> String {
+    shell(
+        palette,
+        locale,
+        Kind::HowItWorks,
+        &html! {
+            (sections::how_it_works_intro(locale))
+            (sections::model(palette, locale))
+            (sections::contrast_matrix(palette, locale))
+            (sections::limits(locale))
+        },
+    )
+}
+
+fn shell(palette: &Palette, locale: Locale, kind: Kind, content: &Markup) -> String {
     let markup = html! {
         (DOCTYPE)
         html lang=(locale.tag()) data-default-locale[locale.is_default()] {
             head {
                 meta charset="utf-8";
                 meta name="viewport" content="width=device-width, initial-scale=1";
-                title {
-                    (t(
-                        locale,
-                        "noctua-colors — a color system compiler",
-                        "noctua-colors — um compilador de sistemas de cores",
-                    ))
-                }
-                meta name="description" content=(t(
-                    locale,
-                    "A color system compiler. One declarative spec in; CSS, Tailwind, Rust, \
-                     DTCG, TypeScript, SCSS and QML out. The repository versions the curves, \
-                     not the colors.",
-                    "Um compilador de sistemas de cores. Uma especificação declarativa entra; \
-                     CSS, Tailwind, Rust, DTCG, TypeScript, SCSS e QML saem. O repositório \
-                     versiona as curvas, não as cores.",
-                ));
+                title { (kind.title(locale)) }
+                meta name="description" content=(kind.description(locale));
 
                 // Each language points at the other, so a search engine
                 // indexes them as one document in two versions rather than as
                 // duplicates competing with each other.
+                //
+                // Pointing at *this* page in the other language, not always at
+                // the index: a Portuguese reader following the switcher from
+                // how-it-works expects how-it-works.
                 @for other in Locale::all() {
-                    link rel="alternate" hreflang=(other.tag()) href=(other.page("index"));
+                    link rel="alternate" hreflang=(other.tag()) href=(other.page(kind.stem()));
                 }
 
                 (font_preloads())
@@ -77,15 +170,9 @@ pub fn render(palette: &Palette, locale: Locale) -> String {
                 a class="skip-link" href="#main" {
                     (t(locale, "Skip to content", "Pular para o conteúdo"))
                 }
-                (navigation(palette, locale))
+                (navigation(palette, locale, kind))
                 main id="main" {
-                    (sections::hero(palette, locale))
-                    (sections::model(palette, locale))
-                    (sections::palette_browser(palette, locale))
-                    (sections::contexts(palette, locale))
-                    (sections::contrast_matrix(palette, locale))
-                    (sections::previews(palette, locale))
-                    (sections::integration(locale))
+                    (content)
                 }
                 (sections::detail_panel(locale))
                 (footer(locale))
@@ -239,22 +326,44 @@ pub(crate) fn theme_bootstrap(default_theme: Option<&str>) -> String {
     )
 }
 
-fn navigation(palette: &Palette, locale: Locale) -> Markup {
+fn navigation(palette: &Palette, locale: Locale, kind: Kind) -> Markup {
     html! {
         header class="site-header" {
             nav class="nav" aria-label=(t(locale, "Primary", "Principal")) {
-                a class="wordmark" href="#main" {
+                a class="wordmark" href=(locale.page("index")) {
                     span class="wordmark-dot" aria-hidden="true" {}
                     "noctua-colors"
                 }
 
                 ul class="nav-links" {
-                    li { a href="#model" { (t(locale, "Model", "Modelo")) } }
-                    li { a href="#palette" { (t(locale, "Palette", "Paleta")) } }
-                    li { a href="#contexts" { (t(locale, "Contexts", "Contextos")) } }
-                    li { a href="#contrast" { (t(locale, "Contrast", "Contraste")) } }
-                    li { a href="#previews" { (t(locale, "Previews", "Exemplos")) } }
-                    li { a href="#integrate" { (t(locale, "Integrate", "Integrar")) } }
+                    // In-page anchors only for the page they are on. A `#palette`
+                    // link from how-it-works would scroll to nothing, which
+                    // `every_anchor_has_a_target` catches — and which a reader
+                    // experiences as a dead link.
+                    @match kind {
+                        Kind::Product => {
+                            li { a href="#install" { (t(locale, "Install", "Instalar")) } }
+                            li { a href="#palette" { (t(locale, "Palettes", "Paletas")) } }
+                            li { a href="#contexts" { (t(locale, "Contexts", "Contextos")) } }
+                            li { a href="#previews" { (t(locale, "Previews", "Exemplos")) } }
+                            li { a href="#integrate" { (t(locale, "Integrate", "Integrar")) } }
+                            li {
+                                a href=(locale.page("how-it-works")) {
+                                    (t(locale, "How it works", "Como funciona"))
+                                }
+                            }
+                        }
+                        Kind::HowItWorks => {
+                            li { a href="#model" { (t(locale, "The model", "O modelo")) } }
+                            li { a href="#contrast" { (t(locale, "Contrast", "Contraste")) } }
+                            li { a href="#limits" { (t(locale, "Limits", "Limites")) } }
+                            li {
+                                a href=(locale.page("index")) {
+                                    (t(locale, "The colours", "As cores"))
+                                }
+                            }
+                        }
+                    }
                     li {
                         a class="nav-playground" href=(locale.page("playground")) {
                             (t(locale, "Playground", "Laboratório"))
@@ -271,7 +380,7 @@ fn navigation(palette: &Palette, locale: Locale) -> Markup {
                     span id="palette-status" class="visually-hidden"
                          role="status" aria-live="polite" {}
                     (controls::mode_control(locale))
-                    (controls::language_switch(locale, "index"))
+                    (controls::language_switch(locale, kind.stem()))
                 }
             }
         }
@@ -290,7 +399,7 @@ pub(crate) fn footer(locale: Locale) -> Markup {
                     ))
                     code { "specs/noctua.toml" }
                     (t(locale, " and read back out of ", " e lida de volta de "))
-                    code { "dist/" }
+                    code { "system/" }
                     (t(
                         locale,
                         ". Nothing here is hand-picked, including the colors this page is \

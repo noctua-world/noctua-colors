@@ -40,19 +40,19 @@ jobs:
       - run: rustup show
       - uses: Swatinem/rust-cache@v2
 
-      # `check` already proves dist/ matches the spec once. This proves the
+      # `check` already proves system/ matches the spec once. This proves the
       # compiler is deterministic: two builds from the same input must be
       # byte-identical, or nothing downstream can be reproducible and every
       # diff becomes noise.
       - name: Build twice and compare
         run: |
           cargo xtask build
-          cp -r dist /tmp/dist-first
+          cp -r system /tmp/system-first
           cargo xtask build
           # Excluding build output: compiling the generated crate leaves
           # incremental-compilation fingerprints, which are not reproducible
           # and are not artifacts of this compiler.
-          diff -r --exclude=target --exclude=Cargo.lock /tmp/dist-first dist
+          diff -r --exclude=target --exclude=Cargo.lock /tmp/system-first system
 
       # The site is generated too, and its WebAssembly bundle is part of it.
       # Both are byte-identical across builds; if that ever stops being true,

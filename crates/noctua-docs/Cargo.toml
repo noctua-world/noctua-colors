@@ -6,12 +6,12 @@ edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 
-# Deliberately does NOT depend on noctua-engine. The site reads dist/, exactly
+# Deliberately does NOT depend on noctua-engine. The site reads system/, exactly
 # like any other consumer, which is what makes "the site cannot drift from the
 # system" a mechanism rather than a promise.
 
 # Internal to the compiler. The only publishable artifacts are the generated
-# `noctua-colors-tokens` crate under dist/rust and the `noctua-colors` facade.
+# `noctua-colors-tokens` crate under system/rust and the `noctua-colors` facade.
 publish = false
 
 [dependencies]

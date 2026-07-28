@@ -2,7 +2,7 @@
 #
 # This makes the .gitignore comment beside `/docs-site/public` true: the rendered
 # site is not committed because CI builds and deploys it, and until now nothing
-# did. The site reads `dist/` exactly like any other consumer, which is what
+# did. The site reads `system/` exactly like any other consumer, which is what
 # makes "the site cannot drift from the system" a mechanism rather than a claim.
 #
 # One human step this cannot do for itself: Settings -> Pages -> Source must be

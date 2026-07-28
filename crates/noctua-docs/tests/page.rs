@@ -17,18 +17,18 @@ fn page() -> String {
 
 /// Every rendered page, so a structural check covers the translations too.
 fn all_pages() -> Vec<(String, String)> {
-    let dist = root().join("dist");
-    noctua_docs::render(&dist)
-        .expect("dist/ must exist — run `cargo xtask build`")
+    let system = root().join("system");
+    noctua_docs::render(&system)
+        .expect("system/ must exist — run `cargo xtask build`")
         .into_iter()
         .map(|o| (o.path, o.contents))
         .collect()
 }
 
 fn rendered(path: &str) -> String {
-    let dist = root().join("dist");
-    noctua_docs::render(&dist)
-        .expect("dist/ must exist — run `cargo xtask build`")
+    let system = root().join("system");
+    noctua_docs::render(&system)
+        .expect("system/ must exist — run `cargo xtask build`")
         .into_iter()
         .find(|o| o.path == path)
         .unwrap_or_else(|| panic!("the generator does not render {path}"))
@@ -36,7 +36,7 @@ fn rendered(path: &str) -> String {
 }
 
 #[test]
-fn the_page_renders_from_dist() {
+fn the_page_renders_from_the_system() {
     let html = page();
     assert!(html.starts_with("<!DOCTYPE html>"));
     assert!(html.contains("noctua-colors"));
@@ -93,7 +93,7 @@ fn no_reference_points_at_a_missing_file() {
     let html = page();
     // Derived from what the generator actually produces, so adding a page or
     // an asset never needs this list edited to match.
-    let palette = noctua_docs::load(&root().join("dist")).expect("dist/ must exist");
+    let palette = noctua_docs::load(&root().join("system")).expect("system/ must exist");
     let shipped: HashSet<String> = noctua_docs::assets()
         .iter()
         .map(|(_, to)| (*to).to_owned())
@@ -105,7 +105,7 @@ fn no_reference_points_at_a_missing_file() {
         .chain(rendered_pages())
         .collect();
 
-    // Integration samples contain `href="dist/css/balanced.css"` as text. That
+    // Integration samples contain `href="system/css/balanced.css"` as text. That
     // is documentation, not a reference the site has to resolve.
     let outside_code = strip_code_blocks(&html);
 
@@ -344,8 +344,8 @@ fn the_layout_is_built_for_a_narrow_screen() {
 /// Both languages, rendered in full, each a complete document.
 #[test]
 fn every_locale_renders_every_page() {
-    let dist = root().join("dist");
-    let outputs = noctua_docs::render(&dist).expect("dist/ must exist");
+    let system = root().join("system");
+    let outputs = noctua_docs::render(&system).expect("system/ must exist");
     let paths: Vec<&str> = outputs.iter().map(|o| o.path.as_str()).collect();
 
     for expected in [
@@ -389,10 +389,20 @@ fn the_portuguese_page_is_actually_in_portuguese() {
     let pt = rendered("index.pt.html");
     let en = rendered("index.html");
 
-    for phrase in ["A paleta", "Contraste", "Em contexto", "Como funciona"] {
+    for phrase in ["A paleta", "Em contexto", "Instalar", "Paletas"] {
         assert!(
             pt.contains(phrase),
-            "the Portuguese page is missing {phrase:?}"
+            "the Portuguese product page is missing {phrase:?}"
+        );
+    }
+    // The compiler page carries its own prose, and it is the one most at risk
+    // of being written in English and never translated — it is the page a
+    // contributor edits and a reader rarely visits.
+    let pt_compiler = rendered("how-it-works.pt.html");
+    for phrase in ["Como funciona", "Contraste", "o compilador", "Limites"] {
+        assert!(
+            pt_compiler.contains(phrase),
+            "the Portuguese compiler page is missing {phrase:?}"
         );
     }
     // And the English headings must not have leaked through.
@@ -550,10 +560,10 @@ fn the_playground_script_and_its_markup_agree() {
 
 /// Every palette's stylesheet must reach the site, or its picker entry paints
 /// nothing. The list used to be hardcoded, so a new theme's CSS was emitted to
-/// `dist/` and never copied.
+/// `system/` and never copied.
 #[test]
 fn every_theme_ships_a_stylesheet_and_a_palette_file() {
-    let palette = noctua_docs::load(&root().join("dist")).expect("dist/ must exist");
+    let palette = noctua_docs::load(&root().join("system")).expect("system/ must exist");
     let files = noctua_docs::token_files(&palette);
 
     for (index, theme) in palette.theme_names().iter().enumerate() {
@@ -573,7 +583,7 @@ fn every_theme_ships_a_stylesheet_and_a_palette_file() {
 
         // And the file the site copies has to exist to be copied.
         //
-        // Probed in `dist/`, deliberately, not in `docs-site/public/`. The
+        // Probed in `system/`, deliberately, not in `docs-site/public/`. The
         // rendered site is gitignored and is written by `cargo xtask build`,
         // while `cargo xtask check` never writes anything — so probing the
         // rendered site made this test pass only on a machine that happened to
@@ -585,7 +595,7 @@ fn every_theme_ships_a_stylesheet_and_a_palette_file() {
         // honestly assert what this crate decides, which is the list above and
         // the existence of its sources.
         for file in [&stylesheet, &format!("json/themes/{theme}.json")] {
-            let path = root().join("dist").join(file);
+            let path = root().join("system").join(file);
             assert!(
                 path.exists(),
                 "{} is listed for the site but does not exist",
@@ -736,17 +746,27 @@ fn every_swatch_is_painted_with_its_token() {
 /// was simply wrong in dark mode with script blocked.
 #[test]
 fn the_mode_on_screen_is_decided_by_the_stylesheet() {
-    let html = page();
     let script = std::fs::read_to_string(root().join("docs-site/js/site.js")).expect("site.js");
     let css = std::fs::read_to_string(root().join("docs-site/css/site.css")).expect("site.css");
 
-    for block in ["ramp-group", "matrix"] {
-        assert!(html.contains(block), "the page lost .{block}");
+    // Both dual-mode blocks still exist, but they no longer live on the same
+    // page: the ramp is part of the palette browser and the contrast matrix is
+    // part of the compiler's argument. Naming the page each belongs on is what
+    // keeps this test honest — asserting "somewhere in the site" would pass
+    // even if one were dropped entirely and the other rendered twice.
+    for (page, block) in [
+        ("index.html", "ramp-group"),
+        ("how-it-works.html", "matrix"),
+    ] {
+        assert!(rendered(page).contains(block), "{page} lost .{block}");
     }
-    assert!(
-        !html.contains("data-mode=\"dark\" hidden"),
-        "a mode block is still hidden in the markup"
-    );
+    // No page may hide a mode block and let script reveal it.
+    for (path, html) in all_pages() {
+        assert!(
+            !html.contains("data-mode=\"dark\" hidden"),
+            "{path} still hides a mode block in the markup"
+        );
+    }
     assert!(
         !script.contains("syncVisibility"),
         "site.js still decides which mode is visible, which it cannot do before \
@@ -845,7 +865,7 @@ fn the_two_ramp_renderers_agree() {
 /// One palette in the markup, whatever the spec offers.
 #[test]
 fn only_the_default_palette_is_rendered() {
-    let palette = noctua_docs::load(&root().join("dist")).expect("dist/ must exist");
+    let palette = noctua_docs::load(&root().join("system")).expect("system/ must exist");
     let html = page();
 
     let groups = html.matches("class=\"ramp-group").count();
@@ -865,9 +885,9 @@ fn only_the_default_palette_is_rendered() {
 
 /// Every page the generator renders.
 fn rendered_pages() -> Vec<String> {
-    let dist = root().join("dist");
-    noctua_docs::render(&dist)
-        .expect("dist/ must exist — run `cargo xtask build`")
+    let system = root().join("system");
+    noctua_docs::render(&system)
+        .expect("system/ must exist — run `cargo xtask build`")
         .into_iter()
         .map(|output| output.path)
         .collect()

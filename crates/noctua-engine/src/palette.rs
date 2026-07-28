@@ -83,10 +83,29 @@ pub struct Palette {
     /// repository that pins the axes can then tell a palette that moved
     /// underneath it from one that did not.
     pub spec_hash: String,
+    /// What the colour system calls itself, and the version being published.
+    ///
+    /// Carried on the palette so emitters need no access to the spec, and so
+    /// the version they stamp is **the colour system's**, not the compiler's.
+    /// Before this it came from `env!("CARGO_PKG_VERSION")`, which is the
+    /// compiler's own version and is fixed at compile time — which is also
+    /// what made `xtask release` stamp the version it had just replaced.
+    pub identity: Identity,
     /// The translucency ladder.
     pub alpha: AlphaScale,
     /// Every theme, in spec order.
     pub themes: Vec<ResolvedTheme>,
+}
+
+/// What the colour system calls itself, from the spec's `[system]` table.
+#[derive(Debug, Clone)]
+pub struct Identity {
+    /// The published version. Distinct from the compiler's.
+    pub version: String,
+    /// The name generated package metadata uses.
+    pub name: String,
+    /// One line, for the same metadata.
+    pub description: String,
 }
 
 /// The translucency ladder, carried through so emitters need no spec.
@@ -400,6 +419,11 @@ pub fn build(spec: &Spec) -> Result<Palette, EngineError> {
         shiftable_roles,
         neutral_ramps,
         spec_hash: spec.source_hash.clone(),
+        identity: Identity {
+            version: spec.system.version.clone(),
+            name: spec.system.name.clone(),
+            description: spec.system.description.clone(),
+        },
         alpha: AlphaScale {
             percentages: spec.alpha.percentages.clone(),
             // The end of the ramp unless the spec names something else.

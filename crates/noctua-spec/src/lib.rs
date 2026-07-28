@@ -38,7 +38,7 @@ pub use curve::{CurveSpec, HueSpec};
 pub use error::{Problem, SpecError};
 pub use model::{
     Alpha, ApcaTarget, Chart, Consumer, DeltaLTarget, DensityBand, Family, FamilyOverride,
-    NamedScale, Neutral, Output, Role, Scale, Spec, Spread, Stops, TargetSpec, Theme,
+    NamedScale, Neutral, Output, Role, Scale, Spec, Spread, Stops, System, TargetSpec, Theme,
 };
 
 /// A short, stable content hash of a specification.
@@ -178,6 +178,47 @@ mod tests {
             problem.span().is_some(),
             "a parse error must point somewhere"
         );
+    }
+
+    /// The colour system's version is published to two registries that both
+    /// reject a malformed one — but only after a tag has been pushed. Catching
+    /// it here turns a failed release into a failed `check`.
+    #[test]
+    fn a_malformed_system_version_is_rejected() {
+        for bad in ["1.2", "1.2.3.4", "v1.2.3", "1.2.x", ""] {
+            let spec = format!("[system]\nversion = \"{bad}\"\n[families.a]\nhue = 1\n");
+            let error = super::parse("t.toml", &spec)
+                .err()
+                .unwrap_or_else(|| panic!("\"{bad}\" should not be accepted"));
+            assert!(
+                error
+                    .problems()
+                    .iter()
+                    .any(|p| p.message().contains("[system]")),
+                "\"{bad}\" was rejected, but not for the reason we meant"
+            );
+        }
+    }
+
+    /// Pre-release and build metadata are legitimate semver and must survive.
+    #[test]
+    fn a_prerelease_system_version_is_accepted() {
+        for good in ["0.2.0", "1.0.0-rc.1", "1.0.0+build.5", "10.20.30"] {
+            let spec = format!("[system]\nversion = \"{good}\"\n[families.a]\nhue = 1\n");
+            let parsed = super::parse("t.toml", &spec)
+                .unwrap_or_else(|e| panic!("\"{good}\" should be accepted: {e:?}"));
+            assert_eq!(parsed.system.version, good);
+        }
+    }
+
+    /// Left out entirely, the spec still parses — every other field has a
+    /// default and this one must not be the exception that breaks the
+    /// "smallest useful spec is three lines" promise.
+    #[test]
+    fn the_system_table_is_optional() {
+        let parsed = super::parse("t.toml", "[families.a]\nhue = 1\n").expect("parses");
+        assert_eq!(parsed.system.name, "noctua-colors");
+        assert!(!parsed.system.version.is_empty());
     }
 
     #[test]

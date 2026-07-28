@@ -6,11 +6,15 @@
 default:
     @just --list
 
-# Compile the spec into every target under dist/.
+# Compile the spec into every target, under the scratch tree target/system/.
 build:
     cargo xtask build
 
-# Validate the spec, run every gate, and verify dist/ is in sync.
+# The same, but writing the published colour system in system/.
+system:
+    cargo xtask build --system
+
+# Validate the spec, run every gate, and verify system/ is in sync.
 check:
     cargo xtask check
 
@@ -22,7 +26,7 @@ colors:
 dev port="8080":
     cargo xtask dev --port {{port}}
 
-# Copy dist/ into every consumer registered in the spec.
+# Copy system/ into every consumer registered in the spec.
 export:
     cargo xtask export
 

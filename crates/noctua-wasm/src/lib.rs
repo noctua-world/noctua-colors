@@ -21,7 +21,7 @@ use wasm_bindgen::prelude::wasm_bindgen;
 
 /// Compiles a spec and returns the palette as JSON.
 ///
-/// The same JSON `cargo xtask build` writes to `dist/json/palette.json`, so
+/// The same JSON `cargo xtask build` writes to `system/json/palette.json`, so
 /// the playground and the docs site read one format.
 ///
 /// # Errors

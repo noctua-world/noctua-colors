@@ -2,7 +2,7 @@
 //!
 //! `package.json` is the one manifest in this repository that is hand-written
 //! rather than generated, and it points at generated files. So it is the one
-//! place where a rename inside `dist/` can break a consumer while every other
+//! place where a rename inside `system/` can break a consumer while every other
 //! check stays green: `exports` is a whitelist, and a path in it that no longer
 //! exists fails at the consumer's `@import`, in their project, weeks later.
 //!
@@ -27,7 +27,7 @@ use crate::ui;
 /// Only when `package.json` cannot be read or is not valid JSON. A broken
 /// *claim* is a returned failure, not an error, so every claim gets checked in
 /// one pass rather than stopping at the first.
-pub(crate) fn check(root: &Path, workspace_version: &str) -> Result<Vec<String>, String> {
+pub(crate) fn check(root: &Path, system_version: &str) -> Result<Vec<String>, String> {
     let path = root.join("package.json");
     if !path.exists() {
         // Not every repository in this fleet publishes to npm. Absence is a
@@ -46,10 +46,10 @@ pub(crate) fn check(root: &Path, workspace_version: &str) -> Result<Vec<String>,
     exports_resolve(root, &manifest, &mut failures, &mut checked);
     files_exist(root, &manifest, &mut failures, &mut checked);
     side_effects_cover_css(&manifest, &mut failures, &mut checked);
-    version_tracks_workspace(&manifest, workspace_version, &mut failures, &mut checked);
+    version_tracks_the_colour_system(&manifest, system_version, &mut failures, &mut checked);
     nothing_is_depended_on(&manifest, &mut failures);
 
-    // 6. The trap this check exists for. `dist/tailwind/theme.css` opens with a
+    // 6. The trap this check exists for. `system/tailwind/theme.css` opens with a
     //    *relative* `@import "../css/index.css"`, which never touches the
     //    `exports` map — it is resolved on the filesystem, inside the tarball.
     //    So moving either file breaks Tailwind consumers while passing every
@@ -153,18 +153,28 @@ fn side_effects_cover_css(manifest: &Value, failures: &mut Vec<String>, checked:
     }
 }
 
-/// The version has to track the workspace, or the npm package and the crate
-/// disagree about what release they are.
-fn version_tracks_workspace(
+/// The npm version has to track **the colour system's**, not the compiler's.
+///
+/// `package.json` is the one artifact whose version is hand-written, and it and
+/// the generated crate are published from the same tag. If they disagree, one
+/// registry ships a release the other has never heard of — and npm publishes
+/// are permanent, so this has to fail before the tag exists rather than after.
+///
+/// It used to compare against the workspace version. That was right when there
+/// was one number; now the workspace holds the compiler's, and comparing
+/// against it would demand that the npm package be versioned by a number no
+/// consumer of it can see.
+fn version_tracks_the_colour_system(
     manifest: &Value,
-    workspace_version: &str,
+    system_version: &str,
     failures: &mut Vec<String>,
     checked: &mut usize,
 ) {
     match manifest.get("version").and_then(Value::as_str) {
-        Some(version) if version == workspace_version => *checked += 1,
+        Some(version) if version == system_version => *checked += 1,
         Some(version) => failures.push(format!(
-            "package.json is at {version} and the workspace is at {workspace_version}"
+            "package.json is at {version} and the colour system is at {system_version}. \
+             The spec's [system] table is the authority; `cargo xtask release` writes both"
         )),
         None => failures.push("package.json has no version".to_owned()),
     }
@@ -187,21 +197,62 @@ fn nothing_is_depended_on(manifest: &Value, failures: &mut Vec<String>) {
     }
 }
 
+/// Every `.css` file under `system/`, in a stable order.
+///
+/// Collected rather than listed. A hardcoded list was right when two files had
+/// imports; at forty-two it is a blind spot that grows every time a palette is
+/// added, and the thing it would miss — an import that resolves in-repo but not
+/// in the tarball — is exactly what this check exists to catch.
+fn stylesheets(directory: &Path, into: &mut Vec<std::path::PathBuf>) -> Result<(), String> {
+    // A directory that is not there is a finding, not a crash: the caller
+    // reports "ships no stylesheets at all", which is the useful sentence.
+    // Returning Err here instead would abort the whole packaging check on a
+    // tree that simply has not been built yet.
+    if !directory.is_dir() {
+        return Ok(());
+    }
+    let entries = std::fs::read_dir(directory)
+        .map_err(|error| format!("could not read {}: {error}", directory.display()))?;
+    let mut found: Vec<std::path::PathBuf> = Vec::new();
+    for entry in entries {
+        let entry = entry.map_err(|error| format!("could not read an entry: {error}"))?;
+        found.push(entry.path());
+    }
+    found.sort();
+
+    for path in found {
+        if path.is_dir() {
+            stylesheets(&path, into)?;
+        } else if path.extension().is_some_and(|e| e == "css") {
+            into.push(path);
+        }
+    }
+    Ok(())
+}
+
 /// Resolves every relative `@import` in the generated CSS against the
 /// filesystem, the way a bundler inside the tarball will.
 fn relative_imports_resolve(root: &Path) -> Result<Vec<String>, String> {
     let mut failures = Vec::new();
-    let dist = root.join("dist");
+    let system = root.join("system");
 
-    for relative in ["tailwind/theme.css", "css/index.css"] {
-        let file = dist.join(relative);
-        if !file.exists() {
-            failures.push(format!("dist/{relative} is missing"));
-            continue;
-        }
+    let mut files = Vec::new();
+    for directory in ["css", "tailwind"] {
+        stylesheets(&system.join(directory), &mut files)?;
+    }
+    if files.is_empty() {
+        failures.push("system/ ships no stylesheets at all".to_owned());
+    }
+
+    for file in files {
+        let relative = file
+            .strip_prefix(&system)
+            .unwrap_or(&file)
+            .to_string_lossy()
+            .replace('\\', "/");
         let text = std::fs::read_to_string(&file)
-            .map_err(|error| format!("could not read dist/{relative}: {error}"))?;
-        let parent = file.parent().unwrap_or(&dist);
+            .map_err(|error| format!("could not read system/{relative}: {error}"))?;
+        let parent = file.parent().unwrap_or(&system);
 
         for line in text.lines() {
             let Some(rest) = line.trim().strip_prefix("@import") else {
@@ -215,7 +266,7 @@ fn relative_imports_resolve(root: &Path) -> Result<Vec<String>, String> {
             }
             if !parent.join(target).exists() {
                 failures.push(format!(
-                    "dist/{relative} imports {target}, which does not resolve. This \
+                    "system/{relative} imports {target}, which does not resolve. This \
                      breaks inside the published tarball while still working in-repo"
                 ));
             }
@@ -248,9 +299,13 @@ mod tests {
             .to_owned()
     }
 
+    /// The version passed here is the **colour system's**, because that is what
+    /// `check` compares `package.json` against and what the tag publishes.
+    /// Passing the compiler's made this fail the moment the two diverged, which
+    /// is exactly what it should have done.
     #[test]
     fn the_shipped_package_is_coherent() {
-        let failures = check(&repository_root(), &workspace_version()).expect("readable");
+        let failures = check(&repository_root(), &system_version()).expect("readable");
         assert!(failures.is_empty(), "{failures:#?}");
     }
 
@@ -262,7 +317,7 @@ mod tests {
         std::fs::write(
             dir.join("package.json"),
             r#"{"version":"0.0.0","sideEffects":["**/*.css"],
-                "exports":{"./css":"./dist/css/nope.css"},"files":[]}"#,
+                "exports":{"./css":"./system/css/nope.css"},"files":[]}"#,
         )
         .expect("write");
 
@@ -310,19 +365,28 @@ mod tests {
         );
     }
 
-    /// Every place the release version lands has to agree, and there are five.
+    /// The colour system's version, from the spec — the authority.
+    fn system_version() -> String {
+        let spec = noctua_spec::load(repository_root().join("specs/noctua.toml"))
+            .expect("the shipped spec");
+        spec.system.version
+    }
+
+    /// Every artifact a consumer sees must carry **the colour system's**
+    /// version, and there are four places it lands.
     ///
-    /// `cargo xtask release` writes two of them directly and regenerates the
-    /// other three — and the regeneration has to happen in a *freshly compiled*
-    /// subprocess, because the version reaches `dist/` through
-    /// `env!("CARGO_PKG_VERSION")`, which is baked when the binary was built.
-    /// Doing it in-process stamped the artifacts with the version that had just
-    /// been replaced, and `check` reported three files out of sync. This is the
-    /// test that would have caught it.
+    /// `cargo xtask release` writes two directly — the spec and `package.json`
+    /// — and regenerates the other two. The regeneration happens in a *freshly
+    /// compiled* subprocess; see the comment on `rebuild_with_the_new_version`
+    /// for why that is still necessary now that the system version travels on
+    /// the palette.
+    ///
+    /// This test caught a real bug: an in-process regeneration stamped the
+    /// artifacts with the version that had just been replaced.
     #[test]
     fn every_artifact_carries_the_same_version() {
         let root = repository_root();
-        let workspace = workspace_version();
+        let system = system_version();
 
         let package_json: serde_json::Value = serde_json::from_str(
             &std::fs::read_to_string(root.join("package.json")).expect("read"),
@@ -330,27 +394,53 @@ mod tests {
         .expect("valid JSON");
         assert_eq!(
             package_json["version"].as_str().expect("a version"),
-            workspace,
-            "package.json disagrees with the workspace"
+            system,
+            "package.json disagrees with the spec's [system] version"
         );
 
         let manifest: serde_json::Value = serde_json::from_str(
-            &std::fs::read_to_string(root.join("dist/MANIFEST.json")).expect("read"),
+            &std::fs::read_to_string(root.join("system/MANIFEST.json")).expect("read"),
         )
         .expect("valid JSON");
         assert_eq!(
-            manifest["version"].as_str().expect("a version"),
-            workspace,
-            "dist/MANIFEST.json disagrees — regenerate with `cargo xtask build`"
+            manifest["systemVersion"].as_str().expect("a version"),
+            system,
+            "system/MANIFEST.json disagrees — regenerate with `cargo xtask build --system`"
         );
 
-        for file in ["dist/rust/Cargo.toml", "dist/rust/README.md"] {
+        for file in ["system/rust/Cargo.toml", "system/rust/README.md"] {
             let text = std::fs::read_to_string(root.join(file)).expect("read");
             assert!(
-                text.contains(&format!("version = \"{workspace}\"")),
-                "{file} does not carry {workspace}"
+                text.contains(&format!("version = \"{system}\"")),
+                "{file} does not carry {system}"
             );
         }
+    }
+
+    /// The two versions are genuinely separate, and the manifest records both.
+    ///
+    /// Without this, the split could silently collapse back into one number —
+    /// a later refactor reintroducing `env!("CARGO_PKG_VERSION")` on the
+    /// publishing path would pass every other test here, because the two are
+    /// allowed to be *equal*; what they are not allowed to be is the same
+    /// field.
+    #[test]
+    fn the_manifest_records_the_compiler_version_separately() {
+        let manifest: serde_json::Value = serde_json::from_str(
+            &std::fs::read_to_string(repository_root().join("system/MANIFEST.json")).expect("read"),
+        )
+        .expect("valid JSON");
+
+        assert_eq!(
+            manifest["version"].as_str().expect("a version"),
+            workspace_version(),
+            "MANIFEST.json's `version` must stay the compiler's — TOKEN-POLICY.md \
+             tells consumers to diff this file"
+        );
+        assert!(
+            manifest["systemVersion"].is_string(),
+            "the colour system's version is missing from the manifest"
+        );
     }
 
     #[test]
@@ -367,13 +457,13 @@ mod tests {
     #[test]
     fn a_relative_import_that_does_not_resolve_is_caught() {
         let dir = tempdir("relative-import");
-        std::fs::create_dir_all(dir.join("dist/tailwind")).expect("mkdir");
-        std::fs::create_dir_all(dir.join("dist/css")).expect("mkdir");
-        std::fs::write(dir.join("dist/css/index.css"), "/* the sibling */\n").expect("write");
+        std::fs::create_dir_all(dir.join("system/tailwind")).expect("mkdir");
+        std::fs::create_dir_all(dir.join("system/css")).expect("mkdir");
+        std::fs::write(dir.join("system/css/index.css"), "/* the sibling */\n").expect("write");
         // Points one directory further up than the real file does, which is
         // exactly what a move would produce.
         std::fs::write(
-            dir.join("dist/tailwind/theme.css"),
+            dir.join("system/tailwind/theme.css"),
             "@import \"../../css/index.css\";\n",
         )
         .expect("write");

@@ -75,7 +75,7 @@ fn literals(line: &str) -> Vec<String> {
 
 /// Scans the repository for color literals that nothing permits.
 ///
-/// `dist/`, `tests/golden/` and `target/` are excluded: they are generated,
+/// `system/`, `tests/golden/` and `target/` are excluded: they are generated,
 /// and the colors in them are the entire point.
 #[must_use]
 pub fn no_hardcoded_colors(root: &Path) -> Report {
@@ -220,11 +220,11 @@ fn walk(base: &Path) -> Vec<PathBuf> {
                 .to_string();
             if path.is_dir() {
                 // `public` is the rendered docs site: generated output, like
-                // `dist`. The colors in it are the palette being displayed,
+                // `system`. The colors in it are the palette being displayed,
                 // which is the entire point of the page.
                 if !matches!(
                     name.as_str(),
-                    "target" | "dist" | "public" | "node_modules" | "vendor"
+                    "target" | "system" | "public" | "node_modules" | "vendor"
                 ) {
                     stack.push(path);
                 }

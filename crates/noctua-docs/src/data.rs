@@ -1,6 +1,6 @@
 //! The palette, as the site sees it.
 //!
-//! Read from `dist/json/palette.json` — the same artifact any other consumer
+//! Read from `system/json/palette.json` — the same artifact any other consumer
 //! gets, parsed with no privileged access to the engine.
 //!
 //! That constraint is the point. A docs site that imported `noctua-engine` and
@@ -269,7 +269,7 @@ impl Palette {
     /// Malformed or unreadable JSON.
     pub fn parse(json: &str) -> Result<Self, String> {
         let mut palette: Self = serde_json::from_str(json)
-            .map_err(|error| format!("dist/json/palette.json is not readable: {error}"))?;
+            .map_err(|error| format!("system/json/palette.json is not readable: {error}"))?;
         palette.resolve_contract();
         Ok(palette)
     }
@@ -333,8 +333,12 @@ mod tests {
     use super::*;
 
     fn shipped() -> Palette {
-        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../../dist/json/palette.json");
-        let json = std::fs::read_to_string(path).expect("dist/json/palette.json — run xtask build");
+        let path = concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/../../system/json/palette.json"
+        );
+        let json =
+            std::fs::read_to_string(path).expect("system/json/palette.json — run xtask build");
         Palette::parse(&json).expect("valid palette")
     }
 
@@ -363,8 +367,8 @@ mod tests {
     #[test]
     fn the_first_theme_is_the_one_the_stylesheet_paints() {
         let palette = shipped();
-        let css = concat!(env!("CARGO_MANIFEST_DIR"), "/../../dist/css/index.css");
-        let index = std::fs::read_to_string(css).expect("dist/css/index.css");
+        let css = concat!(env!("CARGO_MANIFEST_DIR"), "/../../system/css/index.css");
+        let index = std::fs::read_to_string(css).expect("system/css/index.css");
 
         // `index.css` imports the default theme's bare file name first, after
         // the two shared files — the ramp and the semantic contract.

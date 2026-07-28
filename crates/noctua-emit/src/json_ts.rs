@@ -7,7 +7,7 @@
 //! deliberately richer than the other targets, because it is what the docs
 //! site reads. That is the mechanism which makes "the site cannot drift from
 //! the system" true rather than aspirational: the site is a consumer of
-//! `dist/`, exactly like any other project, rather than a second
+//! `system/`, exactly like any other project, rather than a second
 //! implementation that happens to agree.
 //!
 //! `index.js` and `index.d.ts` are the same data as an importable module, with

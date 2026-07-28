@@ -1,6 +1,6 @@
 //! Rendering the documentation site.
 //!
-//! The site is generated from `dist/`, so it can only be built after the spec
+//! The site is generated from `system/`, so it can only be built after the spec
 //! has been compiled. That ordering is the mechanism which keeps the site
 //! honest: it reads the same artifacts every other consumer reads.
 
@@ -13,16 +13,19 @@ pub(crate) const OUTPUT: &str = "docs-site/public";
 
 /// Renders the site into `docs-site/public/`.
 ///
+/// `system` is the built colour system to read — the published tree or a
+/// scratch build. Taking it as a parameter is what lets a scratch build be
+/// previewed without publishing it.
+///
 /// # Errors
 ///
-/// A missing `dist/`, or any filesystem failure.
-pub(crate) fn build(root: &Path) -> Result<usize, String> {
-    let dist = root.join("dist");
+/// A missing colour system, or any filesystem failure.
+pub(crate) fn build(root: &Path, system: &Path) -> Result<usize, String> {
     let out = root.join(OUTPUT);
     let source = root.join("docs-site");
 
-    let palette = noctua_docs::load(&dist)?;
-    let pages = noctua_docs::render(&dist)?;
+    let palette = noctua_docs::load(system)?;
+    let pages = noctua_docs::render(system)?;
 
     // A clean rebuild, so a renamed page never lingers as a stale route.
     if out.exists() {
@@ -45,8 +48,8 @@ pub(crate) fn build(root: &Path) -> Result<usize, String> {
 
     // The tokens, copied in exactly as a consumer would receive them.
     for file in noctua_docs::token_files(&palette) {
-        let bytes = std::fs::read(dist.join(&file))
-            .map_err(|error| format!("could not read dist/{file}: {error}"))?;
+        let bytes = std::fs::read(system.join(&file))
+            .map_err(|error| format!("could not read system/{file}: {error}"))?;
         write(&out.join("tokens").join(&file), &bytes)?;
         written += 1;
     }

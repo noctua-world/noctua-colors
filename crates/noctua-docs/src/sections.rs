@@ -1,6 +1,6 @@
 //! The page's content.
 //!
-//! Every number rendered here was read from `dist/json/palette.json`. Where
+//! Every number rendered here was read from `system/json/palette.json`. Where
 //! the copy quotes a figure — a chroma, an Lc, a separation — it is
 //! interpolated from the data rather than typed, so the prose cannot go stale
 //! while the palette moves under it.
@@ -21,25 +21,36 @@ pub fn hero(palette: &Palette, locale: Locale) -> Markup {
         section class="hero" {
             div class="wrap" {
                 p class="eyebrow reveal" {
-                    (t(locale, "color system compiler", "compilador de sistemas de cores"))
+                    (t(locale, "a colour system", "um sistema de cores"))
                 }
                 h1 class="reveal" {
-                    (t(locale, "The repository versions the ", "O repositório versiona as "))
-                    em { (t(locale, "curves", "curvas")) }
-                    (t(locale, ", not the colors.", ", não as cores."))
+                    (t(locale, "Colours that were ", "Cores que foram "))
+                    em { (t(locale, "solved", "resolvidas")) }
+                    (t(locale, ", not picked.", ", não escolhidas."))
                 }
                 p class="lead reveal" {
                     (t(
                         locale,
-                        "One declarative spec compiles to CSS custom properties, a Tailwind v4 \
-                         theme, a Rust crate, DTCG tokens, TypeScript, SCSS and a QML singleton. \
-                         No hand-picked hex value exists anywhere in the source — every color on \
-                         this page was computed, checked, and regenerated on demand.",
-                        "Uma especificação declarativa compila para propriedades CSS, um tema \
-                         Tailwind v4, um crate Rust, tokens DTCG, TypeScript, SCSS e um singleton \
-                         QML. Não existe nenhum valor hexadecimal escolhido à mão no código — \
-                         cada cor desta página foi calculada, verificada e regerada sob demanda.",
+                        "Most colour systems are a list of hex values somebody chose. This one \
+                         is the output of a compiler: every step of every ramp was solved \
+                         against a perceptual contrast target, in every palette, and checked \
+                         before it shipped. Link one file and you have all of it — light and \
+                         dark included.",
+                        "A maioria dos sistemas de cores é uma lista de valores hexadecimais \
+                         que alguém escolheu. Este é a saída de um compilador: cada passo de \
+                         cada rampa foi resolvido contra um alvo de contraste perceptual, em \
+                         todas as paletas, e verificado antes de ser publicado. Vincule um \
+                         arquivo e você tem tudo — claro e escuro inclusos.",
                     ))
+                }
+
+                p class="hero-actions reveal" {
+                    a class="button button-primary" href="#install" {
+                        (t(locale, "Install it", "Instalar"))
+                    }
+                    a class="button button-secondary" href="#palette" {
+                        (t(locale, "Browse the palettes", "Ver as paletas"))
+                    }
                 }
 
                 @if let Some(step) = solid {
@@ -87,14 +98,14 @@ pub fn hero(palette: &Palette, locale: Locale) -> Markup {
                 }
 
                 ul class="hero-stats reveal" {
-                    (stat(&palette.themes.len().to_string(), t(locale, "themes", "temas")))
-                    (stat(
-                        &palette.roles.len().to_string(),
-                        t(locale, "roles per family", "papéis por família"),
-                    ))
+                    (stat(&palette.themes.len().to_string(), t(locale, "palettes", "paletas")))
                     (stat(
                         &palette.gray_ramp().len().to_string(),
                         t(locale, "neutral steps", "passos neutros"),
+                    ))
+                    (stat(
+                        &palette.roles.len().to_string(),
+                        t(locale, "roles per family", "papéis por família"),
                     ))
                     (stat(&palette.gamuts.len().to_string(), t(locale, "gamuts", "gamuts")))
                 }
@@ -106,6 +117,100 @@ pub fn hero(palette: &Palette, locale: Locale) -> Markup {
 fn stat(value: &str, label: &str) -> Markup {
     html! {
         li { strong { (value) } span { (label) } }
+    }
+}
+
+/// How to actually get the colours — the section the site did not have.
+///
+/// It leads with the smallest thing that works, a single `<link>` to a single
+/// palette, because that is what most arrivals want and because the number
+/// beside it is the argument: one palette is a twenty-fifth of the weight of
+/// all of them.
+///
+/// The palette name is taken from the palette rather than typed, so this stays
+/// correct if the default is ever renamed.
+#[must_use]
+pub fn install(palette: &Palette, locale: Locale) -> Markup {
+    let default = palette.default_theme();
+    let cdn = format!(
+        "<link rel=\"stylesheet\"\n      \
+         href=\"https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/palette/{default}.css\">"
+    );
+    let npm = format!(
+        "npm install @noctua-world/colors\n\n/* then, in your CSS */\n@import \"@noctua-world/colors/palette/{default}.css\";"
+    );
+    let tailwind = format!(
+        "@import \"tailwindcss\";\n@import \"@noctua-world/colors/tailwind/palette/{default}.css\";\n\n\
+         <!-- then -->\n<div class=\"bg-surface text-fg border-border dark:bg-surface-subtle\">"
+    );
+    let rust = format!(
+        "cargo add noctua-colors-tokens --features {}\n\nuse noctua_colors_tokens::{}::light::accent;\nlet hex = accent::SOLID.hex;",
+        default.replace('-', "_"),
+        default.replace('-', "_")
+    );
+
+    let routes: [(&str, &str, &String); 4] = [
+        ("A browser", "install-cdn", &cdn),
+        ("npm", "install-npm", &npm),
+        ("Tailwind v4", "install-tailwind", &tailwind),
+        ("Rust", "install-rust", &rust),
+    ];
+
+    html! {
+        section id="install" class="section" {
+            div class="wrap" {
+                h2 class="reveal" { (t(locale, "Install", "Instalar")) }
+                p class="section-lead reveal" {
+                    (t(
+                        locale,
+                        "Pick the one that matches you. Each is complete — there is no step two.",
+                        "Escolha o que combina com você. Cada um está completo — não existe \
+                         passo dois.",
+                    ))
+                }
+
+                div class="tabs reveal" {
+                    div class="tab-strip" role="tablist"
+                        aria-label=(t(locale, "Installation routes", "Formas de instalação")) {
+                        @for (index, (label, id, _)) in routes.iter().enumerate() {
+                            button type="button" class="tab" role="tab"
+                                   id=(format!("tab-{id}"))
+                                   aria-controls=(format!("panel-{id}"))
+                                   aria-selected=(if index == 0 { "true" } else { "false" })
+                                   tabindex=(if index == 0 { "0" } else { "-1" }) {
+                                (label)
+                            }
+                        }
+                    }
+                    @for (index, (_, id, code)) in routes.iter().enumerate() {
+                        div class="tab-panel" role="tabpanel"
+                            id=(format!("panel-{id}"))
+                            aria-labelledby=(format!("tab-{id}"))
+                            hidden[index != 0] {
+                            pre { code { (PreEscaped(html_escape(code))) } }
+                        }
+                    }
+                }
+
+                p class="section-note reveal" {
+                    (t(
+                        locale,
+                        "That is one palette, complete: the neutral ramp, every semantic name, \
+                         and both modes — 29 KB over the wire. The file carrying all ",
+                        "Isso é uma paleta, completa: a rampa neutra, todos os nomes semânticos \
+                         e os dois modos — 29 KB na rede. O arquivo com as ",
+                    ))
+                    strong { (palette.themes.len().to_string()) }
+                    (t(
+                        locale,
+                        " is 741 KB, which is why the small one exists. Use it only if your \
+                         users switch palettes at runtime.",
+                        " paletas tem 741 KB, e é por isso que o pequeno existe. Use-o apenas \
+                         se seus usuários trocarem de paleta em tempo de execução.",
+                    ))
+                }
+            }
+        }
     }
 }
 
@@ -510,10 +615,10 @@ pub fn contexts(palette: &Palette, locale: Locale) -> Markup {
                     (t(
                         locale,
                         "Colour alone cannot separate ten meanings for a dichromat — measured, \
-                         and published in dist/reports/colour-vision.md. Pair a status colour \
+                         and published in system/reports/colour-vision.md. Pair a status colour \
                          with an icon or a label.",
                         "Cor sozinha não separa dez significados para um dicromata — medido, e \
-                         publicado em dist/reports/colour-vision.md. Acompanhe uma cor de estado \
+                         publicado em system/reports/colour-vision.md. Acompanhe uma cor de estado \
                          com um ícone ou um rótulo.",
                     ))
                 }
@@ -661,11 +766,11 @@ fn categorical_scales(mode: Option<&ModePalette>, prefix: &str, locale: Locale) 
                 "Six is what a generated set can keep apart under all three dichromacies. A \
                  set marked labelled goes past that deliberately and says so: its legend has \
                  to name every series, and the measured margins are published in \
-                 dist/reports/colour-vision.md rather than assumed away.",
+                 system/reports/colour-vision.md rather than assumed away.",
                 "Seis é o que um conjunto gerado consegue manter distinguível sob as três \
                  dicromacias. Um conjunto marcado como rotulado passa disso de propósito e diz \
                  isso: sua legenda precisa nomear cada série, e as margens medidas são \
-                 publicadas em dist/reports/colour-vision.md em vez de ignoradas.",
+                 publicadas em system/reports/colour-vision.md em vez de ignoradas.",
             ))
         }
         @if let Some(m) = mode {
@@ -837,7 +942,7 @@ pub fn contrast_matrix(palette: &Palette, locale: Locale) -> Markup {
 /// The pairs the contrast matrix shows, with the compiler's severity for each.
 ///
 /// Exposed so `xtask` can check it against `noctua_check::contrast::PAIRS`.
-/// This crate deliberately does not depend on the gates — it reads `dist/` and
+/// This crate deliberately does not depend on the gates — it reads `system/` and
 /// nothing else — so the two tables are kept in step by a test rather than by
 /// a dependency.
 #[must_use]
@@ -1108,8 +1213,8 @@ fn notifications_card(locale: Locale) -> Markup {
                 p {
                     (t(
                         locale,
-                        "29 files written to dist/.",
-                        "29 arquivos escritos em dist/.",
+                        "29 files written to system/.",
+                        "29 arquivos escritos em system/.",
                     ))
                 }
             }
@@ -1158,9 +1263,9 @@ pub fn integration(locale: Locale) -> Markup {
             "css",
             r#"<!-- three files: the dense grays, the semantic contract, and
      the default theme's values -->
-<link rel="stylesheet" href="dist/css/ramp.css">
-<link rel="stylesheet" href="dist/css/contexts.css">
-<link rel="stylesheet" href="dist/css/ochre-balanced.css">
+<link rel="stylesheet" href="system/css/ramp.css">
+<link rel="stylesheet" href="system/css/contexts.css">
+<link rel="stylesheet" href="system/css/ochre-balanced.css">
 
 <!-- or index.css: all of the above plus every other theme, and a name
      that survives a theme being renamed -->
@@ -1175,7 +1280,7 @@ pub fn integration(locale: Locale) -> Markup {
             "Tailwind v4",
             "tailwind",
             r#"@import "tailwindcss";
-@import "../noctua-colors/dist/tailwind/theme.css";
+@import "../noctua-colors/system/tailwind/theme.css";
 
 <!-- then -->
 <div class="bg-surface text-fg border-border">"#,
@@ -1183,7 +1288,7 @@ pub fn integration(locale: Locale) -> Markup {
         (
             "Rust",
             "rust",
-            r#"noctua-colors-tokens = { path = "../noctua-colors/dist/rust" }
+            r#"noctua-colors-tokens = { path = "../noctua-colors/system/rust" }
 
 use noctua_colors_tokens::balanced::dark::accent;
 let hex = accent::SOLID.hex;"#,
@@ -1191,7 +1296,7 @@ let hex = accent::SOLID.hex;"#,
         (
             "TypeScript",
             "ts",
-            r#"import { palette } from "../noctua-colors/dist/ts/index.js";
+            r#"import { palette } from "../noctua-colors/system/ts/index.js";
 
 const solid = palette.themes.balanced.light.families.accent.steps[8];
 solid.renditions[0].hex;"#,
@@ -1277,5 +1382,217 @@ pub fn detail_panel(locale: Locale) -> Markup {
             data-label-headroom=(t(locale, "to gamut edge", "até a borda do gamut"))
             data-label-copy=(t(locale, "Copy as", "Copiar como"))
             data-label-close=(t(locale, "Close", "Fechar")) {}
+    }
+}
+
+/// The opening of the compiler page.
+///
+/// It says who the page is for, out loud, because the reader who wanted a
+/// stylesheet and landed here should be told in one sentence and given a way
+/// back rather than left to work it out.
+#[must_use]
+pub fn how_it_works_intro(locale: Locale) -> Markup {
+    html! {
+        section class="hero hero-compact" {
+            div class="wrap" {
+                p class="eyebrow reveal" {
+                    (t(locale, "the compiler", "o compilador"))
+                }
+                h1 class="reveal" {
+                    (t(locale, "How these colours were made", "Como estas cores foram feitas"))
+                }
+                p class="lead reveal" {
+                    (t(
+                        locale,
+                        "This page is about the program, not the palette. If you came for a \
+                         stylesheet, everything you need is on the front page — this is here \
+                         because colours are only worth trusting if the method is.",
+                        "Esta página é sobre o programa, não sobre a paleta. Se você veio por \
+                         uma folha de estilo, tudo o que precisa está na página inicial — isto \
+                         existe porque cores só merecem confiança se o método merecer.",
+                    ))
+                }
+                p class="hero-actions reveal" {
+                    a class="button button-secondary" href=(locale.page("index")) {
+                        (t(locale, "Back to the colours", "Voltar para as cores"))
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// What the gates measured, including what they could not fix.
+///
+/// The limit is stated as prominently as the capability. A colour system that
+/// publishes only its successes is asking to be trusted on a claim nobody can
+/// check; this one publishes the numbers where it falls short, because those
+/// are the numbers that change what a reader should do.
+#[must_use]
+pub fn limits(locale: Locale) -> Markup {
+    html! {
+        section id="limits" class="section" {
+            div class="wrap" {
+                h2 class="reveal" {
+                    (t(
+                        locale,
+                        "What the gates found, and could not fix",
+                        "O que os portões encontraram, e não puderam corrigir",
+                    ))
+                }
+                p class="section-lead reveal" {
+                    (t(
+                        locale,
+                        "The quality gates were wired up after the emitters and immediately \
+                         reported 175 failures against a palette that had passed everything \
+                         else. The cause was structural: every semantic solid was anchored to \
+                         the same contrast target, so they all landed at the same lightness and \
+                         differed only in hue — and hue is precisely the axis dichromacy \
+                         removes.",
+                        "Os portões de qualidade foram ligados depois dos emissores e \
+                         imediatamente relataram 175 falhas contra uma paleta que havia passado \
+                         em todo o resto. A causa era estrutural: cada sólido semântico estava \
+                         ancorado no mesmo alvo de contraste, então todos caíam na mesma \
+                         luminosidade e diferiam apenas no matiz — e o matiz é exatamente o \
+                         eixo que a dicromacia remove.",
+                    ))
+                }
+
+                div class="prose reveal" {
+                    p {
+                        (t(
+                            locale,
+                            "Families now separate in lightness as well as hue, which is the \
+                             only lever that survives. That is not a complete fix, and the \
+                             system says so rather than pretending. Searched across every \
+                             combination subject to fills staying visible and ramps staying \
+                             sane, the best achievable worst-case separation for a six-family \
+                             semantic set is ",
+                            "As famílias agora se separam em luminosidade além do matiz, que é \
+                             a única alavanca que sobrevive. Isso não é uma correção completa, \
+                             e o sistema diz isso em vez de fingir. Buscando em todas as \
+                             combinações, sujeitas a os preenchimentos permanecerem visíveis e \
+                             as rampas permanecerem sãs, a melhor separação de pior caso \
+                             alcançável para um conjunto semântico de seis famílias é ",
+                        ))
+                        strong { "0.0163" }
+                        (t(
+                            locale,
+                            " — under one just-noticeable difference, and there are now ten \
+                             families.",
+                            " — abaixo de uma diferença minimamente perceptível, e agora são \
+                             dez famílias.",
+                        ))
+                    }
+                    p {
+                        (t(
+                            locale,
+                            "So the gate reports margins and warns; it fails only when two \
+                             colours are literally the same. Every number is published in ",
+                            "Então o portão relata margens e avisa; ele falha apenas quando \
+                             duas cores são literalmente iguais. Todos os números são \
+                             publicados em ",
+                        ))
+                        code { "system/reports/colour-vision.md" }
+                        (t(
+                            locale,
+                            ". This is the reason WCAG 1.4.1 exists: never convey information \
+                             by colour alone. The palette gets you as far as colour can, and \
+                             tells you exactly how far that is.",
+                            ". Esta é a razão de a WCAG 1.4.1 existir: nunca transmita \
+                             informação apenas por cor. A paleta leva você até onde a cor \
+                             consegue, e diz exatamente até onde isso é.",
+                        ))
+                    }
+                    p {
+                        (t(
+                            locale,
+                            "The same measurement decided the categorical scale. Eight \
+                             generated colours bottom out at 0.0416 separation; six reach \
+                             0.0724. The default is six, and asking for more warns rather than \
+                             silently shipping a chart a dichromat cannot read.",
+                            "A mesma medição decidiu a escala categórica. Oito cores geradas \
+                             chegam ao fundo em 0,0416 de separação; seis alcançam 0,0724. O \
+                             padrão é seis, e pedir mais gera um aviso em vez de publicar \
+                             silenciosamente um gráfico que um dicromata não consegue ler.",
+                        ))
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// Why the colours can be trusted, on the product page, kept short.
+///
+/// The full argument is a page of its own; this is the paragraph that earns
+/// the click, and the link that offers it.
+#[must_use]
+pub fn trust(palette: &Palette, locale: Locale) -> Markup {
+    html! {
+        section id="trust" class="section" {
+            div class="wrap" {
+                h2 class="reveal" {
+                    (t(
+                        locale,
+                        "Why these colours are trustworthy",
+                        "Por que estas cores são confiáveis",
+                    ))
+                }
+                div class="prose reveal" {
+                    p {
+                        (t(
+                            locale,
+                            "Nothing here was picked by eye. A colour's saturation is stored as \
+                             a fraction of the most a display can actually show at that \
+                             lightness and hue, so the same token is richer on a wide-gamut \
+                             screen without being redefined. And a step's lightness is solved \
+                             from a contrast target using APCA, which — unlike WCAG 2.x — \
+                             models polarity, and so does not rate a too-weak dark-mode pair as \
+                             better than a comfortable light-mode one.",
+                            "Nada aqui foi escolhido a olho. A saturação de uma cor é \
+                             armazenada como uma fração do máximo que uma tela consegue \
+                             realmente exibir naquela luminosidade e matiz, então o mesmo token \
+                             fica mais rico em uma tela de gamut amplo sem ser redefinido. E a \
+                             luminosidade de um passo é resolvida a partir de um alvo de \
+                             contraste usando APCA, que — ao contrário do WCAG 2.x — modela \
+                             polaridade, e portanto não avalia um par escuro fraco demais como \
+                             melhor que um par claro confortável.",
+                        ))
+                    }
+                    p {
+                        (t(
+                            locale,
+                            "Every build runs 48,441 checks across every palette, mode and \
+                             pair, and fails on a regression. Colour-vision simulation runs \
+                             too — and where a pair genuinely cannot be told apart, that is \
+                             published rather than hidden.",
+                            "Cada build executa 48.441 verificações em todas as paletas, modos \
+                             e pares, e falha em uma regressão. A simulação de visão de cores \
+                             também roda — e onde um par realmente não pode ser distinguido, \
+                             isso é publicado em vez de escondido.",
+                        ))
+                    }
+                    p {
+                        (t(
+                            locale,
+                            "There are ",
+                            "São ",
+                        ))
+                        strong { (palette.themes.len().to_string()) }
+                        (t(
+                            locale,
+                            " palettes, and every one of them went through the same gates.",
+                            " paletas, e todas passaram pelos mesmos portões.",
+                        ))
+                    }
+                    p {
+                        a class="button button-secondary" href=(locale.page("how-it-works")) {
+                            (t(locale, "How it works, in full", "Como funciona, na íntegra"))
+                        }
+                    }
+                }
+            }
+        }
     }
 }

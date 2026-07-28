@@ -13,17 +13,17 @@
 //!
 //! Every emitted file carries a header saying it is generated, from what, and
 //! how to regenerate it. The header deliberately contains **no version string
-//! and no content hash**: either would rewrite every file in `dist/` whenever
+//! and no content hash**: either would rewrite every file in `system/` whenever
 //! anything changed, burying a one-token diff in hundreds of lines of churn.
 //!
 //! Provenance lives in [`manifest`] instead — one file that carries the tool
 //! version, the spec path, and a hash per artifact.
 
 pub mod css;
-pub mod dist;
 pub mod dtcg;
 pub mod json_ts;
 pub mod name;
+pub mod output;
 pub mod qml;
 pub mod reports;
 pub mod rust;
@@ -37,7 +37,7 @@ use noctua_engine::Palette;
 /// One file an emitter produced.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct EmittedFile {
-    /// Path relative to `dist/`, using forward slashes.
+    /// Path relative to `system/`, using forward slashes.
     pub path: String,
     /// Complete file contents.
     pub contents: String,
@@ -54,7 +54,7 @@ impl EmittedFile {
     }
 }
 
-/// A format `dist/` can be written in.
+/// A format `system/` can be written in.
 pub trait Emitter {
     /// Stable identifier, as named in the spec's `consumers` entries.
     fn id(&self) -> &'static str;
@@ -71,7 +71,7 @@ pub trait Emitter {
 
 /// Every emitter, in a fixed order.
 ///
-/// The order is the order `dist/` is written in and the order the CLI lists
+/// The order is the order `system/` is written in and the order the CLI lists
 /// them; it is fixed so output never depends on iteration order.
 #[must_use]
 pub fn registry() -> Vec<Box<dyn Emitter>> {
@@ -174,7 +174,7 @@ pub enum CommentStyle {
     Line(&'static str),
 }
 
-/// Builds `dist/MANIFEST.json`.
+/// Builds `system/MANIFEST.json`.
 ///
 /// This is where provenance lives, so that headers can stay stable. It records
 /// the tool version, the spec it was built from, a hash of that spec, and a
@@ -186,10 +186,21 @@ pub enum CommentStyle {
 /// Never in practice: the value built here is a map of strings, which
 /// `serde_json` cannot fail to serialize.
 #[must_use]
-pub fn manifest(spec_path: &str, spec_text: &str, files: &[EmittedFile]) -> EmittedFile {
+pub fn manifest(
+    identity: &noctua_engine::Identity,
+    spec_path: &str,
+    spec_text: &str,
+    files: &[EmittedFile],
+) -> EmittedFile {
     let mut root = serde_json::Map::new();
     root.insert("tool".into(), "noctua-colors".into());
+    // `version` keeps meaning the **compiler's** version, unchanged, because
+    // TOKEN-POLICY.md tells consumers to diff this file: adding a key is safe
+    // and repurposing one is not. `systemVersion` is the number that matters
+    // to anyone installing the colours, and it is new.
     root.insert("version".into(), env!("CARGO_PKG_VERSION").into());
+    root.insert("systemVersion".into(), identity.version.clone().into());
+    root.insert("system".into(), identity.name.clone().into());
     root.insert("regenerate".into(), REGENERATE.into());
     root.insert("spec".into(), spec_path.into());
     root.insert("specHash".into(), hash(spec_text.as_bytes()).into());
@@ -275,13 +286,26 @@ mod tests {
         );
     }
 
+    fn identity() -> noctua_engine::Identity {
+        noctua_engine::Identity {
+            version: "9.9.9".to_owned(),
+            name: "test-system".to_owned(),
+            description: "a fixture".to_owned(),
+        }
+    }
+
     #[test]
     fn the_manifest_records_provenance_for_every_file() {
         let files = [
             EmittedFile::new("css/ochre-balanced.css", ":root {}"),
             EmittedFile::new("scss/_noctua.scss", "$a: 1;"),
         ];
-        let manifest = manifest("specs/noctua.toml", "[families.accent]", &files);
+        let manifest = manifest(
+            &identity(),
+            "specs/noctua.toml",
+            "[families.accent]",
+            &files,
+        );
         assert_eq!(manifest.path, "MANIFEST.json");
 
         let parsed: serde_json::Value =
@@ -298,10 +322,42 @@ mod tests {
         assert!(parsed["files"]["scss/_noctua.scss"].is_string());
     }
 
+    /// The two versions are both recorded, and they are not the same key.
+    ///
+    /// `version` has meant the compiler's since 0.1.0 and `TOKEN-POLICY.md`
+    /// tells consumers to diff this file, so it keeps that meaning. The colour
+    /// system's version is the new key — adding one is safe, repurposing one
+    /// silently changes what an existing diff means.
+    #[test]
+    fn the_manifest_separates_the_two_versions() {
+        let manifest = manifest(&identity(), "s.toml", "x", &[]);
+        let parsed: serde_json::Value =
+            serde_json::from_str(&manifest.contents).expect("valid JSON");
+
+        assert_eq!(parsed["systemVersion"], "9.9.9", "the colour system's");
+        assert_eq!(parsed["system"], "test-system");
+        assert_eq!(
+            parsed["version"],
+            env!("CARGO_PKG_VERSION"),
+            "`version` must still be the compiler's"
+        );
+        assert_ne!(parsed["version"], parsed["systemVersion"]);
+    }
+
     #[test]
     fn the_manifest_changes_when_a_file_does() {
-        let before = manifest("s.toml", "x", &[EmittedFile::new("a.css", ":root{}")]);
-        let after = manifest("s.toml", "x", &[EmittedFile::new("a.css", ":root{ }")]);
+        let before = manifest(
+            &identity(),
+            "s.toml",
+            "x",
+            &[EmittedFile::new("a.css", ":root{}")],
+        );
+        let after = manifest(
+            &identity(),
+            "s.toml",
+            "x",
+            &[EmittedFile::new("a.css", ":root{ }")],
+        );
         assert_ne!(before.contents, after.contents);
     }
 }

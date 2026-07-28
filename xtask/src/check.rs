@@ -18,7 +18,7 @@ pub(crate) fn run(root: &Path, spec_path: &Path, colors_only: bool) -> Result<()
     let mut failures: Vec<String> = Vec::new();
 
     ui::heading("specification");
-    // Deliberately `palette`, not `run`: `check` must never write dist/ before
+    // Deliberately `palette`, not `run`: `check` must never write system/ before
     // comparing against it, or the hand-edit guard checks nothing.
     let palette = build::palette(root, spec_path)?;
 
@@ -88,7 +88,7 @@ fn gates(root: &Path, palette: &noctua_engine::Palette) -> Vec<String> {
     let source_lines = source_report.checked;
 
     // Read rather than regenerated: the point is to check what shipped.
-    let sheets = noctua_check::references::read_stylesheets(&root.join("dist/css"));
+    let sheets = noctua_check::references::read_stylesheets(&root.join("system/css"));
     let reference_report = noctua_check::references::check(root, sheets.iter().map(String::as_str));
     let reference_lines = reference_report.checked;
 
@@ -122,11 +122,11 @@ fn gates(root: &Path, palette: &noctua_engine::Palette) -> Vec<String> {
     )]
 }
 
-/// That `dist/` is in sync, and that what it contains actually works.
+/// That `system/` is in sync, and that what it contains actually works.
 ///
 /// # Errors
 ///
-/// Only when the spec or `dist/` cannot be read. A file being out of sync is
+/// Only when the spec or `system/` cannot be read. A file being out of sync is
 /// a returned failure, not an error, so the remaining checks still run.
 fn generated_output(
     root: &Path,
@@ -138,16 +138,19 @@ fn generated_output(
     let relative = build::relative_to(root, spec_path);
     let spec_text = std::fs::read_to_string(spec_path)
         .map_err(|error| format!("could not read {relative}: {error}"))?;
-    let drift = noctua_emit::dist::check(&root.join("dist"), palette, &relative, &spec_text)
-        .map_err(|error| format!("could not read dist/: {error}"))?;
+    let drift = noctua_emit::output::check(&root.join("system"), palette, &relative, &spec_text)
+        .map_err(|error| format!("could not read system/: {error}"))?;
 
     if drift.is_empty() {
-        ui::ok("dist/ matches the specification");
+        ui::ok("system/ matches the specification");
     } else {
         for item in &drift {
             ui::failure(&item.to_string());
         }
-        ui::detail("generated files are never edited by hand; change the spec and rebuild");
+        ui::detail(
+            "if you meant this, run `cargo xtask build --system`; \
+             if you did not, a generated file was edited by hand",
+        );
         failures.push(format!("{} generated file(s) out of sync", drift.len()));
     }
 
@@ -156,11 +159,11 @@ fn generated_output(
     // mistake before.
     //
     // Built into the workspace's own target directory rather than inside
-    // dist/. Otherwise compiling leaves artifacts among the generated files,
-    // and the determinism check — which diffs two builds of dist/ — starts
+    // system/. Otherwise compiling leaves artifacts among the generated files,
+    // and the determinism check — which diffs two builds of system/ — starts
     // comparing incremental-compilation fingerprints.
     match cargo_with_target(
-        &root.join("dist/rust"),
+        &root.join("system/rust"),
         &["build", "--quiet"],
         &root.join("target/generated-crate"),
     ) {
@@ -179,18 +182,24 @@ fn generated_output(
     let example = root.join("examples/consumer-rust");
     if example.is_dir() {
         match cargo_with_target(&example, &["run", "--quiet"], &root.join("target/examples")) {
-            Ok(()) => ui::ok("the example consumer builds and runs against dist/rust"),
+            Ok(()) => ui::ok("the example consumer builds and runs against system/rust"),
             Err(error) => {
                 ui::failure(&error);
-                failures.push("the example consumer does not build against dist/rust".to_owned());
+                failures.push("the example consumer does not build against system/rust".to_owned());
             }
         }
     }
 
-    // The npm package's claims about dist/, checked in Rust so this fires on a
+    // The npm package's claims about system/, checked in Rust so this fires on a
     // machine with only rustup. `npm pack --dry-run` in CI is the authority;
     // this is what catches the mistake before it is pushed.
-    failures.extend(crate::packaging::check(root, env!("CARGO_PKG_VERSION"))?);
+    //
+    // The version compared against comes off the palette — the colour system's,
+    // read from the spec on this run. Not `env!("CARGO_PKG_VERSION")`, which is
+    // the compiler's and is baked in at compile time; that made a stale binary
+    // check a stale number, which is the failure mode this whole check exists
+    // to prevent.
+    failures.extend(crate::packaging::check(root, &palette.identity.version)?);
 
     Ok(failures)
 }
@@ -268,7 +277,7 @@ mod tests {
     }
 
     /// The documentation site renders the contrast matrix from a table of its
-    /// own, because `noctua-docs` reads `dist/` and never depends on the
+    /// own, because `noctua-docs` reads `system/` and never depends on the
     /// gates. That independence is deliberate, and it means the two tables
     /// can drift — so they are compared here, in the one crate that can see
     /// both.

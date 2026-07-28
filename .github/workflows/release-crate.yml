@@ -32,15 +32,28 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
 
-      - name: The tag and the workspace version must agree
+      # A tag names the **colour system's** version, which since 0.2.0 is a
+      # different number from the compiler's. This used to read
+      # [workspace.package] — the compiler's — which would now reject every
+      # correct tag and accept a wrong one.
+      #
+      # `package.json` rather than the spec, and `grep` rather than `node`:
+      # this is a Rust job with no `setup-node`, and leaning on the runner
+      # image's preinstalled node is an undeclared dependency. The first
+      # `"version"` in this file is the package's own — it has no dependencies,
+      # so there are no nested ones to match by accident.
+      #
+      # `cargo xtask check`, which runs immediately below, is what proves
+      # package.json and the spec agree. This step only has to read one of them.
+      - name: The tag and the colour system's version must agree
         run: |
           tag="${GITHUB_REF_NAME#v}"
-          ws="$(grep -A5 '^\[workspace.package\]' Cargo.toml | grep '^version' | cut -d'"' -f2)"
-          if [ "$tag" != "$ws" ]; then
-            echo "::error::tag v$tag does not match the workspace version $ws"
+          system="$(grep -m1 '"version"' package.json | cut -d'"' -f4)"
+          if [ "$tag" != "$system" ]; then
+            echo "::error::tag v$tag does not match the colour system version $system"
             exit 1
           fi
-          echo "publishing $ws"
+          echo "publishing $system"
 
       # The whole gate, before anything irreversible. A crates.io publish cannot
       # be undone — `cargo yank` only stops *new* dependents.
@@ -65,7 +78,7 @@ jobs:
       - name: noctua-colors-tokens
         run: |
           set +e
-          out="$(cargo publish --manifest-path dist/rust/Cargo.toml --locked 2>&1)"
+          out="$(cargo publish --manifest-path system/rust/Cargo.toml --locked 2>&1)"
           status=$?
           set -e
           echo "$out"

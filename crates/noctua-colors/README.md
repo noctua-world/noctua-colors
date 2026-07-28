@@ -1,9 +1,11 @@
 # noctua-colors
 
-**A colour system compiler.** A small declarative specification goes in; every
-artifact other projects consume comes out — CSS custom properties, a Tailwind v4
-theme, DTCG tokens, SCSS, JSON/TypeScript, a QML singleton, and a `const` Rust
-crate.
+**A colour system whose colours were solved, not picked.** 39 palettes, 1,767
+semantic names, light and dark from one file, every contrast pair checked.
+
+It ships as CSS custom properties, a Tailwind v4 theme, DTCG tokens, SCSS,
+JSON/TypeScript, a QML singleton, and a `const` Rust crate — because it is the
+output of a compiler rather than a list somebody wrote down.
 
 ## This crate contains no code
 

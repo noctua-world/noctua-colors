@@ -6,7 +6,7 @@
 //!
 //! # Why `check` does everything
 //!
-//! It validates the spec, runs every quality gate, verifies `dist/` is in
+//! It validates the spec, runs every quality gate, verifies `system/` is in
 //! sync, and runs formatting, lints and tests. One command, so what runs
 //! locally is exactly what runs in CI. "Passes on my machine, fails in CI"
 //! is a category of problem this removes rather than manages.
@@ -43,14 +43,25 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Command {
-    /// Compile the spec into every target under dist/, and render the site.
+    /// Compile the spec into every target, and render the site.
+    ///
+    /// Writes a scratch build by default, so the everyday loop cannot touch the
+    /// published colour system. Pass `--system` when you mean to change it.
     Build {
         /// Skip rendering the documentation site.
         #[arg(long)]
         no_site: bool,
+
+        /// Write the published colour system in `system/` instead of a scratch build.
+        ///
+        /// This is the deliberate act: `system/` is committed and is what every
+        /// consumer installs, so changing it is a decision rather than a
+        /// side effect of testing.
+        #[arg(long)]
+        system: bool,
     },
 
-    /// Validate the spec, run every quality gate, and verify dist/ is in sync.
+    /// Validate the spec, run every quality gate, and verify system/ is in sync.
     ///
     /// This is the single gate. CI runs exactly this command.
     Check {
@@ -68,7 +79,7 @@ enum Command {
         port: u16,
     },
 
-    /// Copy dist/ into every consumer registered in the spec.
+    /// Copy system/ into every consumer registered in the spec.
     Export {
         /// Report what would be written without writing anything.
         #[arg(long)]
@@ -103,7 +114,18 @@ enum Command {
     /// Tag a version and verify everything is publishable.
     Release {
         /// The version to release, such as `0.2.0`.
+        ///
+        /// This is the **colour system's** version — the one a tag means, the
+        /// one both registries publish, and the one bound by TOKEN-POLICY.md.
         version: String,
+
+        /// Bump the compiler's version instead of the colour system's.
+        ///
+        /// The compiler is not published; its version appears in
+        /// MANIFEST.json and in `cargo xtask --version`, so bumping it is a
+        /// bookkeeping act rather than a release.
+        #[arg(long)]
+        tool: bool,
 
         /// Report what would happen without changing anything.
         #[arg(long)]
@@ -117,7 +139,9 @@ fn main() -> ExitCode {
     let spec = root.join(&cli.spec);
 
     let outcome = match cli.command {
-        Command::Build { no_site } => build::all(&root, &spec, !no_site).map(|_| ()),
+        Command::Build { no_site, system } => {
+            build::all(&root, &spec, !no_site, system).map(|_| ())
+        }
         Command::Check { colors_only } => check::run(&root, &spec, colors_only),
         Command::Dev { port } => dev::run(&root, &spec, port),
         Command::Export { dry_run } => export::run(&root, &spec, dry_run),
@@ -142,7 +166,11 @@ fn main() -> ExitCode {
 
             resolved.and_then(|gamut| import::run(&root, &source, name.as_deref(), gamut))
         }
-        Command::Release { version, dry_run } => release::run(&root, &spec, &version, dry_run),
+        Command::Release {
+            version,
+            tool,
+            dry_run,
+        } => release::run(&root, &spec, &version, tool, dry_run),
     };
 
     match outcome {

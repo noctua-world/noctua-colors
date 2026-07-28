@@ -73,7 +73,10 @@ pub(crate) fn run(root: &Path, spec_path: &Path, port: u16) -> Result<(), String
 
 /// Rebuilds and reports, swallowing failures so the loop survives them.
 fn rebuild(root: &Path, spec_path: &Path) {
-    match build::all(root, spec_path, true) {
+    // Never publishes. `dev` is the tightest loop there is — rebuilding on
+    // every keystroke into the committed tree is exactly the accident the
+    // scratch directory exists to prevent.
+    match build::all(root, spec_path, true, false) {
         Ok(palette) => {
             serve::GENERATION.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
             let mut report = noctua_check::run(&palette);

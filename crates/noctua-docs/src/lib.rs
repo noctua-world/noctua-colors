@@ -1,10 +1,10 @@
 //! The documentation site.
 //!
-//! A static generator. It reads `dist/` — the same artifacts any other project
+//! A static generator. It reads `system/` — the same artifacts any other project
 //! consumes — and writes plain HTML, CSS and JavaScript that deploy anywhere a
 //! file server runs.
 //!
-//! # Why it reads `dist/` rather than calling the engine
+//! # Why it reads `system/` rather than calling the engine
 //!
 //! Because a site that recomputed its own colors would be a second
 //! implementation, agreeing with the first only by luck. Reading the emitted
@@ -12,8 +12,8 @@
 //! the only useful place for it to be wrong.
 //!
 //! Every swatch, chart and code sample on the site therefore comes from
-//! `dist/json/palette.json`, and every color it *paints with* comes from
-//! `dist/css/`. There is no third source.
+//! `system/json/palette.json`, and every color it *paints with* comes from
+//! `system/css/`. There is no third source.
 
 mod controls;
 pub mod data;
@@ -58,21 +58,21 @@ pub struct Output {
 ///
 /// # Errors
 ///
-/// A missing or malformed `dist/`, which means `cargo xtask build` has not run.
-pub fn load(dist: &Path) -> Result<Palette, String> {
-    let json = std::fs::read_to_string(dist.join("json/palette.json")).map_err(|e| {
-        format!("could not read dist/json/palette.json ({e}). Run `cargo xtask build` first.")
+/// A missing or malformed `system/`, which means `cargo xtask build` has not run.
+pub fn load(system: &Path) -> Result<Palette, String> {
+    let json = std::fs::read_to_string(system.join("json/palette.json")).map_err(|e| {
+        format!("could not read system/json/palette.json ({e}). Run `cargo xtask build` first.")
     })?;
     Palette::parse(&json)
 }
 
-/// Renders the whole site from a built `dist/`.
+/// Renders the whole site from a built `system/`.
 ///
 /// # Errors
 ///
-/// A missing or malformed `dist/`, which means `cargo xtask build` has not run.
-pub fn render(dist: &Path) -> Result<Vec<Output>, String> {
-    let palette = load(dist)?;
+/// A missing or malformed `system/`, which means `cargo xtask build` has not run.
+pub fn render(system: &Path) -> Result<Vec<Output>, String> {
+    let palette = load(system)?;
 
     // Both locales, rendered in full. The alternative — one page that
     // rewrites itself on load — shows the wrong language first and needs
@@ -82,6 +82,13 @@ pub fn render(dist: &Path) -> Result<Vec<Output>, String> {
         outputs.push(Output {
             path: locale.page("index"),
             contents: page::render(&palette, locale),
+        });
+        // The compiler, on its own route. Someone who wants a stylesheet
+        // should not have to scroll past the gamut-boundary derivation, and
+        // the derivation should not have to be abbreviated to spare them.
+        outputs.push(Output {
+            path: locale.page("how-it-works"),
+            contents: page::render_how_it_works(&palette, locale),
         });
         // A route of its own: the playground costs a WebAssembly module, and
         // charging every reader for it would be the wrong trade.
@@ -123,14 +130,14 @@ pub fn assets() -> Vec<(&'static str, &'static str)> {
     ]
 }
 
-/// Token files copied out of `dist/` into the site.
+/// Token files copied out of `system/` into the site.
 ///
 /// The site links these exactly as a consumer would, which is what stops it
 /// from drifting.
 ///
 /// Derived from the palette rather than listed. A hardcoded list was correct
 /// for exactly as long as nobody added a theme: the new theme's stylesheet was
-/// emitted into `dist/`, never copied to the site, and `index.css` imported it
+/// emitted into `system/`, never copied to the site, and `index.css` imported it
 /// anyway — a 404 for every visitor and a theme in the picker with no colors
 /// behind it. Nothing failed, because the test that guarded the list built its
 /// expectation from the same list.

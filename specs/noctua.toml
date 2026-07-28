@@ -1,6 +1,6 @@
 # noctua-colors — the specification.
 #
-# This file is the only thing a developer edits. Everything under dist/ is
+# This file is the only thing a developer edits. Everything under system/ is
 # generated from it by `cargo xtask build` and must never be hand-edited.
 #
 # Every field below has a default, so anything you delete keeps working. The
@@ -14,6 +14,32 @@
 # about 61% of the chroma sRGB allows there. Recording the hue and letting the
 # curves regenerate the rest is the entire point of this project — the two
 # projects had already drifted apart on five of thirteen shared tokens.
+
+# --- The colour system's identity ----------------------------------------
+#
+# This repository publishes two things on two clocks, and this table is the
+# one people install.
+#
+#   * The colour system — these colours, these names. Versioned here, stamped
+#     on every artifact, and what a tag means.
+#   * The compiler that produced it. Versioned in Cargo.toml's
+#     [workspace.package], and it appears in `cargo xtask --version` and
+#     nowhere a consumer looks.
+#
+# They were one number until 0.2.0, and one number cannot say both "the
+# compiler was refactored" and "a colour moved". Only the second is a reason
+# for anyone to upgrade, and only the second is bound by TOKEN-POLICY.md.
+#
+# Bumping: `cargo xtask release <version>` writes this and package.json
+# together. `--tool <version>` bumps the compiler instead.
+[system]
+version = "0.2.0"
+
+# The name and one-line description carried into generated package metadata —
+# the npm package, the generated Rust crate, and MANIFEST.json — so those
+# describe the colour system rather than the tool that emitted it.
+name = "noctua-colors"
+description = "A generated colour system: 39 palettes and 1,767 semantic names, solved in OKLCH against APCA contrast targets rather than hand-picked."
 
 [output]
 # The gamut relative chroma resolves against, and the one the hex fallback
@@ -165,7 +191,7 @@ hue_correction = [[0.25, 3.5], [0.55, 5.5], [0.85, 1.5]]
 # three hundred aliases in each would be the largest and least informative part
 # of this file. A `[themes.<name>.semantic]` block still overrides one palette,
 # and only what it overrides is written per theme — everything below is emitted
-# once, into `dist/css/contexts.css` and its equivalents.
+# once, into `system/css/contexts.css` and its equivalents.
 #
 # Every slot emits five tokens — `--nc-color-rejected`, `-hover`, `-bg`,
 # `-border`, and `--nc-color-on-rejected`.

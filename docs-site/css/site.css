@@ -1427,3 +1427,70 @@ pre code {
   color: var(--nc-color-fg);
   text-decoration: none;
 }
+
+/* --- The product page ------------------------------------------------- */
+
+/* The hero's call to action. Two buttons, wrapping rather than shrinking:
+ * at 320px they stack, which is the narrowest thing the layout test allows. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+
+/* An outline button beside the filled one. It borrows the accent for its
+ * border and text rather than its fill, so the pair reads as primary and
+ * secondary without a second colour entering the page. */
+.button-secondary {
+  background: transparent;
+  border-color: var(--nc-color-accent);
+  color: var(--nc-color-accent);
+}
+
+.button-secondary:hover {
+  background: var(--nc-accent-a3);
+  border-color: var(--nc-color-accent-hover);
+}
+
+/* The compiler page's opening. Shorter than the product hero: it is a
+ * signpost rather than a pitch, and the content below it is the point. */
+.hero-compact {
+  padding-block: 3rem 2rem;
+}
+
+.hero-compact h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* A footnote under a section, quieter than the lead above it. */
+.section-note {
+  max-width: 62ch;
+  margin-top: 1.5rem;
+  color: var(--nc-color-fg-muted);
+  font-size: 0.95rem;
+}
+
+/* Running prose, where the page argues rather than demonstrates. Measured
+ * rather than full-width: past about 70 characters the eye loses the line. */
+.prose {
+  max-width: 68ch;
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+.prose strong {
+  color: var(--nc-color-fg);
+  font-weight: var(--font-weight-bold);
+}
+
+/* `.button` was only ever worn by <button> until the hero used it on links.
+ * An anchor brings its own underline and inline layout, so a link wearing
+ * this class needs both removed to read as the same control. */
+a.button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}

@@ -150,7 +150,7 @@ fn alpha_token(step: &ResolvedStep, percentage: f64) -> Value {
 }
 
 /// The OKLCH triple, rounded the way every other target rounds it so the same
-/// colour reads identically across `dist/`.
+/// colour reads identically across `system/`.
 fn components(step: &ResolvedStep) -> Value {
     let oklch = step.primary().oklch;
     json!([round(oklch.l, 4), round(oklch.c, 4), round(oklch.h, 2)])

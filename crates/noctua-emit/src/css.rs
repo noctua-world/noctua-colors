@@ -76,6 +76,7 @@ impl Emitter for Css {
 
         for (index, theme) in palette.themes.iter().enumerate() {
             files.push(theme_file(palette, theme, index == 0, &semantic));
+            files.push(palette_file(palette, theme, &semantic));
         }
 
         files.push(index_file(palette));
@@ -128,7 +129,7 @@ struct Selectors {
 /// is that a rename is a breaking change for anyone linking it directly, and
 /// the references inside this repository all have to move together — the
 /// README, `examples/`, the site's integration snippet, and
-/// `noctua_docs::token_files`. `dist/css/index.css` is the name that never
+/// `noctua_docs::token_files`. `system/css/index.css` is the name that never
 /// moves, for consumers who would rather not track theme names at all.
 fn theme_file_name(theme: &str, is_default: bool) -> String {
     if is_default {
@@ -229,10 +230,7 @@ fn theme_file(
     is_default: bool,
     semantic: &tokens::ThemeSplit,
 ) -> EmittedFile {
-    let prefix = &palette.prefix;
     let selectors = selectors(&theme.name, is_default);
-    let light = &theme.modes[0];
-    let dark = &theme.modes[1];
 
     let mut out = header(spec_path(), CommentStyle::Block);
     writeln!(out, "\n/* Theme: {}", theme.name).expect("string write");
@@ -258,20 +256,37 @@ fn theme_file(
     )
     .expect("string write");
 
+    theme_body(&mut out, palette, theme, &selectors, semantic);
+
+    EmittedFile::new(
+        format!("css/{}", theme_file_name(&theme.name, is_default)),
+        out,
+    )
+}
+
+/// Every declaration one theme contributes, written under `selectors`.
+///
+/// Split out of [`theme_file`] so that [`palette_file`] can emit the same
+/// declarations under a *different* scope. That is the whole trick behind the
+/// self-contained per-palette files, and it is the one thing about them that
+/// is easy to get silently wrong — see [`palette_file`].
+fn theme_body(
+    out: &mut String,
+    palette: &Palette,
+    theme: &noctua_engine::ResolvedTheme,
+    selectors: &Selectors,
+    semantic: &tokens::ThemeSplit,
+) {
+    let prefix = &palette.prefix;
+    let light = &theme.modes[0];
+    let dark = &theme.modes[1];
+
     writeln!(out, "/* --- Values: hex, understood everywhere --- */\n").expect("string write");
-    mode_layer(&mut out, "", &selectors, prefix, light, dark, Layer::Hex);
+    mode_layer(out, "", selectors, prefix, light, dark, Layer::Hex);
 
     writeln!(out, "\n/* --- Values: OKLCH, where supported --- */\n").expect("string write");
     writeln!(out, "@supports (color: oklch(0 0 0)) {{").expect("string write");
-    mode_layer(
-        &mut out,
-        "  ",
-        &selectors,
-        prefix,
-        light,
-        dark,
-        Layer::Oklch,
-    );
+    mode_layer(out, "  ", selectors, prefix, light, dark, Layer::Oklch);
     writeln!(out, "}}").expect("string write");
 
     for (slot, gamut) in palette.gamuts.iter().enumerate().skip(1) {
@@ -286,9 +301,9 @@ fn theme_file(
         writeln!(out, "@media (color-gamut: p3) {{").expect("string write");
         writeln!(out, "  @supports (color: oklch(0 0 0)) {{").expect("string write");
         mode_layer(
-            &mut out,
+            out,
             "    ",
-            &selectors,
+            selectors,
             prefix,
             light,
             dark,
@@ -348,11 +363,6 @@ fn theme_file(
         .expect("string write");
     }
     writeln!(out, "}}").expect("string write");
-
-    EmittedFile::new(
-        format!("css/{}", theme_file_name(&theme.name, is_default)),
-        out,
-    )
 }
 
 /// The semantic contract, which does not vary by theme.
@@ -378,7 +388,6 @@ fn theme_file(
 /// custom property. `noctua_check::references` catches that inside this
 /// repository; outside it, `index.css` imports everything and is the answer.
 fn contexts_file(palette: &Palette, semantic: &tokens::ThemeSplit) -> EmittedFile {
-    let prefix = &palette.prefix;
     let mut out = header(spec_path(), CommentStyle::Block);
     writeln!(
         out,
@@ -394,6 +403,14 @@ fn contexts_file(palette: &Palette, semantic: &tokens::ThemeSplit) -> EmittedFil
     )
     .expect("string write");
 
+    contexts_body(&mut out, palette, semantic);
+
+    EmittedFile::new("css/contexts.css", out)
+}
+
+/// The shared semantic layer, without a file around it.
+fn contexts_body(out: &mut String, palette: &Palette, semantic: &tokens::ThemeSplit) {
+    let prefix = &palette.prefix;
     writeln!(out, ":where(:root) {{").expect("string write");
     for alias in &semantic.shared {
         writeln!(
@@ -404,8 +421,6 @@ fn contexts_file(palette: &Palette, semantic: &tokens::ThemeSplit) -> EmittedFil
         .expect("string write");
     }
     writeln!(out, "}}").expect("string write");
-
-    EmittedFile::new("css/contexts.css", out)
 }
 
 /// The dense neutral ramp, which does not vary by theme or mode.
@@ -419,6 +434,14 @@ fn ramp_file(palette: &Palette) -> EmittedFile {
     )
     .expect("string write");
 
+    ramp_body(&mut out, palette);
+
+    EmittedFile::new("css/ramp.css", out)
+}
+
+/// The neutral ramp's declarations, without a file around them.
+fn ramp_body(out: &mut String, palette: &Palette) {
+    let prefix = &palette.prefix;
     let layers: Vec<(String, Layer)> = std::iter::once((String::new(), Layer::Hex))
         .chain(std::iter::once((
             "@supports (color: oklch(0 0 0))".to_owned(),
@@ -468,8 +491,69 @@ fn ramp_file(palette: &Palette) -> EmittedFile {
         }
         writeln!(out).expect("string write");
     }
+}
 
-    EmittedFile::new("css/ramp.css", out)
+/// One palette, complete and alone: `css/palette/<theme>.css`.
+///
+/// This is the file a person who has picked a palette should link, and nothing
+/// else. `index.css` carries all thirty-nine — 5.12 MB, 674 KB over the wire —
+/// because it has to serve someone who wants to switch at runtime. Someone who
+/// has decided on `blue-vivid` was paying for the other thirty-eight.
+///
+/// It is the three shared pieces concatenated: the neutral ramp, the semantic
+/// contract, and this one theme. That is safe because they declare disjoint
+/// names, and where they *could* collide `:where(:root)`'s zero specificity
+/// settles it by specificity rather than by source order.
+///
+/// # The scope, which is the whole trap
+///
+/// A theme that is not the default is normally written under
+/// `[data-palette="blue-vivid"]`, because in `index.css` it is one of
+/// thirty-nine and has to be asked for. Concatenated naively into a file of its
+/// own that selector matches nothing, so the file defines **no colour at all**
+/// — and CSS drops an undefined custom property without a word, so the page
+/// renders unstyled and the console stays empty.
+///
+/// So every per-palette file emits at `:root`, exactly as the default theme's
+/// does. `a_palette_file_defines_the_contract_at_root` is the guard, and it
+/// exists because this failure is silent rather than loud.
+fn palette_file(
+    palette: &Palette,
+    theme: &noctua_engine::ResolvedTheme,
+    semantic: &tokens::ThemeSplit,
+) -> EmittedFile {
+    // `true` — the default theme's selectors — for *every* palette. See above.
+    let selectors = selectors(&theme.name, true);
+
+    let mut out = header(spec_path(), CommentStyle::Block);
+    writeln!(
+        out,
+        "\n/* The {} palette, complete and self-contained.\n\
+        \x20\n\
+        \x20  One <link> and you are done: this carries the neutral ramp, the\n\
+        \x20  semantic contract and this palette's values. Nothing else to\n\
+        \x20  import, and none of the other {} palettes to download.\n\
+        \x20\n\
+        \x20  Bound to :root, so it applies to the whole page. Light and dark\n\
+        \x20  both work from this file alone — the system preference, a\n\
+        \x20  [data-theme] attribute, or a .light / .dark class.\n\
+        \x20\n\
+        \x20  Want to switch palettes at runtime instead? Import index.css. */\n",
+        theme.name,
+        palette.themes.len() - 1
+    )
+    .expect("string write");
+
+    writeln!(out, "/* === The neutral ramp === */\n").expect("string write");
+    ramp_body(&mut out, palette);
+
+    writeln!(out, "\n/* === The semantic contract === */\n").expect("string write");
+    contexts_body(&mut out, palette, semantic);
+
+    writeln!(out, "\n\n/* === The {} palette === */\n", theme.name).expect("string write");
+    theme_body(&mut out, palette, theme, &selectors, semantic);
+
+    EmittedFile::new(format!("css/palette/{}.css", theme.name), out)
 }
 
 fn index_file(palette: &Palette) -> EmittedFile {
@@ -523,12 +607,129 @@ mod tests {
     fn one_file_per_theme_plus_the_two_shared_ones_and_an_index() {
         let palette = shipped();
         let files = Css.emit(&palette);
-        // The ramp, the semantic contract, an index, and one file per theme.
-        assert_eq!(files.len(), palette.themes.len() + 3);
+        // The ramp, the semantic contract, an index, and *two* files per theme:
+        // the layered one index.css imports, and the self-contained one.
+        assert_eq!(files.len(), palette.themes.len() * 2 + 3);
         for shared in ["css/ramp.css", "css/contexts.css", "css/index.css"] {
             assert!(files.iter().any(|f| f.path == shared), "{shared} missing");
         }
         assert!(files.iter().any(|f| f.path == "css/ochre-balanced.css"));
+        assert!(
+            files
+                .iter()
+                .any(|f| f.path == "css/palette/ochre-balanced.css")
+        );
+    }
+
+    /// Every palette gets a self-contained file, named for the palette.
+    #[test]
+    fn every_theme_has_a_self_contained_file() {
+        let palette = shipped();
+        let files = Css.emit(&palette);
+        for theme in &palette.themes {
+            let path = format!("css/palette/{}.css", theme.name);
+            assert!(
+                files.iter().any(|f| f.path == path),
+                "{path} missing — a palette with no small file to link"
+            );
+        }
+    }
+
+    /// **The guard this feature exists for.**
+    ///
+    /// A non-default theme's declarations are normally scoped to
+    /// `[data-palette="…"]`. Concatenated into a standalone file that selector
+    /// matches nothing, and the file silently defines no colour: CSS drops an
+    /// undefined custom property without an error, so the page renders
+    /// unstyled and the console stays clean. There is no louder symptom to
+    /// catch this by, so it is caught here.
+    ///
+    /// Checked on a theme that is **not** the default, because the default
+    /// would pass this test even if the bug were present.
+    #[test]
+    fn a_palette_file_defines_the_contract_at_root() {
+        let palette = shipped();
+        let not_default = &palette.themes[1].name;
+        assert_ne!(not_default, &palette.themes[0].name);
+        let css = file(&format!("css/palette/{not_default}.css"));
+
+        assert!(
+            !css.contains("[data-palette="),
+            "{not_default} is scoped to an attribute nothing sets — it would define nothing"
+        );
+
+        // The three pieces, each proven by a token only it declares.
+        assert!(css.contains("--nc-gray-1:"), "the neutral ramp is missing");
+        assert!(
+            css.contains("--nc-color-surface:"),
+            "the semantic contract is missing"
+        );
+        assert!(
+            css.contains("--nc-neutral-bg-app:"),
+            "the palette's own values are missing"
+        );
+    }
+
+    /// Light *and* dark must both work from the one file.
+    ///
+    /// All three switches, because a consumer picks one and the other two
+    /// failing is invisible until someone else picks differently.
+    #[test]
+    fn a_palette_file_carries_both_modes_and_every_switch() {
+        let css = file("css/palette/azure-vivid.css");
+        assert!(css.contains("@media (prefers-color-scheme: dark)"));
+        assert!(css.contains(r#"[data-theme="dark"]"#));
+        assert!(css.contains(".dark {") || css.contains(", .dark {"));
+        assert!(css.contains(r#"[data-theme="light"]"#));
+        assert!(css.contains("color-scheme: dark;"));
+        assert!(css.contains("color-scheme: light;"));
+    }
+
+    /// The wide-gamut upgrade survives the concatenation.
+    ///
+    /// It is the layer most likely to be lost, because it is the only one
+    /// nested two deep — and losing it costs nothing visible on an sRGB
+    /// display, which is what most development happens on.
+    #[test]
+    fn a_palette_file_keeps_the_wide_gamut_layer() {
+        let css = file("css/palette/jade-sober.css");
+        assert!(css.contains("@media (color-gamut: p3)"));
+        assert!(css.contains("@supports (color: oklch(0 0 0))"));
+        assert!(
+            css.contains("color-mix("),
+            "the translucency ladder is missing"
+        );
+    }
+
+    /// A self-contained file must declare every token the contract points at.
+    ///
+    /// This is the same class of bug as the scope trap and just as silent: a
+    /// `var()` naming a token nothing declares resolves to nothing. Rather
+    /// than spot-check names, take every `var(--nc-…)` the file references and
+    /// require the file itself to declare it.
+    #[test]
+    fn a_palette_file_references_nothing_it_does_not_declare() {
+        let css = file("css/palette/rose-balanced.css");
+
+        let declared: std::collections::HashSet<&str> = css
+            .match_indices("  --nc-")
+            .filter_map(|(at, _)| css[at + 2..].split(':').next())
+            .map(str::trim)
+            .collect();
+
+        let mut dangling: Vec<&str> = css
+            .match_indices("var(--nc-")
+            .filter_map(|(at, _)| css[at + 4..].split(')').next())
+            .map(str::trim)
+            .filter(|name| !declared.contains(name))
+            .collect();
+        dangling.sort_unstable();
+        dangling.dedup();
+
+        assert!(
+            dangling.is_empty(),
+            "referenced but never declared, so they resolve to nothing: {dangling:?}"
+        );
     }
 
     #[test]
