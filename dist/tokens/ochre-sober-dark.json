@@ -4,145 +4,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#111111",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0006,
+          59.3
+        ],
+        "hex": "#111111"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0006,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0143
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#181717",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0008,
+          59.3
+        ],
+        "hex": "#181717"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0008,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0164
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#201f1f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0009,
+          59.3
+        ],
+        "hex": "#201f1f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0009,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0159
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#282828",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.001,
+          59.3
+        ],
+        "hex": "#282828"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.001,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0153
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#323231",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0012,
+          59.3
+        ],
+        "hex": "#323231"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0012,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0161
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#414140",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0014,
+          59.3
+        ],
+        "hex": "#414140"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0014,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0159
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#555453",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0017,
+          59.3
+        ],
+        "hex": "#555453"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0017,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0161
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#7f7e7d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0023,
+          59.3
+        ],
+        "hex": "#7f7e7d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0023,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0164
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#989695",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6756,
+          0.0026,
+          59.3
+        ],
+        "hex": "#989695"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6756,
-          "c": 0.0026,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0163
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#a7a6a4",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.725,
+          0.0028,
+          59.3
+        ],
+        "hex": "#a7a6a4"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.725,
-          "c": 0.0028,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0164
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#c8c6c6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8287,
+          0.0019,
+          59.3
+        ],
+        "hex": "#c8c6c6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8287,
-          "c": 0.0019,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0163
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#eeeeed",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "hex": "#eeeeed"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.948,
-          "c": 0.0005,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0155
       }
     }
@@ -151,145 +187,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#101113",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0044,
+          250.0
+        ],
+        "hex": "#101113"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0044,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0873
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#16181a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0051,
+          250.0
+        ],
+        "hex": "#16181a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0051,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0875
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#1d1f22",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0059,
+          250.0
+        ],
+        "hex": "#1d1f22"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0059,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0868
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#26282b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0068,
+          250.0
+        ],
+        "hex": "#26282b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0068,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0867
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#2f3236",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0078,
+          250.0
+        ],
+        "hex": "#2f3236"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0078,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0872
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#3d4146",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0093,
+          250.0
+        ],
+        "hex": "#3d4146"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0093,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0878
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#50555a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0111,
+          250.0
+        ],
+        "hex": "#50555a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0111,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0879
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#787f87",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0147,
+          250.0
+        ],
+        "hex": "#787f87"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0147,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0876
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#9098a0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.675,
+          0.0157,
+          250.0
+        ],
+        "hex": "#9098a0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.675,
-          "c": 0.0157,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0878
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#a0a7ae",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7244,
+          0.013,
+          250.0
+        ],
+        "hex": "#a0a7ae"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7244,
-          "c": 0.013,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0874
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#c3c7cc",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8284,
+          0.0078,
+          250.0
+        ],
+        "hex": "#c3c7cc"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8284,
-          "c": 0.0078,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0876
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#edeeef",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "hex": "#edeeef"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9479,
-          "c": 0.0022,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.0852
       }
     }
@@ -298,145 +370,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#13100f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0048,
+          42.0
+        ],
+        "hex": "#13100f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0048,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0894
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#1a1715",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0056,
+          42.0
+        ],
+        "hex": "#1a1715"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0056,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0901
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#221e1d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0065,
+          42.0
+        ],
+        "hex": "#221e1d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0065,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0898
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#2c2725",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0075,
+          42.0
+        ],
+        "hex": "#2c2725"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0075,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0897
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#36302e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0086,
+          42.0
+        ],
+        "hex": "#36302e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0086,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0902
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#463f3d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0102,
+          42.0
+        ],
+        "hex": "#463f3d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0102,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0904
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#5a524f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0122,
+          42.0
+        ],
+        "hex": "#5a524f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0122,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0906
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#877b77",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0162,
+          42.0
+        ],
+        "hex": "#877b77"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0162,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0905
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#a2948f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.677,
+          0.0185,
+          42.0
+        ],
+        "hex": "#a2948f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.677,
-          "c": 0.0185,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0906
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#b0a39f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7261,
+          0.016,
+          42.0
+        ],
+        "hex": "#b0a39f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7261,
-          "c": 0.016,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0905
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#cdc5c3",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8294,
+          0.009,
+          42.0
+        ],
+        "hex": "#cdc5c3"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8294,
-          "c": 0.009,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0903
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#efedec",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "hex": "#efedec"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9481,
-          "c": 0.0024,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.0877
       }
     }
@@ -445,145 +553,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#121110",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0026,
+          62.8
+        ],
+        "hex": "#121110"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0026,
-          "h": 62.8
-        },
         "colors.noctua.relativeChroma": 0.0639
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#1a1714",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0068,
+          62.16
+        ],
+        "hex": "#1a1714"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0068,
-          "h": 62.16
-        },
         "colors.noctua.relativeChroma": 0.1436
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#241e19",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.013,
+          61.53
+        ],
+        "hex": "#241e19"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.013,
-          "h": 61.53
-        },
         "colors.noctua.relativeChroma": 0.2344
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#30261e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0209,
+          60.89
+        ],
+        "hex": "#30261e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0209,
-          "h": 60.89
-        },
         "colors.noctua.relativeChroma": 0.3245
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#3d2e22",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0298,
+          60.25
+        ],
+        "hex": "#3d2e22"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0298,
-          "h": 60.25
-        },
         "colors.noctua.relativeChroma": 0.4031
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#513c2b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0405,
+          59.62
+        ],
+        "hex": "#513c2b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0405,
-          "h": 59.62
-        },
         "colors.noctua.relativeChroma": 0.46
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#6a4d37",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0511,
+          58.98
+        ],
+        "hex": "#6a4d37"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0511,
-          "h": 58.98
-        },
         "colors.noctua.relativeChroma": 0.4836
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#9c7557",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0659,
+          58.35
+        ],
+        "hex": "#9c7557"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0659,
-          "h": 58.35
-        },
         "colors.noctua.relativeChroma": 0.466
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#b98e6e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6794,
+          0.0682,
+          57.71
+        ],
+        "hex": "#b98e6e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6794,
-          "c": 0.0682,
-          "h": 57.71
-        },
         "colors.noctua.relativeChroma": 0.4181
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#c69e81",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7285,
+          0.062,
+          57.07
+        ],
+        "hex": "#c69e81"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7285,
-          "c": 0.062,
-          "h": 57.07
-        },
         "colors.noctua.relativeChroma": 0.352
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#d8c3b4",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8305,
+          0.0313,
+          56.44
+        ],
+        "hex": "#d8c3b4"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8305,
-          "c": 0.0313,
-          "h": 56.44
-        },
         "colors.noctua.relativeChroma": 0.2813
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#f2edea",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "hex": "#f2edea"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9483,
-          "c": 0.0067,
-          "h": 55.8
-        },
         "colors.noctua.relativeChroma": 0.2183
       }
     }
@@ -592,145 +736,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#131010",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.005,
+          33.3
+        ],
+        "hex": "#131010"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.005,
-          "h": 33.3
-        },
         "colors.noctua.relativeChroma": 0.0767
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#1d1514",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.012,
+          32.85
+        ],
+        "hex": "#1d1514"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.012,
-          "h": 32.85
-        },
         "colors.noctua.relativeChroma": 0.1573
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#291b18",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0225,
+          32.39
+        ],
+        "hex": "#291b18"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0225,
-          "h": 32.39
-        },
         "colors.noctua.relativeChroma": 0.25
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#38211d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.036,
+          31.94
+        ],
+        "hex": "#38211d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.036,
-          "h": 31.94
-        },
         "colors.noctua.relativeChroma": 0.3424
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#492721",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0515,
+          31.48
+        ],
+        "hex": "#492721"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0515,
-          "h": 31.48
-        },
         "colors.noctua.relativeChroma": 0.4239
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#613129",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0702,
+          31.03
+        ],
+        "hex": "#613129"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0702,
-          "h": 31.03
-        },
         "colors.noctua.relativeChroma": 0.4821
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#7e3f35",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.089,
+          30.57
+        ],
+        "hex": "#7e3f35"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.089,
-          "h": 30.57
-        },
         "colors.noctua.relativeChroma": 0.5059
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#b96154",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.1155,
+          30.12
+        ],
+        "hex": "#b96154"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.1155,
-          "h": 30.12
-        },
         "colors.noctua.relativeChroma": 0.4874
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#d5a198",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7548,
+          0.0645,
+          29.66
+        ],
+        "hex": "#d5a198"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7548,
-          "c": 0.0645,
-          "h": 29.66
-        },
         "colors.noctua.relativeChroma": 0.4373
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#d7b3ad",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7979,
+          0.0428,
+          29.21
+        ],
+        "hex": "#d7b3ad"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7979,
-          "c": 0.0428,
-          "h": 29.21
-        },
         "colors.noctua.relativeChroma": 0.3682
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#d9c2be",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8315,
+          0.0276,
+          28.75
+        ],
+        "hex": "#d9c2be"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8315,
-          "c": 0.0276,
-          "h": 28.75
-        },
         "colors.noctua.relativeChroma": 0.2946
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#f2ecec",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9485,
+          0.0059,
+          28.3
+        ],
+        "hex": "#f2ecec"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9485,
-          "c": 0.0059,
-          "h": 28.3
-        },
         "colors.noctua.relativeChroma": 0.2293
       }
     }
@@ -739,145 +919,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#121110",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0028,
+          89.7
+        ],
+        "hex": "#121110"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0028,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.077
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#191714",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0067,
+          89.7
+        ],
+        "hex": "#191714"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0067,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.1592
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#221f19",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0125,
+          89.7
+        ],
+        "hex": "#221f19"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0125,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.2549
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#2c281d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0199,
+          89.7
+        ],
+        "hex": "#2c281d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0199,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.3516
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#373121",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0282,
+          89.7
+        ],
+        "hex": "#373121"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0282,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.4367
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#494029",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.038,
+          89.7
+        ],
+        "hex": "#494029"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.038,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.4972
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#5f5335",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0476,
+          89.7
+        ],
+        "hex": "#5f5335"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0476,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.5223
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#8c7d54",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0604,
+          89.7
+        ],
+        "hex": "#8c7d54"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0604,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.4984
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#8f825d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6083,
+          0.0538,
+          89.7
+        ],
+        "hex": "#8f825d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6083,
-          "c": 0.0538,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.4328
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#9e9273",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6623,
+          0.0465,
+          89.7
+        ],
+        "hex": "#9e9273"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6623,
-          "c": 0.0465,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.3436
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#d1c6a8",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8283,
+          0.0421,
+          89.7
+        ],
+        "hex": "#d1c6a8"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8283,
-          "c": 0.0421,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.2487
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#f0eee6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9478,
+          0.0108,
+          89.7
+        ],
+        "hex": "#f0eee6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9478,
-          "c": 0.0108,
-          "h": 89.7
-        },
         "colors.noctua.relativeChroma": 0.1648
       }
     }
@@ -886,145 +1102,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#101210",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0045,
+          141.0
+        ],
+        "hex": "#101210"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0045,
-          "h": 141.0
-        },
         "colors.noctua.relativeChroma": 0.0769
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#151914",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0108,
+          141.55
+        ],
+        "hex": "#151914"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0108,
-          "h": 141.55
-        },
         "colors.noctua.relativeChroma": 0.1574
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#1a2219",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0202,
+          142.09
+        ],
+        "hex": "#1a2219"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0202,
-          "h": 142.09
-        },
         "colors.noctua.relativeChroma": 0.2497
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#1f2c1e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0321,
+          142.64
+        ],
+        "hex": "#1f2c1e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0321,
-          "h": 142.64
-        },
         "colors.noctua.relativeChroma": 0.3422
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#243823",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0445,
+          143.18
+        ],
+        "hex": "#243823"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0445,
-          "h": 143.18
-        },
         "colors.noctua.relativeChroma": 0.4233
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#2d492c",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0589,
+          143.73
+        ],
+        "hex": "#2d492c"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0589,
-          "h": 143.73
-        },
         "colors.noctua.relativeChroma": 0.4817
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#3a5f3a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0725,
+          144.27
+        ],
+        "hex": "#3a5f3a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0725,
-          "h": 144.27
-        },
         "colors.noctua.relativeChroma": 0.5056
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#5a8d5b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0914,
+          144.82
+        ],
+        "hex": "#5a8d5b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0914,
-          "h": 144.82
-        },
         "colors.noctua.relativeChroma": 0.4874
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#6c9f6e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6525,
+          0.0888,
+          145.36
+        ],
+        "hex": "#6c9f6e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6525,
-          "c": 0.0888,
-          "h": 145.36
-        },
         "colors.noctua.relativeChroma": 0.4373
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#80ad82",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7038,
+          0.0795,
+          145.91
+        ],
+        "hex": "#80ad82"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7038,
-          "c": 0.0795,
-          "h": 145.91
-        },
         "colors.noctua.relativeChroma": 0.3688
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#a6d2a9",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8204,
+          0.0731,
+          146.45
+        ],
+        "hex": "#a6d2a9"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8204,
-          "c": 0.0731,
-          "h": 146.45
-        },
         "colors.noctua.relativeChroma": 0.2953
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#e4f1e5",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9455,
+          0.0218,
+          147.0
+        ],
+        "hex": "#e4f1e5"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9455,
-          "c": 0.0218,
-          "h": 147.0
-        },
         "colors.noctua.relativeChroma": 0.2301
       }
     }
@@ -1033,145 +1285,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#101112",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0031,
+          240.0
+        ],
+        "hex": "#101112"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0031,
-          "h": 240.0
-        },
         "colors.noctua.relativeChroma": 0.076
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#14181a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0073,
+          239.27
+        ],
+        "hex": "#14181a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0073,
-          "h": 239.27
-        },
         "colors.noctua.relativeChroma": 0.1566
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#1a2025",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0134,
+          238.55
+        ],
+        "hex": "#1a2025"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0134,
-          "h": 238.55
-        },
         "colors.noctua.relativeChroma": 0.2496
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#1f2a31",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.021,
+          238.06
+        ],
+        "hex": "#1f2a31"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.021,
-          "h": 238.06
-        },
         "colors.noctua.relativeChroma": 0.3416
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#23343f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0295,
+          237.74
+        ],
+        "hex": "#23343f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0295,
-          "h": 237.74
-        },
         "colors.noctua.relativeChroma": 0.4228
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#2c4453",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0397,
+          237.65
+        ],
+        "hex": "#2c4453"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0397,
-          "h": 237.65
-        },
         "colors.noctua.relativeChroma": 0.4814
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#39586d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0497,
+          237.64
+        ],
+        "hex": "#39586d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0497,
-          "h": 237.64
-        },
         "colors.noctua.relativeChroma": 0.5054
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#59849f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0633,
+          237.24
+        ],
+        "hex": "#59849f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0633,
-          "h": 237.24
-        },
         "colors.noctua.relativeChroma": 0.4871
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#6790aa",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6326,
+          0.0596,
+          236.09
+        ],
+        "hex": "#6790aa"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6326,
-          "c": 0.0596,
-          "h": 236.09
-        },
         "colors.noctua.relativeChroma": 0.4373
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#7aa0b6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6847,
+          0.0532,
+          234.55
+        ],
+        "hex": "#7aa0b6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6847,
-          "c": 0.0532,
-          "h": 234.55
-        },
         "colors.noctua.relativeChroma": 0.3685
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#b3cad7",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8265,
+          0.0315,
+          231.11
+        ],
+        "hex": "#b3cad7"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8265,
-          "c": 0.0315,
-          "h": 231.11
-        },
         "colors.noctua.relativeChroma": 0.2952
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#e9eff1",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9474,
+          0.0072,
+          230.0
+        ],
+        "hex": "#e9eff1"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9474,
-          "c": 0.0072,
-          "h": 230.0
-        },
         "colors.noctua.relativeChroma": 0.2293
       }
     }
@@ -1180,145 +1468,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#131110",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0037,
+          47.5
+        ],
+        "hex": "#131110"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0037,
-          "h": 47.5
-        },
         "colors.noctua.relativeChroma": 0.0757
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#1b1614",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0089,
+          47.05
+        ],
+        "hex": "#1b1614"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0089,
-          "h": 47.05
-        },
         "colors.noctua.relativeChroma": 0.1563
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#261d19",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0167,
+          46.59
+        ],
+        "hex": "#261d19"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0167,
-          "h": 46.59
-        },
         "colors.noctua.relativeChroma": 0.2499
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#33241d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0266,
+          46.14
+        ],
+        "hex": "#33241d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0266,
-          "h": 46.14
-        },
         "colors.noctua.relativeChroma": 0.3424
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#422c21",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0378,
+          45.68
+        ],
+        "hex": "#422c21"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0378,
-          "h": 45.68
-        },
         "colors.noctua.relativeChroma": 0.4232
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#583829",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0513,
+          45.23
+        ],
+        "hex": "#583829"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0513,
-          "h": 45.23
-        },
         "colors.noctua.relativeChroma": 0.4816
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#724836",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0647,
+          44.77
+        ],
+        "hex": "#724836"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0647,
-          "h": 44.77
-        },
         "colors.noctua.relativeChroma": 0.5054
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#a86e54",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0836,
+          44.32
+        ],
+        "hex": "#a86e54"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0836,
-          "h": 44.32
-        },
         "colors.noctua.relativeChroma": 0.4873
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#d0947b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7192,
+          0.0806,
+          43.86
+        ],
+        "hex": "#d0947b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7192,
-          "c": 0.0806,
-          "h": 43.86
-        },
         "colors.noctua.relativeChroma": 0.437
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#d1a897",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7643,
+          0.0544,
+          43.41
+        ],
+        "hex": "#d1a897"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7643,
-          "c": 0.0544,
-          "h": 43.41
-        },
         "colors.noctua.relativeChroma": 0.3686
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#d9c2b9",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8311,
+          0.0292,
+          42.95
+        ],
+        "hex": "#d9c2b9"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8311,
-          "c": 0.0292,
-          "h": 42.95
-        },
         "colors.noctua.relativeChroma": 0.2949
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#f2edeb",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9485,
+          0.0062,
+          42.5
+        ],
+        "hex": "#f2edeb"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9485,
-          "c": 0.0062,
-          "h": 42.5
-        },
         "colors.noctua.relativeChroma": 0.2277
       }
     }
@@ -1327,145 +1651,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#111110",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0031,
+          115.5
+        ],
+        "hex": "#111110"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0031,
-          "h": 115.5
-        },
         "colors.noctua.relativeChroma": 0.0765
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#171814",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0074,
+          115.86
+        ],
+        "hex": "#171814"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0074,
-          "h": 115.86
-        },
         "colors.noctua.relativeChroma": 0.1574
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#1f2019",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0137,
+          116.23
+        ],
+        "hex": "#1f2019"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0137,
-          "h": 116.23
-        },
         "colors.noctua.relativeChroma": 0.2493
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#272a1d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0218,
+          116.59
+        ],
+        "hex": "#272a1d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0218,
-          "h": 116.59
-        },
         "colors.noctua.relativeChroma": 0.3426
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#313422",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0308,
+          116.95
+        ],
+        "hex": "#313422"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0308,
-          "h": 116.95
-        },
         "colors.noctua.relativeChroma": 0.4229
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#3f442a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0417,
+          117.32
+        ],
+        "hex": "#3f442a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0417,
-          "h": 117.32
-        },
         "colors.noctua.relativeChroma": 0.4821
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#525836",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0523,
+          117.68
+        ],
+        "hex": "#525836"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0523,
-          "h": 117.68
-        },
         "colors.noctua.relativeChroma": 0.5053
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#7a8455",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0673,
+          118.05
+        ],
+        "hex": "#7a8455"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0673,
-          "h": 118.05
-        },
         "colors.noctua.relativeChroma": 0.4874
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#828b60",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6184,
+          0.0632,
+          118.41
+        ],
+        "hex": "#828b60"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6184,
-          "c": 0.0632,
-          "h": 118.41
-        },
         "colors.noctua.relativeChroma": 0.4374
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#929b73",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6716,
+          0.058,
+          118.77
+        ],
+        "hex": "#929b73"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6716,
-          "c": 0.058,
-          "h": 118.77
-        },
         "colors.noctua.relativeChroma": 0.3683
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#c1cba2",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8247,
+          0.0573,
+          119.14
+        ],
+        "hex": "#c1cba2"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8247,
-          "c": 0.0573,
-          "h": 119.14
-        },
         "colors.noctua.relativeChroma": 0.2952
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#e9f2cf",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9447,
+          0.0467,
+          119.5
+        ],
+        "hex": "#e9f2cf"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9447,
-          "c": 0.0467,
-          "h": 119.5
-        },
         "colors.noctua.relativeChroma": 0.231
       }
     }
@@ -1474,145 +1834,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#101111",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0023,
+          200.5
+        ],
+        "hex": "#101111"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0023,
-          "h": 200.5
-        },
         "colors.noctua.relativeChroma": 0.076
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#151818",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0055,
+          200.95
+        ],
+        "hex": "#151818"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0055,
-          "h": 200.95
-        },
         "colors.noctua.relativeChroma": 0.157
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#1a2121",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0102,
+          201.41
+        ],
+        "hex": "#1a2121"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0102,
-          "h": 201.41
-        },
         "colors.noctua.relativeChroma": 0.2499
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#1f2b2b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0161,
+          201.86
+        ],
+        "hex": "#1f2b2b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0161,
-          "h": 201.86
-        },
         "colors.noctua.relativeChroma": 0.3416
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#243537",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0228,
+          202.32
+        ],
+        "hex": "#243537"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0228,
-          "h": 202.32
-        },
         "colors.noctua.relativeChroma": 0.424
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#2d4648",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.0307,
+          202.77
+        ],
+        "hex": "#2d4648"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.0307,
-          "h": 202.77
-        },
         "colors.noctua.relativeChroma": 0.4821
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#3a5b5e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.0384,
+          203.23
+        ],
+        "hex": "#3a5b5e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.0384,
-          "h": 203.23
-        },
         "colors.noctua.relativeChroma": 0.5055
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#5a878b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.0492,
+          203.68
+        ],
+        "hex": "#5a878b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.0492,
-          "h": 203.68
-        },
         "colors.noctua.relativeChroma": 0.4868
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#76a7ac",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6945,
+          0.0518,
+          204.14
+        ],
+        "hex": "#76a7ac"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6945,
-          "c": 0.0518,
-          "h": 204.14
-        },
         "colors.noctua.relativeChroma": 0.4374
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#89b5ba",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.743,
+          0.0467,
+          204.59
+        ],
+        "hex": "#89b5ba"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.743,
-          "c": 0.0467,
-          "h": 204.59
-        },
         "colors.noctua.relativeChroma": 0.3683
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#a7ced2",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.824,
+          0.0415,
+          205.05
+        ],
+        "hex": "#a7ced2"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.824,
-          "c": 0.0415,
-          "h": 205.05
-        },
         "colors.noctua.relativeChroma": 0.2949
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#e4f0f1",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9466,
+          0.0125,
+          205.5
+        ],
+        "hex": "#e4f0f1"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9466,
-          "c": 0.0125,
-          "h": 205.5
-        },
         "colors.noctua.relativeChroma": 0.2307
       }
     }
@@ -1621,145 +2017,181 @@
     "$type": "color",
     "bg-app": {
       "$type": "color",
-      "$value": "#101115",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.178,
+          0.0089,
+          270.5
+        ],
+        "hex": "#101115"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.178,
-          "c": 0.0089,
-          "h": 270.5
-        },
         "colors.noctua.relativeChroma": 0.0766
       }
     },
     "bg-subtle": {
       "$type": "color",
-      "$value": "#141721",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.206,
+          0.0212,
+          269.95
+        ],
+        "hex": "#141721"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.206,
-          "c": 0.0212,
-          "h": 269.95
-        },
         "colors.noctua.relativeChroma": 0.157
       }
     },
     "bg-element": {
       "$type": "color",
-      "$value": "#181e32",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.24,
+          0.0395,
+          269.41
+        ],
+        "hex": "#181e32"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.24,
-          "c": 0.0395,
-          "h": 269.41
-        },
         "colors.noctua.relativeChroma": 0.2498
       }
     },
     "bg-element-hover": {
       "$type": "color",
-      "$value": "#1c2647",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.277,
+          0.0627,
+          269.06
+        ],
+        "hex": "#1c2647"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.277,
-          "c": 0.0627,
-          "h": 269.06
-        },
         "colors.noctua.relativeChroma": 0.3425
       }
     },
     "bg-element-active": {
       "$type": "color",
-      "$value": "#1f2e5e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.316,
+          0.0887,
+          268.83
+        ],
+        "hex": "#1f2e5e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.316,
-          "c": 0.0887,
-          "h": 268.83
-        },
         "colors.noctua.relativeChroma": 0.4239
       }
     },
     "border-subtle": {
       "$type": "color",
-      "$value": "#273a7f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.374,
+          0.1195,
+          268.8
+        ],
+        "hex": "#273a7f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.374,
-          "c": 0.1195,
-          "h": 268.8
-        },
         "colors.noctua.relativeChroma": 0.4823
       }
     },
     "border-element": {
       "$type": "color",
-      "$value": "#334aa6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.446,
+          0.1494,
+          268.83
+        ],
+        "hex": "#334aa6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.446,
-          "c": 0.1494,
-          "h": 268.83
-        },
         "colors.noctua.relativeChroma": 0.5058
       }
     },
     "border-strong": {
       "$type": "color",
-      "$value": "#637bbe",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.593,
+          0.1077,
+          268.53
+        ],
+        "hex": "#637bbe"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.593,
-          "c": 0.1077,
-          "h": 268.53
-        },
         "colors.noctua.relativeChroma": 0.4876
       }
     },
     "solid": {
       "$type": "color",
-      "$value": "#6278b6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.5822,
+          0.0995,
+          268.05
+        ],
+        "hex": "#6278b6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.5822,
-          "c": 0.0995,
-          "h": 268.05
-        },
         "colors.noctua.relativeChroma": 0.4371
       }
     },
     "solid-hover": {
       "$type": "color",
-      "$value": "#788ab7",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6372,
+          0.0713,
+          267.01
+        ],
+        "hex": "#788ab7"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6372,
-          "c": 0.0713,
-          "h": 267.01
-        },
         "colors.noctua.relativeChroma": 0.3684
       }
     },
     "text-muted": {
       "$type": "color",
-      "$value": "#bec7d8",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8286,
+          0.0251,
+          263.35
+        ],
+        "hex": "#bec7d8"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8286,
-          "c": 0.0251,
-          "h": 263.35
-        },
         "colors.noctua.relativeChroma": 0.2952
       }
     },
     "text-strong": {
       "$type": "color",
-      "$value": "#eceef2",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0057,
+          262.5
+        ],
+        "hex": "#eceef2"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9479,
-          "c": 0.0057,
-          "h": 262.5
-        },
         "colors.noctua.relativeChroma": 0.2309
       }
     }
@@ -1768,73 +2200,91 @@
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#594231",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4,
+          0.0415,
+          59.3
+        ],
+        "hex": "#594231"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4,
-          "c": 0.0415,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.4393
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#5a714a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.52,
+          0.0654,
+          133.79
+        ],
+        "hex": "#5a714a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.52,
-          "c": 0.0654,
-          "h": 133.79
-        },
         "colors.noctua.relativeChroma": 0.4398
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#6a9691",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.64,
+          0.0491,
+          187.18
+        ],
+        "hex": "#6a9691"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.64,
-          "c": 0.0491,
-          "h": 187.18
-        },
         "colors.noctua.relativeChroma": 0.4397
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#a4b0d4",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.76,
+          0.0537,
+          270.81
+        ],
+        "hex": "#a4b0d4"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.76,
-          "c": 0.0537,
-          "h": 270.81
-        },
         "colors.noctua.relativeChroma": 0.4393
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#e7cee9",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.88,
+          0.0454,
+          323.29
+        ],
+        "hex": "#e7cee9"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.88,
-          "c": 0.0454,
-          "h": 323.29
-        },
         "colors.noctua.relativeChroma": 0.4399
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#f6ebee",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.95,
+          0.0119,
+          358.07
+        ],
+        "hex": "#f6ebee"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.95,
-          "c": 0.0119,
-          "h": 358.07
-        },
         "colors.noctua.relativeChroma": 0.4367
       }
     }
@@ -1843,73 +2293,91 @@
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#344d4f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4,
+          0.03,
+          205.0
+        ],
+        "hex": "#344d4f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4,
-          "c": 0.03,
-          "h": 205.0
-        },
         "colors.noctua.relativeChroma": 0.4392
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#625dad",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.52,
+          0.1233,
+          284.14
+        ],
+        "hex": "#625dad"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.52,
-          "c": 0.1233,
-          "h": 284.14
-        },
         "colors.noctua.relativeChroma": 0.4397
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#b56eb5",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.64,
+          0.1302,
+          327.17
+        ],
+        "hex": "#b56eb5"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.64,
-          "c": 0.1302,
-          "h": 327.17
-        },
         "colors.noctua.relativeChroma": 0.44
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#d7a0a9",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.76,
+          0.0654,
+          8.07
+        ],
+        "hex": "#d7a0a9"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.76,
-          "c": 0.0654,
-          "h": 8.07
-        },
         "colors.noctua.relativeChroma": 0.4399
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#e9d4ba",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.88,
+          0.042,
+          72.13
+        ],
+        "hex": "#e9d4ba"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.88,
-          "c": 0.042,
-          "h": 72.13
-        },
         "colors.noctua.relativeChroma": 0.4392
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#e0f6dc",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.95,
+          0.0415,
+          140.73
+        ],
+        "hex": "#e0f6dc"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.95,
-          "c": 0.0415,
-          "h": 140.73
-        },
         "colors.noctua.relativeChroma": 0.4391
       }
     }
@@ -1918,145 +2386,181 @@
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#493627",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.35,
+          0.0363,
+          59.3
+        ],
+        "hex": "#493627"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.35,
-          "c": 0.0363,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.4392
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#4d4b33",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4064,
+          0.0377,
+          103.86
+        ],
+        "hex": "#4d4b33"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4064,
-          "c": 0.0377,
-          "h": 103.86
-        },
         "colors.noctua.relativeChroma": 0.4396
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#48613e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4627,
+          0.0616,
+          137.0
+        ],
+        "hex": "#48613e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4627,
-          "c": 0.0616,
-          "h": 137.0
-        },
         "colors.noctua.relativeChroma": 0.4393
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#4e725c",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.5191,
+          0.0543,
+          157.03
+        ],
+        "hex": "#4e725c"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.5191,
-          "c": 0.0543,
-          "h": 157.03
-        },
         "colors.noctua.relativeChroma": 0.4396
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#5a8184",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.5755,
+          0.0431,
+          202.97
+        ],
+        "hex": "#5a8184"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.5755,
-          "c": 0.0431,
-          "h": 202.97
-        },
         "colors.noctua.relativeChroma": 0.4398
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#658eb2",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6318,
+          0.0703,
+          245.25
+        ],
+        "hex": "#658eb2"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6318,
-          "c": 0.0703,
-          "h": 245.25
-        },
         "colors.noctua.relativeChroma": 0.4397
       }
     },
     "7": {
       "$type": "color",
-      "$value": "#8f97c8",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6882,
+          0.0729,
+          277.39
+        ],
+        "hex": "#8f97c8"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6882,
-          "c": 0.0729,
-          "h": 277.39
-        },
         "colors.noctua.relativeChroma": 0.4399
       }
     },
     "8": {
       "$type": "color",
-      "$value": "#b8a1d2",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7445,
+          0.0737,
+          306.08
+        ],
+        "hex": "#b8a1d2"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7445,
-          "c": 0.0737,
-          "h": 306.08
-        },
         "colors.noctua.relativeChroma": 0.4393
       }
     },
     "9": {
       "$type": "color",
-      "$value": "#d6aedb",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8009,
+          0.0766,
+          322.51
+        ],
+        "hex": "#d6aedb"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8009,
-          "c": 0.0766,
-          "h": 322.51
-        },
         "colors.noctua.relativeChroma": 0.4399
       }
     },
     "10": {
       "$type": "color",
-      "$value": "#e6c5d7",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8573,
+          0.0437,
+          343.51
+        ],
+        "hex": "#e6c5d7"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8573,
-          "c": 0.0437,
-          "h": 343.51
-        },
         "colors.noctua.relativeChroma": 0.4395
       }
     },
     "11": {
       "$type": "color",
-      "$value": "#efdde0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9136,
+          0.0203,
+          6.2
+        ],
+        "hex": "#efdde0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9136,
-          "c": 0.0203,
-          "h": 6.2
-        },
         "colors.noctua.relativeChroma": 0.4395
       }
     },
     "12": {
       "$type": "color",
-      "$value": "#f6ecea",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.95,
+          0.0111,
+          34.01
+        ],
+        "hex": "#f6ecea"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.95,
-          "c": 0.0111,
-          "h": 34.01
-        },
         "colors.noctua.relativeChroma": 0.4382
       }
     }
@@ -2065,37 +2569,46 @@
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#735741",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.48,
+          0.0498,
+          59.3
+        ],
+        "hex": "#735741"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.48,
-          "c": 0.0498,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.4393
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#78aaa4",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7,
+          0.0537,
+          187.18
+        ],
+        "hex": "#78aaa4"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7,
-          "c": 0.0537,
-          "h": 187.18
-        },
         "colors.noctua.relativeChroma": 0.4397
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#efdef0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.92,
+          0.0297,
+          323.29
+        ],
+        "hex": "#efdef0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.92,
-          "c": 0.0297,
-          "h": 323.29
-        },
         "colors.noctua.relativeChroma": 0.4396
       }
     }
@@ -2104,133 +2617,166 @@
     "$type": "color",
     "0": {
       "$type": "color",
-      "$value": "#e1f5e0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.95,
+          0.0345,
+          144.0
+        ],
+        "hex": "#e1f5e0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.95,
-          "c": 0.0345,
-          "h": 144.0
-        },
         "colors.noctua.relativeChroma": 0.384
       }
     },
     "1": {
       "$type": "color",
-      "$value": "#c2edb0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9,
+          0.0923,
+          136.89
+        ],
+        "hex": "#c2edb0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9,
-          "c": 0.0923,
-          "h": 136.89
-        },
         "colors.noctua.relativeChroma": 0.4026
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#bed996",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.85,
+          0.0941,
+          126.21
+        ],
+        "hex": "#bed996"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.85,
-          "c": 0.0941,
-          "h": 126.21
-        },
         "colors.noctua.relativeChroma": 0.4337
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#bdc485",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8,
+          0.0842,
+          113.63
+        ],
+        "hex": "#bdc485"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8,
-          "c": 0.0842,
-          "h": 113.63
-        },
         "colors.noctua.relativeChroma": 0.4697
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#b9b076",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.75,
+          0.0777,
+          100.33
+        ],
+        "hex": "#b9b076"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.75,
-          "c": 0.0777,
-          "h": 100.33
-        },
         "colors.noctua.relativeChroma": 0.4978
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#b29c6a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7,
+          0.0724,
+          86.89
+        ],
+        "hex": "#b29c6a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7,
-          "c": 0.0724,
-          "h": 86.89
-        },
         "colors.noctua.relativeChroma": 0.5057
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#a98960",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.65,
+          0.0686,
+          73.61
+        ],
+        "hex": "#a98960"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.65,
-          "c": 0.0686,
-          "h": 73.61
-        },
         "colors.noctua.relativeChroma": 0.497
       }
     },
     "7": {
       "$type": "color",
-      "$value": "#9e7757",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6,
+          0.067,
+          61.2
+        ],
+        "hex": "#9e7757"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6,
-          "c": 0.067,
-          "h": 61.2
-        },
         "colors.noctua.relativeChroma": 0.4817
       }
     },
     "8": {
       "$type": "color",
-      "$value": "#92664d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.55,
+          0.0673,
+          50.52
+        ],
+        "hex": "#92664d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.55,
-          "c": 0.0673,
-          "h": 50.52
-        },
         "colors.noctua.relativeChroma": 0.4663
       }
     },
     "9": {
       "$type": "color",
-      "$value": "#855644",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.5,
+          0.0692,
+          41.37
+        ],
+        "hex": "#855644"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.5,
-          "c": 0.0692,
-          "h": 41.37
-        },
         "colors.noctua.relativeChroma": 0.4531
       }
     },
     "10": {
       "$type": "color",
-      "$value": "#7a443a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.45,
+          0.0775,
+          30.8
+        ],
+        "hex": "#7a443a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.45,
-          "c": 0.0775,
-          "h": 30.8
-        },
         "colors.noctua.relativeChroma": 0.4395
       }
     }
@@ -2239,61 +2785,76 @@
     "$type": "color",
     "lower": {
       "$type": "color",
-      "$value": "#a9e7a8",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.87,
+          0.1062,
+          144.0
+        ],
+        "hex": "#a9e7a8"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.87,
-          "c": 0.1062,
-          "h": 144.0
-        },
         "colors.noctua.relativeChroma": 0.3848
       }
     },
     "low": {
       "$type": "color",
-      "$value": "#b2c184",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.785,
+          0.0843,
+          120.07
+        ],
+        "hex": "#b2c184"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.785,
-          "c": 0.0843,
-          "h": 120.07
-        },
         "colors.noctua.relativeChroma": 0.452
       }
     },
     "medium": {
       "$type": "color",
-      "$value": "#b29c6a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7,
+          0.0724,
+          86.89
+        ],
+        "hex": "#b29c6a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7,
-          "c": 0.0724,
-          "h": 86.89
-        },
         "colors.noctua.relativeChroma": 0.5057
       }
     },
     "high": {
       "$type": "color",
-      "$value": "#a6795a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.615,
+          0.0716,
+          55.61
+        ],
+        "hex": "#a6795a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.615,
-          "c": 0.0716,
-          "h": 55.61
-        },
         "colors.noctua.relativeChroma": 0.4736
       }
     },
     "higher": {
       "$type": "color",
-      "$value": "#99564b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.53,
+          0.0913,
+          30.8
+        ],
+        "hex": "#99564b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.53,
-          "c": 0.0913,
-          "h": 30.8
-        },
         "colors.noctua.relativeChroma": 0.4396
       }
     }
@@ -2301,437 +2862,989 @@
   "alpha": {
     "$type": "color",
     "neutral-a1": {
-      "$value": "#eeeeed05"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.02,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a2": {
-      "$value": "#eeeeed0a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.04,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a3": {
-      "$value": "#eeeeed0f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.06,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a4": {
-      "$value": "#eeeeed14"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.08,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a5": {
-      "$value": "#eeeeed1f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.12,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a6": {
-      "$value": "#eeeeed29"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.16,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a7": {
-      "$value": "#eeeeed3d"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.24,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a8": {
-      "$value": "#eeeeed52"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.32,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a9": {
-      "$value": "#eeeeed7a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.48,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a10": {
-      "$value": "#eeeeeda3"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.64,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a11": {
-      "$value": "#eeeeedcc"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.8,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-a12": {
-      "$value": "#eeeeedeb"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.948,
+          0.0005,
+          59.3
+        ],
+        "alpha": 0.92,
+        "hex": "#eeeeed"
+      }
     },
     "neutral-cool-a1": {
-      "$value": "#edeeef05"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.02,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a2": {
-      "$value": "#edeeef0a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.04,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a3": {
-      "$value": "#edeeef0f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.06,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a4": {
-      "$value": "#edeeef14"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.08,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a5": {
-      "$value": "#edeeef1f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.12,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a6": {
-      "$value": "#edeeef29"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.16,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a7": {
-      "$value": "#edeeef3d"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.24,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a8": {
-      "$value": "#edeeef52"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.32,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a9": {
-      "$value": "#edeeef7a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.48,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a10": {
-      "$value": "#edeeefa3"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.64,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a11": {
-      "$value": "#edeeefcc"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.8,
+        "hex": "#edeeef"
+      }
     },
     "neutral-cool-a12": {
-      "$value": "#edeeefeb"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9479,
+          0.0022,
+          250.0
+        ],
+        "alpha": 0.92,
+        "hex": "#edeeef"
+      }
     },
     "neutral-warm-a1": {
-      "$value": "#efedec05"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.02,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a2": {
-      "$value": "#efedec0a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.04,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a3": {
-      "$value": "#efedec0f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.06,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a4": {
-      "$value": "#efedec14"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.08,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a5": {
-      "$value": "#efedec1f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.12,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a6": {
-      "$value": "#efedec29"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.16,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a7": {
-      "$value": "#efedec3d"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.24,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a8": {
-      "$value": "#efedec52"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.32,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a9": {
-      "$value": "#efedec7a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.48,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a10": {
-      "$value": "#efedeca3"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.64,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a11": {
-      "$value": "#efedeccc"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.8,
+        "hex": "#efedec"
+      }
     },
     "neutral-warm-a12": {
-      "$value": "#efedeceb"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9481,
+          0.0024,
+          42.0
+        ],
+        "alpha": 0.92,
+        "hex": "#efedec"
+      }
     },
     "accent-a1": {
-      "$value": "#f2edea05"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.02,
+        "hex": "#f2edea"
+      }
     },
     "accent-a2": {
-      "$value": "#f2edea0a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.04,
+        "hex": "#f2edea"
+      }
     },
     "accent-a3": {
-      "$value": "#f2edea0f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.06,
+        "hex": "#f2edea"
+      }
     },
     "accent-a4": {
-      "$value": "#f2edea14"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.08,
+        "hex": "#f2edea"
+      }
     },
     "accent-a5": {
-      "$value": "#f2edea1f"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.12,
+        "hex": "#f2edea"
+      }
     },
     "accent-a6": {
-      "$value": "#f2edea29"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.16,
+        "hex": "#f2edea"
+      }
     },
     "accent-a7": {
-      "$value": "#f2edea3d"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.24,
+        "hex": "#f2edea"
+      }
     },
     "accent-a8": {
-      "$value": "#f2edea52"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.32,
+        "hex": "#f2edea"
+      }
     },
     "accent-a9": {
-      "$value": "#f2edea7a"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.48,
+        "hex": "#f2edea"
+      }
     },
     "accent-a10": {
-      "$value": "#f2edeaa3"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.64,
+        "hex": "#f2edea"
+      }
     },
     "accent-a11": {
-      "$value": "#f2edeacc"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.8,
+        "hex": "#f2edea"
+      }
     },
     "accent-a12": {
-      "$value": "#f2edeaeb"
+      "$type": "color",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9483,
+          0.0067,
+          55.8
+        ],
+        "alpha": 0.92,
+        "hex": "#f2edea"
+      }
     }
   },
   "gray": {
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#030303",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1,
+          0.0007,
+          59.3
+        ],
+        "hex": "#030303"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1,
-          "c": 0.0007,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0296
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#060606",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1213,
+          0.0008,
+          59.3
+        ],
+        "hex": "#060606"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1213,
-          "c": 0.0008,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0279
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#0a0909",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1426,
+          0.001,
+          59.3
+        ],
+        "hex": "#0a0909"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1426,
-          "c": 0.001,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0297
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#0e0e0e",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1639,
+          0.0011,
+          59.3
+        ],
+        "hex": "#0e0e0e"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1639,
-          "c": 0.0011,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0284
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#131312",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1852,
+          0.0013,
+          59.3
+        ],
+        "hex": "#131312"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1852,
-          "c": 0.0013,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0297
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#181717",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2065,
+          0.0014,
+          59.3
+        ],
+        "hex": "#181717"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2065,
-          "c": 0.0014,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0287
       }
     },
     "7": {
       "$type": "color",
-      "$value": "#1d1c1c",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2278,
+          0.0016,
+          59.3
+        ],
+        "hex": "#1d1c1c"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2278,
-          "c": 0.0016,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0297
       }
     },
     "8": {
       "$type": "color",
-      "$value": "#222121",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2491,
+          0.0017,
+          59.3
+        ],
+        "hex": "#222121"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2491,
-          "c": 0.0017,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0289
       }
     },
     "9": {
       "$type": "color",
-      "$value": "#31302f",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.3113,
+          0.0022,
+          59.3
+        ],
+        "hex": "#31302f"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.3113,
-          "c": 0.0022,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0299
       }
     },
     "10": {
       "$type": "color",
-      "$value": "#424140",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.3752,
+          0.0026,
+          59.3
+        ],
+        "hex": "#424140"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.3752,
-          "c": 0.0026,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0293
       }
     },
     "11": {
       "$type": "color",
-      "$value": "#545251",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4391,
+          0.0031,
+          59.3
+        ],
+        "hex": "#545251"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4391,
-          "c": 0.0031,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0299
       }
     },
     "12": {
       "$type": "color",
-      "$value": "#666462",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.503,
+          0.0035,
+          59.3
+        ],
+        "hex": "#666462"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.503,
-          "c": 0.0035,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0295
       }
     },
     "13": {
       "$type": "color",
-      "$value": "#787674",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.567,
+          0.004,
+          59.3
+        ],
+        "hex": "#787674"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.567,
-          "c": 0.004,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0299
       }
     },
     "14": {
       "$type": "color",
-      "$value": "#8b8987",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6309,
+          0.0044,
+          59.3
+        ],
+        "hex": "#8b8987"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6309,
-          "c": 0.0044,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0295
       }
     },
     "15": {
       "$type": "color",
-      "$value": "#9f9c9a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6948,
+          0.0049,
+          59.3
+        ],
+        "hex": "#9f9c9a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6948,
-          "c": 0.0049,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0299
       }
     },
     "16": {
       "$type": "color",
-      "$value": "#b3b0ad",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7587,
+          0.0052,
+          59.3
+        ],
+        "hex": "#b3b0ad"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7587,
-          "c": 0.0052,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0299
       }
     },
     "17": {
       "$type": "color",
-      "$value": "#c7c4c3",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8226,
+          0.0036,
+          59.3
+        ],
+        "hex": "#c7c4c3"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8226,
-          "c": 0.0036,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0297
       }
     },
     "18": {
       "$type": "color",
-      "$value": "#d3d1d0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8622,
+          0.0027,
+          59.3
+        ],
+        "hex": "#d3d1d0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8622,
-          "c": 0.0027,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0296
       }
     },
     "19": {
       "$type": "color",
-      "$value": "#dad8d7",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8835,
+          0.0022,
+          59.3
+        ],
+        "hex": "#dad8d7"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8835,
-          "c": 0.0022,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.029
       }
     },
     "20": {
       "$type": "color",
-      "$value": "#e0dfde",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9048,
+          0.0018,
+          59.3
+        ],
+        "hex": "#e0dfde"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9048,
-          "c": 0.0018,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0296
       }
     },
     "21": {
       "$type": "color",
-      "$value": "#e7e6e6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9261,
+          0.0013,
+          59.3
+        ],
+        "hex": "#e7e6e6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9261,
-          "c": 0.0013,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0279
       }
     },
     "22": {
       "$type": "color",
-      "$value": "#eeeded",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9474,
+          0.0009,
+          59.3
+        ],
+        "hex": "#eeeded"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9474,
-          "c": 0.0009,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0276
       }
     },
     "23": {
       "$type": "color",
-      "$value": "#f5f4f4",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9687,
+          0.0005,
+          59.3
+        ],
+        "hex": "#f5f4f4"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9687,
-          "c": 0.0005,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0262
       }
     },
     "24": {
       "$type": "color",
-      "$value": "#fcfcfc",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.99,
+          0.0001,
+          59.3
+        ],
+        "hex": "#fcfcfc"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.99,
-          "c": 0.0001,
-          "h": 59.3
-        },
         "colors.noctua.relativeChroma": 0.0166
       }
     }
@@ -2740,289 +3853,361 @@
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#030304",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1,
+          0.0045,
+          250.0
+        ],
+        "hex": "#030304"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1,
-          "c": 0.0045,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.159
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#050608",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1213,
+          0.0054,
+          250.0
+        ],
+        "hex": "#050608"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1213,
-          "c": 0.0054,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1573
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#080a0c",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1426,
+          0.0064,
+          250.0
+        ],
+        "hex": "#080a0c"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1426,
-          "c": 0.0064,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1586
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#0c0e11",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1639,
+          0.0074,
+          250.0
+        ],
+        "hex": "#0c0e11"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1639,
-          "c": 0.0074,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1595
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#101316",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1852,
+          0.0083,
+          250.0
+        ],
+        "hex": "#101316"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1852,
-          "c": 0.0083,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1583
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#14181c",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2065,
+          0.0093,
+          250.0
+        ],
+        "hex": "#14181c"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2065,
-          "c": 0.0093,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1591
       }
     },
     "7": {
       "$type": "color",
-      "$value": "#191d21",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2278,
+          0.0103,
+          250.0
+        ],
+        "hex": "#191d21"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2278,
-          "c": 0.0103,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1597
       }
     },
     "8": {
       "$type": "color",
-      "$value": "#1d2227",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2491,
+          0.0112,
+          250.0
+        ],
+        "hex": "#1d2227"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2491,
-          "c": 0.0112,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1588
       }
     },
     "9": {
       "$type": "color",
-      "$value": "#2b3138",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.3113,
+          0.014,
+          250.0
+        ],
+        "hex": "#2b3138"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.3113,
-          "c": 0.014,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1589
       }
     },
     "10": {
       "$type": "color",
-      "$value": "#3a424a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.3752,
+          0.0169,
+          250.0
+        ],
+        "hex": "#3a424a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.3752,
-          "c": 0.0169,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1591
       }
     },
     "11": {
       "$type": "color",
-      "$value": "#4a535d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4391,
+          0.0198,
+          250.0
+        ],
+        "hex": "#4a535d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4391,
-          "c": 0.0198,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1593
       }
     },
     "12": {
       "$type": "color",
-      "$value": "#5b6571",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.503,
+          0.0227,
+          250.0
+        ],
+        "hex": "#5b6571"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.503,
-          "c": 0.0227,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1594
       }
     },
     "13": {
       "$type": "color",
-      "$value": "#6b7885",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.567,
+          0.0256,
+          250.0
+        ],
+        "hex": "#6b7885"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.567,
-          "c": 0.0256,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1595
       }
     },
     "14": {
       "$type": "color",
-      "$value": "#7d8b9a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6309,
+          0.0285,
+          250.0
+        ],
+        "hex": "#7d8b9a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6309,
-          "c": 0.0285,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1596
       }
     },
     "15": {
       "$type": "color",
-      "$value": "#919ead",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6948,
+          0.0266,
+          250.0
+        ],
+        "hex": "#919ead"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6948,
-          "c": 0.0266,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1596
       }
     },
     "16": {
       "$type": "color",
-      "$value": "#a7b2be",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7587,
+          0.0205,
+          250.0
+        ],
+        "hex": "#a7b2be"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7587,
-          "c": 0.0205,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1594
       }
     },
     "17": {
       "$type": "color",
-      "$value": "#bec6ce",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8226,
+          0.0147,
+          250.0
+        ],
+        "hex": "#bec6ce"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8226,
-          "c": 0.0147,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1594
       }
     },
     "18": {
       "$type": "color",
-      "$value": "#ccd2d9",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8622,
+          0.0112,
+          250.0
+        ],
+        "hex": "#ccd2d9"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8622,
-          "c": 0.0112,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1587
       }
     },
     "19": {
       "$type": "color",
-      "$value": "#d4d9df",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8835,
+          0.0094,
+          250.0
+        ],
+        "hex": "#d4d9df"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8835,
-          "c": 0.0094,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1589
       }
     },
     "20": {
       "$type": "color",
-      "$value": "#dce0e4",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9048,
+          0.0076,
+          250.0
+        ],
+        "hex": "#dce0e4"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9048,
-          "c": 0.0076,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1585
       }
     },
     "21": {
       "$type": "color",
-      "$value": "#e4e7ea",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9261,
+          0.0059,
+          250.0
+        ],
+        "hex": "#e4e7ea"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9261,
-          "c": 0.0059,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1598
       }
     },
     "22": {
       "$type": "color",
-      "$value": "#eceef0",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9474,
+          0.0041,
+          250.0
+        ],
+        "hex": "#eceef0"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9474,
-          "c": 0.0041,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1573
       }
     },
     "23": {
       "$type": "color",
-      "$value": "#f3f5f6",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9687,
+          0.0024,
+          250.0
+        ],
+        "hex": "#f3f5f6"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9687,
-          "c": 0.0024,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.156
       }
     },
     "24": {
       "$type": "color",
-      "$value": "#fbfcfc",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.99,
+          0.0007,
+          250.0
+        ],
+        "hex": "#fbfcfc"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.99,
-          "c": 0.0007,
-          "h": 250.0
-        },
         "colors.noctua.relativeChroma": 0.1435
       }
     }
@@ -3031,289 +4216,361 @@
     "$type": "color",
     "1": {
       "$type": "color",
-      "$value": "#040303",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1,
+          0.0049,
+          42.0
+        ],
+        "hex": "#040303"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1,
-          "c": 0.0049,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1624
       }
     },
     "2": {
       "$type": "color",
-      "$value": "#080505",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1213,
+          0.006,
+          42.0
+        ],
+        "hex": "#080505"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1213,
-          "c": 0.006,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1639
       }
     },
     "3": {
       "$type": "color",
-      "$value": "#0c0908",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1426,
+          0.0071,
+          42.0
+        ],
+        "hex": "#0c0908"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1426,
-          "c": 0.0071,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.165
       }
     },
     "4": {
       "$type": "color",
-      "$value": "#110d0b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1639,
+          0.0081,
+          42.0
+        ],
+        "hex": "#110d0b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1639,
-          "c": 0.0081,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1638
       }
     },
     "5": {
       "$type": "color",
-      "$value": "#161110",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.1852,
+          0.0092,
+          42.0
+        ],
+        "hex": "#161110"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.1852,
-          "c": 0.0092,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1646
       }
     },
     "6": {
       "$type": "color",
-      "$value": "#1c1614",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2065,
+          0.0102,
+          42.0
+        ],
+        "hex": "#1c1614"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2065,
-          "c": 0.0102,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1637
       }
     },
     "7": {
       "$type": "color",
-      "$value": "#211b18",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2278,
+          0.0113,
+          42.0
+        ],
+        "hex": "#211b18"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2278,
-          "c": 0.0113,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1644
       }
     },
     "8": {
       "$type": "color",
-      "$value": "#27201d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.2491,
+          0.0124,
+          42.0
+        ],
+        "hex": "#27201d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.2491,
-          "c": 0.0124,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.165
       }
     },
     "9": {
       "$type": "color",
-      "$value": "#382e2b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.3113,
+          0.0154,
+          42.0
+        ],
+        "hex": "#382e2b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.3113,
-          "c": 0.0154,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1639
       }
     },
     "10": {
       "$type": "color",
-      "$value": "#4a3e39",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.3752,
+          0.0186,
+          42.0
+        ],
+        "hex": "#4a3e39"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.3752,
-          "c": 0.0186,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1643
       }
     },
     "11": {
       "$type": "color",
-      "$value": "#5d4f49",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.4391,
+          0.0218,
+          42.0
+        ],
+        "hex": "#5d4f49"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.4391,
-          "c": 0.0218,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1645
       }
     },
     "12": {
       "$type": "color",
-      "$value": "#716059",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.503,
+          0.025,
+          42.0
+        ],
+        "hex": "#716059"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.503,
-          "c": 0.025,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1647
       }
     },
     "13": {
       "$type": "color",
-      "$value": "#86716a",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.567,
+          0.0282,
+          42.0
+        ],
+        "hex": "#86716a"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.567,
-          "c": 0.0282,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1648
       }
     },
     "14": {
       "$type": "color",
-      "$value": "#9b847b",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6309,
+          0.0314,
+          42.0
+        ],
+        "hex": "#9b847b"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6309,
-          "c": 0.0314,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1649
       }
     },
     "15": {
       "$type": "color",
-      "$value": "#b0978d",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.6948,
+          0.0335,
+          42.0
+        ],
+        "hex": "#b0978d"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.6948,
-          "c": 0.0335,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1646
       }
     },
     "16": {
       "$type": "color",
-      "$value": "#bfaca5",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.7587,
+          0.0248,
+          42.0
+        ],
+        "hex": "#bfaca5"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.7587,
-          "c": 0.0248,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1645
       }
     },
     "17": {
       "$type": "color",
-      "$value": "#cfc2bc",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8226,
+          0.0172,
+          42.0
+        ],
+        "hex": "#cfc2bc"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8226,
-          "c": 0.0172,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.165
       }
     },
     "18": {
       "$type": "color",
-      "$value": "#dacfcb",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8622,
+          0.0128,
+          42.0
+        ],
+        "hex": "#dacfcb"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8622,
-          "c": 0.0128,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1638
       }
     },
     "19": {
       "$type": "color",
-      "$value": "#dfd6d3",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.8835,
+          0.0106,
+          42.0
+        ],
+        "hex": "#dfd6d3"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.8835,
-          "c": 0.0106,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1635
       }
     },
     "20": {
       "$type": "color",
-      "$value": "#e5dedb",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9048,
+          0.0085,
+          42.0
+        ],
+        "hex": "#e5dedb"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9048,
-          "c": 0.0085,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1634
       }
     },
     "21": {
       "$type": "color",
-      "$value": "#ebe5e3",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9261,
+          0.0065,
+          42.0
+        ],
+        "hex": "#ebe5e3"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9261,
-          "c": 0.0065,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1639
       }
     },
     "22": {
       "$type": "color",
-      "$value": "#f0edeb",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9474,
+          0.0045,
+          42.0
+        ],
+        "hex": "#f0edeb"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9474,
-          "c": 0.0045,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1622
       }
     },
     "23": {
       "$type": "color",
-      "$value": "#f6f4f3",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.9687,
+          0.0026,
+          42.0
+        ],
+        "hex": "#f6f4f3"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.9687,
-          "c": 0.0026,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1602
       }
     },
     "24": {
       "$type": "color",
-      "$value": "#fcfbfb",
+      "$value": {
+        "colorSpace": "oklch",
+        "components": [
+          0.99,
+          0.0008,
+          42.0
+        ],
+        "hex": "#fcfbfb"
+      },
       "$extensions": {
-        "colors.noctua.oklch": {
-          "l": 0.99,
-          "c": 0.0008,
-          "h": 42.0
-        },
         "colors.noctua.relativeChroma": 0.1568
       }
     }

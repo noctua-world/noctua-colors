@@ -1,17 +1,35 @@
-//! Design Tokens Community Group JSON.
+//! Design Tokens Community Group JSON, conformant to **Format Module 2025.10**.
 //!
-//! The point of this target is that an existing Style Dictionary pipeline
-//! consumes it unchanged. That constrains the shape more than the standard
-//! does: `$value` is a plain hex string, because that is what every tool in
-//! the ecosystem actually reads today. The richer object form for color in the
-//! draft is not yet widely supported, so the OKLCH coordinates ride along in
-//! `$extensions` instead — present for anything that wants them, invisible to
-//! anything that does not.
+//! That version is the first stable one, and it made a colour `$value` an
+//! **object** with required `colorSpace` and `components`. A plain hex string —
+//! which this target emitted while the spec was a draft, on the argument that it
+//! was what tools actually read — is no longer valid, and Style Dictionary v5
+//! parses 2025.10 by default. So the shape changed here before the package was
+//! ever published: altering token shape afterwards is a breaking change for
+//! every downstream pipeline.
+//!
+//! The change is a straight improvement rather than a compliance tax. The spec
+//! lists `oklch` among its colour spaces, so the coordinates a colour was
+//! actually *defined* by are now the primary, lossless value, and `hex` rides
+//! along as the six-digit sRGB fallback the spec provides for exactly this. What
+//! used to be demoted into `$extensions` is now the value itself.
+//!
+//! One consequence worth knowing: the spec requires `hex` to be **six** digits,
+//! with opacity in a separate `alpha` property. So the translucency ladder no
+//! longer carries an eight-digit `#rrggbbaa` here — a conformant consumer reads
+//! `alpha` and composites. The eight-digit forms still exist where they are the
+//! native spelling: `color-mix()` in CSS, and ARGB in QML.
 
 use noctua_engine::{Palette, ResolvedStep};
 use serde_json::{Map, Value, json};
 
 use crate::{CommentStyle, EmittedFile, Emitter, header, value};
+
+/// The colour space every emitted `$value` declares.
+///
+/// The palette is authored in OKLCH and solved in it, so this is the
+/// representation that loses nothing. `hex` is the fallback, not the source.
+const COLOR_SPACE: &str = "oklch";
 
 /// The DTCG token target.
 #[derive(Debug, Clone, Copy)]
@@ -23,7 +41,7 @@ impl Emitter for Dtcg {
     }
 
     fn describe(&self) -> &'static str {
-        "DTCG JSON tokens, consumable by Style Dictionary unchanged"
+        "DTCG 2025.10 JSON tokens, consumable by Style Dictionary unchanged"
     }
 
     fn emit(&self, palette: &Palette) -> Vec<EmittedFile> {
@@ -58,12 +76,7 @@ impl Emitter for Dtcg {
                 let mut alpha = Map::new();
                 alpha.insert("$type".into(), "color".into());
                 for stop in crate::tokens::alpha_tokens(palette, mode) {
-                    alpha.insert(
-                        stop.stem(),
-                        json!({
-                            "$value": crate::value::hex_rgba(stop.step.primary(), stop.percentage),
-                        }),
-                    );
+                    alpha.insert(stop.stem(), alpha_token(stop.step, stop.percentage));
                 }
                 root.insert("alpha".into(), Value::Object(alpha));
 
@@ -95,20 +108,52 @@ fn description(theme: &str, mode: &str) -> Value {
     json!(format!("Theme {theme}, {mode} mode. {banner}"))
 }
 
+/// An opaque colour token.
+///
+/// `components` is `[L, C, H]`, the order the spec fixes for `oklch`: lightness
+/// in 0 to 1, chroma from 0 up, hue in 0 to 360.
 fn token(step: &ResolvedStep) -> Value {
     let color = step.primary();
     json!({
         "$type": "color",
-        "$value": value::hex(color),
+        "$value": {
+            "colorSpace": COLOR_SPACE,
+            "components": components(step),
+            "hex": value::hex(color),
+        },
         "$extensions": {
-            "colors.noctua.oklch": {
-                "l": round(color.oklch.l, 4),
-                "c": round(color.oklch.c, 4),
-                "h": round(color.oklch.h, 2),
-            },
+            // Relative chroma has no expression in the spec, and it is the one
+            // number that explains *why* a step looks the way it does — how much
+            // of the gamut's room at that lightness and hue the colour takes.
             "colors.noctua.relativeChroma": round(color.achieved_relative_chroma, 4),
         }
     })
+}
+
+/// One stop of the translucency ladder.
+///
+/// `alpha` is the spec's own opacity property, 0 to 1, and `hex` stays six
+/// digits because the spec requires that. Compositing is the consumer's job,
+/// which is the honest division: an alpha token has no colour until it lands on
+/// a backdrop.
+fn alpha_token(step: &ResolvedStep, percentage: f64) -> Value {
+    let color = step.primary();
+    json!({
+        "$type": "color",
+        "$value": {
+            "colorSpace": COLOR_SPACE,
+            "components": components(step),
+            "alpha": round(percentage / 100.0, 4),
+            "hex": value::hex(color),
+        }
+    })
+}
+
+/// The OKLCH triple, rounded the way every other target rounds it so the same
+/// colour reads identically across `dist/`.
+fn components(step: &ResolvedStep) -> Value {
+    let oklch = step.primary().oklch;
+    json!([round(oklch.l, 4), round(oklch.c, 4), round(oklch.h, 2)])
 }
 
 fn round(value: f64, places: i32) -> f64 {
@@ -143,6 +188,27 @@ mod tests {
         serde_json::from_str(&contents).expect("valid JSON")
     }
 
+    /// Walks every colour token in a file, so a conformance rule is checked
+    /// against all of them rather than against whichever one a test picked.
+    fn every_value(tokens: &Value, mut visit: impl FnMut(&str, &Value)) {
+        fn walk(node: &Value, path: &str, visit: &mut impl FnMut(&str, &Value)) {
+            let Some(object) = node.as_object() else {
+                return;
+            };
+            if let Some(value) = object.get("$value") {
+                visit(path, value);
+                return;
+            }
+            for (key, child) in object {
+                if key.starts_with('$') {
+                    continue;
+                }
+                walk(child, &format!("{path}/{key}"), visit);
+            }
+        }
+        walk(tokens, "", &mut visit);
+    }
+
     #[test]
     fn one_file_per_theme_and_mode() {
         let palette = shipped();
@@ -168,24 +234,115 @@ mod tests {
         }
     }
 
-    /// The requirement: an existing Style Dictionary pipeline reads this as-is.
+    /// The requirement that replaced "a plain hex string is what tools read":
+    /// Format Module 2025.10 makes a colour `$value` an object with **required**
+    /// `colorSpace` and `components`. A bare string is not a valid value, so a
+    /// regression here is a conformance failure rather than a style difference.
+    ///
+    /// Checked over every token in the file, and the component ranges are
+    /// checked too, because a value inside the right shape but outside the
+    /// declared range is just as unusable.
     #[test]
-    fn tokens_use_the_plain_hex_value_every_tool_understands() {
+    fn every_value_is_a_conformant_oklch_object() {
+        let palette = shipped();
+        let mode = &palette.themes[0].modes[0];
+        // Derived from the palette rather than written as a number, so the
+        // walker and the emitter have to agree on how many tokens exist. A
+        // literal here would pass just as happily against a file that had
+        // silently stopped emitting a whole group.
+        let expected: usize = mode.families.values().map(|f| f.steps.len()).sum::<usize>()
+            + mode.scales.values().map(|s| s.steps.len()).sum::<usize>()
+            + crate::tokens::alpha_tokens(&palette, mode).len()
+            + palette
+                .neutral_ramps
+                .iter()
+                .map(|(_, steps)| steps.len())
+                .sum::<usize>();
+
         let tokens = parsed("tokens/ochre-balanced-light.json");
-        let solid = &tokens["accent"]["solid"];
-        assert_eq!(solid["$type"], "color");
-        let hex = solid["$value"].as_str().expect("a string value");
-        assert!(hex.starts_with('#') && hex.len() == 7, "got {hex}");
+        let mut seen = 0usize;
+        every_value(&tokens, |path, value| {
+            seen += 1;
+            let object = value
+                .as_object()
+                .unwrap_or_else(|| panic!("{path}: $value must be an object, got {value}"));
+            assert_eq!(object["colorSpace"], COLOR_SPACE, "{path}");
+
+            let components = object["components"]
+                .as_array()
+                .unwrap_or_else(|| panic!("{path}: components must be an array"));
+            assert_eq!(components.len(), 3, "{path}: oklch takes [L, C, H]");
+            let (l, c, h) = (
+                components[0].as_f64().expect("L is a number"),
+                components[1].as_f64().expect("C is a number"),
+                components[2].as_f64().expect("H is a number"),
+            );
+            assert!((0.0..=1.0).contains(&l), "{path}: L {l} outside 0..=1");
+            assert!(c >= 0.0, "{path}: C {c} is negative");
+            assert!((0.0..360.0).contains(&h), "{path}: H {h} outside 0..360");
+        });
+        assert_eq!(
+            seen, expected,
+            "the walker found {seen} tokens and the palette says {expected}"
+        );
+    }
+
+    /// The spec is explicit that the fallback "MUST be formatted in 6 digit CSS
+    /// hex color notation", which is why the translucency ladder moved its
+    /// opacity into `alpha` instead of an eighth and ninth digit.
+    #[test]
+    fn the_hex_fallback_is_always_six_digits() {
+        let tokens = parsed("tokens/ochre-balanced-dark.json");
+        every_value(&tokens, |path, value| {
+            let hex = value["hex"]
+                .as_str()
+                .unwrap_or_else(|| panic!("{path}: hex"));
+            assert_eq!(hex.len(), 7, "{path}: {hex} is not #rrggbb");
+            assert!(hex.starts_with('#'), "{path}: {hex}");
+            assert!(
+                hex[1..].chars().all(|c| c.is_ascii_hexdigit()),
+                "{path}: {hex}"
+            );
+        });
     }
 
     #[test]
-    fn the_oklch_coordinates_ride_along_without_getting_in_the_way() {
+    fn translucent_tokens_carry_alpha_and_opaque_ones_do_not() {
+        let tokens = parsed("tokens/ochre-balanced-light.json");
+
+        let wash = &tokens["alpha"];
+        let stop = wash
+            .as_object()
+            .expect("the alpha group")
+            .iter()
+            .find(|(key, _)| !key.starts_with('$'))
+            .map(|(_, value)| value)
+            .expect("at least one stop");
+        let alpha = stop["$value"]["alpha"].as_f64().expect("an alpha number");
+        assert!(
+            (0.0..=1.0).contains(&alpha),
+            "alpha {alpha} outside 0..=1 — the spec's range, not a percentage"
+        );
+
+        assert!(
+            tokens["accent"]["solid"]["$value"].get("alpha").is_none(),
+            "an opaque token must not declare alpha"
+        );
+    }
+
+    /// Relative chroma is the one thing the spec cannot express, so it is the
+    /// one thing left in `$extensions`. The OKLCH coordinates used to live here
+    /// and are now the value itself; keeping a copy would be two sources for one
+    /// number.
+    #[test]
+    fn only_the_unexpressible_rides_in_extensions() {
         let tokens = parsed("tokens/ochre-balanced-light.json");
         let extensions = &tokens["accent"]["solid"]["$extensions"];
-        assert!(extensions["colors.noctua.oklch"]["l"].is_number());
-        assert!(extensions["colors.noctua.oklch"]["c"].is_number());
-        assert!(extensions["colors.noctua.oklch"]["h"].is_number());
         assert!(extensions["colors.noctua.relativeChroma"].is_number());
+        assert!(
+            extensions.get("colors.noctua.oklch").is_none(),
+            "oklch is the $value now; a second copy can only disagree with it"
+        );
     }
 
     #[test]

@@ -1,0 +1,84 @@
+# Cuts a GitHub Release with the whole dist/ attached, when a version tag is
+# pushed.
+#
+# This is the channel that carries *everything* — including the 19 MB typed JSON
+# and TypeScript payload the npm package deliberately leaves out. It is also the
+# channel Nix consumers fetch by URL and hash, which is why the assets are
+# attested and why Immutable Releases matters: a mutable asset would silently
+# break every consumer's recorded hash.
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions: {}
+
+jobs:
+  release:
+    name: GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      # Creating the release and uploading assets.
+      contents: write
+      # Attestation. All three are required as of actions/attest v4 — the third
+      # is new, and omitting it is the most common failure with this action.
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # dist/ is committed, so there is nothing to build — but it must match the
+      # spec, or the release would ship artifacts that no longer correspond to
+      # the source they claim to come from.
+      - name: Install the pinned toolchain
+        run: rustup show
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: dist/ must match the spec
+        run: cargo xtask check --colors-only
+
+      - name: Pack
+        run: |
+          name="noctua-colors-${GITHUB_REF_NAME}"
+          tar -czf "${name}-dist.tar.gz" dist
+          zip -qr "${name}-dist.zip" dist
+          sha256sum "${name}-dist.tar.gz" "${name}-dist.zip" > SHA256SUMS
+          cat SHA256SUMS
+
+      # SLSA build provenance, signed through Sigstore's public-good instance.
+      # Free on public repositories. This binds each asset's digest to this
+      # workflow run, so a consumer can verify where a tarball came from:
+      #
+      #   gh attestation verify noctua-colors-v0.1.0-dist.tar.gz \
+      #     --repo noctua-world/noctua-colors
+      - uses: actions/attest@v4
+        with:
+          subject-path: "noctua-colors-*-dist.*"
+
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: |
+            noctua-colors-*-dist.tar.gz
+            noctua-colors-*-dist.zip
+            SHA256SUMS
+          generate_release_notes: true
+          body: |
+            Install any way you like — npm, a CDN, crates.io, Cargo git, Nix, or
+            these tarballs. Every route is documented in the
+            [README](https://github.com/noctua-world/noctua-colors#readme).
+
+            The attached archives carry the **complete** `dist/`, including the
+            typed JSON and TypeScript payload that the npm package leaves out to
+            stay small.
+
+            Verify an asset:
+
+            ```sh
+            gh attestation verify noctua-colors-${{ github.ref_name }}-dist.tar.gz \
+              --repo ${{ github.repository }}
+            sha256sum -c SHA256SUMS
+            ```

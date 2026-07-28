@@ -9,6 +9,10 @@ on:
     branches: [main]
   pull_request:
 
+# Read-only by default; a job that needs more asks for it. Matches the other
+# workflows here, and the repository setting.
+permissions: {}
+
 env:
   CARGO_TERM_COLOR: always
 

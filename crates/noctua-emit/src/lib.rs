@@ -113,6 +113,18 @@ pub fn emit_all(palette: &Palette) -> Vec<EmittedFile> {
 /// The command that regenerates everything, quoted in every header.
 pub const REGENERATE: &str = "cargo xtask build";
 
+/// Where this project lives.
+///
+/// Emitted into generated manifests, so it is a fact about the project rather
+/// than about any one target. Registry metadata is checked against it: npm
+/// rejects a provenance attestation whose `repository` does not match the
+/// publishing repository **case-sensitively**, so this string and the one in
+/// `package.json` have to agree exactly.
+pub const REPOSITORY: &str = "https://github.com/noctua-world/noctua-colors";
+
+/// Where the documentation site is served.
+pub const HOMEPAGE: &str = "https://noctua-world.github.io/noctua-colors/";
+
 /// The line every generated file leads with, in that file's comment syntax.
 ///
 /// `spec` is the path the palette was compiled from.

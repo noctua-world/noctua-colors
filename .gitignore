@@ -29,3 +29,7 @@ dist/rust/Cargo.lock
 # The developer's private, machine-specific agent notes. May exist beside any
 # AGENTS.md and is never committed. See NOCTUA.md §3.4.
 AGENTS.local.md
+
+# `nix build` output symlink.
+/result
+/result-*

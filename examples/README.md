@@ -19,8 +19,11 @@ than only the manifest.
 
 ## `consumer-web`
 
-One `<link>` to `dist/css/balanced.css`. Open `index.html` in a browser — there
-is nothing to install and nothing to build.
+Three `<link>` tags — `dist/css/ramp.css`, `contexts.css` and the default theme,
+which is the whole integration and the reason all three are needed: a theme file
+alone defines no `--nc-gray-*` and no `--nc-color-*`, and CSS drops an undefined
+custom property without saying so. Open `index.html` in a browser — there is
+nothing to install and nothing to build.
 
 ```bash
 xdg-open examples/consumer-web/index.html

@@ -1,0 +1,60 @@
+# Deploys the documentation site to GitHub Pages.
+#
+# This makes the .gitignore comment beside `/docs-site/public` true: the rendered
+# site is not committed because CI builds and deploys it, and until now nothing
+# did. The site reads `dist/` exactly like any other consumer, which is what
+# makes "the site cannot drift from the system" a mechanism rather than a claim.
+#
+# One human step this cannot do for itself: Settings -> Pages -> Source must be
+# set to "GitHub Actions". The configure-pages action can enable it, but only
+# with a personal access token, and provisioning a long-lived admin credential to
+# save one click is a bad trade.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+# Never cancel a deploy that is already running: the second half of an
+# interrupted deploy is a broken site.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    # Not decoration — deploy-pages requires this environment to exist.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install the pinned toolchain
+        run: rustup show
+
+      - uses: Swatinem/rust-cache@v2
+
+      # The full build, because the site includes the WebAssembly playground —
+      # the compiler itself, compiled for the browser.
+      - run: cargo xtask build
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs-site/public
+
+      - id: deployment
+        uses: actions/deploy-pages@v5

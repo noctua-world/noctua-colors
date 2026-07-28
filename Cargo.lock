@@ -632,6 +632,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "noctua-colors"
+version = "0.1.0"
+
+[[package]]
 name = "noctua-core"
 version = "0.1.0"
 dependencies = [
@@ -1502,6 +1506,7 @@ dependencies = [
  "noctua-spec",
  "notify",
  "notify-debouncer-full",
+ "serde_json",
  "tiny_http",
  "wasm-bindgen-cli-support",
 ]

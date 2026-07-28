@@ -8,6 +8,11 @@ license.workspace = true
 
 # This crate performs NO color math. It consumes resolved, quantized colors and
 # formats them. See AGENTS.md ("Invariants").
+
+# Internal to the compiler. The only publishable artifacts are the generated
+# `noctua-colors-tokens` crate under dist/rust and the `noctua-colors` facade.
+publish = false
+
 [dependencies]
 indexmap.workspace = true
 noctua-core.workspace = true

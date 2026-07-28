@@ -441,6 +441,34 @@ leaves `target/` and `Cargo.lock` inside `dist/` — byproducts of *using* the
 artifacts — so the sync check skips both, or one `cargo build` reports hundreds
 of stale files.
 
+**`sideEffects: false` on a package that ships CSS silently deletes the CSS.**
+Not an error, not a warning — a bundler treats the whole package as side-effect
+free, tree-shakes stylesheets nobody "imported a binding from", and the consumer
+gets an unstyled application. The array form `["**/*.css", "**/*.scss"]` is the
+only correct answer here. `@radix-ui/colors` ships `false` and is right to,
+because it ships only JS objects; do not copy it. `packaging::side_effects_cover_css`
+rejects both `false` and an array that forgot CSS.
+
+**The DTCG token shape was wrong, and it was wrong *defensibly*.** The emitter
+used a plain hex `$value` on the argument that it was what every tool actually
+read — true while the spec was a draft. Format Module **2025.10** made a colour
+`$value` an object with required `colorSpace` and `components`, and Style
+Dictionary v5 parses that by default. The shape was fixed **before the first
+publish**, deliberately: altering token shape afterwards is a breaking change for
+every downstream pipeline, and there is no way to un-publish. The spec turned out
+to support `oklch` natively, so what had been demoted into `$extensions` became
+the value itself — the lossless one — with `hex` as the six-digit fallback the
+spec provides. Two knock-ons: the translucency ladder moved its opacity into the
+spec's `alpha` property, because `hex` **must** be six digits; and
+`colors.noctua.relativeChroma` is now the only thing left in `$extensions`,
+because it is the only thing the spec cannot express.
+
+**npm does not auto-include `LICENSE-MIT`.** It always ships `package.json`,
+`README*` and `LICENSE*` — but the hyphenated dual-licence spelling does not match
+its rule, so a dual-licensed package would publish with a `license` field and
+neither licence text. Both files are named explicitly in `files`. Found by reading
+`npm pack --dry-run --json`, which is the only way to see it.
+
 **`Path::starts_with` does not understand `..`, and that silently disabled a
 safety notice.** `export` announces "outside this repository" before writing into
 a sibling checkout, because writing into somebody else's tree unannounced is not a
@@ -664,21 +692,53 @@ The same convention holds in every repository of the workspace — `NOCTUA.md §
 
 ## Publishing
 
-This repository has **no git remote yet**, and `noctua-design` therefore consumes
-it by local path (`NOCTUA.md §5.3`, §8.6). When a URL arrives, publishing is:
+**Remote:** `git@github.com:noctua-world/noctua-colors.git`, public.
 
-1. `git remote add origin <url>` and push `main`.
-2. Confirm CI is green **on the remote** — the workflow runs `cargo xtask check`,
-   the same command a developer runs, plus a byte-identical-rebuild job.
-3. `cargo xtask release <version>`, which writes the version everywhere it
-   appears. **Committing is left to a human** (`NOCTUA.md §2.6`).
-4. Tag and push tags.
-5. Switch consumers from the path dependency to the git-tag form. The path form in
-   each consumer carries the git form in a comment directly above it, so this is a
-   one-line change per consumer.
+Consumers reach this project through many channels. `dist/` is generated **and
+committed**, which is what lets every one of them work with no build step:
 
-Nothing is published to crates.io or npm. `dist/` is generated **and committed**,
-so a git dependency needs no build step and no registry.
+| Channel | Artifact | Published by |
+|---|---|---|
+| npm `@noctua-world/colors` | the **curated** set — css, tokens, scss, tailwind, `axes.json` | `release-npm.yml` |
+| crates.io `noctua-colors-tokens` | the generated crate from `dist/rust` | `release-crate.yml` |
+| crates.io `noctua-colors` | the facade crate that holds the name | `release-crate.yml` |
+| GitHub Release | the **complete** `dist/` as tarball + zip + `SHA256SUMS` | `release-github.yml` |
+| jsDelivr / unpkg | both npm-backed and `gh`-backed | nothing — automatic |
+| Cargo git dependency, Nix flake, submodule, copy | the complete `dist/` | nothing — the tag is enough |
+| GitHub Pages | the docs site | `pages.yml`, on push to `main` |
+
+**Cutting a release.** `cargo xtask release <version>` runs the gate, writes the
+version into `Cargo.toml` **and `package.json`**, rebuilds so `dist/MANIFEST.json`
+and the generated crate's manifest follow, and warns if `CHANGELOG.md` has no
+entry. It stops there. Then, by hand:
+
+```sh
+git commit -am "release: <version>"
+git tag -a v<version> -m "noctua-colors <version>"
+git push --follow-tags
+```
+
+**Pushing the tag is what publishes.** All three release workflows trigger on
+`v*.*.*`. Nothing publishes on a push to `main`.
+
+**There are no publishing secrets, and there must never be any.** npm and
+crates.io both use **OIDC trusted publishing**: the workflow's own identity is
+exchanged for a credential that lives minutes. Three consequences to respect:
+
+- **The workflow filenames are configuration.** npm's trusted publisher is
+  registered against `release-npm.yml` and crates.io's against
+  `release-crate.yml`, **by filename**. Renaming either file breaks publishing,
+  and the error does not mention the filename.
+- **Only GitHub-hosted runners.** Trusted publishing and npm provenance both
+  refuse self-hosted runners.
+- **The first publish of any new package name must be manual.** Neither registry
+  has a pending-publisher concept, and both require the package to exist before a
+  trusted publisher can be configured for it.
+
+**`package.json` is the only hand-written manifest here**, and it points at
+generated files, so `cargo xtask check` verifies every claim it makes — in Rust,
+with no Node, because a gate that only fires in CI tells you after you pushed.
+See `xtask/src/packaging.rs`.
 
 ## Maintaining this file
 

@@ -6,6 +6,10 @@ edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 
+# Internal to the compiler. The only publishable artifacts are the generated
+# `noctua-colors-tokens` crate under dist/rust and the `noctua-colors` facade.
+publish = false
+
 [dependencies]
 noctua-core.workspace = true
 blake3.workspace = true

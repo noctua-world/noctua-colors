@@ -8,6 +8,11 @@ license.workspace = true
 
 # noctua-core knows nothing about the spec format or the output targets, and
 # has no workspace dependencies. See AGENTS.md ("Invariants").
+
+# Internal to the compiler. The only publishable artifacts are the generated
+# `noctua-colors-tokens` crate under dist/rust and the `noctua-colors` facade.
+publish = false
+
 [dependencies]
 
 [dev-dependencies]

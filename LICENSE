@@ -1,0 +1,17 @@
+noctua-colors is dual-licensed, at your option, under either of:
+
+  * Apache License, Version 2.0 — see LICENSE-APACHE
+  * MIT license                 — see LICENSE-MIT
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this project by you shall be dual licensed as above, without any
+additional terms or conditions.
+
+This file exists so that automated licence detection has a single conventional
+name to find. The two files it points at are the actual licence texts; if they
+ever disagree with this summary, they win.
+
+The typeface vendored under docs-site/assets/fonts/ is Noctua Iosevka, a custom
+build of Iosevka by Renzhi Li, under the SIL Open Font License 1.1. Its licence
+travels with it, in docs-site/assets/fonts/OFL.md, and applies to those files
+rather than to this project.

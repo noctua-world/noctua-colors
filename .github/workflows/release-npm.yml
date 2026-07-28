@@ -1,0 +1,87 @@
+# Publishes @noctua-world/colors when a version tag is pushed.
+#
+# There is no NODE_AUTH_TOKEN here, and that is the entire point: npm trusted
+# publishing exchanges the workflow's OIDC identity for a short-lived credential,
+# so there is no long-lived secret to leak. npm's classic tokens were revoked in
+# December 2025 and granular tokens lose publish rights in January 2027, so this
+# is also the only path with a future.
+#
+# The filename is part of the configuration. npm's trusted publisher is
+# registered against `release-npm.yml` by name — renaming this file silently
+# breaks publishing, and the error does not mention the filename.
+name: Publish to npm
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+# Read-only by default; each job asks for what it needs.
+permissions: {}
+
+jobs:
+  publish:
+    name: npm publish
+    # Must be a GitHub-hosted runner. Trusted publishing and provenance both
+    # refuse self-hosted runners.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # OIDC, for both trusted publishing and the provenance attestation.
+      # Without it nothing here works.
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      # Trusted publishing needs npm >= 11.5.1, which is newer than what some
+      # Node images ship.
+      - name: Use a recent npm
+        run: npm install -g npm@latest
+
+      # The tag has to match what is about to be published, or a mistyped tag
+      # publishes the wrong version under the right name — and npm publishes are
+      # permanent.
+      - name: The tag and package.json must agree
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$pkg" ]; then
+            echo "::error::tag v$tag does not match package.json $pkg"
+            exit 1
+          fi
+          echo "publishing $pkg"
+
+      # Asserts the tarball is the curated set and not the whole 79 MB tree.
+      # `cargo xtask check` verifies every claim in package.json without Node;
+      # this verifies what npm will actually put in the tarball.
+      - name: What is in the tarball
+        run: |
+          npm pack --dry-run
+          node -e '
+            const p = require("child_process").execSync("npm pack --dry-run --json");
+            const [{ files, unpackedSize }] = JSON.parse(p);
+            const leaked = files.filter(f =>
+              /^dist\/(ts|rust|qml|reports)\//.test(f.path) ||
+              /^dist\/json\/(palette|themes)/.test(f.path));
+            if (leaked.length) {
+              console.error("::error::excluded paths in the tarball:", leaked.map(f => f.path));
+              process.exit(1);
+            }
+            const limit = 20 * 1024 * 1024;
+            if (unpackedSize > limit) {
+              console.error(`::error::unpacked ${unpackedSize} exceeds ${limit}`);
+              process.exit(1);
+            }
+            console.log(`unpacked ${(unpackedSize / 1048576).toFixed(1)} MiB, ${files.length} files`);
+          '
+
+      # `--provenance` as well as publishConfig.provenance: the docs say OIDC
+      # makes it automatic, practitioners report otherwise, and setting both
+      # costs nothing.
+      - name: Publish
+        run: npm publish --provenance --access public

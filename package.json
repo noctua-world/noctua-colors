@@ -1,0 +1,68 @@
+{
+  "name": "@noctua-world/colors",
+  "version": "0.1.0",
+  "description": "A generated colour system: CSS custom properties, a Tailwind v4 theme, DTCG 2025.10 tokens and SCSS. Solved in OKLCH against APCA contrast targets, not hand-picked.",
+  "license": "MIT OR Apache-2.0",
+  "homepage": "https://noctua-world.github.io/noctua-colors/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noctua-world/noctua-colors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noctua-world/noctua-colors/issues"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "color",
+    "colour",
+    "oklch",
+    "apca",
+    "css-variables",
+    "custom-properties",
+    "tailwindcss",
+    "tailwind",
+    "dtcg",
+    "theme",
+    "dark-mode",
+    "palette",
+    "accessibility"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "style": "./dist/css/index.css",
+  "sass": "./dist/scss/_noctua.scss",
+  "exports": {
+    ".": "./dist/css/index.css",
+    "./css": "./dist/css/index.css",
+    "./css/index.css": "./dist/css/index.css",
+    "./css/*.css": "./dist/css/*.css",
+    "./tailwind": "./dist/tailwind/theme.css",
+    "./tailwind/theme.css": "./dist/tailwind/theme.css",
+    "./scss": "./dist/scss/_noctua.scss",
+    "./scss/noctua": "./dist/scss/_noctua.scss",
+    "./tokens/*.json": "./dist/tokens/*.json",
+    "./axes.json": "./dist/json/axes.json",
+    "./manifest.json": "./dist/MANIFEST.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/css",
+    "dist/scss",
+    "dist/tailwind",
+    "dist/tokens",
+    "dist/json/axes.json",
+    "dist/MANIFEST.json",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -6,10 +6,21 @@
 
 [package]
 name = "noctua-colors-tokens"
-description = "Generated color tokens from noctua-colors."
+description = "Generated color tokens from noctua-colors: every palette as const OKLCH and sRGB values, no_std and dependency-free."
 version = "0.1.0"
 edition = "2021"
+
+# A lower edition than the workspace, deliberately: nothing here needs a
+# newer one, and the lowest edition that compiles is the widest set of
+# consumers that can depend on it.
+rust-version = "1.85"
 license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/noctua-world/noctua-colors"
+homepage = "https://noctua-world.github.io/noctua-colors/"
+documentation = "https://docs.rs/noctua-colors-tokens"
+keywords = ["design-tokens", "color", "oklch", "theme", "palette"]
+categories = ["gui", "graphics", "no-std"]
 
 # Its own workspace root.
 #

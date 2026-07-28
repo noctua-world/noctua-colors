@@ -11,23 +11,79 @@ source; every color is computed, checked, and regenerated on demand.
 
 ---
 
-## Working on this repository
+## Install
 
-This repository is part of the **Noctua workspace**, and two rules make the rest
-of the tooling work:
+Pick whichever channel suits you. Every one carries the same generated
+artifacts, and none of them needs a build step on your side.
 
-- **Clone it only inside `noctua-workspace/repos/`.** Nothing outside that
-  directory can reach the shared documents or the sibling repositories.
-- **Start your agents only from the `noctua-workspace` root**, never from inside
-  this repository. An agent started here cannot see `noctua-design`, cannot read
-  the master technical reference, and will guess instead of looking. It detects
-  this itself and prints a loud warning — if you see one, close it and reopen it
-  at the workspace root.
+| You use | Install |
+|---|---|
+| **A browser, no tooling at all** | `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noctua-world/colors@0.1.0/dist/css/index.css">` |
+| **npm / pnpm / bun** | `npm i @noctua-world/colors` |
+| **Tailwind v4** | `npm i @noctua-world/colors`, then `@import "@noctua-world/colors/tailwind";` |
+| **Rust, Dioxus, egui, a TUI** | `cargo add noctua-colors-tokens` |
+| **Cargo, straight from git** | `noctua-colors-tokens = { git = "https://github.com/noctua-world/noctua-colors", tag = "v0.1.0" }` |
+| **Style Dictionary or any DTCG tool** | point `source` at `@noctua-world/colors/tokens/*.json` |
+| **Sass** | `@use "@noctua-world/colors/scss" as noctua;` |
+| **Nix** | `inputs.noctua-colors.url = "github:noctua-world/noctua-colors";` |
+| **Qt / Quickshell** | copy `dist/qml/` from a [release](https://github.com/noctua-world/noctua-colors/releases) |
+| **A submodule, subtree or plain copy** | `dist/` is committed; take what you want |
 
-The workspace's `NOCTUA.md` is the master technical reference for the whole
-project; this repository's [`AGENTS.md`](AGENTS.md) is its own operating manual.
+### The three-line version
 
----
+```css
+/* Everything: the dense grays, the semantic contract, and every theme. */
+@import "@noctua-world/colors/css/index.css";
+```
+
+```html
+<html data-palette="blue-vivid" data-theme="dark">
+```
+
+Light and dark already work three ways with nothing to configure — the system
+preference, a `data-theme` attribute, and a `.light` / `.dark` class — on the root
+or on any subtree. Then code against the semantic contract:
+
+```css
+.panel {
+  background: var(--nc-color-surface-raised);
+  color: var(--nc-color-fg);
+  border: 1px solid var(--nc-color-border);
+}
+.panel:focus-visible { outline: 2px solid var(--nc-color-ring); }
+```
+
+**Full details for every channel, including the gotchas, are in
+[Consuming the output](#consuming-the-output).** The one worth knowing up front:
+if you link a theme file *on its own*, `--nc-gray-4` and `--nc-color-success`
+will silently do nothing, because CSS drops an undefined custom property without
+a word. Link `index.css`, or link all three of `ramp.css`, `contexts.css` and a
+theme.
+
+### What the npm package contains, and what it does not
+
+The npm package is the **curated** set: the CSS, the Tailwind theme, the DTCG
+tokens, the SCSS and `axes.json` — about 13 MB unpacked, 1.3 MB on the wire.
+
+It deliberately leaves out the 19 MB typed JSON/TypeScript payload
+(`dist/json/palette.json` and `dist/ts/`), the Rust crate source, the QML
+singletons and the compliance reports. Nobody should download 79 MB to use a
+colour. Those are all still available — from a
+[release tarball](https://github.com/noctua-world/noctua-colors/releases), from
+`cdn.jsdelivr.net/gh/...`, from a git dependency, or from Nix, each of which
+carries the complete `dist/`.
+
+### Verifying what you installed
+
+```sh
+npm audit signatures      # registry signatures and the provenance attestation
+gh attestation verify noctua-colors-v0.1.0-dist.tar.gz \
+  --repo noctua-world/noctua-colors
+```
+
+npm publishes are made from GitHub Actions with OIDC and no long-lived token, so
+the provenance attestation ties each tarball to the commit and the workflow that
+built it. Release assets carry SLSA build provenance.
 
 ## Why
 
@@ -258,6 +314,24 @@ the *first* crossing — it guarantees that every `cr` below 1 is in gamut, whic
 is precisely what relative chroma needs.
 
 </details>
+
+## Working on this repository
+
+This repository is part of the **Noctua workspace**, and two rules make the rest
+of the tooling work:
+
+- **Clone it only inside `noctua-workspace/repos/`.** Nothing outside that
+  directory can reach the shared documents or the sibling repositories.
+- **Start your agents only from the `noctua-workspace` root**, never from inside
+  this repository. An agent started here cannot see `noctua-design`, cannot read
+  the master technical reference, and will guess instead of looking. It detects
+  this itself and prints a loud warning — if you see one, close it and reopen it
+  at the workspace root.
+
+The workspace's `NOCTUA.md` is the master technical reference for the whole
+project; this repository's [`AGENTS.md`](AGENTS.md) is its own operating manual.
+
+---
 
 ## Quick start
 
@@ -514,7 +588,7 @@ noctua-colors-tokens = { path = "../noctua-colors/dist/rust",
 ```
 
 ```rust
-use noctua_colors_tokens::balanced::dark::accent;
+use noctua_colors_tokens::ochre_balanced::dark::accent;
 
 let button = accent::SOLID.hex;          // "#c78756"
 let packed = accent::SOLID.packed();     // 0x00c78756
@@ -534,7 +608,7 @@ Everything is `const`, the crate has no dependencies, and it is `no_std`.
 ```js
 // config.js
 export default {
-  source: ["../noctua-colors/dist/tokens/noctua-light.json"],
+  source: ["../noctua-colors/dist/tokens/ochre-balanced-light.json"],
   platforms: { /* your platforms */ },
 };
 ```
@@ -550,7 +624,7 @@ anything that wants them, and are ignored by anything that does not.
 ```ts
 import { palette } from "../noctua-colors/dist/ts/index.js";
 
-const solid = palette.themes.balanced.light.families.accent.steps[8];
+const solid = palette.themes["ochre-balanced"].light.families.accent.steps[8];
 solid.renditions[0].hex;             // "#bf8253"
 solid.renditions[0].css;             // "oklch(0.6584 0.0985 57.71)"
 solid.renditions[0].chromaHeadroom;  // how much room is left in the gamut
@@ -573,14 +647,14 @@ Copy or symlink `dist/qml/` next to your QML, then:
 import "."
 
 Rectangle {
-    color: NoctuaDark.surface
-    border.color: NoctuaDark.border
-    Text { color: NoctuaDark.fg }
-    Rectangle { color: NoctuaDark.accent }
+    color: OchreBalancedDark.surface
+    border.color: OchreBalancedDark.border
+    Text { color: OchreBalancedDark.fg }
+    Rectangle { color: OchreBalancedDark.accent }
 }
 ```
 
-One singleton per theme and mode — `NoctuaDark`, `VividLight`, and so on —
+One singleton per theme and mode — `OchreBalancedDark`, `OchreVividLight`, and so on —
 registered in `qmldir`. Values are hex, because Qt's `color` type does not
 parse `oklch()`. Note that Qt's eight-digit form is **ARGB**, not RGBA.
 
@@ -592,14 +666,14 @@ parse `oklch()`. Note that Qt's eight-digit form is **ARGB**, not RGBA.
 ```scss
 @use "../noctua-colors/dist/scss/noctua" as noctua;
 
-.card { background: noctua.$nc-balanced-light-neutral-bg-app; }
+.card { background: noctua.$nc-ochre-balanced-light-neutral-bg-app; }
 ```
 
 Or via the flat map:
 
 ```scss
 @use "sass:map";
-.button { background: map.get(noctua.$noctua-colors, "balanced-light-accent-solid"); }
+.button { background: map.get(noctua.$noctua-colors, "ochre-balanced-light-accent-solid"); }
 ```
 
 Sass resolves these at build time, so SCSS output cannot follow a runtime mode

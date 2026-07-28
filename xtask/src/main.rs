@@ -16,6 +16,7 @@ mod check;
 mod dev;
 mod export;
 mod import;
+mod packaging;
 mod release;
 mod serve;
 mod site;

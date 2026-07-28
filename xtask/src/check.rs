@@ -187,6 +187,11 @@ fn generated_output(
         }
     }
 
+    // The npm package's claims about dist/, checked in Rust so this fires on a
+    // machine with only rustup. `npm pack --dry-run` in CI is the authority;
+    // this is what catches the mistake before it is pushed.
+    failures.extend(crate::packaging::check(root, env!("CARGO_PKG_VERSION"))?);
+
     Ok(failures)
 }
 

@@ -1,0 +1,23 @@
+[package]
+name = "noctua-colors"
+description = "A color system compiler: a declarative spec goes in, every artifact other projects consume comes out — CSS custom properties, a Tailwind v4 theme, DTCG tokens, SCSS, JSON/TypeScript, QML, and a const Rust crate."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# This crate holds the project's name on crates.io and nothing else. The colours
+# themselves are in `noctua-colors-tokens`, which is generated output; the
+# compiler that produces them is not a library anyone should depend on, so its
+# crates carry `publish = false`. See src/lib.rs.
+readme = "README.md"
+repository = "https://github.com/noctua-world/noctua-colors"
+homepage = "https://noctua-world.github.io/noctua-colors/"
+documentation = "https://docs.rs/noctua-colors"
+keywords = ["design-tokens", "color", "oklch", "theme", "palette"]
+categories = ["gui", "graphics"]
+
+[dependencies]
+
+[lints]
+workspace = true
