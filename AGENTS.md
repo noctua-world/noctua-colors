@@ -735,6 +735,29 @@ exchanged for a credential that lives minutes. Three consequences to respect:
   has a pending-publisher concept, and both require the package to exist before a
   trusted publisher can be configured for it.
 
+**The v0.1.0 release workflows are red, and that is the bootstrap, not a
+defect.** `Publish crates` failed at `crates-io-auth-action` because a trusted
+publisher cannot exist before the crate does, and `Publish to npm` failed on a
+tarball-inspection bug since fixed. Both packages were published by hand, which
+is the only way a first publish can happen on either registry. A re-run will not
+turn them green: a re-run uses the workflow file from the **tag's** ref, not from
+`main`. The first release cut after the trusted publishers exist is the one that
+proves the automated path — expect it to be green and to carry a provenance
+attestation, which v0.1.0 cannot have.
+
+**npm 12 changed the shape of `npm pack --json`** from an array to an object
+keyed by package name. The fields inside are identical; only the envelope moved.
+This matters here because `release-npm.yml` deliberately runs
+`npm install -g npm@latest` — trusted publishing needs >= 11.5.1 — so CI runs a
+newer npm than the machine, and anything parsing npm's JSON has to accept both
+shapes or it passes locally and fails only in CI.
+
+**The registry read path lags the write path.** During the bootstrap publish,
+`npm view` returned 404 while `npm access get status` said the package was public
+and a PUT was rejected for already existing. So a pre-flight lookup can never
+decide whether to publish: it is a fast path, and the registry's answer to the
+actual publish is the authority. Both release workflows are written that way.
+
 **`package.json` is the only hand-written manifest here**, and it points at
 generated files, so `cargo xtask check` verifies every claim it makes — in Rust,
 with no Node, because a gate that only fires in CI tells you after you pushed.

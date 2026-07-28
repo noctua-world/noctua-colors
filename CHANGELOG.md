@@ -64,5 +64,18 @@ what changed, since there is nothing before it.
   contrast is a property of two opaque colours, and an alpha token has none until
   it is composited.
 
+### Known, and deliberate
+
+- **v0.1.0 carries no npm provenance attestation.** Provenance requires OIDC from
+  CI, CI requires a trusted publisher, and a trusted publisher requires the
+  package to already exist — so the first publish of any package is necessarily
+  manual and unattested. Every release after this one is attested. The
+  alternative was burning a throwaway version to create the package, which would
+  have sat in the version history forever.
+- **The v0.1.0 release workflows show as failed.** Both packages were published by
+  hand for the reason above; the workflows could not authenticate to registries
+  that had no trusted publisher yet. The artifacts are correct and verified — see
+  the release assets' checksums and `npm audit signatures`.
+
 [Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/noctua-world/noctua-colors/releases/tag/v0.1.0
