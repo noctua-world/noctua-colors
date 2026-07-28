@@ -64,7 +64,14 @@ jobs:
           npm pack --dry-run
           node -e '
             const p = require("child_process").execSync("npm pack --dry-run --json");
-            const [{ files, unpackedSize }] = JSON.parse(p);
+            const parsed = JSON.parse(p);
+            // npm 11 returns an array of one entry; npm 12 returns an object
+            // keyed by package name. The fields inside are identical — only the
+            // envelope changed. This step ran the CLI the workflow installs
+            // (`npm@latest`), not the one on the developer machine, so the
+            // difference showed up here and nowhere else.
+            const { files, unpackedSize } =
+              Array.isArray(parsed) ? parsed[0] : Object.values(parsed)[0];
             const leaked = files.filter(f =>
               /^dist\/(ts|rust|qml|reports)\//.test(f.path) ||
               /^dist\/json\/(palette|themes)/.test(f.path));
