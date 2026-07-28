@@ -1,6 +1,6 @@
 {
   "tool": "noctua-colors",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "regenerate": "cargo xtask build",
   "spec": "specs/noctua.toml",
   "specHash": "blake3:470197fcdb8253223c1932261431417a",
@@ -169,8 +169,8 @@
     "qml/qmldir": "blake3:6dfcd28d78f8ce484fc16e25be9fd587",
     "reports/colour-vision.md": "blake3:852ab631b2a7358c975bd01e48df28c2",
     "reports/wcag.md": "blake3:9a12ccbabcb27f38a8d32f62050af412",
-    "rust/Cargo.toml": "blake3:b59347d66fabb4ffc3d4708a1ac8753a",
-    "rust/README.md": "blake3:b4365570059bab4972c13fc639078228",
+    "rust/Cargo.toml": "blake3:7c32653de24bb1f03d3f683f96bcc30a",
+    "rust/README.md": "blake3:f3896ab1b457b5280a10ad45c5ea723c",
     "rust/src/lib.rs": "blake3:0a0e856286b595d0e154adad4601aeb4",
     "scss/_noctua.scss": "blake3:8c223b4f9ba5988a956c02ddd51043ad",
     "tailwind/theme.css": "blake3:5eeb2a526e90994842a4be8169d5f08f",

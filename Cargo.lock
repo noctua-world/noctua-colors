@@ -623,7 +623,7 @@ dependencies = [
 
 [[package]]
 name = "noctua-check"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "indexmap",
  "noctua-core",
@@ -633,18 +633,18 @@ dependencies = [
 
 [[package]]
 name = "noctua-colors"
-version = "0.1.0"
+version = "0.1.1"
 
 [[package]]
 name = "noctua-core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proptest",
 ]
 
 [[package]]
 name = "noctua-docs"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "indexmap",
  "maud",
@@ -654,7 +654,7 @@ dependencies = [
 
 [[package]]
 name = "noctua-emit"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "blake3",
  "indexmap",
@@ -668,7 +668,7 @@ dependencies = [
 
 [[package]]
 name = "noctua-engine"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "indexmap",
  "noctua-core",
@@ -679,7 +679,7 @@ dependencies = [
 
 [[package]]
 name = "noctua-spec"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "blake3",
  "indexmap",
@@ -692,7 +692,7 @@ dependencies = [
 
 [[package]]
 name = "noctua-wasm"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "noctua-check",
  "noctua-core",
@@ -1491,7 +1491,7 @@ checksum = "f17a85883d4e6d00e8a97c586de764dabcc06133f7f1d55dce5cdc070ad7fe59"
 
 [[package]]
 name = "xtask"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anstream 0.6.21",
  "anstyle",

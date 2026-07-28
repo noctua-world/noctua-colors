@@ -1,6 +1,6 @@
 {
   "name": "@noctua-world/colors",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A generated colour system: CSS custom properties, a Tailwind v4 theme, DTCG 2025.10 tokens and SCSS. Solved in OKLCH against APCA contrast targets, not hand-picked.",
   "license": "MIT OR Apache-2.0",
   "homepage": "https://noctua-world.github.io/noctua-colors/",

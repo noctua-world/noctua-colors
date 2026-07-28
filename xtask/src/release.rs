@@ -78,10 +78,17 @@ pub(crate) fn run(
     // mistake is loud rather than shipped.
     bump_package_json(root, &current, version)?;
 
-    // The version lives in dist/MANIFEST.json and in the generated crate's
-    // manifest too, so the artifacts have to be rebuilt or `check` would
-    // immediately report them out of sync.
-    crate::build::run(root, spec_path)?;
+    // The version reaches dist/ through `env!("CARGO_PKG_VERSION")` — it is in
+    // dist/MANIFEST.json, in the generated crate's manifest, and in that crate's
+    // README. `env!` is resolved when *this binary* was compiled, so calling
+    // `build::run` in-process here would regenerate everything stamped with the
+    // version we just replaced, and `check` would report three files out of sync.
+    // Cargo cannot recompile a binary that is currently running.
+    //
+    // So the rebuild is a subprocess: cargo notices Cargo.toml changed, rebuilds
+    // xtask and noctua-emit against the new version, and the artifacts come out
+    // stamped correctly. It costs a compile, which a release can afford.
+    rebuild_with_the_new_version(root, spec_path)?;
 
     // A changelog entry is the one part of a release a tool cannot write. For a
     // colour system, "which colour changed" is the only question a consumer
@@ -93,6 +100,40 @@ pub(crate) fn run(
 
     next_steps(version);
     Ok(())
+}
+
+/// Regenerates `dist/` from a freshly compiled binary.
+///
+/// A subprocess rather than a call, for the reason above: the version is a
+/// compile-time constant, so the artifacts can only carry the new one if the
+/// code that writes them was compiled after the manifest changed.
+fn rebuild_with_the_new_version(root: &Path, spec_path: &Path) -> Result<(), String> {
+    let spec = spec_path
+        .strip_prefix(root)
+        .unwrap_or(spec_path)
+        .to_string_lossy()
+        .into_owned();
+
+    let status = std::process::Command::new(env!("CARGO"))
+        .args([
+            "run",
+            "--quiet",
+            "--package",
+            "xtask",
+            "--",
+            "--spec",
+            &spec,
+            "build",
+        ])
+        .current_dir(root)
+        .status()
+        .map_err(|error| format!("could not rebuild: {error}"))?;
+
+    if status.success() {
+        Ok(())
+    } else {
+        Err("the rebuild against the new version failed".to_owned())
+    }
 }
 
 /// The three commands a human runs to turn a prepared version into a release.

@@ -310,6 +310,49 @@ mod tests {
         );
     }
 
+    /// Every place the release version lands has to agree, and there are five.
+    ///
+    /// `cargo xtask release` writes two of them directly and regenerates the
+    /// other three — and the regeneration has to happen in a *freshly compiled*
+    /// subprocess, because the version reaches `dist/` through
+    /// `env!("CARGO_PKG_VERSION")`, which is baked when the binary was built.
+    /// Doing it in-process stamped the artifacts with the version that had just
+    /// been replaced, and `check` reported three files out of sync. This is the
+    /// test that would have caught it.
+    #[test]
+    fn every_artifact_carries_the_same_version() {
+        let root = repository_root();
+        let workspace = workspace_version();
+
+        let package_json: serde_json::Value = serde_json::from_str(
+            &std::fs::read_to_string(root.join("package.json")).expect("read"),
+        )
+        .expect("valid JSON");
+        assert_eq!(
+            package_json["version"].as_str().expect("a version"),
+            workspace,
+            "package.json disagrees with the workspace"
+        );
+
+        let manifest: serde_json::Value = serde_json::from_str(
+            &std::fs::read_to_string(root.join("dist/MANIFEST.json")).expect("read"),
+        )
+        .expect("valid JSON");
+        assert_eq!(
+            manifest["version"].as_str().expect("a version"),
+            workspace,
+            "dist/MANIFEST.json disagrees — regenerate with `cargo xtask build`"
+        );
+
+        for file in ["dist/rust/Cargo.toml", "dist/rust/README.md"] {
+            let text = std::fs::read_to_string(root.join(file)).expect("read");
+            assert!(
+                text.contains(&format!("version = \"{workspace}\"")),
+                "{file} does not carry {workspace}"
+            );
+        }
+    }
+
     #[test]
     fn a_repository_without_a_package_json_is_not_a_failure() {
         let dir = tempdir("no-package-json");

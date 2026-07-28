@@ -12,6 +12,40 @@ meet contrast?** Generated release notes list commits. They do not list that.
 
 ## [Unreleased]
 
+## [0.1.1]
+
+No colour changed. This release exists to prove the automated publishing path
+end to end: both registries reached from CI over OIDC, with no token stored
+anywhere, and an npm provenance attestation — which v0.1.0 could not have,
+because a trusted publisher cannot be configured for a package that does not
+yet exist.
+
+### Fixed
+
+- The release workflow's tarball inspection assumed `npm pack --json` returns an
+  array. npm 12 returns an object keyed by package name; the fields inside are
+  identical. It now accepts either. This only ever failed in CI, which installs
+  `npm@latest` because trusted publishing requires >= 11.5.1.
+- Both release workflows now decide whether to publish from **the registry's
+  answer** rather than from a prior lookup. The read path lags the write path —
+  observed during the v0.1.0 bootstrap, where `npm view` returned 404 while a
+  publish was rejected for already existing — so "not readable" never means "not
+  published".
+- `cargo xtask check` passes on a fresh clone. A documentation test probed the
+  rendered site, which is gitignored and written only by `cargo xtask build`, so
+  it passed only on a machine that had built recently.
+- `cargo xtask export` announces writes outside the repository again.
+  `Path::starts_with` is lexical and does not understand `..`, so every
+  `../sibling` consumer — the case the notice exists for — was silently treated
+  as inside.
+- `cargo xtask release` regenerates `dist/` in a freshly compiled subprocess.
+  The version reaches the artifacts through `env!("CARGO_PKG_VERSION")`, which is
+  baked in when the binary is compiled, so regenerating in-process stamped them
+  with the version that had just been replaced. Found the first time the verb was
+  ever run, and now covered by a test that asserts all five places carrying the
+  version agree.
+
+
 ## [0.1.0]
 
 The first published version. Everything below describes what exists rather than
