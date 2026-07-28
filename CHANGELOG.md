@@ -12,6 +12,33 @@ meet contrast?** Generated release notes list commits. They do not list that.
 
 ## [Unreleased]
 
+## [0.2.1]
+
+No colour changed. One file was missing, and its absence was the kind that only
+shows up when someone builds on top of the system.
+
+### Added
+
+- **`system/css/theme-ochre-balanced.css`** — the default palette in its
+  scopable form. Every other palette was emitted twice: once bound to `:root`
+  and once to `[data-palette="<name>"]`. The default was emitted only at
+  `:root`, which made it **the one palette of thirty-nine that could not be
+  applied to a subtree**: `<div data-palette="ochre-balanced">` matched nothing
+  and the element silently inherited whatever the page was on.
+
+  Falling back to `:root` is not a substitute. It works only while the page
+  itself is on the default; inside a page set to another palette, a subtree
+  asking for the default got the page's colours. That is invisible until
+  someone builds a component with its own theme, and then it reads as the
+  component ignoring its own setting.
+
+  `css/index.css` now imports both forms of the default.
+
+  Additive: a new file, nothing renamed, no token moved. Two new tests assert
+  that **every** palette in the spec has a scopable file and that the file
+  actually binds to the attribute rather than to `:root` — the second because
+  the first would pass on a file that existed but was scoped wrongly.
+
 ## [0.2.0]
 
 **The reframing.** This release changes almost nothing about the colours and
@@ -224,7 +251,8 @@ what changed, since there is nothing before it.
   that had no trusted publisher yet. The artifacts are correct and verified — see
   the release assets' checksums and `npm audit signatures`.
 
-[Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/noctua-world/noctua-colors/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/noctua-world/noctua-colors/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/noctua-world/noctua-colors/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/noctua-world/noctua-colors/releases/tag/v0.1.0

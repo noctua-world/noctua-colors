@@ -1,14 +1,14 @@
 {
   "tool": "noctua-colors",
   "version": "0.1.1",
-  "systemVersion": "0.2.0",
+  "systemVersion": "0.2.1",
   "system": "noctua-colors",
   "regenerate": "cargo xtask build",
   "spec": "specs/noctua.toml",
-  "specHash": "blake3:9aea4f2b85211c040c8ea58f35341ce6",
+  "specHash": "blake3:1bdbfe56dd1c7cf4a96daf87a8e0e727",
   "files": {
     "css/contexts.css": "blake3:27e7cda0fdbc6c0e7d0c96952ee0621c",
-    "css/index.css": "blake3:1d7774bf878e1e1c18d7659c0692ba65",
+    "css/index.css": "blake3:77be35994b3aadae6ca69a7a0d12e0b7",
     "css/ochre-balanced.css": "blake3:bc0446886eb073c6464502937dafe999",
     "css/palette/amber-balanced.css": "blake3:5db588bec3bdbf073022ce0faefd79b4",
     "css/palette/amber-sober.css": "blake3:1a4994e7ff6b9409bca97ffdd3fd3b9b",
@@ -74,6 +74,7 @@
     "css/theme-magenta-balanced.css": "blake3:e7b4a863b9abadf5154de1135aa64537",
     "css/theme-magenta-sober.css": "blake3:a32eba0db53061906c281100ad14a765",
     "css/theme-magenta-vivid.css": "blake3:ee9217d1e10f42b7147a2d44692fa418",
+    "css/theme-ochre-balanced.css": "blake3:554b2168c58597c058938b747f48e1da",
     "css/theme-ochre-sober.css": "blake3:7e669c1d302efe87a7237b30dbfb5d1c",
     "css/theme-ochre-vivid.css": "blake3:9f5499026a1d44d782170a4fa38f9213",
     "css/theme-rose-balanced.css": "blake3:7faa95be1bf0851a551a29f39c7a8a96",
@@ -88,8 +89,8 @@
     "css/theme-violet-balanced.css": "blake3:1f8bcc04cb0b05d795f732741cf4df5f",
     "css/theme-violet-sober.css": "blake3:cc99ebb97e5c3eb63f4664c8a68d722f",
     "css/theme-violet-vivid.css": "blake3:7fbd4aad6bfc9520af1a32d86d219a14",
-    "json/axes.json": "blake3:51ce582db24188aa4e682e3ef08dc611",
-    "json/palette.json": "blake3:613d61555b79aeb73e51445e30a1ab2f",
+    "json/axes.json": "blake3:8dc0ba51c68c6605e6f0ea3fbb03c25b",
+    "json/palette.json": "blake3:f359bb66a519c815f0610d53f207058c",
     "json/themes/amber-balanced.json": "blake3:07240f8310cb377c0097ecf56093f5ed",
     "json/themes/amber-sober.json": "blake3:75f9105a1399c1bae6f6c1cacdbb6d27",
     "json/themes/amber-vivid.json": "blake3:4a8818a43f01cfcc204eceef75e654ce",
@@ -210,8 +211,8 @@
     "qml/qmldir": "blake3:6dfcd28d78f8ce484fc16e25be9fd587",
     "reports/colour-vision.md": "blake3:852ab631b2a7358c975bd01e48df28c2",
     "reports/wcag.md": "blake3:9a12ccbabcb27f38a8d32f62050af412",
-    "rust/Cargo.toml": "blake3:3ec72ed54ddc2efe8859f0c96fc7747f",
-    "rust/README.md": "blake3:79a5b322d434135f3fdd8e46475b8f89",
+    "rust/Cargo.toml": "blake3:e5f8cb926d7492d07d8d0b45c77519ee",
+    "rust/README.md": "blake3:aed404e29cad2689d58e09f9ee954694",
     "rust/src/lib.rs": "blake3:0a0e856286b595d0e154adad4601aeb4",
     "scss/_noctua.scss": "blake3:8c223b4f9ba5988a956c02ddd51043ad",
     "tailwind/bridge.css": "blake3:740511b4e092e20b3ff57f4d2c9b4a47",
@@ -334,6 +335,6 @@
     "tokens/violet-vivid-dark.json": "blake3:9cc8ac655f5b29050cae950c0c545cb8",
     "tokens/violet-vivid-light.json": "blake3:06d879a796f4c2a06a01ba9945ee20de",
     "ts/index.d.ts": "blake3:4e51ebb3f3f8ca39acce865e1df9e169",
-    "ts/index.js": "blake3:3c5803f181ee8cec0a5a06aa01b9c438"
+    "ts/index.js": "blake3:6be93f8301b78bbf45aac31fbc7b631b"
   }
 }

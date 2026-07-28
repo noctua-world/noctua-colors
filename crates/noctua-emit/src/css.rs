@@ -77,6 +77,25 @@ impl Emitter for Css {
         for (index, theme) in palette.themes.iter().enumerate() {
             files.push(theme_file(palette, theme, index == 0, &semantic));
             files.push(palette_file(palette, theme, &semantic));
+
+            // The default theme is emitted **twice**: once bound to `:root`,
+            // which is what a consumer who never switches palettes gets, and
+            // once bound to `[data-palette="…"]` like every other theme.
+            //
+            // Without the second form the default is the one palette of the
+            // thirty-nine that cannot be applied to a subtree — the attribute
+            // matches nothing and the element inherits whatever the page is.
+            // That asymmetry is invisible until someone builds a component
+            // with its own theme, and then it is a bug that looks like the
+            // component ignoring its own setting.
+            //
+            // Falling back to `:root` is not a substitute. It works only when
+            // the page itself is on the default; inside a page that is on
+            // another palette, a subtree asking for the default gets the
+            // page's colours.
+            if index == 0 {
+                files.push(theme_file(palette, theme, false, &semantic));
+            }
         }
 
         files.push(index_file(palette));
@@ -576,6 +595,14 @@ fn index_file(palette: &Palette) -> EmittedFile {
     for (index, theme) in palette.themes.iter().enumerate() {
         let file = theme_file_name(&theme.name, index == 0);
         writeln!(out, "@import \"./{file}\";").expect("string write");
+
+        // Both forms of the default. The `:root` one above is what a page gets
+        // by default; this one is what makes `data-palette="<default>"` work on
+        // a subtree, exactly as it does for the other thirty-eight.
+        if index == 0 {
+            let scoped = theme_file_name(&theme.name, false);
+            writeln!(out, "@import \"./{scoped}\";").expect("string write");
+        }
     }
     EmittedFile::new("css/index.css", out)
 }
@@ -607,9 +634,10 @@ mod tests {
     fn one_file_per_theme_plus_the_two_shared_ones_and_an_index() {
         let palette = shipped();
         let files = Css.emit(&palette);
-        // The ramp, the semantic contract, an index, and *two* files per theme:
-        // the layered one index.css imports, and the self-contained one.
-        assert_eq!(files.len(), palette.themes.len() * 2 + 3);
+        // The ramp, the semantic contract, an index, *two* files per theme —
+        // the layered one index.css imports and the self-contained one — and
+        // one extra: the default theme's scopable form.
+        assert_eq!(files.len(), palette.themes.len() * 2 + 4);
         for shared in ["css/ramp.css", "css/contexts.css", "css/index.css"] {
             assert!(files.iter().any(|f| f.path == shared), "{shared} missing");
         }
@@ -619,6 +647,66 @@ mod tests {
                 .iter()
                 .any(|f| f.path == "css/palette/ochre-balanced.css")
         );
+    }
+
+    /// **Every** palette can be applied to a subtree.
+    ///
+    /// This is the test that found the gap it now guards. The default theme
+    /// was emitted only at `:root`, so `data-palette="ochre-balanced"` on a
+    /// `<div>` matched nothing and the element silently inherited the page's
+    /// palette. Thirty-eight of thirty-nine worked, which is exactly the shape
+    /// of bug that survives review.
+    ///
+    /// Asserted over `palette.themes` rather than a list, so a palette added
+    /// to the spec is covered without anyone remembering to extend this.
+    #[test]
+    fn every_palette_has_a_scopable_file() {
+        let palette = shipped();
+        let files = Css.emit(&palette);
+
+        for theme in &palette.themes {
+            let path = format!("css/theme-{}.css", theme.name);
+            assert!(
+                files.iter().any(|f| f.path == path),
+                "{path} is missing, so `data-palette=\"{}\"` would match nothing \
+                 on a subtree and the element would inherit the page's palette",
+                theme.name
+            );
+        }
+    }
+
+    /// A scopable file must bind to the attribute, not to `:root`.
+    ///
+    /// The file existing proves nothing on its own: emitted with the default
+    /// theme's `:root` scoping it would still be useless on a subtree, and the
+    /// test above would still pass.
+    #[test]
+    fn a_scopable_file_binds_to_the_attribute() {
+        let palette = shipped();
+        let default = &palette.themes[0].name;
+        let css = file(&format!("css/theme-{default}.css"));
+
+        assert!(
+            css.contains(&format!("[data-palette=\"{default}\"]")),
+            "the default theme's scopable form is not bound to the attribute"
+        );
+        // And the light block must not be `:root`, or it would also repaint
+        // the whole page whenever this file is linked.
+        assert!(
+            !css.contains("\n:root {"),
+            "the scopable form binds to :root, so linking it would repaint the page"
+        );
+    }
+
+    /// The index must reach both forms of the default.
+    #[test]
+    fn the_index_imports_both_forms_of_the_default() {
+        let palette = shipped();
+        let default = &palette.themes[0].name;
+        let index = file("css/index.css");
+
+        assert!(index.contains(&format!("@import \"./{default}.css\";")));
+        assert!(index.contains(&format!("@import \"./theme-{default}.css\";")));
     }
 
     /// Every palette gets a self-contained file, named for the palette.

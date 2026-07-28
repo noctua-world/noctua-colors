@@ -20,7 +20,7 @@ is compiled in**. Ask for the ones you ship:
 ```toml
 # The table form, because an inline table cannot span lines in TOML.
 [dependencies.noctua-colors-tokens]
-version = "0.2.0"
+version = "0.2.1"
 default-features = false
 features = ["ochre_balanced", "blue_vivid"]
 ```

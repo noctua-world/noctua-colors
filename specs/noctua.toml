@@ -33,7 +33,7 @@
 # Bumping: `cargo xtask release <version>` writes this and package.json
 # together. `--tool <version>` bumps the compiler instead.
 [system]
-version = "0.2.0"
+version = "0.2.1"
 
 # The name and one-line description carried into generated package metadata —
 # the npm package, the generated Rust crate, and MANIFEST.json — so those

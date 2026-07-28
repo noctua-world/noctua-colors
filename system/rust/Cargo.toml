@@ -7,7 +7,7 @@
 [package]
 name = "noctua-colors-tokens"
 description = "Generated color tokens from noctua-colors: every palette as const OKLCH and sRGB values, no_std and dependency-free."
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 
 # A lower edition than the workspace, deliberately: nothing here needs a
