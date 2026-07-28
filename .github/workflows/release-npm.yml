@@ -80,26 +80,42 @@ jobs:
             console.log(`unpacked ${(unpackedSize / 1048576).toFixed(1)} MiB, ${files.length} files`);
           '
 
-      # Publishing the same version twice is an error, and there are two
-      # ordinary ways to arrive here having already published: the bootstrap
-      # release, which must be published by hand because npm has no
-      # pending-publisher and a trusted publisher cannot be configured for a
-      # package that does not exist yet; and a re-run after a transient failure.
-      # Neither is a problem worth a red X, so this skips instead.
-      - name: Is this version already on the registry?
-        id: existing
-        run: |
-          version="$(node -p "require('./package.json').version")"
-          if npm view "@noctua-world/colors@${version}" version >/dev/null 2>&1; then
-            echo "published=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::@noctua-world/colors@${version} is already published; nothing to do"
-          else
-            echo "published=false" >> "$GITHUB_OUTPUT"
-          fi
-
+      # Publishing the same version twice is an error, and there are two ordinary
+      # ways to arrive here having already published: the bootstrap release,
+      # which must be done by hand because npm has no pending-publisher and a
+      # trusted publisher cannot be configured for a package that does not exist
+      # yet; and a re-run after a transient failure. Neither deserves a red X.
+      #
+      # The check is a fast path, not the decision. `npm view` reads the
+      # packument through a CDN that lags the write path by minutes — observed
+      # during the bootstrap publish, where `npm view` returned 404 while
+      # `npm access get status` reported the package public and a PUT was
+      # rejected for already existing. So "not readable" must never be trusted to
+      # mean "not published": the registry's answer to the actual publish is the
+      # only authority, and that is what the second branch reads.
+      #
       # `--provenance` as well as publishConfig.provenance: the docs say OIDC
       # makes it automatic, practitioners report otherwise, and setting both
       # costs nothing.
       - name: Publish
-        if: steps.existing.outputs.published == 'false'
-        run: npm publish --provenance --access public
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if npm view "@noctua-world/colors@${version}" version >/dev/null 2>&1; then
+            echo "::notice::@noctua-world/colors@${version} is already published; nothing to do"
+            exit 0
+          fi
+
+          set +e
+          out="$(npm publish --provenance --access public 2>&1)"
+          status=$?
+          set -e
+          echo "$out"
+
+          if [ "$status" -eq 0 ]; then
+            exit 0
+          fi
+          if echo "$out" | grep -qi 'cannot publish over'; then
+            echo "::notice::${version} was already on the registry; the read path had not caught up"
+            exit 0
+          fi
+          exit "$status"

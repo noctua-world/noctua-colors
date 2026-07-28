@@ -46,34 +46,6 @@ jobs:
       # be undone — `cargo yank` only stops *new* dependents.
       - run: cargo xtask check
 
-      # Same reasoning as the npm workflow: the bootstrap release is published by
-      # hand, because crates.io has no pending-publisher either, and a re-run
-      # after a transient failure is ordinary. A crates.io publish is permanent —
-      # `cargo yank` only stops new dependents — so "already there" is the one
-      # outcome worth skipping rather than retrying.
-      - name: Which versions are already on the registry?
-        id: existing
-        run: |
-          version="${GITHUB_REF_NAME#v}"
-          # Output names deliberately avoid hyphens. In a GitHub Actions
-          # expression, `outputs.noctua-colors-tokens` parses the hyphens as
-          # subtraction, so the condition silently evaluates to something falsy
-          # and the publish is skipped forever. Bracket notation would also work;
-          # underscores are harder to get wrong.
-          check() {
-            code="$(curl -sS -o /dev/null -w '%{http_code}' \
-              -H 'User-Agent: noctua-colors release workflow' \
-              "https://crates.io/api/v1/crates/$1/${version}")"
-            if [ "$code" = "200" ]; then
-              echo "$2=true" >> "$GITHUB_OUTPUT"
-              echo "::notice::$1 ${version} is already published; skipping"
-            else
-              echo "$2=false" >> "$GITHUB_OUTPUT"
-            fi
-          }
-          check noctua-colors-tokens tokens
-          check noctua-colors facade
-
       - uses: rust-lang/crates-io-auth-action@v1
         id: auth
 
@@ -84,9 +56,25 @@ jobs:
       #
       # `--locked` so the published crate is built from the committed lockfile
       # rather than whatever resolves today.
+      # Idempotent, and the tolerance is on the *registry's* answer rather than a
+      # prior lookup. crates.io's read path can lag its write path, so "the API
+      # does not list this version" is not evidence that publishing will succeed —
+      # only the publish itself knows. A crates.io publish is permanent (`cargo
+      # yank` only stops new dependents), so "already there" is the one outcome
+      # worth skipping rather than retrying.
       - name: noctua-colors-tokens
-        if: steps.existing.outputs.tokens == 'false'
-        run: cargo publish --manifest-path dist/rust/Cargo.toml --locked
+        run: |
+          set +e
+          out="$(cargo publish --manifest-path dist/rust/Cargo.toml --locked 2>&1)"
+          status=$?
+          set -e
+          echo "$out"
+          [ "$status" -eq 0 ] && exit 0
+          if echo "$out" | grep -qiE 'already (been )?uploaded|already exists'; then
+            echo "::notice::this version is already on crates.io; nothing to do"
+            exit 0
+          fi
+          exit "$status"
         env:
           CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
 
@@ -94,7 +82,17 @@ jobs:
       # so a failure here must not look like a failure to ship the tokens —
       # hence the separate step and the ordering.
       - name: noctua-colors
-        if: steps.existing.outputs.facade == 'false'
-        run: cargo publish -p noctua-colors --locked
+        run: |
+          set +e
+          out="$(cargo publish -p noctua-colors --locked 2>&1)"
+          status=$?
+          set -e
+          echo "$out"
+          [ "$status" -eq 0 ] && exit 0
+          if echo "$out" | grep -qiE 'already (been )?uploaded|already exists'; then
+            echo "::notice::this version is already on crates.io; nothing to do"
+            exit 0
+          fi
+          exit "$status"
         env:
           CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
