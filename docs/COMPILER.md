@@ -31,11 +31,15 @@ the method is more interesting than the output.
 ## Why
 
 Two sibling projects, `noctua-os1-hub` and `noctua-os1-shell`, each keep a
-`Theme.qml`.
-One of them describes itself in a comment as a fork of the other with "the same
-palette". Five of their thirteen shared tokens have since drifted apart, and
-neither file has a `success` or `warning` color — so two different greens were
-invented independently at nineteen call sites between them.
+`Theme.qml`. One of them describes itself in a comment as a fork of the other
+with "the same palette". Eleven of their seventeen shared tokens have since
+drifted apart, and neither file has a `success` or `warning` color — so four
+different greens were invented independently at thirty-one call sites between
+them.
+
+Those counts were five of thirteen and two greens when this was first written.
+Nobody changed the plan; the files simply went on being maintained by hand, which
+is the whole argument in one line.
 
 That is what happens to a palette maintained as a list of hex values. This
 project makes the list an *output*.
