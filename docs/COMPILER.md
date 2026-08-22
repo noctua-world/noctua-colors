@@ -30,7 +30,8 @@ the method is more interesting than the output.
 
 ## Why
 
-Two sibling projects, `noctua-hub` and `noctua-shell`, each keep a `Theme.qml`.
+Two sibling projects, `noctua-os1-hub` and `noctua-os1-shell`, each keep a
+`Theme.qml`.
 One of them describes itself in a comment as a fork of the other with "the same
 palette". Five of their thirteen shared tokens have since drifted apart, and
 neither file has a `success` or `warning` color — so two different greens were

@@ -64,7 +64,7 @@ Swap `blue-vivid` for any palette in [the grid below](#choose-a-palette).
 
 **29 KB gzipped**, and that is one palette complete: the neutral ramp, every
 semantic name, light and dark. There is also a file carrying all 39, for
-switching at runtime — it is 741 KB gzipped, or **25× more**, which is exactly
+switching at runtime — it is 730 KB gzipped, or **25× more**, which is exactly
 why the one-palette file exists.
 
 ### I use npm
@@ -254,7 +254,7 @@ To let your users choose, load the all-palettes file and set an attribute:
 document.documentElement.dataset.palette = "violet-sober";
 ```
 
-This is the 741 KB-gzipped route. If you ship one palette, do not use it.
+This is the 730 KB-gzipped route. If you ship one palette, do not use it.
 
 ---
 
@@ -405,7 +405,7 @@ palette can fix that, so the honest answer is a legend, and the report says so.
 | **Cargo, from git** | `noctua-colors-tokens = { git = "https://github.com/noctua-world/noctua-colors", tag = "v0.2.0" }` |
 | **SCSS** | `@use "@noctua-world/colors/scss/noctua" as noctua;` |
 | **Design tokens (DTCG)** | `@noctua-world/colors/tokens/blue-vivid-light.json` |
-| **TypeScript / JSON** | in the release tarball — npm leaves out the 19 MB payload |
+| **TypeScript / JSON** | in the release tarball — npm leaves out the 36 MB payload |
 | **Qt / Quickshell** | copy `system/qml/` from a [release](https://github.com/noctua-world/noctua-colors/releases) |
 | **Nix** | `inputs.noctua-colors.url = "github:noctua-world/noctua-colors";` |
 | **Submodule, subtree, plain copy** | `system/` is committed; take what you want |
@@ -512,9 +512,9 @@ Values are hex, because Sass resolves at compile time and cannot follow a
 rendition and relative chroma as plain JSON. `system/ts/index.js` is the same
 data with `.d.ts` types.
 
-Both are ~19 MB and are **deliberately excluded from the npm package** — they
+Each is ~18 MB and both are **deliberately excluded from the npm package** — they
 are in the release tarball instead, because almost nobody installing colours
-wants to download them.
+wants to download them. `npm pack --dry-run` is what says which files ship.
 
 ### Qt / QML
 
@@ -588,7 +588,7 @@ does not move the number you depend on.
 | [`docs/COMPILER.md`](docs/COMPILER.md) | **how this was made** — the two ideas at depth, the gamut-boundary derivation, and what the quality gates found but could not fix |
 | [`TOKEN-POLICY.md`](TOKEN-POLICY.md) | what you may depend on, and what a version bump means |
 | [`CHANGELOG.md`](CHANGELOG.md) | which colour changed, and whether your contrast still holds |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | working on this repository |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | working on this repository — **read *Before you clone* first**: this repository belongs to a workspace, and both cloning it elsewhere and starting an agent inside it break the tooling |
 | [`SECURITY.md`](SECURITY.md) | supply-chain posture, and how to report an issue |
 | [`AGENTS.md`](AGENTS.md) | the operating manual: invariants, commands, and the gotchas that have already cost debugging time here |
 | [`specs/noctua.toml`](specs/noctua.toml) | the specification — heavily commented, and the only file a developer edits |

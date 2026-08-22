@@ -408,7 +408,8 @@ background reads **Lc 46 in light and Lc 15 in dark**, so dark needs roughly
 Lc 58 against a dark ground means lightness 0.75. Text targets stay near-equal.
 
 **Two targets have a quirk that bites once.** Qt parses hex and nothing else, so
-`Theme.qml` has no `oklch()` and no custom properties — and eight-digit hex in Qt
+the QML singletons in `system/qml/` — one per theme and mode, named for the
+palette — carry no `oklch()` and no custom properties. Eight-digit hex in Qt
 is **ARGB**, not RGBA: alpha leads, which is why `value::hex_argb` and
 `hex_rgba` are two functions rather than one with a flag. The same eight digits
 read as two different colours, so a mistake there produces a plausible result
