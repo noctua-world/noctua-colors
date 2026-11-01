@@ -257,7 +257,7 @@ mod tests {
         let scratch = Scratch::new("empty");
 
         let drift = check(&scratch.0, &palette, "specs/noctua.toml", &text).expect("check");
-        assert!(!drift.is_empty());
+        assert_ne!(drift, [] as [Drift; 0]);
         assert!(drift.iter().all(|d| matches!(d, Drift::Missing(_))));
     }
 

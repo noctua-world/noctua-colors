@@ -191,7 +191,7 @@ mod tests {
 
     #[test]
     fn degenerate_requests_do_not_panic() {
-        assert!(place(0, 0.0, 1.0, &[]).is_empty());
+        assert_eq!(place(0, 0.0, 1.0, &[]), [] as [f64; 0]);
         assert_eq!(place(1, 0.3, 0.9, &[]), vec![0.3]);
         assert_eq!(place(5, 0.5, 0.5, &[]), vec![0.5]);
     }

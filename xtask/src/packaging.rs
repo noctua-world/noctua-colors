@@ -446,7 +446,7 @@ mod tests {
     #[test]
     fn a_repository_without_a_package_json_is_not_a_failure() {
         let dir = tempdir("no-package-json");
-        assert!(check(&dir, "0.1.0").expect("readable").is_empty());
+        assert_eq!(check(&dir, "0.1.0").expect("readable"), [] as [String; 0]);
     }
 
     /// The trap this whole module exists for, and the only one that is

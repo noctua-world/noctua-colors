@@ -218,7 +218,7 @@ mod tests {
     fn the_system_table_is_optional() {
         let parsed = super::parse("t.toml", "[families.a]\nhue = 1\n").expect("parses");
         assert_eq!(parsed.system.name, "noctua-colors");
-        assert!(!parsed.system.version.is_empty());
+        assert_ne!(parsed.system.version, "");
     }
 
     #[test]

@@ -150,7 +150,7 @@ mod tests {
         assert_has_root([0.0, 1.0, -3.0, 2.0], 1.0); // x^2 - 3x + 2
         assert_has_root([0.0, 1.0, -3.0, 2.0], 2.0);
         assert_has_root([0.0, 0.0, 2.0, -6.0], 3.0); // 2x - 6
-        assert!(real_roots([0.0, 0.0, 0.0, 1.0]).is_empty());
+        assert_eq!(real_roots([0.0, 0.0, 0.0, 1.0]), [] as [f64; 0]);
     }
 
     #[test]

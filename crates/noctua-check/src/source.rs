@@ -263,10 +263,10 @@ mod tests {
     /// Flagging malformed-input fixtures would train people to ignore this.
     #[test]
     fn it_ignores_things_that_are_not_colours() {
-        assert!(literals("issue #12345 and #1234567").is_empty());
-        assert!(literals("no colours here").is_empty());
-        assert!(literals("#").is_empty());
-        assert!(literals("#zz").is_empty());
+        assert_eq!(literals("issue #12345 and #1234567"), [] as [String; 0]);
+        assert_eq!(literals("no colours here"), [] as [String; 0]);
+        assert_eq!(literals("#"), [] as [String; 0]);
+        assert_eq!(literals("#zz"), [] as [String; 0]);
     }
 
     #[test]

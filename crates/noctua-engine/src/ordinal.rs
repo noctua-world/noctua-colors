@@ -261,7 +261,7 @@ mod tests {
 
     #[test]
     fn degenerate_counts_do_not_panic() {
-        assert!(place(0, &traffic_light(), L, Gamut::Srgb).is_empty());
+        assert_eq!(place(0, &traffic_light(), L, Gamut::Srgb), [] as [f64; 0]);
         assert_eq!(place(1, &traffic_light(), L, Gamut::Srgb), vec![0.0]);
     }
 }

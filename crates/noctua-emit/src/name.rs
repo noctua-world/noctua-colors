@@ -269,7 +269,7 @@ mod tests {
             "Ünïcödé",
         ] {
             let id = identifier(raw);
-            assert!(!id.is_empty());
+            assert_ne!(id, "");
             assert!(
                 !id.chars().next().expect("non-empty").is_ascii_digit(),
                 "{raw} produced {id}, which starts with a digit"

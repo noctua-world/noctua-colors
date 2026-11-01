@@ -251,7 +251,7 @@ mod tests {
             ),
             ["--color-accent", "--color-surface"]
         );
-        assert!(references("color: red").is_empty());
+        assert_eq!(references("color: red"), [] as [String; 0]);
     }
 
     #[test]
