@@ -4,42 +4,42 @@
 
 **A colour system whose colours were solved, not picked.**
 
-39 palettes · 1,767 semantic names · light and dark from one file ·
-48,441 contrast pairs checked on every build
+Palettes on an accent × saturation grid · semantic names for hundreds of product states ·
+light and dark from one file · every contrast pair checked on every build
 
 [Browse the palettes](https://noctua-world.github.io/noctua-colors/) ·
-[Install](#install-in-one-minute) ·
+[Install](#install) ·
 [How it was made](docs/COMPILER.md)
 
 </div>
 
 ---
 
-Most colour systems are a list of hex values somebody chose. This one is the
-**output of a compiler**. You describe a hue; a program solves every step of
-every ramp against a perceptual contrast target, in every palette, and checks
-all 48,441 resulting pairs before anything ships.
+Most colour systems are a list of hex values somebody chose. This one is the **output of a
+compiler**: you describe a hue, and a program solves every step of every ramp against a
+perceptual contrast target, in every palette, then checks every resulting pair before anything
+ships.
 
-You do not have to care about any of that to use it. You link one file.
+You do not need to care about any of that to use it. You link one file:
 
 ```html
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/palette/blue-vivid.css">
 ```
 
-That is a complete install. You now have `--nc-color-surface`, `--nc-color-fg`,
-`--nc-color-accent`, `--nc-color-danger` and 1,763 more — and dark mode already
-works.
+That is a complete install. `--nc-color-surface`, `--nc-color-fg`, `--nc-color-accent`,
+`--nc-color-danger` and every other semantic name are defined, and dark mode already works.
 
 ---
 
 ## Contents
 
-- [Install in one minute](#install-in-one-minute)
+- [Install](#install)
 - [Use it](#use-it)
 - [Choose a palette](#choose-a-palette)
 - [The names you get](#the-names-you-get)
 - [Light and dark](#light-and-dark)
+- [Mistakes that fail silently](#mistakes-that-fail-silently)
 - [Why these colours are trustworthy](#why-these-colours-are-trustworthy)
 - [Every way to install](#every-way-to-install)
 - [Two versions, and which one is yours](#two-versions-and-which-one-is-yours)
@@ -47,66 +47,64 @@ works.
 
 ---
 
-## Install in one minute
+## Install
 
-Pick the row that matches you. Each one is complete — there is no step two.
+Pick the one that matches you. Each is complete: there is no step two.
 
-### I just want colours in a web page
+### A web page
 
-Copy this into your `<head>`:
+Copy this into your `<head>`, and swap `blue-vivid` for any palette in
+[the grid](#choose-a-palette):
 
 ```html
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/palette/blue-vivid.css">
 ```
 
-Swap `blue-vivid` for any palette in [the grid below](#choose-a-palette).
+That one file is a whole palette — the neutral ramp, every semantic name, light and dark — at a
+few dozen kilobytes gzipped. In production, put a version in the URL
+(`@noctua-world/colors@<version>/system/…`), because colour values may move between minor
+versions ([`TOKEN-POLICY.md`](TOKEN-POLICY.md)).
 
-**29 KB gzipped**, and that is one palette complete: the neutral ramp, every
-semantic name, light and dark. There is also a file carrying all 39, for
-switching at runtime — it is 730 KB gzipped, or **25× more**, which is exactly
-why the one-palette file exists.
-
-### I use npm
+### npm
 
 ```sh
 npm install @noctua-world/colors
 ```
 
-Then in your CSS:
+Then, in your CSS:
 
 ```css
 @import "@noctua-world/colors/palette/blue-vivid.css";
 ```
 
-### I use Tailwind v4
+### Tailwind v4
 
 ```sh
 npm install @noctua-world/colors
 ```
 
-Two lines in your entry CSS, and that is the whole integration:
+Two lines in your entry CSS are the whole integration:
 
 ```css
 @import "tailwindcss";
 @import "@noctua-world/colors/tailwind/palette/blue-vivid.css";
 ```
 
-You now write `bg-surface`, `text-fg`, `border-border`, `bg-accent`,
-`text-danger`, `bg-gray-18` — and `dark:` works, following the same signals the
-tokens do.
+You now write `bg-surface`, `text-fg`, `border-border`, `bg-accent`, `text-danger` and
+`bg-gray-18`, and they follow light and dark on their own.
 
-### I write Rust
+### Rust
 
 ```sh
-cargo add noctua-colors-tokens --features blue_vivid
+cargo add noctua-colors-tokens --no-default-features --features blue_vivid
 ```
 
 ```rust
 use noctua_colors_tokens::blue_vivid::light::accent;
 
-let hex = accent::SOLID.hex();      // a &'static str
-let rgb = accent::SOLID.packed();   // a u32
+let hex = accent::SOLID.hex;        // a &'static str, "#rrggbb"
+let rgb = accent::SOLID.packed();   // a u32, 0x00rrggbb
 ```
 
 `no_std`, no dependencies, every value a `const`.
@@ -115,7 +113,7 @@ let rgb = accent::SOLID.packed();   // a u32
 
 ## Use it
 
-### You name meanings, not colours
+### Name meanings, not colours
 
 ```css
 .card {
@@ -135,12 +133,12 @@ let rgb = accent::SOLID.packed();   // a u32
 ```
 
 Nothing there names a colour. Change the palette and all of it follows, because
-`--nc-color-overdue` is a name for a *meaning*, not for a particular red.
+`--nc-color-overdue` names a *meaning*, not a particular red.
 
 ### A complete page you can copy
 
-Save this as `index.html`, open it, then switch your operating system between
-light and dark appearance.
+Save this as `index.html`, open it, then switch your operating system between light and dark
+appearance.
 
 ```html
 <!doctype html>
@@ -234,16 +232,17 @@ Two axes — an **accent hue** and a **saturation** — so a palette name is alw
 | **clay** | `clay-balanced` | `clay-vivid` | `clay-sober` |
 | **umber** | `umber-balanced` | `umber-vivid` | `umber-sober` |
 
-**`ochre-balanced` is the default** — the one bound to `:root` in `index.css`,
-and what you get if you do not choose.
+**`ochre-balanced` is the default**: the palette `index.css` binds to `:root`, and what you get
+if you do not choose.
 
-The saturation axis is a single multiplier on relative chroma. That is why it
-is an axis at all, rather than 39 separately tuned palettes.
+The saturation axis is a single multiplier on relative chroma, which is why it is an axis at all
+rather than a set of separately tuned palettes.
 [See them side by side.](https://noctua-world.github.io/noctua-colors/)
 
 ### Switching at runtime
 
-To let your users choose, load the all-palettes file and set an attribute:
+To let your users choose, load the file that carries every palette, and set an attribute on the
+root element:
 
 ```html
 <link rel="stylesheet"
@@ -254,13 +253,14 @@ To let your users choose, load the all-palettes file and set an attribute:
 document.documentElement.dataset.palette = "violet-sober";
 ```
 
-This is the 730 KB-gzipped route. If you ship one palette, do not use it.
+That file is many times the size of one palette's. If you ship a single palette, link its own
+file instead.
 
 ---
 
 ## The names you get
 
-Every name below exists in every palette, in both modes.
+Every name in this section exists in every palette, in both modes.
 
 ### Page furniture
 
@@ -277,8 +277,8 @@ Every name below exists in every palette, in both modes.
 
 ### States and meanings
 
-The contract carries **1,767 names**, covering **349 subjects**. Each subject
-gives you a family:
+Each **subject** — a state or a meaning, such as `danger`, `overdue` or `deployed` — gives you
+five names:
 
 | Pattern | Example | For |
 |---|---|---|
@@ -288,10 +288,9 @@ gives you a family:
 | `--nc-color-<subject>-border` | `--nc-color-danger-border` | a border to match that background |
 | `--nc-color-on-<subject>` | `--nc-color-on-danger` | **text that is legible on the solid fill** |
 
-`--nc-color-on-danger` was solved against `--nc-color-danger` to a contrast
-target, so you never guess whether white or black goes on top.
-
-**They come in two pairs, and mixing them is the one easy mistake:**
+`--nc-color-on-danger` was solved against `--nc-color-danger` to a contrast target, so you never
+guess whether white or black goes on top. The five come in **two pairings**, and mixing them is
+the one easy mistake:
 
 ```css
 /* A solid chip — the fill and the text solved against each other. */
@@ -302,10 +301,6 @@ target, so you never guess whether white or black goes on top.
          border: 1px solid var(--nc-color-danger-border); }
 ```
 
-`on-danger` is a *near-white*, chosen to sit on the saturated fill. On the pale
-`-bg` it would be nearly invisible — and since both are valid colours, nothing
-would warn you.
-
 A sample of the subjects:
 
 ```text
@@ -315,37 +310,37 @@ expired  overdue  locked  verified  deprecated  offline  syncing  throttled
 quarantined  chargeback  backordered  onboarding  ratelimited  …
 ```
 
-Ordinary product vocabulary — the point is that you rarely have to invent one.
-The complete list is in [`system/css/contexts.css`](system/css/contexts.css)
-and on [the documentation site](https://noctua-world.github.io/noctua-colors/).
+Ordinary product vocabulary: the point is that you rarely have to invent one. The complete list
+is in [`system/css/contexts.css`](system/css/contexts.css) and on
+[the documentation site](https://noctua-world.github.io/noctua-colors/).
 
-### The neutral ramp
+### Underneath: the palette itself
 
-`--nc-gray-1` through `--nc-gray-24`, plus `--nc-gray-cool-*` and
-`--nc-gray-warm-*`, for when the semantic names are not granular enough.
+Every semantic name points at one of these. Use them directly when no meaning fits.
 
-These are **mode-independent**: `--nc-gray-4` is one colour, not two. The ramp
-is a shared resource both modes draw from.
+| Names | What they are |
+|---|---|
+| `--nc-<family>-<role>` | each family's ramp, by role: `bg-app`, `bg-subtle`, `bg-element`, `bg-element-hover`, `bg-element-active`, `border-subtle`, `border-element`, `border-strong`, `solid`, `solid-hover`, `text-muted`, `text-strong` |
+| `--nc-<family>-1` … `-12` | the same twelve steps, numbered |
+| `--nc-gray-1` … `--nc-gray-24`, `--nc-gray-cool-*`, `--nc-gray-warm-*` | dense neutral ramps, **mode-independent**: `--nc-gray-4` is one colour, not two |
+| `--nc-neutral-a1` … `-a12`, `--nc-accent-a1` … `-a12` | translucent washes, built with `color-mix` so they follow the active mode |
+| `--nc-chart-1` …, `--nc-level-1` …, `--nc-magnitude-low` / `-high` | scales: categorical sets for charts, and ordered ones meant to be read in sequence |
 
-### Translucency
-
-`--nc-neutral-a1` … `-a12` and `--nc-accent-a1` … `-a12` — washes built with
-`color-mix`, so they follow whichever mode and gamut layer is active rather
-than freezing a value.
+The families are `accent`, `danger`, `warning`, `success`, `info`, `urgent`, `waiting`,
+`active`, `progress`, and `neutral` with its `neutral-cool` and `neutral-warm` variants. The
+`--nc-gray-*` ramps are shared by every palette.
 
 ---
 
 ## Light and dark
 
-**It already works.** All three mechanisms are emitted, composed so they cannot
-conflict:
+**It already works.** Three mechanisms are emitted, composed so they cannot conflict:
 
-| You do | It does |
+| On `<html>`, you set | It does |
 |---|---|
 | nothing | follows the operating system's preference |
-| `<html data-theme="dark">` | forces dark |
-| `<html class="dark">` | forces dark |
-| either, on *any* element | switches that subtree only |
+| `data-theme="dark"` or `data-theme="light"` | forces that mode |
+| `class="dark"` or `class="light"` | forces that mode |
 
 So a toggle is one line:
 
@@ -353,43 +348,78 @@ So a toggle is one line:
 document.documentElement.dataset.theme = wantsDark ? "dark" : "light";
 ```
 
-`color-scheme` is set too, so scrollbars, form controls and the canvas match.
-Without it a dark page still gets light scrollbars.
+`color-scheme` is set too, so scrollbars, form controls and the canvas match. Without it, a dark
+page still gets light scrollbars.
+
+**Set the mode on the root, not on a section.** The same attribute or class on a smaller element
+switches the palette's own steps (`--nc-<family>-<role>`) inside it, but **not** the semantic
+names: CSS resolves a `var()` inside a custom property on the element that declares it, and the
+semantic names are declared once, on the root. A `data-palette` on a section behaves the same way.
+To give one section its own mode, declare again on it the semantic names it uses — their
+definitions are in [`system/css/contexts.css`](system/css/contexts.css):
+
+```css
+.dark, .light, [data-theme] {
+  --nc-color-surface: var(--nc-neutral-bg-app);
+  --nc-color-fg:      var(--nc-neutral-text-strong);
+}
+```
+
+---
+
+## Mistakes that fail silently
+
+Each of these leaves a page that looks plausible and a console that says nothing.
+
+1. **Linking a theme file on its own.** `system/css/ochre-balanced.css` and
+   `system/css/theme-<name>.css` carry one palette's values and nothing shared, so
+   `--nc-gray-*` and `--nc-color-*` stay undefined — and CSS drops an undefined custom property
+   without a word. Link the palette's own file, `palette/<name>.css`, or
+   [all three layers](#plain-css-from-a-checkout-or-a-copy).
+2. **`on-X` on `X-bg`.** `--nc-color-on-danger` is solved against the saturated fill, which puts
+   it right beside the tinted `-bg` in lightness, in either mode: on that background it is nearly
+   invisible, and since both are valid colours nothing warns you. The solid takes `on-X`; `-bg`
+   takes `-border` and ordinary text.
+3. **A mode or a palette set on a section.** The palette steps follow it; the semantic names do
+   not ([Light and dark](#light-and-dark)).
+4. **Linking from `raw.githubusercontent.com`.** It serves files as `text/plain` with `nosniff`,
+   so browsers refuse to apply them as stylesheets. Use jsDelivr, through npm or through `gh`.
+5. **An unpinned version in production.** Colour values may change in a minor release, and
+   before 1.0 a minor release may rename; pin a version ([`TOKEN-POLICY.md`](TOKEN-POLICY.md)).
+6. **A plain `@theme` in your own Tailwind mapping.** It bakes the values in at build time, so
+   dark mode never applies. The package's mapping uses `@theme inline`; keep it that way if you
+   write your own.
 
 ---
 
 ## Why these colours are trustworthy
 
-Two ideas do the work. Both are covered at full depth in
-[**docs/COMPILER.md**](docs/COMPILER.md) — here is what they buy you.
+Two ideas do the work. Both are covered at full depth in [**docs/COMPILER.md**](docs/COMPILER.md);
+here is what they buy you.
 
-**Chroma is relative, not absolute.** Saturation is stored as a fraction of the
-most a display can actually show at that lightness and hue. So the same token
-is richer on a wide-gamut screen without being redefined anywhere, and a yellow
-and a blue look equally saturated at the same step despite blue having nearly
-twice the chroma available.
+**Chroma is relative, not absolute.** Saturation is stored as a fraction of the most a display can
+actually show at that lightness and hue. So the same token is richer on a wide-gamut screen
+without being redefined anywhere, and a yellow and a blue look equally saturated at the same step,
+although blue has nearly twice the chroma available.
 
-**Lightness is solved, not authored.** Every step's lightness is derived from a
-contrast target, using **APCA** rather than WCAG 2.x. That distinction is not
-academic:
+**Lightness is solved, not authored.** Every step's lightness is derived from a contrast target,
+using **APCA** rather than WCAG 2.x. That distinction is not academic:
 
 | pair | WCAG 2.x | APCA |
 |---|---|---|
 | `#767676` on `#ffffff` | 4.54:1 — barely AA | Lc **+71.6** — comfortable |
 | `#9a9a9a` on `#000000` | 7.46:1 — passes AAA | Lc **−47.7** — too weak for body text |
 
-WCAG rates the dark-mode pair as substantially *better*. APCA, which models
-polarity and the actual perceptual response, rates it markedly worse — which
-matches what your eyes report. A system tuned to WCAG ships both as
-equivalent. WCAG ratios are still emitted, as a compliance report; no gate
-targets them.
+WCAG rates the dark-mode pair as substantially *better*. APCA, which models polarity and the
+actual perceptual response, rates it markedly worse — which matches what your eyes report. A
+system tuned to WCAG ships both as equivalent. WCAG ratios are still emitted, as a compliance
+report; no gate targets them.
 
-**And it is all checked.** Every build runs 48,441 checks across every palette,
-mode and pair, and fails on a regression. Colour-vision simulation runs too —
-and where a pair genuinely cannot be made distinguishable, that is **published
-rather than hidden**, in `system/reports/colour-vision.md`, with the measured
-numbers. Twelve chart series cannot all be told apart under protanopia; no
-palette can fix that, so the honest answer is a legend, and the report says so.
+**And it is all checked.** Every build checks every contrast pair in every palette and mode, and
+fails on a regression. Colour-vision simulation runs too, and what it cannot fix is **published
+rather than hidden**: `system/reports/colour-vision.md` gives the measured separation of every
+pair of semantic colours under each dichromacy. No palette can make all of them distinguishable
+by colour alone, so pair a colour that carries meaning with an icon, a label or a shape.
 
 ---
 
@@ -397,16 +427,17 @@ palette can fix that, so the honest answer is a legend, and the report says so.
 
 | Route | Command or line |
 |---|---|
-| **CDN, one palette** | `<link href="https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/palette/blue-vivid.css">` |
-| **CDN, all palettes** | `<link href="https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/index.css">` |
+| **CDN, one palette** | `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/palette/blue-vivid.css">` |
+| **CDN, every palette** | `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noctua-world/colors/system/css/index.css">` |
+| **CDN, without npm** | `https://cdn.jsdelivr.net/gh/noctua-world/noctua-colors@v<version>/system/…` — the complete tree |
 | **npm** | `npm install @noctua-world/colors` |
 | **Tailwind v4** | `@import "@noctua-world/colors/tailwind/palette/blue-vivid.css";` |
-| **Rust** | `cargo add noctua-colors-tokens --features blue_vivid` |
-| **Cargo, from git** | `noctua-colors-tokens = { git = "https://github.com/noctua-world/noctua-colors", tag = "v0.2.0" }` |
+| **Rust** | `cargo add noctua-colors-tokens --no-default-features --features blue_vivid` |
+| **Cargo, from git** | `noctua-colors-tokens = { git = "https://github.com/noctua-world/noctua-colors", tag = "v<version>", default-features = false, features = ["blue_vivid"] }` |
 | **SCSS** | `@use "@noctua-world/colors/scss/noctua" as noctua;` |
 | **Design tokens (DTCG)** | `@noctua-world/colors/tokens/blue-vivid-light.json` |
-| **TypeScript / JSON** | in the release tarball — npm leaves out the 36 MB payload |
-| **Qt / Quickshell** | copy `system/qml/` from a [release](https://github.com/noctua-world/noctua-colors/releases) |
+| **TypeScript / JSON** | in the release tarball; npm leaves that payload out |
+| **Qt / QML** | copy `system/qml/` from a [release](https://github.com/noctua-world/noctua-colors/releases) |
 | **Nix** | `inputs.noctua-colors.url = "github:noctua-world/noctua-colors";` |
 | **Submodule, subtree, plain copy** | `system/` is committed; take what you want |
 
@@ -421,66 +452,68 @@ palette can fix that, so the honest answer is a legend, and the report says so.
 Or the three layers separately, if you want to swap only the palette:
 
 ```html
-<link rel="stylesheet" href="system/css/ramp.css">      <!-- the dense grays -->
-<link rel="stylesheet" href="system/css/contexts.css">  <!-- the contract -->
-<link rel="stylesheet" href="system/css/ochre-balanced.css">  <!-- the values -->
+<link rel="stylesheet" href="system/css/ramp.css">            <!-- the dense greys -->
+<link rel="stylesheet" href="system/css/contexts.css">        <!-- the contract -->
+<link rel="stylesheet" href="system/css/ochre-balanced.css">  <!-- the default palette's values -->
 ```
 
-**Link all three, or none.** A theme file on its own defines no `--nc-gray-*`
-and no `--nc-color-*`, and CSS drops an undefined custom property *without
-saying so* — the page renders unstyled and the console stays empty. The
-per-palette file exists so that you cannot make this mistake.
+For any other palette the third file is `system/css/theme-<name>.css`, which applies under
+`data-palette="<name>"` on the root. **Link all three, or none**: a theme file alone defines no
+`--nc-gray-*` and no `--nc-color-*` (mistake 1 above).
 
 ### npm subpaths
 
 | Subpath | Contents |
 |---|---|
-| `@noctua-world/colors` | all palettes (`css/index.css`) |
+| `@noctua-world/colors` | every palette (`css/index.css`) |
 | `@noctua-world/colors/palette/<name>.css` | one palette, self-contained |
-| `@noctua-world/colors/css/<name>.css` | one theme's values only |
-| `@noctua-world/colors/tailwind` | Tailwind, all palettes |
+| `@noctua-world/colors/css/<file>.css` | any single file of `system/css/`: `ramp.css`, `contexts.css`, a theme's values |
+| `@noctua-world/colors/tailwind` | Tailwind, every palette |
 | `@noctua-world/colors/tailwind/palette/<name>.css` | Tailwind, one palette |
 | `@noctua-world/colors/scss/noctua` | the SCSS entry |
 | `@noctua-world/colors/tokens/<name>-<mode>.json` | DTCG tokens |
 | `@noctua-world/colors/axes.json` | the accent × saturation grid |
 | `@noctua-world/colors/manifest.json` | hashes and both versions |
 
-### Tailwind v4, all palettes
+### Tailwind v4, every palette
 
 ```css
 @import "tailwindcss";
 @import "@noctua-world/colors/tailwind";
 ```
 
-Utilities come out as `var()` references rather than frozen values, so they
-follow the active mode. That is `@theme inline`, and it is load-bearing: a
-plain `@theme` would stamp `bg-accent` with whichever mode was active at build
-time, and dark mode would silently stop working.
+Utilities come out as `var()` references rather than frozen values, so they follow the active
+mode. That is `@theme inline`, and it is load-bearing: a plain `@theme` would stamp `bg-accent`
+with whichever mode was active at build time, and dark mode would silently stop working.
+
+The `dark:` variant follows the `.dark` class and `data-theme="dark"`; it does not fire on the
+operating system's preference alone. The colour utilities rarely need it — `bg-surface` is
+already dark in dark mode.
 
 ### Rust
 
-```toml
-[dependencies]
-noctua-colors-tokens = { version = "0.2.0", features = ["blue_vivid"] }
-```
-
-One Cargo feature per palette, so a program shipping two does not carry the
-other 37.
+One Cargo feature per palette, so a program compiles in only the palettes it names.
+`--no-default-features` leaves out the default palette, `ochre_balanced`.
 
 ```rust
 use noctua_colors_tokens::blue_vivid::{dark, light};
+use noctua_colors_tokens::gray;
 
-const CARD: &str = light::neutral::BG_ELEMENT.hex();
+const CARD: &str = light::neutral::BG_ELEMENT.hex;
 let packed: u32 = dark::accent::SOLID.packed();
-let (l, c, h) = light::accent::SOLID.oklch();
+let solid = light::accent::SOLID;
+let (l, c, h) = (solid.l, solid.c, solid.h);   // OKLCH, as the colour was defined
+let step = gray::STEP_18;                       // the shared neutral ramp
 ```
+
+A path is `<palette>::<light|dark>::<family>::<ROLE>`; `gray`, `gray_cool` and `gray_warm` are
+shared by every palette and always present.
 
 ### Design tokens (DTCG 2025.10)
 
-`system/tokens/<palette>-<mode>.json` is standards-compliant DTCG. Colour
-values are objects with `colorSpace: "oklch"` and `components`, plus a 6-digit
-`hex` fallback — which is what the 2025.10 stable specification requires, and
-what tools like Style Dictionary v5 actually read.
+`system/tokens/<palette>-<mode>.json` is standards-compliant DTCG. Colour values are objects with
+`colorSpace: "oklch"` and `components`, plus a six-digit `hex` fallback — which is what the
+2025.10 stable specification requires, and what tools such as Style Dictionary v5 actually read.
 
 ```js
 // style-dictionary config
@@ -503,18 +536,16 @@ export default {
 .card { background: noctua.$nc-blue-vivid-light-neutral-bg-element; }
 ```
 
-Values are hex, because Sass resolves at compile time and cannot follow a
-`var()`. Both modes are emitted; you pick one.
+Values are hex, because Sass resolves at compile time and cannot follow a `var()`. Both modes are
+emitted; you pick one.
 
 ### TypeScript and JSON
 
-`system/json/palette.json` is every theme, mode, family, step, role, gamut
-rendition and relative chroma as plain JSON. `system/ts/index.js` is the same
-data with `.d.ts` types.
-
-Each is ~18 MB and both are **deliberately excluded from the npm package** — they
-are in the release tarball instead, because almost nobody installing colours
-wants to download them. `npm pack --dry-run` is what says which files ship.
+`system/json/palette.json` is every theme, mode, family, step, role, gamut rendition and relative
+chroma as plain JSON; `system/ts/index.js` is the same data, with `.d.ts` types. Both run to many
+megabytes, so they are **deliberately left out of the npm package** and shipped in the
+[release](https://github.com/noctua-world/noctua-colors/releases) tarball instead.
+`npm pack --dry-run` shows what the package carries.
 
 ### Qt / QML
 
@@ -532,33 +563,36 @@ Rectangle {
 ### Nix
 
 ```nix
-{
-  inputs.noctua-colors.url = "github:noctua-world/noctua-colors";
+inputs.noctua-colors.url = "github:noctua-world/noctua-colors";
+```
 
-  # then, in a derivation:
-  installPhase = ''
-    mkdir -p $out/static
-    cp -r ${noctua-colors}/share/noctua-colors/css $out/static/
-  '';
-}
+The flake provides the package as `packages.<system>.default`, and an overlay,
+`overlays.default`, that adds `pkgs.noctua-colors`. Everything is installed under
+`share/noctua-colors`:
+
+```nix
+installPhase = ''
+  mkdir -p $out/static
+  cp -r ${pkgs.noctua-colors}/share/noctua-colors/css $out/static/
+'';
 ```
 
 ### Verifying what you installed
 
-Every release is published from CI with no stored credentials, over OIDC, and
-carries signed build provenance.
+The npm package and the release assets are published from CI with no stored credentials, over
+OIDC, and carry signed build provenance.
 
 ```sh
 # npm
 npm audit signatures
 
 # release assets
-gh attestation verify noctua-colors-v0.2.0-system.tar.gz \
+gh attestation verify noctua-colors-v<version>-system.tar.gz \
   --repo noctua-world/noctua-colors
 sha256sum -c SHA256SUMS
 
 # any file, against the manifest
-b3sum system/css/index.css   # compare with system/MANIFEST.json
+b3sum -l 16 system/css/index.css   # the css/index.css entry in system/MANIFEST.json
 ```
 
 ---
@@ -572,11 +606,10 @@ This repository publishes two things, on two clocks:
 | **The colour system** | the palettes, the names, the values | npm, crates.io, the git tag |
 | **The compiler** | the program that generated them | `MANIFEST.json`'s `version` |
 
-**The colour system's version is the one that matters to you.** A tag names it,
-both registries publish it, and [`TOKEN-POLICY.md`](TOKEN-POLICY.md) says
-exactly what a bump may and may not change. The compiler's version is
-bookkeeping: it is published nowhere, and a refactor that touches no colour
-does not move the number you depend on.
+**The colour system's version is the one that matters to you.** A tag names it, both registries
+publish it, and [`TOKEN-POLICY.md`](TOKEN-POLICY.md) says exactly what a bump may and may not
+change. The compiler's version is bookkeeping: it is published nowhere, and a refactor that
+touches no colour does not move the number you depend on.
 
 ---
 
@@ -590,9 +623,9 @@ does not move the number you depend on.
 | [`CHANGELOG.md`](CHANGELOG.md) | which colour changed, and whether your contrast still holds |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | working on this repository — **read *Before you clone* first**: this repository belongs to a workspace, and both cloning it elsewhere and starting an agent inside it break the tooling |
 | [`SECURITY.md`](SECURITY.md) | supply-chain posture, and how to report an issue |
-| [`AGENTS.md`](AGENTS.md) | the operating manual: invariants, commands, and the gotchas that have already cost debugging time here |
+| [`AGENTS.md`](AGENTS.md) | the operating manual for anyone, human or agent, changing this repository |
 | [`specs/noctua.toml`](specs/noctua.toml) | the specification — heavily commented, and the only file a developer edits |
-| [`examples/`](examples/) | a Rust consumer and a web consumer, both built by CI |
+| [`examples/`](examples/) | a Rust consumer and a web consumer |
 
 ---
 

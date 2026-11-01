@@ -9,11 +9,11 @@
 #     [families.accent]
 #     hue = 264
 #
-# Hues come from the existing fleet palette, measured rather than copied: the
-# ochre that noctua-hub and noctua-shell already use sits at hue 59.3 with
-# about 61% of the chroma sRGB allows there. Recording the hue and letting the
-# curves regenerate the rest is the entire point of this project — the two
-# projects had already drifted apart on five of thirteen shared tokens.
+# Hues come from an existing palette, measured rather than copied: the ochre
+# the earlier hand-written Quickshell themes used sits at hue 59.3 with about
+# 61% of the chroma sRGB allows there. Recording the hue and letting the curves
+# regenerate the rest is the entire point of this project — hand-written themes
+# drift apart.
 
 # --- The colour system's identity ----------------------------------------
 #
@@ -944,10 +944,6 @@ targets = ["css", "json-ts"]
 # palette browser, and `rust` is what the Dioxus package compiles in. It does
 # not take `scss`, `qml`, `dtcg` or `reports` — nothing there consumes them, and
 # an unused target is payload plus review surface.
-#
-# Until noctua-design exists (NOCTUA-PLAN.md Stage 3), `cargo xtask export`
-# reports this consumer and writes nothing new; the directory is created on the
-# first real export.
 [[consumers]]
 name = "noctua-design"
 path = "../noctua-design/packages/tokens/vendor"

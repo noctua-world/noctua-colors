@@ -8,7 +8,7 @@ licensed under the SIL Open Font License 1.1. The full licence is in
 [`OFL.md`](OFL.md) and must be shipped wherever these files are.
 
 The build plan lives outside this repository, at
-`noctua-font/noctua-iosevka/private-build-plans.toml`, together with its
+`noctua-fonts/noctua-iosevka/private-build-plans.toml`, together with its
 rebuild guide. That is the source of truth for the typeface; this directory
 holds only what the documentation site serves.
 

@@ -30,12 +30,11 @@ the method is more interesting than the output.
 
 ## Why
 
-Two sibling projects, `noctua-os1-hub` and `noctua-os1-shell`, each keep a
-`Theme.qml`. One of them describes itself in a comment as a fork of the other
-with "the same palette". Eleven of their seventeen shared tokens have since
-drifted apart, and neither file has a `success` or `warning` color — so four
-different greens were invented independently at thirty-one call sites between
-them.
+Hand-written themes drift. Two Quickshell projects that each kept their own
+`Theme.qml`, one a fork of the other with "the same palette", ended up with
+most of their shared tokens drifted apart, and neither had a `success` or
+`warning` color — so several different greens were invented independently
+across their call sites.
 
 Those counts were five of thirteen and two greens when this was first written.
 Nobody changed the plan; the files simply went on being maintained by hand, which

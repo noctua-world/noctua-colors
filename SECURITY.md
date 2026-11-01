@@ -56,7 +56,7 @@ gh attestation verify noctua-colors-v0.2.0-system.tar.gz \
 sha256sum -c SHA256SUMS
 
 # Any generated file, against the manifest it shipped with
-b3sum system/css/index.css   # compare with system/MANIFEST.json
+b3sum -l 16 system/css/index.css   # compare with system/MANIFEST.json
 ```
 
 ## Supported versions

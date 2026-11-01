@@ -58,8 +58,8 @@ pub(crate) fn run(root: &Path, spec_path: &Path, dry_run: bool) -> Result<(), St
         ui::warn("no consumers are registered, so there is nowhere to export to");
         ui::detail("add one to the spec:");
         ui::detail("    [[consumers]]");
-        ui::detail("    name    = \"noctua-hub\"");
-        ui::detail("    path    = \"../noctua-hub/tokens\"");
+        ui::detail("    name    = \"my-app\"");
+        ui::detail("    path    = \"../my-app/tokens\"");
         ui::detail("    targets = [\"qml\"]");
         return Ok(());
     }

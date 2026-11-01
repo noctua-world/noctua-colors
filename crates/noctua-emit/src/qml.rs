@@ -1,10 +1,9 @@
 //! QML singletons, for Quickshell and other Qt consumers.
 //!
-//! This target exists because the two projects closest to this one —
-//! `noctua-hub` and `noctua-shell` — are Quickshell, and could not consume a
-//! single one of the web-facing targets. They each keep a hand-written
-//! `Theme.qml`; between them, five of thirteen shared tokens had already
-//! drifted apart, and neither had a `success` or `warning` color at all.
+//! This target exists because a Quickshell consumer cannot consume a single
+//! one of the web-facing targets. Without it, each keeps a hand-written
+//! `Theme.qml`, their shared tokens drift apart, and none has a `success` or
+//! `warning` color at all.
 //!
 //! # Two Qt constraints shape the output
 //!
@@ -289,7 +288,7 @@ mod tests {
         );
     }
 
-    /// The gap that made the two Quickshell projects invent their own greens.
+    /// The gap that made hand-written Quickshell themes invent their own greens.
     #[test]
     fn the_translucency_ladder_is_written_in_qts_ordering() {
         // Qt reads the eight-digit form as ARGB. The first stop is 2% opaque,

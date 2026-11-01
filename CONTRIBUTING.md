@@ -35,6 +35,7 @@ the playground needs is declared in `rust-toolchain.toml` and installed by
 `xtask` itself.
 
 ```sh
+cd noctua-workspace/repos
 git clone https://github.com/noctua-world/noctua-colors
 cd noctua-colors
 cargo xtask check
@@ -92,8 +93,8 @@ These are not style preferences. Breaking one is a defect.
    strings are i18n resources and need an English and a pt-BR pair, which the
    site's `t(locale, en, pt)` helper enforces at compile time.
 
-[`AGENTS.md`](AGENTS.md) has the full list, the repository map, and a section of
-gotchas that have each already cost real debugging time.
+[`AGENTS.md`](AGENTS.md) has the full list, the repository map, and the traps this
+code has already met.
 
 ---
 
@@ -105,26 +106,31 @@ cargo xtask check --colors-only   # skip fmt, lints and tests, for tuning colour
 cargo test --workspace            # just the tests
 ```
 
-Property tests run 2048 cases each. To reproduce a specific failure, proptest
-writes the input to `crates/noctua-core/tests/*.proptest-regressions` — commit
-that file so the case is replayed forever.
+The property tests in `crates/noctua-core/tests/properties.rs` run far more cases
+than proptest's default; its `proptest_config` says how many. When one fails,
+proptest writes the input to a `.proptest-regressions` file beside the test —
+commit that file, so the case is replayed forever.
 
-A change to the colours will move `tests/golden/palette.txt`. That is expected;
-what is not expected is moving it *without meaning to*, which is why it is
-committed.
+A change to the colours moves `tests/golden/palette.txt`. That is expected; what
+is not expected is moving it *without meaning to*, which is why it is committed.
+When you mean it:
+
+```sh
+UPDATE_GOLDEN=1 cargo test -p noctua-engine --test palette
+```
 
 ---
 
 ## Releasing
 
 ```sh
-cargo xtask release 0.3.0 --dry-run   # see what would happen
-cargo xtask release 0.3.0             # write it
+cargo xtask release <version> --dry-run   # see what would happen
+cargo xtask release <version>             # write it
 ```
 
 This bumps the **colour system's** version — the one in `specs/noctua.toml`'s
 `[system]` table, which is what a tag means and what both registries publish.
-`--tool 0.3.0` bumps the compiler's version instead, which publishes nothing.
+`--tool <version>` bumps the compiler's version instead, which publishes nothing.
 
 `release` deliberately does **not** commit, tag, push or publish. It verifies,
 writes the version everywhere it appears, checks the changelog has an entry, and
