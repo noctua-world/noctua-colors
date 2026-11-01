@@ -4,7 +4,7 @@
 >
 > Code, comments, identifiers, documentation, CLI help, error messages, test names, commit
 > messages, the documentation site — all of it, always, whatever language the developer writes
-> to you in. You may *reply* in Portuguese; you may not *produce artifacts* in it. The one
+> to you in. You may *reply* in that language; you may not *produce artifacts* in it. The one
 > exception is the site's interface strings, which exist in English and Brazilian Portuguese
 > (`NOCTUA.md §2.1`).
 
@@ -622,8 +622,8 @@ directory that does not exist before the first export.
 excuses: bind fixtures to one-line `let`s. A stale `cargo xtask dev` keeps rewriting
 `target/system/` with an old binary, so an edit seems to do nothing: find it with
 `pgrep -af xtask` and stop it by PID, never with `pkill -f` and a pattern your own shell's command
-line contains, which kills that shell. And the shell is **zsh**, which does not word-split an
-unquoted `$var`.
+line contains, which kills that shell. And shells differ: zsh does not word-split an unquoted
+`$var` and POSIX `sh` does, so quote every expansion.
 
 **Two workspace facts.** `clippy::float_cmp` is allowed in test modules only, where exact
 comparison against a sentinel a function returns verbatim *is* the assertion. And this is a
@@ -642,8 +642,8 @@ integration tests live in the crate they exercise.
   `crates/<crate>/tests/properties.rs`. A test that found a real bug says so in a comment.
 - **Floats.** `f64` throughout, quantized once at palette construction, so what the gates
   checked is byte-for-byte what ships.
-- **Commits.** Conventional commits, in English, signed with a hardware key that needs a physical
-  touch: never commit unprompted, and nothing a commit says credits an agent (`NOCTUA.md §2.6`).
+- **Commits.** Conventional commits, in English, signed: never commit unprompted, and nothing a
+  commit says credits an agent (`NOCTUA.md §2.6`).
 
 ## Dependencies
 
@@ -697,7 +697,7 @@ only `.TEMP/.gitkeep` is tracked (`NOCTUA.md §3.7`).
 the spec's `[system]` table **and `package.json`**, rebuilds so `system/MANIFEST.json` and the
 generated crate's manifest follow, and warns if `CHANGELOG.md` has no entry. `--tool <version>`
 bumps the compiler's version in `Cargo.toml` instead, and publishes nothing. The verb stops
-there; the commit needs the developer's key touch, so the rest is theirs to run:
+there; committing, tagging and pushing are the developer's to run:
 
 ```sh
 git commit -am "release: <version>"
