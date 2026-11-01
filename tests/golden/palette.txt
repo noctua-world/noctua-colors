@@ -983,18 +983,18 @@ gamuts srgb display-p3
 
 [amber-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0005 105.00)  cr 0.022
+     2 bg-subtle          #f7f7f5  oklch(0.9750 0.0021 105.00)  cr 0.024
+     3 bg-element         #efefec  oklch(0.9510 0.0039 105.00)  cr 0.024
+     4 bg-element-hover   #e7e7e3  oklch(0.9260 0.0048 105.00)  cr 0.024
+     5 bg-element-active  #dededa  oklch(0.8990 0.0046 105.00)  cr 0.024
+     6 border-subtle      #d1d1cd  oklch(0.8590 0.0044 105.00)  cr 0.024
+     7 border-element     #c1c1be  oklch(0.8090 0.0042 105.00)  cr 0.024
+     8 border-strong      #a8a7a5  oklch(0.7290 0.0038 105.00)  cr 0.025
+     9 solid              #90908e  oklch(0.6527 0.0034 105.00)  cr 0.025
+    10 solid-hover        #807f7d  oklch(0.5975 0.0031 105.00)  cr 0.024
+    11 text-muted         #656563  oklch(0.5065 0.0026 105.00)  cr 0.024
+    12 text-strong        #2a2a29  oklch(0.2835 0.0014 105.00)  cr 0.023
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -1142,18 +1142,18 @@ gamuts srgb display-p3
 
 [amber-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111111  oklch(0.1780 0.0009 105.00)  cr 0.024
+     2 bg-subtle          #171717  oklch(0.2060 0.0010 105.00)  cr 0.023
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0012 105.00)  cr 0.024
+     4 bg-element-hover   #282827  oklch(0.2770 0.0014 105.00)  cr 0.024
+     5 bg-element-active  #323231  oklch(0.3160 0.0016 105.00)  cr 0.024
+     6 border-subtle      #414140  oklch(0.3740 0.0019 105.00)  cr 0.024
+     7 border-element     #545453  oklch(0.4460 0.0023 105.00)  cr 0.024
+     8 border-strong      #7e7e7c  oklch(0.5930 0.0030 105.00)  cr 0.024
+     9 solid              #979794  oklch(0.6753 0.0035 105.00)  cr 0.024
+    10 solid-hover        #a6a6a3  oklch(0.7246 0.0037 105.00)  cr 0.024
+    11 text-muted         #c7c7c4  oklch(0.8284 0.0043 105.00)  cr 0.024
+    12 text-strong        #eeeeeb  oklch(0.9478 0.0041 105.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -1301,18 +1301,18 @@ gamuts srgb display-p3
 
 [amber-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfc  oklch(0.9940 0.0007 105.00)  cr 0.031
+     2 bg-subtle          #f7f7f5  oklch(0.9750 0.0029 105.00)  cr 0.033
+     3 bg-element         #efefeb  oklch(0.9510 0.0054 105.00)  cr 0.034
+     4 bg-element-hover   #e7e7e2  oklch(0.9260 0.0067 105.00)  cr 0.034
+     5 bg-element-active  #deded9  oklch(0.8990 0.0065 105.00)  cr 0.034
+     6 border-subtle      #d1d1cc  oklch(0.8590 0.0062 105.00)  cr 0.034
+     7 border-element     #c1c1bc  oklch(0.8090 0.0059 105.00)  cr 0.034
+     8 border-strong      #a8a8a4  oklch(0.7290 0.0053 105.00)  cr 0.034
+     9 solid              #90908d  oklch(0.6527 0.0047 105.00)  cr 0.034
+    10 solid-hover        #80807d  oklch(0.5975 0.0043 105.00)  cr 0.034
+    11 text-muted         #656563  oklch(0.5065 0.0037 105.00)  cr 0.034
+    12 text-strong        #2a2a29  oklch(0.2836 0.0020 105.00)  cr 0.033
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -1460,18 +1460,18 @@ gamuts srgb display-p3
 
 [amber-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111110  oklch(0.1780 0.0013 105.00)  cr 0.034
+     2 bg-subtle          #171717  oklch(0.2060 0.0015 105.00)  cr 0.034
+     3 bg-element         #1f1f1e  oklch(0.2400 0.0017 105.00)  cr 0.033
+     4 bg-element-hover   #282827  oklch(0.2770 0.0020 105.00)  cr 0.034
+     5 bg-element-active  #323231  oklch(0.3160 0.0023 105.00)  cr 0.034
+     6 border-subtle      #41413f  oklch(0.3740 0.0027 105.00)  cr 0.034
+     7 border-element     #545452  oklch(0.4460 0.0032 105.00)  cr 0.034
+     8 border-strong      #7e7e7b  oklch(0.5930 0.0043 105.00)  cr 0.034
+     9 solid              #979794  oklch(0.6752 0.0049 105.00)  cr 0.034
+    10 solid-hover        #a6a6a2  oklch(0.7246 0.0053 105.00)  cr 0.034
+    11 text-muted         #c7c7c3  oklch(0.8284 0.0060 105.00)  cr 0.034
+    12 text-strong        #eeeeea  oklch(0.9477 0.0058 105.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -1619,18 +1619,18 @@ gamuts srgb display-p3
 
 [amber-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0003 105.00)  cr 0.013
+     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0014 105.00)  cr 0.016
+     3 bg-element         #efefed  oklch(0.9510 0.0026 105.00)  cr 0.016
+     4 bg-element-hover   #e7e7e4  oklch(0.9260 0.0032 105.00)  cr 0.016
+     5 bg-element-active  #dededb  oklch(0.8990 0.0031 105.00)  cr 0.016
+     6 border-subtle      #d1d1ce  oklch(0.8590 0.0030 105.00)  cr 0.016
+     7 border-element     #c1c1bf  oklch(0.8090 0.0028 105.00)  cr 0.016
+     8 border-strong      #a7a7a6  oklch(0.7290 0.0025 105.00)  cr 0.016
+     9 solid              #90908e  oklch(0.6528 0.0022 105.00)  cr 0.016
+    10 solid-hover        #7f7f7e  oklch(0.5976 0.0020 105.00)  cr 0.016
+    11 text-muted         #656564  oklch(0.5065 0.0017 105.00)  cr 0.016
+    12 text-strong        #2a2a29  oklch(0.2835 0.0009 105.00)  cr 0.015
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -1778,18 +1778,18 @@ gamuts srgb display-p3
 
 [amber-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0006 105.00)  cr 0.016
+     2 bg-subtle          #171717  oklch(0.2060 0.0007 105.00)  cr 0.016
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0008 105.00)  cr 0.016
+     4 bg-element-hover   #282828  oklch(0.2770 0.0009 105.00)  cr 0.015
+     5 bg-element-active  #323231  oklch(0.3160 0.0011 105.00)  cr 0.016
+     6 border-subtle      #414140  oklch(0.3740 0.0013 105.00)  cr 0.016
+     7 border-element     #545453  oklch(0.4460 0.0015 105.00)  cr 0.016
+     8 border-strong      #7e7e7d  oklch(0.5930 0.0020 105.00)  cr 0.016
+     9 solid              #979795  oklch(0.6754 0.0023 105.00)  cr 0.016
+    10 solid-hover        #a6a6a4  oklch(0.7247 0.0025 105.00)  cr 0.016
+    11 text-muted         #c7c7c5  oklch(0.8285 0.0029 105.00)  cr 0.016
+    12 text-strong        #eeeeec  oklch(0.9478 0.0027 105.00)  cr 0.016
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -1937,18 +1937,18 @@ gamuts srgb display-p3
 
 [lime-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0003 130.00)  cr 0.024
+     2 bg-subtle          #f6f7f6  oklch(0.9750 0.0013 130.00)  cr 0.024
+     3 bg-element         #eeefed  oklch(0.9510 0.0028 130.00)  cr 0.024
+     4 bg-element-hover   #e5e7e4  oklch(0.9260 0.0046 130.00)  cr 0.024
+     5 bg-element-active  #dcdeda  oklch(0.8990 0.0059 130.00)  cr 0.024
+     6 border-subtle      #cfd1ce  oklch(0.8590 0.0056 130.00)  cr 0.024
+     7 border-element     #bfc1be  oklch(0.8090 0.0053 130.00)  cr 0.024
+     8 border-strong      #a6a8a5  oklch(0.7290 0.0048 130.00)  cr 0.024
+     9 solid              #8f908e  oklch(0.6525 0.0043 130.00)  cr 0.024
+    10 solid-hover        #7e807d  oklch(0.5973 0.0039 130.00)  cr 0.024
+    11 text-muted         #646563  oklch(0.5063 0.0033 130.00)  cr 0.024
+    12 text-strong        #292a29  oklch(0.2835 0.0018 130.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -2096,18 +2096,18 @@ gamuts srgb display-p3
 
 [lime-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111111  oklch(0.1780 0.0011 130.00)  cr 0.023
+     2 bg-subtle          #171717  oklch(0.2060 0.0013 130.00)  cr 0.023
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0015 130.00)  cr 0.023
+     4 bg-element-hover   #282827  oklch(0.2770 0.0018 130.00)  cr 0.024
+     5 bg-element-active  #313231  oklch(0.3160 0.0020 130.00)  cr 0.024
+     6 border-subtle      #404140  oklch(0.3740 0.0024 130.00)  cr 0.024
+     7 border-element     #545453  oklch(0.4460 0.0029 130.00)  cr 0.024
+     8 border-strong      #7d7f7c  oklch(0.5930 0.0039 130.00)  cr 0.024
+     9 solid              #969794  oklch(0.6751 0.0044 130.00)  cr 0.024
+    10 solid-hover        #a5a6a3  oklch(0.7244 0.0047 130.00)  cr 0.024
+    11 text-muted         #c5c7c4  oklch(0.8281 0.0054 130.00)  cr 0.024
+    12 text-strong        #edeeec  oklch(0.9477 0.0030 130.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -2255,18 +2255,18 @@ gamuts srgb display-p3
 
 [lime-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0004 130.00)  cr 0.032
+     2 bg-subtle          #f6f7f6  oklch(0.9750 0.0019 130.00)  cr 0.034
+     3 bg-element         #eeefed  oklch(0.9510 0.0039 130.00)  cr 0.034
+     4 bg-element-hover   #e5e7e3  oklch(0.9260 0.0065 130.00)  cr 0.034
+     5 bg-element-active  #dcdfd9  oklch(0.8990 0.0083 130.00)  cr 0.034
+     6 border-subtle      #cfd2cc  oklch(0.8590 0.0079 130.00)  cr 0.034
+     7 border-element     #bfc2bd  oklch(0.8090 0.0075 130.00)  cr 0.034
+     8 border-strong      #a6a8a4  oklch(0.7290 0.0067 130.00)  cr 0.034
+     9 solid              #8f918d  oklch(0.6523 0.0060 130.00)  cr 0.034
+    10 solid-hover        #7e807d  oklch(0.5972 0.0055 130.00)  cr 0.034
+    11 text-muted         #646563  oklch(0.5062 0.0047 130.00)  cr 0.034
+    12 text-strong        #292a29  oklch(0.2834 0.0026 130.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -2414,18 +2414,18 @@ gamuts srgb display-p3
 
 [lime-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111111  oklch(0.1780 0.0016 130.00)  cr 0.033
+     2 bg-subtle          #171817  oklch(0.2060 0.0019 130.00)  cr 0.034
+     3 bg-element         #1f1f1e  oklch(0.2400 0.0022 130.00)  cr 0.034
+     4 bg-element-hover   #282827  oklch(0.2770 0.0025 130.00)  cr 0.034
+     5 bg-element-active  #313231  oklch(0.3160 0.0029 130.00)  cr 0.034
+     6 border-subtle      #40413f  oklch(0.3740 0.0034 130.00)  cr 0.034
+     7 border-element     #535552  oklch(0.4460 0.0041 130.00)  cr 0.034
+     8 border-strong      #7d7f7b  oklch(0.5930 0.0055 130.00)  cr 0.034
+     9 solid              #959793  oklch(0.6749 0.0062 130.00)  cr 0.034
+    10 solid-hover        #a4a7a2  oklch(0.7242 0.0067 130.00)  cr 0.034
+    11 text-muted         #c5c8c3  oklch(0.8279 0.0076 130.00)  cr 0.034
+    12 text-strong        #edeeeb  oklch(0.9476 0.0043 130.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -2573,18 +2573,18 @@ gamuts srgb display-p3
 
 [lime-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0002 130.00)  cr 0.016
+     2 bg-subtle          #f6f7f6  oklch(0.9750 0.0009 130.00)  cr 0.016
+     3 bg-element         #eeefee  oklch(0.9510 0.0019 130.00)  cr 0.016
+     4 bg-element-hover   #e6e7e5  oklch(0.9260 0.0031 130.00)  cr 0.016
+     5 bg-element-active  #dddedb  oklch(0.8990 0.0039 130.00)  cr 0.016
+     6 border-subtle      #d0d1ce  oklch(0.8590 0.0038 130.00)  cr 0.016
+     7 border-element     #c0c1bf  oklch(0.8090 0.0035 130.00)  cr 0.016
+     8 border-strong      #a7a8a6  oklch(0.7290 0.0032 130.00)  cr 0.016
+     9 solid              #8f908e  oklch(0.6526 0.0028 130.00)  cr 0.016
+    10 solid-hover        #7f807e  oklch(0.5974 0.0026 130.00)  cr 0.016
+    11 text-muted         #646564  oklch(0.5064 0.0022 130.00)  cr 0.016
+    12 text-strong        #292a29  oklch(0.2835 0.0012 130.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -2732,18 +2732,18 @@ gamuts srgb display-p3
 
 [lime-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0007 130.00)  cr 0.015
+     2 bg-subtle          #171717  oklch(0.2060 0.0009 130.00)  cr 0.016
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0010 130.00)  cr 0.015
+     4 bg-element-hover   #282828  oklch(0.2770 0.0012 130.00)  cr 0.016
+     5 bg-element-active  #313231  oklch(0.3160 0.0014 130.00)  cr 0.016
+     6 border-subtle      #404140  oklch(0.3740 0.0016 130.00)  cr 0.016
+     7 border-element     #545453  oklch(0.4460 0.0019 130.00)  cr 0.016
+     8 border-strong      #7d7e7d  oklch(0.5930 0.0026 130.00)  cr 0.016
+     9 solid              #969795  oklch(0.6752 0.0029 130.00)  cr 0.016
+    10 solid-hover        #a5a6a4  oklch(0.7245 0.0032 130.00)  cr 0.016
+    11 text-muted         #c6c7c5  oklch(0.8283 0.0036 130.00)  cr 0.016
+    12 text-strong        #edeeec  oklch(0.9478 0.0020 130.00)  cr 0.016
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -2891,18 +2891,18 @@ gamuts srgb display-p3
 
 [jade-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 176.00)  cr 0.012
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0008 176.00)  cr 0.023
+     3 bg-element         #eeefef  oklch(0.9510 0.0017 176.00)  cr 0.024
+     4 bg-element-hover   #e5e7e6  oklch(0.9260 0.0027 176.00)  cr 0.025
+     5 bg-element-active  #dbdedd  oklch(0.8990 0.0038 176.00)  cr 0.024
+     6 border-subtle      #ced1d0  oklch(0.8590 0.0039 176.00)  cr 0.024
+     7 border-element     #bec1c0  oklch(0.8090 0.0037 176.00)  cr 0.024
+     8 border-strong      #a5a8a7  oklch(0.7290 0.0033 176.00)  cr 0.024
+     9 solid              #8e9090  oklch(0.6525 0.0030 176.00)  cr 0.025
+    10 solid-hover        #7e807f  oklch(0.5973 0.0027 176.00)  cr 0.024
+    11 text-muted         #646565  oklch(0.5063 0.0023 176.00)  cr 0.024
+    12 text-strong        #292a2a  oklch(0.2834 0.0013 176.00)  cr 0.025
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -3050,18 +3050,18 @@ gamuts srgb display-p3
 
 [jade-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111111  oklch(0.1780 0.0008 176.00)  cr 0.024
+     2 bg-subtle          #171717  oklch(0.2060 0.0009 176.00)  cr 0.023
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0011 176.00)  cr 0.025
+     4 bg-element-hover   #272828  oklch(0.2770 0.0012 176.00)  cr 0.023
+     5 bg-element-active  #313232  oklch(0.3160 0.0014 176.00)  cr 0.024
+     6 border-subtle      #404141  oklch(0.3740 0.0017 176.00)  cr 0.024
+     7 border-element     #535454  oklch(0.4460 0.0020 176.00)  cr 0.024
+     8 border-strong      #7c7f7e  oklch(0.5930 0.0027 176.00)  cr 0.024
+     9 solid              #959797  oklch(0.6751 0.0031 176.00)  cr 0.025
+    10 solid-hover        #a4a7a6  oklch(0.7244 0.0033 176.00)  cr 0.024
+    11 text-muted         #c4c7c6  oklch(0.8281 0.0038 176.00)  cr 0.025
+    12 text-strong        #eceeed  oklch(0.9477 0.0018 176.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -3209,18 +3209,18 @@ gamuts srgb display-p3
 
 [jade-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0002 176.00)  cr 0.025
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0011 176.00)  cr 0.032
+     3 bg-element         #edefef  oklch(0.9510 0.0024 176.00)  cr 0.034
+     4 bg-element-hover   #e4e7e6  oklch(0.9260 0.0037 176.00)  cr 0.034
+     5 bg-element-active  #dadfdd  oklch(0.8990 0.0054 176.00)  cr 0.034
+     6 border-subtle      #cdd2d0  oklch(0.8590 0.0055 176.00)  cr 0.034
+     7 border-element     #bdc2c0  oklch(0.8090 0.0052 176.00)  cr 0.034
+     8 border-strong      #a4a8a7  oklch(0.7290 0.0047 176.00)  cr 0.034
+     9 solid              #8d9190  oklch(0.6523 0.0042 176.00)  cr 0.034
+    10 solid-hover        #7d807f  oklch(0.5972 0.0038 176.00)  cr 0.034
+    11 text-muted         #636665  oklch(0.5062 0.0032 176.00)  cr 0.034
+    12 text-strong        #292a2a  oklch(0.2834 0.0018 176.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -3368,18 +3368,18 @@ gamuts srgb display-p3
 
 [jade-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111111  oklch(0.1780 0.0011 176.00)  cr 0.033
+     2 bg-subtle          #171817  oklch(0.2060 0.0013 176.00)  cr 0.034
+     3 bg-element         #1e1f1f  oklch(0.2400 0.0015 176.00)  cr 0.033
+     4 bg-element-hover   #272828  oklch(0.2770 0.0017 176.00)  cr 0.033
+     5 bg-element-active  #313232  oklch(0.3160 0.0020 176.00)  cr 0.034
+     6 border-subtle      #3f4141  oklch(0.3740 0.0024 176.00)  cr 0.034
+     7 border-element     #535554  oklch(0.4460 0.0028 176.00)  cr 0.034
+     8 border-strong      #7c7f7e  oklch(0.5930 0.0038 176.00)  cr 0.034
+     9 solid              #949896  oklch(0.6749 0.0043 176.00)  cr 0.034
+    10 solid-hover        #a3a7a6  oklch(0.7242 0.0046 176.00)  cr 0.034
+    11 text-muted         #c3c8c6  oklch(0.8280 0.0053 176.00)  cr 0.034
+    12 text-strong        #eceeed  oklch(0.9476 0.0026 176.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -3527,18 +3527,18 @@ gamuts srgb display-p3
 
 [jade-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 176.00)  cr 0.012
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0005 176.00)  cr 0.014
+     3 bg-element         #eeefef  oklch(0.9510 0.0011 176.00)  cr 0.016
+     4 bg-element-hover   #e5e7e6  oklch(0.9260 0.0018 176.00)  cr 0.016
+     5 bg-element-active  #dcdedd  oklch(0.8990 0.0025 176.00)  cr 0.016
+     6 border-subtle      #cfd1d0  oklch(0.8590 0.0026 176.00)  cr 0.016
+     7 border-element     #bfc1c0  oklch(0.8090 0.0024 176.00)  cr 0.016
+     8 border-strong      #a6a8a7  oklch(0.7290 0.0022 176.00)  cr 0.016
+     9 solid              #8f9090  oklch(0.6526 0.0020 176.00)  cr 0.016
+    10 solid-hover        #7e807f  oklch(0.5974 0.0018 176.00)  cr 0.016
+    11 text-muted         #646565  oklch(0.5064 0.0015 176.00)  cr 0.016
+    12 text-strong        #292a2a  oklch(0.2835 0.0008 176.00)  cr 0.015
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -3686,18 +3686,18 @@ gamuts srgb display-p3
 
 [jade-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0005 176.00)  cr 0.015
+     2 bg-subtle          #171717  oklch(0.2060 0.0006 176.00)  cr 0.016
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0007 176.00)  cr 0.016
+     4 bg-element-hover   #282828  oklch(0.2770 0.0008 176.00)  cr 0.015
+     5 bg-element-active  #313232  oklch(0.3160 0.0009 176.00)  cr 0.015
+     6 border-subtle      #404141  oklch(0.3740 0.0011 176.00)  cr 0.016
+     7 border-element     #535454  oklch(0.4460 0.0013 176.00)  cr 0.016
+     8 border-strong      #7d7e7e  oklch(0.5930 0.0018 176.00)  cr 0.016
+     9 solid              #959797  oklch(0.6752 0.0020 176.00)  cr 0.016
+    10 solid-hover        #a5a6a6  oklch(0.7245 0.0022 176.00)  cr 0.016
+    11 text-muted         #c5c7c7  oklch(0.8283 0.0025 176.00)  cr 0.016
+    12 text-strong        #edeeee  oklch(0.9478 0.0012 176.00)  cr 0.016
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -3845,18 +3845,18 @@ gamuts srgb display-p3
 
 [teal-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0002 194.00)  cr 0.024
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0008 194.00)  cr 0.022
+     3 bg-element         #edefef  oklch(0.9510 0.0017 194.00)  cr 0.023
+     4 bg-element-hover   #e4e7e7  oklch(0.9260 0.0028 194.00)  cr 0.024
+     5 bg-element-active  #dbdede  oklch(0.8990 0.0037 194.00)  cr 0.024
+     6 border-subtle      #ced1d1  oklch(0.8590 0.0036 194.00)  cr 0.025
+     7 border-element     #bec1c1  oklch(0.8090 0.0034 194.00)  cr 0.025
+     8 border-strong      #a5a8a8  oklch(0.7290 0.0030 194.00)  cr 0.024
+     9 solid              #8e9090  oklch(0.6525 0.0027 194.00)  cr 0.024
+    10 solid-hover        #7e8080  oklch(0.5974 0.0025 194.00)  cr 0.024
+    11 text-muted         #646565  oklch(0.5064 0.0021 194.00)  cr 0.024
+    12 text-strong        #292a2a  oklch(0.2835 0.0011 194.00)  cr 0.023
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -4004,18 +4004,18 @@ gamuts srgb display-p3
 
 [teal-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111111  oklch(0.1780 0.0007 194.00)  cr 0.023
+     2 bg-subtle          #171717  oklch(0.2060 0.0008 194.00)  cr 0.023
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0010 194.00)  cr 0.024
+     4 bg-element-hover   #272828  oklch(0.2770 0.0011 194.00)  cr 0.023
+     5 bg-element-active  #313232  oklch(0.3160 0.0013 194.00)  cr 0.024
+     6 border-subtle      #404141  oklch(0.3740 0.0015 194.00)  cr 0.023
+     7 border-element     #535454  oklch(0.4460 0.0018 194.00)  cr 0.024
+     8 border-strong      #7c7e7e  oklch(0.5930 0.0024 194.00)  cr 0.024
+     9 solid              #959797  oklch(0.6751 0.0028 194.00)  cr 0.024
+    10 solid-hover        #a4a6a6  oklch(0.7244 0.0030 194.00)  cr 0.024
+    11 text-muted         #c4c7c7  oklch(0.8282 0.0034 194.00)  cr 0.024
+    12 text-strong        #eceeee  oklch(0.9477 0.0019 194.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -4163,18 +4163,18 @@ gamuts srgb display-p3
 
 [teal-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0002 194.00)  cr 0.024
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0012 194.00)  cr 0.033
+     3 bg-element         #edefef  oklch(0.9510 0.0025 194.00)  cr 0.034
+     4 bg-element-hover   #e4e7e7  oklch(0.9260 0.0039 194.00)  cr 0.034
+     5 bg-element-active  #dadfdf  oklch(0.8990 0.0053 194.00)  cr 0.034
+     6 border-subtle      #cdd2d1  oklch(0.8590 0.0050 194.00)  cr 0.034
+     7 border-element     #bdc1c1  oklch(0.8090 0.0047 194.00)  cr 0.034
+     8 border-strong      #a4a8a8  oklch(0.7290 0.0042 194.00)  cr 0.034
+     9 solid              #8d9190  oklch(0.6524 0.0038 194.00)  cr 0.034
+    10 solid-hover        #7d8080  oklch(0.5972 0.0035 194.00)  cr 0.034
+    11 text-muted         #636565  oklch(0.5063 0.0029 194.00)  cr 0.034
+    12 text-strong        #292a2a  oklch(0.2834 0.0016 194.00)  cr 0.033
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -4322,18 +4322,18 @@ gamuts srgb display-p3
 
 [teal-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111111  oklch(0.1780 0.0010 194.00)  cr 0.033
+     2 bg-subtle          #171817  oklch(0.2060 0.0012 194.00)  cr 0.034
+     3 bg-element         #1e1f1f  oklch(0.2400 0.0014 194.00)  cr 0.034
+     4 bg-element-hover   #272828  oklch(0.2770 0.0016 194.00)  cr 0.034
+     5 bg-element-active  #313232  oklch(0.3160 0.0018 194.00)  cr 0.033
+     6 border-subtle      #3f4141  oklch(0.3740 0.0022 194.00)  cr 0.034
+     7 border-element     #535554  oklch(0.4460 0.0026 194.00)  cr 0.034
+     8 border-strong      #7c7f7f  oklch(0.5930 0.0034 194.00)  cr 0.034
+     9 solid              #949797  oklch(0.6750 0.0039 194.00)  cr 0.034
+    10 solid-hover        #a3a7a7  oklch(0.7243 0.0042 194.00)  cr 0.034
+    11 text-muted         #c3c8c7  oklch(0.8280 0.0048 194.00)  cr 0.034
+    12 text-strong        #eceeee  oklch(0.9476 0.0027 194.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -4481,18 +4481,18 @@ gamuts srgb display-p3
 
 [teal-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 194.00)  cr 0.012
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0005 194.00)  cr 0.014
+     3 bg-element         #eeefef  oklch(0.9510 0.0012 194.00)  cr 0.016
+     4 bg-element-hover   #e5e7e7  oklch(0.9260 0.0019 194.00)  cr 0.016
+     5 bg-element-active  #dcdede  oklch(0.8990 0.0025 194.00)  cr 0.016
+     6 border-subtle      #cfd1d1  oklch(0.8590 0.0024 194.00)  cr 0.016
+     7 border-element     #bfc1c1  oklch(0.8090 0.0022 194.00)  cr 0.016
+     8 border-strong      #a6a8a8  oklch(0.7290 0.0020 194.00)  cr 0.016
+     9 solid              #8f9090  oklch(0.6526 0.0018 194.00)  cr 0.016
+    10 solid-hover        #7e8080  oklch(0.5974 0.0016 194.00)  cr 0.016
+    11 text-muted         #646565  oklch(0.5064 0.0014 194.00)  cr 0.016
+    12 text-strong        #292a2a  oklch(0.2835 0.0007 194.00)  cr 0.014
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -4640,18 +4640,18 @@ gamuts srgb display-p3
 
 [teal-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0005 194.00)  cr 0.016
+     2 bg-subtle          #171717  oklch(0.2060 0.0005 194.00)  cr 0.014
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0006 194.00)  cr 0.015
+     4 bg-element-hover   #282828  oklch(0.2770 0.0007 194.00)  cr 0.015
+     5 bg-element-active  #313232  oklch(0.3160 0.0008 194.00)  cr 0.015
+     6 border-subtle      #404141  oklch(0.3740 0.0010 194.00)  cr 0.016
+     7 border-element     #535454  oklch(0.4460 0.0012 194.00)  cr 0.016
+     8 border-strong      #7d7e7e  oklch(0.5930 0.0016 194.00)  cr 0.016
+     9 solid              #959797  oklch(0.6752 0.0019 194.00)  cr 0.016
+    10 solid-hover        #a5a6a6  oklch(0.7246 0.0020 194.00)  cr 0.016
+    11 text-muted         #c5c7c7  oklch(0.8284 0.0023 194.00)  cr 0.016
+    12 text-strong        #edeeee  oklch(0.9478 0.0012 194.00)  cr 0.015
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -4799,18 +4799,18 @@ gamuts srgb display-p3
 
 [azure-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 212.00)  cr 0.020
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0005 212.00)  cr 0.024
+     3 bg-element         #eeefef  oklch(0.9510 0.0010 212.00)  cr 0.024
+     4 bg-element-hover   #e5e7e7  oklch(0.9260 0.0015 212.00)  cr 0.024
+     5 bg-element-active  #dcdede  oklch(0.8990 0.0021 212.00)  cr 0.024
+     6 border-subtle      #ced1d2  oklch(0.8590 0.0029 212.00)  cr 0.024
+     7 border-element     #bec1c2  oklch(0.8090 0.0034 212.00)  cr 0.024
+     8 border-strong      #a5a8a8  oklch(0.7290 0.0031 212.00)  cr 0.024
+     9 solid              #8e9091  oklch(0.6526 0.0027 212.00)  cr 0.024
+    10 solid-hover        #7e8080  oklch(0.5974 0.0025 212.00)  cr 0.024
+    11 text-muted         #646566  oklch(0.5064 0.0021 212.00)  cr 0.024
+    12 text-strong        #292a2a  oklch(0.2834 0.0012 212.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -4958,18 +4958,18 @@ gamuts srgb display-p3
 
 [azure-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111111  oklch(0.1780 0.0007 212.00)  cr 0.023
+     2 bg-subtle          #171718  oklch(0.2060 0.0008 212.00)  cr 0.022
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0010 212.00)  cr 0.024
+     4 bg-element-hover   #272828  oklch(0.2770 0.0011 212.00)  cr 0.023
+     5 bg-element-active  #313232  oklch(0.3160 0.0013 212.00)  cr 0.024
+     6 border-subtle      #404141  oklch(0.3740 0.0016 212.00)  cr 0.025
+     7 border-element     #535455  oklch(0.4460 0.0019 212.00)  cr 0.024
+     8 border-strong      #7c7e7f  oklch(0.5930 0.0025 212.00)  cr 0.024
+     9 solid              #959798  oklch(0.6752 0.0028 212.00)  cr 0.024
+    10 solid-hover        #a4a6a7  oklch(0.7245 0.0031 212.00)  cr 0.025
+    11 text-muted         #c4c7c8  oklch(0.8283 0.0035 212.00)  cr 0.024
+    12 text-strong        #edeeee  oklch(0.9478 0.0010 212.00)  cr 0.023
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -5117,18 +5117,18 @@ gamuts srgb display-p3
 
 [azure-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 212.00)  cr 0.020
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0007 212.00)  cr 0.034
+     3 bg-element         #eeefef  oklch(0.9510 0.0014 212.00)  cr 0.034
+     4 bg-element-hover   #e5e7e7  oklch(0.9260 0.0021 212.00)  cr 0.034
+     5 bg-element-active  #dcdedf  oklch(0.8990 0.0029 212.00)  cr 0.034
+     6 border-subtle      #ced1d2  oklch(0.8590 0.0042 212.00)  cr 0.034
+     7 border-element     #bdc1c2  oklch(0.8090 0.0048 212.00)  cr 0.034
+     8 border-strong      #a4a8a9  oklch(0.7290 0.0043 212.00)  cr 0.034
+     9 solid              #8d9091  oklch(0.6525 0.0039 212.00)  cr 0.034
+    10 solid-hover        #7d8080  oklch(0.5973 0.0035 212.00)  cr 0.034
+    11 text-muted         #636566  oklch(0.5063 0.0030 212.00)  cr 0.034
+    12 text-strong        #292a2a  oklch(0.2834 0.0017 212.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -5276,18 +5276,18 @@ gamuts srgb display-p3
 
 [azure-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111111  oklch(0.1780 0.0010 212.00)  cr 0.032
+     2 bg-subtle          #171718  oklch(0.2060 0.0012 212.00)  cr 0.033
+     3 bg-element         #1e1f20  oklch(0.2400 0.0014 212.00)  cr 0.033
+     4 bg-element-hover   #272829  oklch(0.2770 0.0016 212.00)  cr 0.033
+     5 bg-element-active  #313232  oklch(0.3160 0.0018 212.00)  cr 0.033
+     6 border-subtle      #3f4141  oklch(0.3740 0.0022 212.00)  cr 0.034
+     7 border-element     #535455  oklch(0.4460 0.0026 212.00)  cr 0.033
+     8 border-strong      #7c7f7f  oklch(0.5930 0.0035 212.00)  cr 0.034
+     9 solid              #949798  oklch(0.6751 0.0040 212.00)  cr 0.034
+    10 solid-hover        #a3a7a7  oklch(0.7244 0.0043 212.00)  cr 0.034
+    11 text-muted         #c3c7c8  oklch(0.8281 0.0049 212.00)  cr 0.034
+    12 text-strong        #edeeee  oklch(0.9478 0.0015 212.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -5435,18 +5435,18 @@ gamuts srgb display-p3
 
 [azure-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 212.00)  cr 0.000
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0003 212.00)  cr 0.014
+     3 bg-element         #eeefef  oklch(0.9510 0.0006 212.00)  cr 0.015
+     4 bg-element-hover   #e6e7e7  oklch(0.9260 0.0010 212.00)  cr 0.016
+     5 bg-element-active  #dddede  oklch(0.8990 0.0014 212.00)  cr 0.016
+     6 border-subtle      #cfd1d1  oklch(0.8590 0.0020 212.00)  cr 0.016
+     7 border-element     #bfc1c1  oklch(0.8090 0.0023 212.00)  cr 0.016
+     8 border-strong      #a6a8a8  oklch(0.7290 0.0020 212.00)  cr 0.016
+     9 solid              #8f9090  oklch(0.6526 0.0018 212.00)  cr 0.016
+    10 solid-hover        #7e8080  oklch(0.5975 0.0017 212.00)  cr 0.016
+    11 text-muted         #646565  oklch(0.5064 0.0014 212.00)  cr 0.016
+    12 text-strong        #292a2a  oklch(0.2835 0.0008 212.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -5594,18 +5594,18 @@ gamuts srgb display-p3
 
 [azure-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0005 212.00)  cr 0.016
+     2 bg-subtle          #171717  oklch(0.2060 0.0005 212.00)  cr 0.014
+     3 bg-element         #1f1f1f  oklch(0.2400 0.0006 212.00)  cr 0.014
+     4 bg-element-hover   #282828  oklch(0.2770 0.0007 212.00)  cr 0.015
+     5 bg-element-active  #313232  oklch(0.3160 0.0009 212.00)  cr 0.016
+     6 border-subtle      #404141  oklch(0.3740 0.0010 212.00)  cr 0.015
+     7 border-element     #535454  oklch(0.4460 0.0012 212.00)  cr 0.015
+     8 border-strong      #7d7e7f  oklch(0.5930 0.0017 212.00)  cr 0.016
+     9 solid              #959797  oklch(0.6753 0.0019 212.00)  cr 0.016
+    10 solid-hover        #a5a6a7  oklch(0.7246 0.0020 212.00)  cr 0.016
+    11 text-muted         #c5c7c7  oklch(0.8284 0.0023 212.00)  cr 0.016
+    12 text-strong        #edeeee  oklch(0.9479 0.0007 212.00)  cr 0.016
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -5753,18 +5753,18 @@ gamuts srgb display-p3
 
 [blue-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 250.00)  cr 0.000
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0003 250.00)  cr 0.024
+     3 bg-element         #eeefef  oklch(0.9510 0.0005 250.00)  cr 0.021
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0009 250.00)  cr 0.024
+     5 bg-element-active  #dddede  oklch(0.8990 0.0012 250.00)  cr 0.024
+     6 border-subtle      #d0d1d2  oklch(0.8590 0.0017 250.00)  cr 0.024
+     7 border-element     #bfc1c2  oklch(0.8090 0.0024 250.00)  cr 0.024
+     8 border-strong      #a6a7a9  oklch(0.7290 0.0035 250.00)  cr 0.024
+     9 solid              #8e9093  oklch(0.6527 0.0045 250.00)  cr 0.024
+    10 solid-hover        #7e8082  oklch(0.5975 0.0041 250.00)  cr 0.024
+    11 text-muted         #646567  oklch(0.5065 0.0035 250.00)  cr 0.024
+    12 text-strong        #292a2b  oklch(0.2835 0.0019 250.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -5912,18 +5912,18 @@ gamuts srgb display-p3
 
 [blue-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111112  oklch(0.1780 0.0012 250.00)  cr 0.024
+     2 bg-subtle          #171718  oklch(0.2060 0.0014 250.00)  cr 0.024
+     3 bg-element         #1f1f20  oklch(0.2400 0.0016 250.00)  cr 0.024
+     4 bg-element-hover   #272829  oklch(0.2770 0.0019 250.00)  cr 0.024
+     5 bg-element-active  #313233  oklch(0.3160 0.0022 250.00)  cr 0.025
+     6 border-subtle      #404142  oklch(0.3740 0.0026 250.00)  cr 0.025
+     7 border-element     #535456  oklch(0.4460 0.0031 250.00)  cr 0.025
+     8 border-strong      #7c7e80  oklch(0.5930 0.0041 250.00)  cr 0.024
+     9 solid              #959799  oklch(0.6753 0.0043 250.00)  cr 0.024
+    10 solid-hover        #a4a6a8  oklch(0.7247 0.0036 250.00)  cr 0.024
+    11 text-muted         #c6c7c8  oklch(0.8286 0.0021 250.00)  cr 0.024
+    12 text-strong        #edeeee  oklch(0.9479 0.0006 250.00)  cr 0.023
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -6071,18 +6071,18 @@ gamuts srgb display-p3
 
 [blue-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 250.00)  cr 0.034
+     2 bg-subtle          #f6f7f7  oklch(0.9750 0.0004 250.00)  cr 0.033
+     3 bg-element         #eeefef  oklch(0.9510 0.0008 250.00)  cr 0.033
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0012 250.00)  cr 0.032
+     5 bg-element-active  #dddedf  oklch(0.8990 0.0017 250.00)  cr 0.033
+     6 border-subtle      #cfd1d2  oklch(0.8590 0.0024 250.00)  cr 0.033
+     7 border-element     #bfc1c3  oklch(0.8090 0.0034 250.00)  cr 0.034
+     8 border-strong      #a5a8aa  oklch(0.7290 0.0050 250.00)  cr 0.034
+     9 solid              #8d9094  oklch(0.6526 0.0063 250.00)  cr 0.034
+    10 solid-hover        #7d8083  oklch(0.5975 0.0058 250.00)  cr 0.034
+    11 text-muted         #636568  oklch(0.5064 0.0049 250.00)  cr 0.034
+    12 text-strong        #292a2b  oklch(0.2835 0.0027 250.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -6230,18 +6230,18 @@ gamuts srgb display-p3
 
 [blue-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111112  oklch(0.1780 0.0017 250.00)  cr 0.034
+     2 bg-subtle          #171718  oklch(0.2060 0.0020 250.00)  cr 0.034
+     3 bg-element         #1e1f20  oklch(0.2400 0.0023 250.00)  cr 0.034
+     4 bg-element-hover   #272829  oklch(0.2770 0.0027 250.00)  cr 0.034
+     5 bg-element-active  #313233  oklch(0.3160 0.0030 250.00)  cr 0.034
+     6 border-subtle      #3f4143  oklch(0.3740 0.0036 250.00)  cr 0.034
+     7 border-element     #525456  oklch(0.4460 0.0043 250.00)  cr 0.034
+     8 border-strong      #7c7e81  oklch(0.5930 0.0057 250.00)  cr 0.034
+     9 solid              #94979a  oklch(0.6753 0.0061 250.00)  cr 0.034
+    10 solid-hover        #a4a6a9  oklch(0.7247 0.0051 250.00)  cr 0.034
+    11 text-muted         #c5c7c9  oklch(0.8285 0.0030 250.00)  cr 0.034
+    12 text-strong        #edeeee  oklch(0.9479 0.0008 250.00)  cr 0.031
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -6389,18 +6389,18 @@ gamuts srgb display-p3
 
 [blue-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 250.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0002 250.00)  cr 0.016
+     3 bg-element         #eeefef  oklch(0.9510 0.0004 250.00)  cr 0.016
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0006 250.00)  cr 0.016
+     5 bg-element-active  #dddede  oklch(0.8990 0.0008 250.00)  cr 0.016
+     6 border-subtle      #d0d1d1  oklch(0.8590 0.0011 250.00)  cr 0.015
+     7 border-element     #c0c1c1  oklch(0.8090 0.0016 250.00)  cr 0.016
+     8 border-strong      #a6a7a9  oklch(0.7290 0.0024 250.00)  cr 0.016
+     9 solid              #8f9092  oklch(0.6527 0.0030 250.00)  cr 0.016
+    10 solid-hover        #7e7f81  oklch(0.5975 0.0027 250.00)  cr 0.016
+    11 text-muted         #646566  oklch(0.5065 0.0023 250.00)  cr 0.016
+    12 text-strong        #292a2a  oklch(0.2835 0.0013 250.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -6548,18 +6548,18 @@ gamuts srgb display-p3
 
 [blue-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0008 250.00)  cr 0.016
+     2 bg-subtle          #171718  oklch(0.2060 0.0009 250.00)  cr 0.015
+     3 bg-element         #1f1f20  oklch(0.2400 0.0011 250.00)  cr 0.016
+     4 bg-element-hover   #282829  oklch(0.2770 0.0012 250.00)  cr 0.015
+     5 bg-element-active  #313232  oklch(0.3160 0.0014 250.00)  cr 0.016
+     6 border-subtle      #404142  oklch(0.3740 0.0017 250.00)  cr 0.016
+     7 border-element     #535455  oklch(0.4460 0.0020 250.00)  cr 0.016
+     8 border-strong      #7d7e80  oklch(0.5930 0.0027 250.00)  cr 0.016
+     9 solid              #959799  oklch(0.6754 0.0029 250.00)  cr 0.016
+    10 solid-hover        #a5a6a7  oklch(0.7247 0.0024 250.00)  cr 0.016
+    11 text-muted         #c6c7c8  oklch(0.8286 0.0014 250.00)  cr 0.016
+    12 text-strong        #edeeee  oklch(0.9479 0.0004 250.00)  cr 0.015
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -6707,18 +6707,18 @@ gamuts srgb display-p3
 
 [indigo-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 278.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0002 278.00)  cr 0.017
+     3 bg-element         #efefef  oklch(0.9510 0.0005 278.00)  cr 0.021
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0008 278.00)  cr 0.022
+     5 bg-element-active  #ddddde  oklch(0.8990 0.0012 278.00)  cr 0.024
+     6 border-subtle      #d0d0d2  oklch(0.8590 0.0017 278.00)  cr 0.024
+     7 border-element     #c0c0c2  oklch(0.8090 0.0023 278.00)  cr 0.024
+     8 border-strong      #a7a7a9  oklch(0.7290 0.0034 278.00)  cr 0.024
+     9 solid              #8f9093  oklch(0.6530 0.0046 278.00)  cr 0.025
+    10 solid-hover        #7f7f83  oklch(0.5978 0.0054 278.00)  cr 0.024
+    11 text-muted         #646569  oklch(0.5068 0.0069 278.00)  cr 0.024
+    12 text-strong        #292a2c  oklch(0.2837 0.0042 278.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -6866,18 +6866,18 @@ gamuts srgb display-p3
 
 [indigo-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111112  oklch(0.1780 0.0026 278.00)  cr 0.024
+     2 bg-subtle          #171719  oklch(0.2060 0.0031 278.00)  cr 0.025
+     3 bg-element         #1f1f21  oklch(0.2400 0.0036 278.00)  cr 0.024
+     4 bg-element-hover   #28282a  oklch(0.2770 0.0041 278.00)  cr 0.024
+     5 bg-element-active  #313234  oklch(0.3160 0.0047 278.00)  cr 0.024
+     6 border-subtle      #404044  oklch(0.3740 0.0056 278.00)  cr 0.024
+     7 border-element     #535458  oklch(0.4460 0.0067 278.00)  cr 0.024
+     8 border-strong      #7d7e81  oklch(0.5930 0.0055 278.00)  cr 0.024
+     9 solid              #969799  oklch(0.6756 0.0042 278.00)  cr 0.024
+    10 solid-hover        #a5a6a8  oklch(0.7249 0.0035 278.00)  cr 0.024
+    11 text-muted         #c6c7c8  oklch(0.8287 0.0021 278.00)  cr 0.024
+    12 text-strong        #eeeeee  oklch(0.9480 0.0006 278.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -7025,18 +7025,18 @@ gamuts srgb display-p3
 
 [indigo-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 278.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0004 278.00)  cr 0.034
+     3 bg-element         #eeefef  oklch(0.9510 0.0008 278.00)  cr 0.034
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0012 278.00)  cr 0.034
+     5 bg-element-active  #dddddf  oklch(0.8990 0.0017 278.00)  cr 0.034
+     6 border-subtle      #d0d0d2  oklch(0.8590 0.0024 278.00)  cr 0.034
+     7 border-element     #c0c0c3  oklch(0.8090 0.0033 278.00)  cr 0.034
+     8 border-strong      #a6a7aa  oklch(0.7290 0.0048 278.00)  cr 0.034
+     9 solid              #8f9094  oklch(0.6530 0.0064 278.00)  cr 0.034
+    10 solid-hover        #7e7f84  oklch(0.5979 0.0076 278.00)  cr 0.034
+    11 text-muted         #64656b  oklch(0.5069 0.0097 278.00)  cr 0.034
+    12 text-strong        #292a2d  oklch(0.2837 0.0060 278.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -7184,18 +7184,18 @@ gamuts srgb display-p3
 
 [indigo-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111113  oklch(0.1780 0.0037 278.00)  cr 0.034
+     2 bg-subtle          #171719  oklch(0.2060 0.0043 278.00)  cr 0.034
+     3 bg-element         #1f1f22  oklch(0.2400 0.0050 278.00)  cr 0.034
+     4 bg-element-hover   #27282b  oklch(0.2770 0.0058 278.00)  cr 0.034
+     5 bg-element-active  #313235  oklch(0.3160 0.0066 278.00)  cr 0.034
+     6 border-subtle      #404045  oklch(0.3740 0.0079 278.00)  cr 0.034
+     7 border-element     #535459  oklch(0.4460 0.0094 278.00)  cr 0.034
+     8 border-strong      #7d7e83  oklch(0.5930 0.0077 278.00)  cr 0.034
+     9 solid              #96979b  oklch(0.6756 0.0059 278.00)  cr 0.034
+    10 solid-hover        #a5a6a9  oklch(0.7249 0.0049 278.00)  cr 0.034
+    11 text-muted         #c6c7c9  oklch(0.8287 0.0029 278.00)  cr 0.034
+    12 text-strong        #edeeee  oklch(0.9480 0.0008 278.00)  cr 0.032
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -7343,18 +7343,18 @@ gamuts srgb display-p3
 
 [indigo-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 278.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0001 278.00)  cr 0.008
+     3 bg-element         #efefef  oklch(0.9510 0.0003 278.00)  cr 0.013
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0005 278.00)  cr 0.014
+     5 bg-element-active  #ddddde  oklch(0.8990 0.0008 278.00)  cr 0.016
+     6 border-subtle      #d0d0d1  oklch(0.8590 0.0011 278.00)  cr 0.016
+     7 border-element     #c0c0c1  oklch(0.8090 0.0015 278.00)  cr 0.015
+     8 border-strong      #a7a7a9  oklch(0.7290 0.0023 278.00)  cr 0.016
+     9 solid              #8f9092  oklch(0.6529 0.0030 278.00)  cr 0.016
+    10 solid-hover        #7f7f82  oklch(0.5977 0.0036 278.00)  cr 0.016
+    11 text-muted         #646568  oklch(0.5067 0.0046 278.00)  cr 0.016
+    12 text-strong        #292a2b  oklch(0.2836 0.0028 278.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -7502,18 +7502,18 @@ gamuts srgb display-p3
 
 [indigo-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111112  oklch(0.1780 0.0018 278.00)  cr 0.016
+     2 bg-subtle          #171718  oklch(0.2060 0.0020 278.00)  cr 0.016
+     3 bg-element         #1f1f20  oklch(0.2400 0.0024 278.00)  cr 0.016
+     4 bg-element-hover   #282829  oklch(0.2770 0.0028 278.00)  cr 0.016
+     5 bg-element-active  #313233  oklch(0.3160 0.0032 278.00)  cr 0.016
+     6 border-subtle      #404143  oklch(0.3740 0.0037 278.00)  cr 0.016
+     7 border-element     #535457  oklch(0.4460 0.0045 278.00)  cr 0.016
+     8 border-strong      #7d7e80  oklch(0.5930 0.0037 278.00)  cr 0.016
+     9 solid              #969799  oklch(0.6755 0.0028 278.00)  cr 0.016
+    10 solid-hover        #a6a6a7  oklch(0.7249 0.0023 278.00)  cr 0.016
+    11 text-muted         #c6c7c8  oklch(0.8287 0.0014 278.00)  cr 0.016
+    12 text-strong        #eeeeee  oklch(0.9480 0.0004 278.00)  cr 0.016
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -7661,18 +7661,18 @@ gamuts srgb display-p3
 
 [violet-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 300.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0003 300.00)  cr 0.022
+     3 bg-element         #efefef  oklch(0.9510 0.0006 300.00)  cr 0.022
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0010 300.00)  cr 0.024
+     5 bg-element-active  #deddde  oklch(0.8990 0.0014 300.00)  cr 0.024
+     6 border-subtle      #d1d0d2  oklch(0.8590 0.0020 300.00)  cr 0.024
+     7 border-element     #c1c0c2  oklch(0.8090 0.0027 300.00)  cr 0.024
+     8 border-strong      #a8a7a9  oklch(0.7290 0.0040 300.00)  cr 0.024
+     9 solid              #908f93  oklch(0.6532 0.0053 300.00)  cr 0.024
+    10 solid-hover        #807f83  oklch(0.5981 0.0063 300.00)  cr 0.024
+    11 text-muted         #666469  oklch(0.5071 0.0066 300.00)  cr 0.024
+    12 text-strong        #2a292b  oklch(0.2838 0.0037 300.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -7820,18 +7820,18 @@ gamuts srgb display-p3
 
 [violet-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #111112  oklch(0.1780 0.0023 300.00)  cr 0.024
+     2 bg-subtle          #171718  oklch(0.2060 0.0027 300.00)  cr 0.025
+     3 bg-element         #1f1f20  oklch(0.2400 0.0031 300.00)  cr 0.024
+     4 bg-element-hover   #28282a  oklch(0.2770 0.0036 300.00)  cr 0.024
+     5 bg-element-active  #323134  oklch(0.3160 0.0041 300.00)  cr 0.024
+     6 border-subtle      #414043  oklch(0.3740 0.0049 300.00)  cr 0.025
+     7 border-element     #545357  oklch(0.4460 0.0058 300.00)  cr 0.024
+     8 border-strong      #7f7d81  oklch(0.5930 0.0064 300.00)  cr 0.024
+     9 solid              #97969a  oklch(0.6758 0.0049 300.00)  cr 0.024
+    10 solid-hover        #a6a6a8  oklch(0.7251 0.0041 300.00)  cr 0.024
+    11 text-muted         #c7c6c8  oklch(0.8288 0.0024 300.00)  cr 0.024
+    12 text-strong        #eeeeee  oklch(0.9480 0.0007 300.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -7979,18 +7979,18 @@ gamuts srgb display-p3
 
 [violet-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 300.00)  cr 0.030
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0004 300.00)  cr 0.029
+     3 bg-element         #efefef  oklch(0.9510 0.0009 300.00)  cr 0.033
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0014 300.00)  cr 0.034
+     5 bg-element-active  #dedddf  oklch(0.8990 0.0019 300.00)  cr 0.033
+     6 border-subtle      #d1d0d2  oklch(0.8590 0.0028 300.00)  cr 0.034
+     7 border-element     #c1c0c3  oklch(0.8090 0.0038 300.00)  cr 0.034
+     8 border-strong      #a8a7aa  oklch(0.7290 0.0057 300.00)  cr 0.034
+     9 solid              #918f94  oklch(0.6534 0.0075 300.00)  cr 0.034
+    10 solid-hover        #807f84  oklch(0.5983 0.0089 300.00)  cr 0.034
+    11 text-muted         #66646a  oklch(0.5073 0.0093 300.00)  cr 0.034
+    12 text-strong        #2a292c  oklch(0.2839 0.0052 300.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -8138,18 +8138,18 @@ gamuts srgb display-p3
 
 [violet-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #111112  oklch(0.1780 0.0032 300.00)  cr 0.034
+     2 bg-subtle          #181719  oklch(0.2060 0.0037 300.00)  cr 0.034
+     3 bg-element         #1f1f21  oklch(0.2400 0.0044 300.00)  cr 0.034
+     4 bg-element-hover   #28282a  oklch(0.2770 0.0051 300.00)  cr 0.034
+     5 bg-element-active  #323134  oklch(0.3160 0.0058 300.00)  cr 0.034
+     6 border-subtle      #414044  oklch(0.3740 0.0068 300.00)  cr 0.034
+     7 border-element     #555358  oklch(0.4460 0.0082 300.00)  cr 0.034
+     8 border-strong      #7f7d83  oklch(0.5930 0.0090 300.00)  cr 0.034
+     9 solid              #97969b  oklch(0.6760 0.0069 300.00)  cr 0.034
+    10 solid-hover        #a7a5a9  oklch(0.7252 0.0058 300.00)  cr 0.034
+    11 text-muted         #c7c6c9  oklch(0.8289 0.0034 300.00)  cr 0.034
+    12 text-strong        #eeeeee  oklch(0.9480 0.0010 300.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -8297,18 +8297,18 @@ gamuts srgb display-p3
 
 [violet-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 300.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0002 300.00)  cr 0.015
+     3 bg-element         #efefef  oklch(0.9510 0.0004 300.00)  cr 0.015
+     4 bg-element-hover   #e6e6e7  oklch(0.9260 0.0006 300.00)  cr 0.014
+     5 bg-element-active  #deddde  oklch(0.8990 0.0009 300.00)  cr 0.016
+     6 border-subtle      #d1d0d1  oklch(0.8590 0.0013 300.00)  cr 0.016
+     7 border-element     #c1c0c1  oklch(0.8090 0.0018 300.00)  cr 0.016
+     8 border-strong      #a7a7a9  oklch(0.7290 0.0027 300.00)  cr 0.016
+     9 solid              #909092  oklch(0.6531 0.0036 300.00)  cr 0.016
+    10 solid-hover        #807f82  oklch(0.5980 0.0042 300.00)  cr 0.016
+    11 text-muted         #656567  oklch(0.5069 0.0044 300.00)  cr 0.016
+    12 text-strong        #2a292b  oklch(0.2837 0.0024 300.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -8456,18 +8456,18 @@ gamuts srgb display-p3
 
 [violet-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111112  oklch(0.1780 0.0015 300.00)  cr 0.016
+     2 bg-subtle          #171718  oklch(0.2060 0.0018 300.00)  cr 0.016
+     3 bg-element         #1f1f20  oklch(0.2400 0.0021 300.00)  cr 0.016
+     4 bg-element-hover   #282829  oklch(0.2770 0.0024 300.00)  cr 0.016
+     5 bg-element-active  #323133  oklch(0.3160 0.0027 300.00)  cr 0.016
+     6 border-subtle      #414042  oklch(0.3740 0.0032 300.00)  cr 0.016
+     7 border-element     #545456  oklch(0.4460 0.0039 300.00)  cr 0.016
+     8 border-strong      #7e7d80  oklch(0.5930 0.0043 300.00)  cr 0.016
+     9 solid              #979699  oklch(0.6757 0.0033 300.00)  cr 0.016
+    10 solid-hover        #a6a6a7  oklch(0.7250 0.0027 300.00)  cr 0.016
+    11 text-muted         #c7c6c8  oklch(0.8287 0.0016 300.00)  cr 0.016
+    12 text-strong        #eeeeee  oklch(0.9480 0.0004 300.00)  cr 0.014
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -8615,18 +8615,18 @@ gamuts srgb display-p3
 
 [magenta-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 325.00)  cr 0.020
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0005 325.00)  cr 0.023
+     3 bg-element         #efeeef  oklch(0.9510 0.0010 325.00)  cr 0.023
+     4 bg-element-hover   #e7e6e7  oklch(0.9260 0.0016 325.00)  cr 0.025
+     5 bg-element-active  #deddde  oklch(0.8990 0.0022 325.00)  cr 0.024
+     6 border-subtle      #d2d0d2  oklch(0.8590 0.0031 325.00)  cr 0.024
+     7 border-element     #c2c0c2  oklch(0.8090 0.0043 325.00)  cr 0.024
+     8 border-strong      #a9a6aa  oklch(0.7290 0.0064 325.00)  cr 0.024
+     9 solid              #938f93  oklch(0.6537 0.0075 325.00)  cr 0.025
+    10 solid-hover        #827e82  oklch(0.5984 0.0068 325.00)  cr 0.024
+    11 text-muted         #676467  oklch(0.5072 0.0058 325.00)  cr 0.024
+    12 text-strong        #2b292b  oklch(0.2839 0.0032 325.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -8774,18 +8774,18 @@ gamuts srgb display-p3
 
 [magenta-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #121112  oklch(0.1780 0.0020 325.00)  cr 0.024
+     2 bg-subtle          #181718  oklch(0.2060 0.0023 325.00)  cr 0.024
+     3 bg-element         #201f20  oklch(0.2400 0.0027 325.00)  cr 0.024
+     4 bg-element-hover   #292829  oklch(0.2770 0.0031 325.00)  cr 0.024
+     5 bg-element-active  #333133  oklch(0.3160 0.0036 325.00)  cr 0.024
+     6 border-subtle      #424042  oklch(0.3740 0.0043 325.00)  cr 0.025
+     7 border-element     #565356  oklch(0.4460 0.0051 325.00)  cr 0.024
+     8 border-strong      #807d80  oklch(0.5930 0.0068 325.00)  cr 0.025
+     9 solid              #9a969a  oklch(0.6763 0.0077 325.00)  cr 0.024
+    10 solid-hover        #a8a5a8  oklch(0.7255 0.0065 325.00)  cr 0.024
+    11 text-muted         #c8c6c8  oklch(0.8290 0.0038 325.00)  cr 0.024
+    12 text-strong        #eeedee  oklch(0.9481 0.0011 325.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -8933,18 +8933,18 @@ gamuts srgb display-p3
 
 [magenta-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 325.00)  cr 0.020
+     2 bg-subtle          #f7f6f7  oklch(0.9750 0.0007 325.00)  cr 0.033
+     3 bg-element         #efeeef  oklch(0.9510 0.0014 325.00)  cr 0.033
+     4 bg-element-hover   #e7e6e7  oklch(0.9260 0.0022 325.00)  cr 0.034
+     5 bg-element-active  #dfdddf  oklch(0.8990 0.0031 325.00)  cr 0.034
+     6 border-subtle      #d2d0d2  oklch(0.8590 0.0044 325.00)  cr 0.034
+     7 border-element     #c3bfc3  oklch(0.8090 0.0061 325.00)  cr 0.034
+     8 border-strong      #aaa5aa  oklch(0.7290 0.0090 325.00)  cr 0.034
+     9 solid              #948e94  oklch(0.6540 0.0105 325.00)  cr 0.034
+    10 solid-hover        #837e83  oklch(0.5987 0.0096 325.00)  cr 0.034
+    11 text-muted         #686468  oklch(0.5075 0.0081 325.00)  cr 0.034
+    12 text-strong        #2b292b  oklch(0.2840 0.0045 325.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -9092,18 +9092,18 @@ gamuts srgb display-p3
 
 [magenta-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #121112  oklch(0.1780 0.0028 325.00)  cr 0.034
+     2 bg-subtle          #181718  oklch(0.2060 0.0033 325.00)  cr 0.034
+     3 bg-element         #201f20  oklch(0.2400 0.0038 325.00)  cr 0.034
+     4 bg-element-hover   #292729  oklch(0.2770 0.0044 325.00)  cr 0.034
+     5 bg-element-active  #333133  oklch(0.3160 0.0050 325.00)  cr 0.034
+     6 border-subtle      #424042  oklch(0.3740 0.0060 325.00)  cr 0.034
+     7 border-element     #565356  oklch(0.4460 0.0071 325.00)  cr 0.034
+     8 border-strong      #817c81  oklch(0.5930 0.0095 325.00)  cr 0.034
+     9 solid              #9b959b  oklch(0.6766 0.0109 325.00)  cr 0.034
+    10 solid-hover        #a9a4aa  oklch(0.7258 0.0091 325.00)  cr 0.034
+    11 text-muted         #c9c6c9  oklch(0.8292 0.0054 325.00)  cr 0.034
+    12 text-strong        #eeedee  oklch(0.9481 0.0015 325.00)  cr 0.033
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -9251,18 +9251,18 @@ gamuts srgb display-p3
 
 [magenta-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 325.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0003 325.00)  cr 0.014
+     3 bg-element         #efeeef  oklch(0.9510 0.0007 325.00)  cr 0.016
+     4 bg-element-hover   #e7e6e7  oklch(0.9260 0.0010 325.00)  cr 0.015
+     5 bg-element-active  #deddde  oklch(0.8990 0.0014 325.00)  cr 0.016
+     6 border-subtle      #d1d0d1  oklch(0.8590 0.0021 325.00)  cr 0.016
+     7 border-element     #c1c0c1  oklch(0.8090 0.0029 325.00)  cr 0.016
+     8 border-strong      #a9a6a9  oklch(0.7290 0.0043 325.00)  cr 0.016
+     9 solid              #928f92  oklch(0.6534 0.0050 325.00)  cr 0.016
+    10 solid-hover        #817f81  oklch(0.5981 0.0046 325.00)  cr 0.016
+    11 text-muted         #666466  oklch(0.5070 0.0039 325.00)  cr 0.016
+    12 text-strong        #2a292a  oklch(0.2838 0.0021 325.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -9410,18 +9410,18 @@ gamuts srgb display-p3
 
 [magenta-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0013 325.00)  cr 0.016
+     2 bg-subtle          #181718  oklch(0.2060 0.0015 325.00)  cr 0.016
+     3 bg-element         #201f20  oklch(0.2400 0.0018 325.00)  cr 0.016
+     4 bg-element-hover   #292829  oklch(0.2770 0.0021 325.00)  cr 0.016
+     5 bg-element-active  #323132  oklch(0.3160 0.0024 325.00)  cr 0.016
+     6 border-subtle      #414042  oklch(0.3740 0.0028 325.00)  cr 0.016
+     7 border-element     #555355  oklch(0.4460 0.0034 325.00)  cr 0.016
+     8 border-strong      #7f7d80  oklch(0.5930 0.0045 325.00)  cr 0.016
+     9 solid              #999699  oklch(0.6760 0.0052 325.00)  cr 0.016
+    10 solid-hover        #a8a5a8  oklch(0.7253 0.0043 325.00)  cr 0.016
+    11 text-muted         #c8c6c8  oklch(0.8289 0.0026 325.00)  cr 0.016
+    12 text-strong        #eeedee  oklch(0.9480 0.0007 325.00)  cr 0.015
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -9569,18 +9569,18 @@ gamuts srgb display-p3
 
 [rose-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 350.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0003 350.00)  cr 0.021
+     3 bg-element         #efeeef  oklch(0.9510 0.0007 350.00)  cr 0.024
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0010 350.00)  cr 0.022
+     5 bg-element-active  #deddde  oklch(0.8990 0.0015 350.00)  cr 0.024
+     6 border-subtle      #d2d0d1  oklch(0.8590 0.0022 350.00)  cr 0.024
+     7 border-element     #c2c0c1  oklch(0.8090 0.0031 350.00)  cr 0.024
+     8 border-strong      #aaa6a8  oklch(0.7290 0.0049 350.00)  cr 0.024
+     9 solid              #948f91  oklch(0.6537 0.0067 350.00)  cr 0.025
+    10 solid-hover        #837e80  oklch(0.5984 0.0061 350.00)  cr 0.024
+    11 text-muted         #686466  oklch(0.5072 0.0052 350.00)  cr 0.025
+    12 text-strong        #2b292a  oklch(0.2839 0.0029 350.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -9728,18 +9728,18 @@ gamuts srgb display-p3
 
 [rose-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #121111  oklch(0.1780 0.0018 350.00)  cr 0.024
+     2 bg-subtle          #181717  oklch(0.2060 0.0021 350.00)  cr 0.024
+     3 bg-element         #201f1f  oklch(0.2400 0.0024 350.00)  cr 0.024
+     4 bg-element-hover   #292828  oklch(0.2770 0.0028 350.00)  cr 0.024
+     5 bg-element-active  #333132  oklch(0.3160 0.0032 350.00)  cr 0.024
+     6 border-subtle      #424041  oklch(0.3740 0.0038 350.00)  cr 0.024
+     7 border-element     #565354  oklch(0.4460 0.0045 350.00)  cr 0.024
+     8 border-strong      #817d7e  oklch(0.5930 0.0060 350.00)  cr 0.024
+     9 solid              #9a9697  oklch(0.6762 0.0062 350.00)  cr 0.024
+    10 solid-hover        #a9a5a7  oklch(0.7254 0.0050 350.00)  cr 0.024
+    11 text-muted         #c8c6c7  oklch(0.8290 0.0027 350.00)  cr 0.024
+    12 text-strong        #eeedee  oklch(0.9480 0.0007 350.00)  cr 0.023
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -9887,18 +9887,18 @@ gamuts srgb display-p3
 
 [rose-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 350.00)  cr 0.029
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0004 350.00)  cr 0.028
+     3 bg-element         #efeeef  oklch(0.9510 0.0009 350.00)  cr 0.031
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0015 350.00)  cr 0.034
+     5 bg-element-active  #dfddde  oklch(0.8990 0.0021 350.00)  cr 0.034
+     6 border-subtle      #d2d0d1  oklch(0.8590 0.0031 350.00)  cr 0.034
+     7 border-element     #c3bfc1  oklch(0.8090 0.0044 350.00)  cr 0.034
+     8 border-strong      #aba6a8  oklch(0.7290 0.0069 350.00)  cr 0.034
+     9 solid              #958e91  oklch(0.6540 0.0094 350.00)  cr 0.034
+    10 solid-hover        #847e80  oklch(0.5987 0.0086 350.00)  cr 0.034
+    11 text-muted         #696466  oklch(0.5075 0.0073 350.00)  cr 0.034
+    12 text-strong        #2b292a  oklch(0.2840 0.0040 350.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -10046,18 +10046,18 @@ gamuts srgb display-p3
 
 [rose-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #121111  oklch(0.1780 0.0025 350.00)  cr 0.034
+     2 bg-subtle          #181718  oklch(0.2060 0.0029 350.00)  cr 0.034
+     3 bg-element         #211f1f  oklch(0.2400 0.0034 350.00)  cr 0.034
+     4 bg-element-hover   #2a2728  oklch(0.2770 0.0039 350.00)  cr 0.034
+     5 bg-element-active  #343132  oklch(0.3160 0.0045 350.00)  cr 0.034
+     6 border-subtle      #434041  oklch(0.3740 0.0053 350.00)  cr 0.034
+     7 border-element     #575355  oklch(0.4460 0.0064 350.00)  cr 0.034
+     8 border-strong      #827c7f  oklch(0.5930 0.0085 350.00)  cr 0.034
+     9 solid              #9c9598  oklch(0.6765 0.0088 350.00)  cr 0.034
+    10 solid-hover        #aaa5a7  oklch(0.7257 0.0070 350.00)  cr 0.034
+    11 text-muted         #c9c6c7  oklch(0.8291 0.0039 350.00)  cr 0.034
+    12 text-strong        #eeedee  oklch(0.9481 0.0010 350.00)  cr 0.033
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -10205,18 +10205,18 @@ gamuts srgb display-p3
 
 [rose-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 350.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0002 350.00)  cr 0.014
+     3 bg-element         #efefef  oklch(0.9510 0.0004 350.00)  cr 0.014
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 350.00)  cr 0.016
+     5 bg-element-active  #deddde  oklch(0.8990 0.0010 350.00)  cr 0.016
+     6 border-subtle      #d1d0d1  oklch(0.8590 0.0014 350.00)  cr 0.015
+     7 border-element     #c2c0c1  oklch(0.8090 0.0021 350.00)  cr 0.016
+     8 border-strong      #a9a6a7  oklch(0.7290 0.0033 350.00)  cr 0.016
+     9 solid              #928f90  oklch(0.6534 0.0044 350.00)  cr 0.016
+    10 solid-hover        #827f80  oklch(0.5982 0.0041 350.00)  cr 0.016
+    11 text-muted         #676465  oklch(0.5070 0.0034 350.00)  cr 0.016
+    12 text-strong        #2b292a  oklch(0.2838 0.0019 350.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -10364,18 +10364,18 @@ gamuts srgb display-p3
 
 [rose-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #121111  oklch(0.1780 0.0012 350.00)  cr 0.016
+     2 bg-subtle          #181717  oklch(0.2060 0.0014 350.00)  cr 0.016
+     3 bg-element         #201f1f  oklch(0.2400 0.0016 350.00)  cr 0.016
+     4 bg-element-hover   #292828  oklch(0.2770 0.0019 350.00)  cr 0.016
+     5 bg-element-active  #333132  oklch(0.3160 0.0021 350.00)  cr 0.016
+     6 border-subtle      #424041  oklch(0.3740 0.0025 350.00)  cr 0.016
+     7 border-element     #555354  oklch(0.4460 0.0030 350.00)  cr 0.016
+     8 border-strong      #807d7e  oklch(0.5930 0.0040 350.00)  cr 0.016
+     9 solid              #999697  oklch(0.6760 0.0042 350.00)  cr 0.016
+    10 solid-hover        #a8a5a6  oklch(0.7252 0.0033 350.00)  cr 0.016
+    11 text-muted         #c8c6c7  oklch(0.8289 0.0018 350.00)  cr 0.016
+    12 text-strong        #eeeeee  oklch(0.9480 0.0005 350.00)  cr 0.016
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -10523,18 +10523,18 @@ gamuts srgb display-p3
 
 [clay-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 15.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0003 15.00)  cr 0.024
+     3 bg-element         #efeeee  oklch(0.9510 0.0006 15.00)  cr 0.024
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0009 15.00)  cr 0.024
+     5 bg-element-active  #dedddd  oklch(0.8990 0.0013 15.00)  cr 0.025
+     6 border-subtle      #d2d0d0  oklch(0.8590 0.0018 15.00)  cr 0.023
+     7 border-element     #c2c0c0  oklch(0.8090 0.0026 15.00)  cr 0.024
+     8 border-strong      #aaa6a6  oklch(0.7290 0.0041 15.00)  cr 0.024
+     9 solid              #948f8f  oklch(0.6535 0.0058 15.00)  cr 0.025
+    10 solid-hover        #837e7e  oklch(0.5983 0.0058 15.00)  cr 0.024
+    11 text-muted         #686464  oklch(0.5072 0.0049 15.00)  cr 0.024
+    12 text-strong        #2b2929  oklch(0.2839 0.0027 15.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -10682,18 +10682,18 @@ gamuts srgb display-p3
 
 [clay-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #121111  oklch(0.1780 0.0017 15.00)  cr 0.024
+     2 bg-subtle          #181717  oklch(0.2060 0.0020 15.00)  cr 0.024
+     3 bg-element         #201f1f  oklch(0.2400 0.0023 15.00)  cr 0.024
+     4 bg-element-hover   #292828  oklch(0.2770 0.0027 15.00)  cr 0.024
+     5 bg-element-active  #333131  oklch(0.3160 0.0031 15.00)  cr 0.025
+     6 border-subtle      #434040  oklch(0.3740 0.0036 15.00)  cr 0.024
+     7 border-element     #565353  oklch(0.4460 0.0043 15.00)  cr 0.024
+     8 border-strong      #817d7d  oklch(0.5930 0.0058 15.00)  cr 0.024
+     9 solid              #9a9696  oklch(0.6761 0.0052 15.00)  cr 0.024
+    10 solid-hover        #a9a5a5  oklch(0.7253 0.0042 15.00)  cr 0.024
+    11 text-muted         #c8c6c6  oklch(0.8289 0.0023 15.00)  cr 0.024
+    12 text-strong        #eeedee  oklch(0.9480 0.0006 15.00)  cr 0.023
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -10841,18 +10841,18 @@ gamuts srgb display-p3
 
 [clay-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 15.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0004 15.00)  cr 0.033
+     3 bg-element         #efeeee  oklch(0.9510 0.0008 15.00)  cr 0.033
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0013 15.00)  cr 0.034
+     5 bg-element-active  #dfdddd  oklch(0.8990 0.0018 15.00)  cr 0.034
+     6 border-subtle      #d2d0d0  oklch(0.8590 0.0026 15.00)  cr 0.034
+     7 border-element     #c3c0c0  oklch(0.8090 0.0037 15.00)  cr 0.034
+     8 border-strong      #aba6a6  oklch(0.7290 0.0058 15.00)  cr 0.034
+     9 solid              #958e8f  oklch(0.6538 0.0081 15.00)  cr 0.034
+    10 solid-hover        #857e7e  oklch(0.5986 0.0082 15.00)  cr 0.034
+    11 text-muted         #696464  oklch(0.5074 0.0069 15.00)  cr 0.034
+    12 text-strong        #2c2929  oklch(0.2840 0.0039 15.00)  cr 0.034
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -11000,18 +11000,18 @@ gamuts srgb display-p3
 
 [clay-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #121111  oklch(0.1780 0.0024 15.00)  cr 0.034
+     2 bg-subtle          #191717  oklch(0.2060 0.0028 15.00)  cr 0.034
+     3 bg-element         #211f1f  oklch(0.2400 0.0033 15.00)  cr 0.034
+     4 bg-element-hover   #2a2727  oklch(0.2770 0.0038 15.00)  cr 0.034
+     5 bg-element-active  #343131  oklch(0.3160 0.0043 15.00)  cr 0.034
+     6 border-subtle      #434040  oklch(0.3740 0.0051 15.00)  cr 0.034
+     7 border-element     #575353  oklch(0.4460 0.0061 15.00)  cr 0.034
+     8 border-strong      #837c7c  oklch(0.5930 0.0081 15.00)  cr 0.034
+     9 solid              #9c9596  oklch(0.6763 0.0074 15.00)  cr 0.034
+    10 solid-hover        #aaa5a5  oklch(0.7255 0.0059 15.00)  cr 0.034
+    11 text-muted         #c9c6c6  oklch(0.8290 0.0033 15.00)  cr 0.034
+    12 text-strong        #eeeded  oklch(0.9480 0.0008 15.00)  cr 0.031
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -11159,18 +11159,18 @@ gamuts srgb display-p3
 
 [clay-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 15.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0002 15.00)  cr 0.016
+     3 bg-element         #efefef  oklch(0.9510 0.0004 15.00)  cr 0.016
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0006 15.00)  cr 0.016
+     5 bg-element-active  #dedddd  oklch(0.8990 0.0008 15.00)  cr 0.015
+     6 border-subtle      #d1d0d0  oklch(0.8590 0.0012 15.00)  cr 0.016
+     7 border-element     #c2c0c0  oklch(0.8090 0.0018 15.00)  cr 0.016
+     8 border-strong      #a9a7a7  oklch(0.7290 0.0027 15.00)  cr 0.016
+     9 solid              #928f8f  oklch(0.6533 0.0039 15.00)  cr 0.016
+    10 solid-hover        #827f7f  oklch(0.5981 0.0039 15.00)  cr 0.016
+    11 text-muted         #676464  oklch(0.5070 0.0033 15.00)  cr 0.016
+    12 text-strong        #2b2929  oklch(0.2838 0.0018 15.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -11318,18 +11318,18 @@ gamuts srgb display-p3
 
 [clay-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #121111  oklch(0.1780 0.0011 15.00)  cr 0.015
+     2 bg-subtle          #181717  oklch(0.2060 0.0013 15.00)  cr 0.016
+     3 bg-element         #201f1f  oklch(0.2400 0.0015 15.00)  cr 0.016
+     4 bg-element-hover   #292828  oklch(0.2770 0.0018 15.00)  cr 0.016
+     5 bg-element-active  #333131  oklch(0.3160 0.0020 15.00)  cr 0.016
+     6 border-subtle      #424040  oklch(0.3740 0.0024 15.00)  cr 0.016
+     7 border-element     #565354  oklch(0.4460 0.0029 15.00)  cr 0.016
+     8 border-strong      #807d7d  oklch(0.5930 0.0039 15.00)  cr 0.016
+     9 solid              #999696  oklch(0.6759 0.0035 15.00)  cr 0.016
+    10 solid-hover        #a8a5a5  oklch(0.7251 0.0028 15.00)  cr 0.016
+    11 text-muted         #c8c6c6  oklch(0.8288 0.0015 15.00)  cr 0.016
+    12 text-strong        #eeeeee  oklch(0.9480 0.0004 15.00)  cr 0.015
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087
@@ -11477,18 +11477,18 @@ gamuts srgb display-p3
 
 [umber-balanced/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 59.30)  cr 0.020
-     3 bg-element         #efefee  oklch(0.9510 0.0007 59.30)  cr 0.023
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0011 59.30)  cr 0.024
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0015 59.30)  cr 0.023
-     6 border-subtle      #d2d0cf  oklch(0.8590 0.0022 59.30)  cr 0.024
-     7 border-element     #c2c0be  oklch(0.8090 0.0032 59.30)  cr 0.024
-     8 border-strong      #a9a7a5  oklch(0.7290 0.0042 59.30)  cr 0.024
-     9 solid              #928f8e  oklch(0.6530 0.0037 59.30)  cr 0.024
-    10 solid-hover        #817f7d  oklch(0.5978 0.0034 59.30)  cr 0.024
-    11 text-muted         #666563  oklch(0.5067 0.0029 59.30)  cr 0.024
-    12 text-strong        #2a2a29  oklch(0.2836 0.0016 59.30)  cr 0.024
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 50.00)  cr 0.000
+     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0003 50.00)  cr 0.022
+     3 bg-element         #efefee  oklch(0.9510 0.0006 50.00)  cr 0.022
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0010 50.00)  cr 0.024
+     5 bg-element-active  #dedddd  oklch(0.8990 0.0014 50.00)  cr 0.024
+     6 border-subtle      #d2d0cf  oklch(0.8590 0.0020 50.00)  cr 0.024
+     7 border-element     #c2c0bf  oklch(0.8090 0.0029 50.00)  cr 0.024
+     8 border-strong      #aaa7a5  oklch(0.7290 0.0045 50.00)  cr 0.024
+     9 solid              #928f8e  oklch(0.6531 0.0042 50.00)  cr 0.024
+    10 solid-hover        #817f7d  oklch(0.5979 0.0038 50.00)  cr 0.024
+    11 text-muted         #676563  oklch(0.5068 0.0032 50.00)  cr 0.024
+    12 text-strong        #2a2929  oklch(0.2837 0.0018 50.00)  cr 0.024
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0003 250.00)  cr 0.103
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0016 250.00)  cr 0.130
@@ -11636,18 +11636,18 @@ gamuts srgb display-p3
 
 [umber-balanced/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0010 59.30)  cr 0.024
-     2 bg-subtle          #181717  oklch(0.2060 0.0011 59.30)  cr 0.023
-     3 bg-element         #201f1f  oklch(0.2400 0.0013 59.30)  cr 0.023
-     4 bg-element-hover   #292827  oklch(0.2770 0.0016 59.30)  cr 0.024
-     5 bg-element-active  #323231  oklch(0.3160 0.0018 59.30)  cr 0.024
-     6 border-subtle      #424040  oklch(0.3740 0.0021 59.30)  cr 0.024
-     7 border-element     #555453  oklch(0.4460 0.0025 59.30)  cr 0.024
-     8 border-strong      #807e7c  oklch(0.5930 0.0034 59.30)  cr 0.024
-     9 solid              #999695  oklch(0.6757 0.0039 59.30)  cr 0.024
-    10 solid-hover        #a8a5a3  oklch(0.7250 0.0042 59.30)  cr 0.025
-    11 text-muted         #c8c6c5  oklch(0.8288 0.0028 59.30)  cr 0.024
-    12 text-strong        #eeeeed  oklch(0.9480 0.0007 59.30)  cr 0.022
+     1 bg-app             #121111  oklch(0.1780 0.0011 50.00)  cr 0.023
+     2 bg-subtle          #181717  oklch(0.2060 0.0013 50.00)  cr 0.024
+     3 bg-element         #201f1f  oklch(0.2400 0.0015 50.00)  cr 0.024
+     4 bg-element-hover   #292827  oklch(0.2770 0.0018 50.00)  cr 0.025
+     5 bg-element-active  #333131  oklch(0.3160 0.0020 50.00)  cr 0.024
+     6 border-subtle      #424040  oklch(0.3740 0.0024 50.00)  cr 0.024
+     7 border-element     #555453  oklch(0.4460 0.0029 50.00)  cr 0.025
+     8 border-strong      #807d7c  oklch(0.5930 0.0038 50.00)  cr 0.024
+     9 solid              #999695  oklch(0.6758 0.0043 50.00)  cr 0.024
+    10 solid-hover        #a9a5a4  oklch(0.7251 0.0046 50.00)  cr 0.025
+    11 text-muted         #c8c6c5  oklch(0.8288 0.0026 50.00)  cr 0.025
+    12 text-strong        #eeeeed  oklch(0.9480 0.0007 50.00)  cr 0.024
   neutral-cool
      1 bg-app             #0f1114  oklch(0.1780 0.0066 250.00)  cr 0.131
      2 bg-subtle          #15181b  oklch(0.2060 0.0076 250.00)  cr 0.130
@@ -11795,18 +11795,18 @@ gamuts srgb display-p3
 
 [umber-vivid/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 59.30)  cr 0.028
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0005 59.30)  cr 0.033
-     3 bg-element         #efeeee  oklch(0.9510 0.0010 59.30)  cr 0.033
-     4 bg-element-hover   #e7e6e5  oklch(0.9260 0.0016 59.30)  cr 0.034
-     5 bg-element-active  #dfdddc  oklch(0.8990 0.0022 59.30)  cr 0.034
-     6 border-subtle      #d2d0ce  oklch(0.8590 0.0032 59.30)  cr 0.034
-     7 border-element     #c3c0be  oklch(0.8090 0.0045 59.30)  cr 0.034
-     8 border-strong      #aaa6a4  oklch(0.7290 0.0059 59.30)  cr 0.034
-     9 solid              #938f8d  oklch(0.6531 0.0053 59.30)  cr 0.034
-    10 solid-hover        #827f7d  oklch(0.5979 0.0048 59.30)  cr 0.034
-    11 text-muted         #676563  oklch(0.5068 0.0041 59.30)  cr 0.034
-    12 text-strong        #2b2929  oklch(0.2836 0.0023 59.30)  cr 0.034
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0001 50.00)  cr 0.031
+     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0004 50.00)  cr 0.029
+     3 bg-element         #efeeee  oklch(0.9510 0.0009 50.00)  cr 0.033
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0014 50.00)  cr 0.033
+     5 bg-element-active  #dfdddc  oklch(0.8990 0.0020 50.00)  cr 0.034
+     6 border-subtle      #d2d0cf  oklch(0.8590 0.0029 50.00)  cr 0.034
+     7 border-element     #c3c0be  oklch(0.8090 0.0041 50.00)  cr 0.034
+     8 border-strong      #aba6a4  oklch(0.7290 0.0063 50.00)  cr 0.034
+     9 solid              #938f8d  oklch(0.6533 0.0059 50.00)  cr 0.034
+    10 solid-hover        #827f7d  oklch(0.5980 0.0054 50.00)  cr 0.034
+    11 text-muted         #676463  oklch(0.5069 0.0046 50.00)  cr 0.034
+    12 text-strong        #2b2929  oklch(0.2837 0.0025 50.00)  cr 0.033
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0005 250.00)  cr 0.171
      2 bg-subtle          #f6f7f8  oklch(0.9750 0.0022 250.00)  cr 0.179
@@ -11954,18 +11954,18 @@ gamuts srgb display-p3
 
 [umber-vivid/dark]
   neutral
-     1 bg-app             #121110  oklch(0.1780 0.0014 59.30)  cr 0.033
-     2 bg-subtle          #181717  oklch(0.2060 0.0016 59.30)  cr 0.033
-     3 bg-element         #201f1e  oklch(0.2400 0.0019 59.30)  cr 0.034
-     4 bg-element-hover   #292827  oklch(0.2770 0.0022 59.30)  cr 0.034
-     5 bg-element-active  #333131  oklch(0.3160 0.0025 59.30)  cr 0.034
-     6 border-subtle      #42403f  oklch(0.3740 0.0030 59.30)  cr 0.034
-     7 border-element     #565452  oklch(0.4460 0.0036 59.30)  cr 0.034
-     8 border-strong      #807d7b  oklch(0.5930 0.0048 59.30)  cr 0.034
-     9 solid              #9a9694  oklch(0.6758 0.0055 59.30)  cr 0.034
-    10 solid-hover        #a9a5a2  oklch(0.7251 0.0059 59.30)  cr 0.034
-    11 text-muted         #c9c6c4  oklch(0.8288 0.0040 59.30)  cr 0.034
-    12 text-strong        #eeeded  oklch(0.9480 0.0011 59.30)  cr 0.034
+     1 bg-app             #121110  oklch(0.1780 0.0016 50.00)  cr 0.034
+     2 bg-subtle          #181717  oklch(0.2060 0.0018 50.00)  cr 0.033
+     3 bg-element         #201f1e  oklch(0.2400 0.0021 50.00)  cr 0.033
+     4 bg-element-hover   #292827  oklch(0.2770 0.0025 50.00)  cr 0.034
+     5 bg-element-active  #333131  oklch(0.3160 0.0028 50.00)  cr 0.034
+     6 border-subtle      #42403f  oklch(0.3740 0.0034 50.00)  cr 0.034
+     7 border-element     #565352  oklch(0.4460 0.0040 50.00)  cr 0.034
+     8 border-strong      #817d7b  oklch(0.5930 0.0054 50.00)  cr 0.034
+     9 solid              #9a9694  oklch(0.6759 0.0061 50.00)  cr 0.034
+    10 solid-hover        #aaa5a3  oklch(0.7253 0.0064 50.00)  cr 0.034
+    11 text-muted         #c9c6c5  oklch(0.8289 0.0036 50.00)  cr 0.034
+    12 text-strong        #eeeded  oklch(0.9480 0.0010 50.00)  cr 0.034
   neutral-cool
      1 bg-app             #0e1215  oklch(0.1780 0.0092 250.00)  cr 0.183
      2 bg-subtle          #14181c  oklch(0.2060 0.0107 250.00)  cr 0.184
@@ -12113,18 +12113,18 @@ gamuts srgb display-p3
 
 [umber-sober/light]
   neutral
-     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 59.30)  cr 0.000
-     2 bg-subtle          #f7f7f6  oklch(0.9750 0.0002 59.30)  cr 0.013
-     3 bg-element         #efefee  oklch(0.9510 0.0004 59.30)  cr 0.013
-     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0007 59.30)  cr 0.015
-     5 bg-element-active  #dedddd  oklch(0.8990 0.0010 59.30)  cr 0.015
-     6 border-subtle      #d1d0d0  oklch(0.8590 0.0015 59.30)  cr 0.016
-     7 border-element     #c2c0bf  oklch(0.8090 0.0021 59.30)  cr 0.016
-     8 border-strong      #a9a7a6  oklch(0.7290 0.0028 59.30)  cr 0.016
-     9 solid              #91908e  oklch(0.6530 0.0025 59.30)  cr 0.016
-    10 solid-hover        #817f7e  oklch(0.5978 0.0023 59.30)  cr 0.016
-    11 text-muted         #666564  oklch(0.5067 0.0019 59.30)  cr 0.016
-    12 text-strong        #2a2a29  oklch(0.2836 0.0011 59.30)  cr 0.016
+     1 bg-app             #fdfdfd  oklch(0.9940 0.0000 50.00)  cr 0.000
+     2 bg-subtle          #f7f7f7  oklch(0.9750 0.0002 50.00)  cr 0.015
+     3 bg-element         #efefee  oklch(0.9510 0.0004 50.00)  cr 0.015
+     4 bg-element-hover   #e7e6e6  oklch(0.9260 0.0006 50.00)  cr 0.014
+     5 bg-element-active  #dedddd  oklch(0.8990 0.0009 50.00)  cr 0.015
+     6 border-subtle      #d1d0d0  oklch(0.8590 0.0014 50.00)  cr 0.016
+     7 border-element     #c2c0bf  oklch(0.8090 0.0019 50.00)  cr 0.016
+     8 border-strong      #a9a7a6  oklch(0.7290 0.0030 50.00)  cr 0.016
+     9 solid              #918f8e  oklch(0.6530 0.0028 50.00)  cr 0.016
+    10 solid-hover        #817f7e  oklch(0.5978 0.0026 50.00)  cr 0.016
+    11 text-muted         #666564  oklch(0.5067 0.0022 50.00)  cr 0.016
+    12 text-strong        #2a2a29  oklch(0.2836 0.0012 50.00)  cr 0.016
   neutral-cool
      1 bg-app             #fdfdfd  oklch(0.9940 0.0002 250.00)  cr 0.068
      2 bg-subtle          #f6f7f7  oklch(0.9750 0.0010 250.00)  cr 0.082
@@ -12272,18 +12272,18 @@ gamuts srgb display-p3
 
 [umber-sober/dark]
   neutral
-     1 bg-app             #111111  oklch(0.1780 0.0006 59.30)  cr 0.014
-     2 bg-subtle          #181717  oklch(0.2060 0.0008 59.30)  cr 0.016
-     3 bg-element         #201f1f  oklch(0.2400 0.0009 59.30)  cr 0.016
-     4 bg-element-hover   #282828  oklch(0.2770 0.0010 59.30)  cr 0.015
-     5 bg-element-active  #323231  oklch(0.3160 0.0012 59.30)  cr 0.016
-     6 border-subtle      #414140  oklch(0.3740 0.0014 59.30)  cr 0.016
-     7 border-element     #555453  oklch(0.4460 0.0017 59.30)  cr 0.016
-     8 border-strong      #7f7e7d  oklch(0.5930 0.0023 59.30)  cr 0.016
-     9 solid              #989695  oklch(0.6756 0.0026 59.30)  cr 0.016
-    10 solid-hover        #a7a6a4  oklch(0.7250 0.0028 59.30)  cr 0.016
-    11 text-muted         #c8c6c6  oklch(0.8287 0.0019 59.30)  cr 0.016
-    12 text-strong        #eeeeed  oklch(0.9480 0.0005 59.30)  cr 0.016
+     1 bg-app             #111111  oklch(0.1780 0.0007 50.00)  cr 0.015
+     2 bg-subtle          #181717  oklch(0.2060 0.0008 50.00)  cr 0.015
+     3 bg-element         #201f1f  oklch(0.2400 0.0010 50.00)  cr 0.016
+     4 bg-element-hover   #292828  oklch(0.2770 0.0012 50.00)  cr 0.016
+     5 bg-element-active  #323231  oklch(0.3160 0.0013 50.00)  cr 0.016
+     6 border-subtle      #414040  oklch(0.3740 0.0016 50.00)  cr 0.016
+     7 border-element     #555453  oklch(0.4460 0.0019 50.00)  cr 0.016
+     8 border-strong      #7f7e7d  oklch(0.5930 0.0025 50.00)  cr 0.016
+     9 solid              #989695  oklch(0.6757 0.0029 50.00)  cr 0.016
+    10 solid-hover        #a8a6a4  oklch(0.7250 0.0030 50.00)  cr 0.016
+    11 text-muted         #c8c6c6  oklch(0.8287 0.0017 50.00)  cr 0.016
+    12 text-strong        #eeeeed  oklch(0.9480 0.0004 50.00)  cr 0.014
   neutral-cool
      1 bg-app             #101113  oklch(0.1780 0.0044 250.00)  cr 0.087
      2 bg-subtle          #16181a  oklch(0.2060 0.0051 250.00)  cr 0.087

@@ -645,16 +645,17 @@ moderator   = "accent"
 # --- Neutral ------------------------------------------------------------
 
 [neutral]
-# Grays are tinted toward the brand, not dead. Two or three percent is below
-# the threshold of being read as "a color" and well above the threshold of
-# sitting comfortably beside one. Set `achromatic = true` for a true gray.
-tint_hue = 59.3
+# Grays are tinted toward each palette's own accent, not dead: a blue palette's
+# surfaces read blue-grey, an ochre one's warm grey. Two or three percent is
+# below the threshold of being read as "a color" and well above the threshold
+# of sitting comfortably beside one. Set `achromatic = true` for a true gray, or
+# `tint_hue` to give every palette's neutral one hue.
 tint_strength = 0.030
 
-# Two more temperatures beside the brand-tinted gray. Naming a hue is what asks
+# Two more temperatures beside the base gray. Naming a hue is what asks
 # for the variant; leaving it out emits neither.
 #
-# These do *not* follow the accent, unlike `tint_hue` — the point of a cool gray
+# These do *not* follow the accent, unlike each palette's neutral — the point of a cool gray
 # is to be a different temperature from the brand, so following the brand would
 # collapse it onto the base ramp. They are fixed, and every palette gets the
 # same two.
@@ -673,7 +674,7 @@ tint_strength = 0.030
 # Equal appearance therefore costs unequal chroma.
 #
 # Warm is at 42 rather than beside the base: at 58 it was 1.3 degrees from
-# `tint_hue`, which is the same hue, and the two ramps could only have differed
+# the base tint's hue, which is the same hue, and the two ramps could only have differed
 # by how much of it they carried. 42 is a taupe, and clears `danger` at 30.8.
 #
 # Measured at these values, peak separation across the ramp: `gray` to
@@ -789,6 +790,13 @@ sober = 0.55
 # entries they have, and whether they admit to needing a legend.
 
 [chart]
+# Every set starts from an absolute hue — the house ochre here. A set that names
+# none starts from its palette's neutral tint, which follows the accent; measured
+# on 2026-11-01, that rotation drops two series of indigo-vivid and
+# magenta-vivid below the protanopia floor in dark mode. Pinned, every palette's
+# charts are the same colours, and the gates hold.
+hue_start = 59.3
+
 # Six rather than eight. Eight generated colours cannot be kept apart under
 # all three dichromacies — measured, the closest pair collapses to 0.042 —
 # while six hold at 0.072. Raise it if a chart needs more; the gate will warn,
@@ -810,9 +818,8 @@ lightness_spread = 0.60
 # apart from each other as well as within themselves, and starting `chart` twice
 # would produce two sets of the same six colours.
 #
-# `hue_start` is absolute here rather than inherited: the default set leads with
-# whichever accent the palette was installed with, so a second set defined as an
-# offset from it would move whenever the accent did, and its relationship to
+# `hue_start` is absolute here, as it is for every set: a set defined as an
+# offset from another would move whenever that one did, and its relationship to
 # the first would be the only thing that stayed fixed.
 name = "chart-alt"
 hue_start = 205.0
@@ -853,6 +860,7 @@ lightness_spread = 0.60
 # interpolate**; the surface has no slope worth following.
 name = "chart-wide"
 labelled = true
+hue_start = 59.3
 count = 12
 spread = "even-delta-e"
 cr = 0.80
@@ -866,6 +874,7 @@ lightness_spread = 0.62
 # the one categorical set with margin to spare — measure it and it should stay
 # far above the target where the others sit near it.
 name = "chart-trio"
+hue_start = 59.3
 count = 3
 spread = "even-delta-e"
 cr = 0.80

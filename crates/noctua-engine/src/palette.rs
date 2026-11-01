@@ -461,6 +461,10 @@ fn gamut_list(spec: &Spec) -> Vec<Gamut> {
 /// follow any one accent. The per-theme `neutral` *family* can and does — the
 /// surfaces, borders and text a palette actually paints with lean toward its
 /// own accent, while `--nc-gray-*` stays a fixed resource.
+///
+/// A categorical set that names no `hue_start` starts from this hue too, so
+/// it rotates with the accent. The shipped spec pins every set's start: the
+/// rotation drops two palettes' series below the colour-vision floor.
 fn neutral_tint_hue(spec: &Spec, theme_name: Option<&str>) -> f64 {
     if let Some(explicit) = spec.neutral.tint_hue {
         return explicit;

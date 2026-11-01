@@ -2,7 +2,7 @@
   "light": {
     "families": {
       "neutral": {
-        "baseHue": 59.3,
+        "baseHue": 15.0,
         "steps": [
           {
             "role": "bg-app",
@@ -14,25 +14,25 @@
                 "oklch": {
                   "l": 0.994,
                   "c": 0.0,
-                  "h": 59.3
+                  "h": 15.0
                 },
-                "css": "oklch(0.9940 0.0000 59.30)",
+                "css": "oklch(0.9940 0.0000 15.00)",
                 "relativeChroma": 0.0,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0036
+                "chromaHeadroom": 0.0029
               },
               {
                 "gamut": "display-p3",
                 "hex": "#fdfdfd",
                 "oklch": {
                   "l": 0.994,
-                  "c": 0.0001,
-                  "h": 59.3
+                  "c": 0.0,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9940 0.0001 59.30)",
-                "relativeChroma": 0.0217,
+                "css": "oklch(0.9940 0.0000 15.00)",
+                "relativeChroma": 0.0,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0045
+                "chromaHeadroom": 0.0038
               }
             ]
           },
@@ -42,29 +42,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#f7f7f6",
+                "hex": "#f7f7f7",
                 "oklch": {
                   "l": 0.975,
                   "c": 0.0003,
-                  "h": 59.3
+                  "h": 15.0
                 },
-                "css": "oklch(0.9750 0.0003 59.30)",
-                "relativeChroma": 0.0197,
+                "css": "oklch(0.9750 0.0003 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0149
+                "chromaHeadroom": 0.012
               },
               {
                 "gamut": "display-p3",
-                "hex": "#f7f7f6",
+                "hex": "#f7f7f7",
                 "oklch": {
                   "l": 0.975,
-                  "c": 0.0004,
-                  "h": 59.3
+                  "c": 0.0003,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9750 0.0004 59.30)",
-                "relativeChroma": 0.0206,
+                "css": "oklch(0.9750 0.0003 15.00)",
+                "relativeChroma": 0.0187,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.019
+                "chromaHeadroom": 0.0158
               }
             ]
           },
@@ -74,29 +74,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#efefee",
+                "hex": "#efeeee",
                 "oklch": {
                   "l": 0.951,
-                  "c": 0.0007,
-                  "h": 59.3
+                  "c": 0.0006,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9510 0.0007 59.30)",
-                "relativeChroma": 0.0231,
+                "css": "oklch(0.9510 0.0006 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0296
+                "chromaHeadroom": 0.0239
               },
               {
                 "gamut": "display-p3",
-                "hex": "#efefee",
+                "hex": "#efeeee",
                 "oklch": {
                   "l": 0.951,
-                  "c": 0.0009,
-                  "h": 59.3
+                  "c": 0.0007,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9510 0.0009 59.30)",
-                "relativeChroma": 0.0233,
+                "css": "oklch(0.9510 0.0007 15.00)",
+                "relativeChroma": 0.0218,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0377
+                "chromaHeadroom": 0.0314
               }
             ]
           },
@@ -109,26 +109,26 @@
                 "hex": "#e7e6e6",
                 "oklch": {
                   "l": 0.926,
-                  "c": 0.0011,
-                  "h": 59.3
+                  "c": 0.0009,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9260 0.0011 59.30)",
-                "relativeChroma": 0.0236,
+                "css": "oklch(0.9260 0.0009 15.00)",
+                "relativeChroma": 0.0238,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0455
+                "chromaHeadroom": 0.037
               },
               {
                 "gamut": "display-p3",
                 "hex": "#e7e6e6",
                 "oklch": {
                   "l": 0.926,
-                  "c": 0.0014,
-                  "h": 59.3
+                  "c": 0.0012,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9260 0.0014 59.30)",
-                "relativeChroma": 0.0236,
+                "css": "oklch(0.9260 0.0012 15.00)",
+                "relativeChroma": 0.0242,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.058
+                "chromaHeadroom": 0.0483
               }
             ]
           },
@@ -141,26 +141,26 @@
                 "hex": "#dedddd",
                 "oklch": {
                   "l": 0.899,
-                  "c": 0.0015,
-                  "h": 59.3
+                  "c": 0.0013,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8990 0.0015 59.30)",
-                "relativeChroma": 0.0231,
+                "css": "oklch(0.8990 0.0013 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0634
+                "chromaHeadroom": 0.0517
               },
               {
                 "gamut": "display-p3",
-                "hex": "#dedddc",
+                "hex": "#dedddd",
                 "oklch": {
                   "l": 0.899,
-                  "c": 0.002,
-                  "h": 59.3
+                  "c": 0.0017,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8990 0.0020 59.30)",
-                "relativeChroma": 0.0242,
+                "css": "oklch(0.8990 0.0017 15.00)",
+                "relativeChroma": 0.0246,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0806
+                "chromaHeadroom": 0.0674
               }
             ]
           },
@@ -170,29 +170,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#d2d0cf",
+                "hex": "#d2d0d0",
                 "oklch": {
                   "l": 0.859,
-                  "c": 0.0022,
-                  "h": 59.3
+                  "c": 0.0018,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8590 0.0022 59.30)",
-                "relativeChroma": 0.0235,
+                "css": "oklch(0.8590 0.0018 15.00)",
+                "relativeChroma": 0.0234,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0913
+                "chromaHeadroom": 0.075
               },
               {
                 "gamut": "display-p3",
-                "hex": "#d2d0cf",
+                "hex": "#d2d0d0",
                 "oklch": {
                   "l": 0.859,
-                  "c": 0.0029,
-                  "h": 59.3
+                  "c": 0.0024,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8590 0.0029 59.30)",
-                "relativeChroma": 0.0244,
+                "css": "oklch(0.8590 0.0024 15.00)",
+                "relativeChroma": 0.024,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1157
+                "chromaHeadroom": 0.0975
               }
             ]
           },
@@ -202,29 +202,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#c2c0be",
+                "hex": "#c2c0c0",
                 "oklch": {
                   "l": 0.809,
-                  "c": 0.0032,
-                  "h": 59.3
+                  "c": 0.0026,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8090 0.0032 59.30)",
-                "relativeChroma": 0.0243,
+                "css": "oklch(0.8090 0.0026 15.00)",
+                "relativeChroma": 0.0238,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1287
+                "chromaHeadroom": 0.1068
               },
               {
                 "gamut": "display-p3",
-                "hex": "#c2c0be",
+                "hex": "#c2c0c0",
                 "oklch": {
                   "l": 0.809,
-                  "c": 0.0041,
-                  "h": 59.3
+                  "c": 0.0034,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8090 0.0041 59.30)",
-                "relativeChroma": 0.0246,
+                "css": "oklch(0.8090 0.0034 15.00)",
+                "relativeChroma": 0.024,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1627
+                "chromaHeadroom": 0.1383
               }
             ]
           },
@@ -234,29 +234,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#a9a7a5",
+                "hex": "#aaa6a6",
                 "oklch": {
                   "l": 0.729,
-                  "c": 0.0042,
-                  "h": 59.3
+                  "c": 0.0041,
+                  "h": 15.0
                 },
-                "css": "oklch(0.7290 0.0042 59.30)",
-                "relativeChroma": 0.0244,
+                "css": "oklch(0.7290 0.0041 15.00)",
+                "relativeChroma": 0.0242,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.168
+                "chromaHeadroom": 0.1652
               },
               {
                 "gamut": "display-p3",
-                "hex": "#a9a7a5",
+                "hex": "#aaa6a6",
                 "oklch": {
                   "l": 0.729,
-                  "c": 0.0048,
-                  "h": 59.3
+                  "c": 0.0053,
+                  "h": 15.0
                 },
-                "css": "oklch(0.7290 0.0048 59.30)",
+                "css": "oklch(0.7290 0.0053 15.00)",
                 "relativeChroma": 0.0244,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1919
+                "chromaHeadroom": 0.2118
               }
             ]
           },
@@ -266,29 +266,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#928f8e",
+                "hex": "#948f8f",
                 "oklch": {
-                  "l": 0.653,
-                  "c": 0.0037,
-                  "h": 59.3
+                  "l": 0.6535,
+                  "c": 0.0058,
+                  "h": 15.0
                 },
-                "css": "oklch(0.6530 0.0037 59.30)",
-                "relativeChroma": 0.024,
+                "css": "oklch(0.6535 0.0058 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1505
+                "chromaHeadroom": 0.2307
               },
               {
                 "gamut": "display-p3",
-                "hex": "#92908e",
+                "hex": "#948f8f",
                 "oklch": {
-                  "l": 0.6531,
-                  "c": 0.0043,
-                  "h": 59.3
+                  "l": 0.654,
+                  "c": 0.0072,
+                  "h": 15.0
                 },
-                "css": "oklch(0.6531 0.0043 59.30)",
+                "css": "oklch(0.6540 0.0072 15.00)",
                 "relativeChroma": 0.0244,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1719
+                "chromaHeadroom": 0.2878
               }
             ]
           },
@@ -298,29 +298,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#817f7d",
+                "hex": "#837e7e",
                 "oklch": {
-                  "l": 0.5978,
-                  "c": 0.0034,
-                  "h": 59.3
+                  "l": 0.5983,
+                  "c": 0.0058,
+                  "h": 15.0
                 },
-                "css": "oklch(0.5978 0.0034 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.5983 0.0058 15.00)",
+                "relativeChroma": 0.0242,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1378
+                "chromaHeadroom": 0.2334
               },
               {
                 "gamut": "display-p3",
-                "hex": "#817f7d",
+                "hex": "#837e7e",
                 "oklch": {
-                  "l": 0.5979,
-                  "c": 0.0039,
-                  "h": 59.3
+                  "l": 0.5987,
+                  "c": 0.0066,
+                  "h": 15.0
                 },
-                "css": "oklch(0.5979 0.0039 59.30)",
-                "relativeChroma": 0.0242,
+                "css": "oklch(0.5987 0.0066 15.00)",
+                "relativeChroma": 0.0244,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1574
+                "chromaHeadroom": 0.2634
               }
             ]
           },
@@ -330,29 +330,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#666563",
+                "hex": "#686464",
                 "oklch": {
-                  "l": 0.5067,
-                  "c": 0.0029,
-                  "h": 59.3
+                  "l": 0.5072,
+                  "c": 0.0049,
+                  "h": 15.0
                 },
-                "css": "oklch(0.5067 0.0029 59.30)",
+                "css": "oklch(0.5072 0.0049 15.00)",
                 "relativeChroma": 0.0242,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1168
+                "chromaHeadroom": 0.1979
               },
               {
                 "gamut": "display-p3",
-                "hex": "#666563",
+                "hex": "#686464",
                 "oklch": {
-                  "l": 0.5068,
-                  "c": 0.0033,
-                  "h": 59.3
+                  "l": 0.5075,
+                  "c": 0.0056,
+                  "h": 15.0
                 },
-                "css": "oklch(0.5068 0.0033 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.5075 0.0056 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1334
+                "chromaHeadroom": 0.2233
               }
             ]
           },
@@ -362,29 +362,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#2a2a29",
+                "hex": "#2b2929",
                 "oklch": {
-                  "l": 0.2836,
-                  "c": 0.0016,
-                  "h": 59.3
+                  "l": 0.2839,
+                  "c": 0.0027,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2836 0.0016 59.30)",
-                "relativeChroma": 0.0239,
+                "css": "oklch(0.2839 0.0027 15.00)",
+                "relativeChroma": 0.0238,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0654
+                "chromaHeadroom": 0.1108
               },
               {
                 "gamut": "display-p3",
-                "hex": "#2a2a29",
+                "hex": "#2b2929",
                 "oklch": {
-                  "l": 0.2836,
-                  "c": 0.0018,
-                  "h": 59.3
+                  "l": 0.284,
+                  "c": 0.0031,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2836 0.0018 59.30)",
-                "relativeChroma": 0.0235,
+                "css": "oklch(0.2840 0.0031 15.00)",
+                "relativeChroma": 0.0242,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0747
+                "chromaHeadroom": 0.125
               }
             ]
           }
@@ -6282,62 +6282,62 @@
       "neutral-a1": {
         "of": "neutral-text-strong",
         "percentage": 2.0,
-        "hex": "#2a2a2905"
+        "hex": "#2b292905"
       },
       "neutral-a2": {
         "of": "neutral-text-strong",
         "percentage": 4.0,
-        "hex": "#2a2a290a"
+        "hex": "#2b29290a"
       },
       "neutral-a3": {
         "of": "neutral-text-strong",
         "percentage": 6.0,
-        "hex": "#2a2a290f"
+        "hex": "#2b29290f"
       },
       "neutral-a4": {
         "of": "neutral-text-strong",
         "percentage": 8.0,
-        "hex": "#2a2a2914"
+        "hex": "#2b292914"
       },
       "neutral-a5": {
         "of": "neutral-text-strong",
         "percentage": 12.0,
-        "hex": "#2a2a291f"
+        "hex": "#2b29291f"
       },
       "neutral-a6": {
         "of": "neutral-text-strong",
         "percentage": 16.0,
-        "hex": "#2a2a2929"
+        "hex": "#2b292929"
       },
       "neutral-a7": {
         "of": "neutral-text-strong",
         "percentage": 24.0,
-        "hex": "#2a2a293d"
+        "hex": "#2b29293d"
       },
       "neutral-a8": {
         "of": "neutral-text-strong",
         "percentage": 32.0,
-        "hex": "#2a2a2952"
+        "hex": "#2b292952"
       },
       "neutral-a9": {
         "of": "neutral-text-strong",
         "percentage": 48.0,
-        "hex": "#2a2a297a"
+        "hex": "#2b29297a"
       },
       "neutral-a10": {
         "of": "neutral-text-strong",
         "percentage": 64.0,
-        "hex": "#2a2a29a3"
+        "hex": "#2b2929a3"
       },
       "neutral-a11": {
         "of": "neutral-text-strong",
         "percentage": 80.0,
-        "hex": "#2a2a29cc"
+        "hex": "#2b2929cc"
       },
       "neutral-a12": {
         "of": "neutral-text-strong",
         "percentage": 92.0,
-        "hex": "#2a2a29eb"
+        "hex": "#2b2929eb"
       },
       "neutral-cool-a1": {
         "of": "neutral-cool-text-strong",
@@ -6524,7 +6524,7 @@
       {
         "fg": "fg",
         "bg": "surface",
-        "lc": 100.0012,
+        "lc": 99.997,
         "wcag": 14.18,
         "minimum": 90.0,
         "severity": "fail",
@@ -6534,7 +6534,7 @@
       {
         "fg": "fg",
         "bg": "surface-subtle",
-        "lc": 96.201,
+        "lc": 96.1929,
         "wcag": 13.42,
         "minimum": 90.0,
         "severity": "fail",
@@ -6544,7 +6544,7 @@
       {
         "fg": "fg",
         "bg": "surface-raised",
-        "lc": 91.4747,
+        "lc": 91.4638,
         "wcag": 12.5,
         "minimum": 90.0,
         "severity": "fail",
@@ -6554,7 +6554,7 @@
       {
         "fg": "fg-muted",
         "bg": "surface",
-        "lc": 78.0043,
+        "lc": 77.9948,
         "wcag": 5.73,
         "minimum": 60.0,
         "severity": "fail",
@@ -6564,7 +6564,7 @@
       {
         "fg": "border-strong",
         "bg": "surface",
-        "lc": 46.1357,
+        "lc": 46.1782,
         "wcag": 2.36,
         "minimum": 15.0,
         "severity": "fail",
@@ -6574,7 +6574,7 @@
       {
         "fg": "border",
         "bg": "surface",
-        "lc": 32.5851,
+        "lc": 32.6092,
         "wcag": 1.78,
         "minimum": 8.0,
         "severity": "warn",
@@ -6664,7 +6664,7 @@
       {
         "fg": "fg",
         "bg": "surface-cool",
-        "lc": 100.0031,
+        "lc": 99.9989,
         "wcag": 14.18,
         "minimum": 90.0,
         "severity": "fail",
@@ -6744,7 +6744,7 @@
       {
         "fg": "fg",
         "bg": "surface-warm",
-        "lc": 99.9943,
+        "lc": 99.9901,
         "wcag": 14.18,
         "minimum": 90.0,
         "severity": "fail",
@@ -6794,7 +6794,7 @@
       {
         "fg": "fg",
         "bg": "accent-bg",
-        "lc": 96.1437,
+        "lc": 96.1395,
         "wcag": 13.41,
         "minimum": 90.0,
         "severity": "fail",
@@ -6824,7 +6824,7 @@
       {
         "fg": "fg",
         "bg": "danger-bg",
-        "lc": 96.1469,
+        "lc": 96.1426,
         "wcag": 13.41,
         "minimum": 90.0,
         "severity": "fail",
@@ -6864,7 +6864,7 @@
       {
         "fg": "fg",
         "bg": "warning-bg",
-        "lc": 96.2211,
+        "lc": 96.2169,
         "wcag": 13.42,
         "minimum": 90.0,
         "severity": "fail",
@@ -6904,7 +6904,7 @@
       {
         "fg": "fg",
         "bg": "success-bg",
-        "lc": 96.4257,
+        "lc": 96.4215,
         "wcag": 13.46,
         "minimum": 90.0,
         "severity": "fail",
@@ -6944,8 +6944,8 @@
       {
         "fg": "fg",
         "bg": "info-bg",
-        "lc": 96.2397,
-        "wcag": 13.43,
+        "lc": 96.2355,
+        "wcag": 13.42,
         "minimum": 90.0,
         "severity": "fail",
         "passes": true,
@@ -6984,7 +6984,7 @@
       {
         "fg": "fg",
         "bg": "urgent-bg",
-        "lc": 96.1567,
+        "lc": 96.1525,
         "wcag": 13.41,
         "minimum": 90.0,
         "severity": "fail",
@@ -7024,7 +7024,7 @@
       {
         "fg": "fg",
         "bg": "waiting-bg",
-        "lc": 96.4741,
+        "lc": 96.4699,
         "wcag": 13.47,
         "minimum": 90.0,
         "severity": "fail",
@@ -7064,7 +7064,7 @@
       {
         "fg": "fg",
         "bg": "active-bg",
-        "lc": 96.3607,
+        "lc": 96.3565,
         "wcag": 13.45,
         "minimum": 90.0,
         "severity": "fail",
@@ -7104,7 +7104,7 @@
       {
         "fg": "fg",
         "bg": "progress-bg",
-        "lc": 96.1996,
+        "lc": 96.1954,
         "wcag": 13.42,
         "minimum": 90.0,
         "severity": "fail",
@@ -7134,7 +7134,7 @@
       {
         "fg": "inactive",
         "bg": "surface",
-        "lc": 58.0054,
+        "lc": 58.0037,
         "wcag": 3.14,
         "minimum": 30.0,
         "severity": "fail",
@@ -7144,7 +7144,7 @@
       {
         "fg": "fg",
         "bg": "inactive-bg",
-        "lc": 96.201,
+        "lc": 96.1929,
         "wcag": 13.42,
         "minimum": 90.0,
         "severity": "fail",
@@ -7154,7 +7154,7 @@
       {
         "fg": "on-inactive",
         "bg": "inactive",
-        "lc": 63.2992,
+        "lc": 63.2974,
         "wcag": 3.14,
         "minimum": 30.0,
         "severity": "fail",
@@ -7164,7 +7164,7 @@
       {
         "fg": "inactive-border",
         "bg": "surface",
-        "lc": 32.5851,
+        "lc": 32.6092,
         "wcag": 1.78,
         "minimum": 8.0,
         "severity": "warn",
@@ -7176,7 +7176,7 @@
   "dark": {
     "families": {
       "neutral": {
-        "baseHue": 59.3,
+        "baseHue": 15.0,
         "steps": [
           {
             "role": "bg-app",
@@ -7184,29 +7184,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#111111",
+                "hex": "#121111",
                 "oklch": {
                   "l": 0.178,
-                  "c": 0.001,
-                  "h": 59.3
+                  "c": 0.0017,
+                  "h": 15.0
                 },
-                "css": "oklch(0.1780 0.0010 59.30)",
-                "relativeChroma": 0.0238,
+                "css": "oklch(0.1780 0.0017 15.00)",
+                "relativeChroma": 0.0239,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.041
+                "chromaHeadroom": 0.0695
               },
               {
                 "gamut": "display-p3",
-                "hex": "#111111",
+                "hex": "#121111",
                 "oklch": {
                   "l": 0.178,
-                  "c": 0.0011,
-                  "h": 59.3
+                  "c": 0.0019,
+                  "h": 15.0
                 },
-                "css": "oklch(0.1780 0.0011 59.30)",
-                "relativeChroma": 0.0229,
+                "css": "oklch(0.1780 0.0019 15.00)",
+                "relativeChroma": 0.0237,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0469
+                "chromaHeadroom": 0.0784
               }
             ]
           },
@@ -7219,26 +7219,26 @@
                 "hex": "#181717",
                 "oklch": {
                   "l": 0.206,
-                  "c": 0.0011,
-                  "h": 59.3
+                  "c": 0.002,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2060 0.0011 59.30)",
-                "relativeChroma": 0.0226,
+                "css": "oklch(0.2060 0.0020 15.00)",
+                "relativeChroma": 0.0243,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0475
+                "chromaHeadroom": 0.0804
               },
               {
                 "gamut": "display-p3",
                 "hex": "#181717",
                 "oklch": {
                   "l": 0.206,
-                  "c": 0.0013,
-                  "h": 59.3
+                  "c": 0.0022,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2060 0.0013 59.30)",
-                "relativeChroma": 0.0234,
+                "css": "oklch(0.2060 0.0022 15.00)",
+                "relativeChroma": 0.0237,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0543
+                "chromaHeadroom": 0.0907
               }
             ]
           },
@@ -7251,26 +7251,26 @@
                 "hex": "#201f1f",
                 "oklch": {
                   "l": 0.24,
-                  "c": 0.0013,
-                  "h": 59.3
+                  "c": 0.0023,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2400 0.0013 59.30)",
-                "relativeChroma": 0.0229,
+                "css": "oklch(0.2400 0.0023 15.00)",
+                "relativeChroma": 0.024,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0554
+                "chromaHeadroom": 0.0937
               },
               {
                 "gamut": "display-p3",
                 "hex": "#201f1f",
                 "oklch": {
                   "l": 0.24,
-                  "c": 0.0015,
-                  "h": 59.3
+                  "c": 0.0026,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2400 0.0015 59.30)",
-                "relativeChroma": 0.0232,
+                "css": "oklch(0.2400 0.0026 15.00)",
+                "relativeChroma": 0.024,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0633
+                "chromaHeadroom": 0.1057
               }
             ]
           },
@@ -7280,29 +7280,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#292827",
+                "hex": "#292828",
                 "oklch": {
                   "l": 0.277,
-                  "c": 0.0016,
-                  "h": 59.3
+                  "c": 0.0027,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2770 0.0016 59.30)",
-                "relativeChroma": 0.0245,
+                "css": "oklch(0.2770 0.0027 15.00)",
+                "relativeChroma": 0.0244,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0638
+                "chromaHeadroom": 0.108
               },
               {
                 "gamut": "display-p3",
-                "hex": "#292827",
+                "hex": "#292828",
                 "oklch": {
                   "l": 0.277,
-                  "c": 0.0018,
-                  "h": 59.3
+                  "c": 0.003,
+                  "h": 15.0
                 },
-                "css": "oklch(0.2770 0.0018 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.2770 0.0030 15.00)",
+                "relativeChroma": 0.024,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0729
+                "chromaHeadroom": 0.1219
               }
             ]
           },
@@ -7312,29 +7312,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#323231",
+                "hex": "#333131",
                 "oklch": {
                   "l": 0.316,
-                  "c": 0.0018,
-                  "h": 59.3
+                  "c": 0.0031,
+                  "h": 15.0
                 },
-                "css": "oklch(0.3160 0.0018 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.3160 0.0031 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0728
+                "chromaHeadroom": 0.1232
               },
               {
                 "gamut": "display-p3",
-                "hex": "#323231",
+                "hex": "#333131",
                 "oklch": {
                   "l": 0.316,
-                  "c": 0.002,
-                  "h": 59.3
+                  "c": 0.0035,
+                  "h": 15.0
                 },
-                "css": "oklch(0.3160 0.0020 59.30)",
-                "relativeChroma": 0.0235,
+                "css": "oklch(0.3160 0.0035 15.00)",
+                "relativeChroma": 0.0246,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0833
+                "chromaHeadroom": 0.139
               }
             ]
           },
@@ -7344,29 +7344,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#424040",
+                "hex": "#434040",
                 "oklch": {
                   "l": 0.374,
-                  "c": 0.0021,
-                  "h": 59.3
+                  "c": 0.0036,
+                  "h": 15.0
                 },
-                "css": "oklch(0.3740 0.0021 59.30)",
-                "relativeChroma": 0.0238,
+                "css": "oklch(0.3740 0.0036 15.00)",
+                "relativeChroma": 0.0241,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0862
+                "chromaHeadroom": 0.1459
               },
               {
                 "gamut": "display-p3",
-                "hex": "#414040",
+                "hex": "#424040",
                 "oklch": {
                   "l": 0.374,
-                  "c": 0.0024,
-                  "h": 59.3
+                  "c": 0.0041,
+                  "h": 15.0
                 },
-                "css": "oklch(0.3740 0.0024 59.30)",
-                "relativeChroma": 0.0238,
+                "css": "oklch(0.3740 0.0041 15.00)",
+                "relativeChroma": 0.0243,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0985
+                "chromaHeadroom": 0.1646
               }
             ]
           },
@@ -7376,29 +7376,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#555453",
+                "hex": "#565353",
                 "oklch": {
                   "l": 0.446,
-                  "c": 0.0025,
-                  "h": 59.3
+                  "c": 0.0043,
+                  "h": 15.0
                 },
-                "css": "oklch(0.4460 0.0025 59.30)",
-                "relativeChroma": 0.0237,
+                "css": "oklch(0.4460 0.0043 15.00)",
+                "relativeChroma": 0.0241,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1028
+                "chromaHeadroom": 0.174
               },
               {
                 "gamut": "display-p3",
-                "hex": "#555453",
+                "hex": "#565353",
                 "oklch": {
                   "l": 0.446,
-                  "c": 0.0029,
-                  "h": 59.3
+                  "c": 0.0049,
+                  "h": 15.0
                 },
-                "css": "oklch(0.4460 0.0029 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.4460 0.0049 15.00)",
+                "relativeChroma": 0.0244,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1174
+                "chromaHeadroom": 0.1963
               }
             ]
           },
@@ -7408,29 +7408,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#807e7c",
+                "hex": "#817d7d",
                 "oklch": {
                   "l": 0.593,
-                  "c": 0.0034,
-                  "h": 59.3
+                  "c": 0.0058,
+                  "h": 15.0
                 },
-                "css": "oklch(0.5930 0.0034 59.30)",
-                "relativeChroma": 0.0243,
+                "css": "oklch(0.5930 0.0058 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1366
+                "chromaHeadroom": 0.2313
               },
               {
                 "gamut": "display-p3",
-                "hex": "#7f7e7c",
+                "hex": "#817d7d",
                 "oklch": {
                   "l": 0.593,
-                  "c": 0.0039,
-                  "h": 59.3
+                  "c": 0.0065,
+                  "h": 15.0
                 },
-                "css": "oklch(0.5930 0.0039 59.30)",
-                "relativeChroma": 0.0244,
+                "css": "oklch(0.5930 0.0065 15.00)",
+                "relativeChroma": 0.0243,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1561
+                "chromaHeadroom": 0.261
               }
             ]
           },
@@ -7440,29 +7440,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#999695",
+                "hex": "#9a9696",
                 "oklch": {
-                  "l": 0.6757,
-                  "c": 0.0039,
-                  "h": 59.3
+                  "l": 0.6761,
+                  "c": 0.0052,
+                  "h": 15.0
                 },
-                "css": "oklch(0.6757 0.0039 59.30)",
-                "relativeChroma": 0.0244,
+                "css": "oklch(0.6761 0.0052 15.00)",
+                "relativeChroma": 0.0242,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1557
+                "chromaHeadroom": 0.2099
               },
               {
                 "gamut": "display-p3",
-                "hex": "#999694",
+                "hex": "#9a9696",
                 "oklch": {
-                  "l": 0.6758,
-                  "c": 0.0044,
-                  "h": 59.3
+                  "l": 0.6765,
+                  "c": 0.0067,
+                  "h": 15.0
                 },
-                "css": "oklch(0.6758 0.0044 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.6765 0.0067 15.00)",
+                "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1779
+                "chromaHeadroom": 0.2667
               }
             ]
           },
@@ -7472,29 +7472,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#a8a5a3",
+                "hex": "#a9a5a5",
                 "oklch": {
-                  "l": 0.725,
+                  "l": 0.7253,
                   "c": 0.0042,
-                  "h": 59.3
+                  "h": 15.0
                 },
-                "css": "oklch(0.7250 0.0042 59.30)",
-                "relativeChroma": 0.0245,
+                "css": "oklch(0.7253 0.0042 15.00)",
+                "relativeChroma": 0.0244,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.167
+                "chromaHeadroom": 0.1681
               },
               {
                 "gamut": "display-p3",
-                "hex": "#a8a6a3",
+                "hex": "#a9a5a5",
                 "oklch": {
-                  "l": 0.7251,
-                  "c": 0.0048,
-                  "h": 59.3
+                  "l": 0.7256,
+                  "c": 0.0054,
+                  "h": 15.0
                 },
-                "css": "oklch(0.7251 0.0048 59.30)",
+                "css": "oklch(0.7256 0.0054 15.00)",
                 "relativeChroma": 0.0245,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1908
+                "chromaHeadroom": 0.2152
               }
             ]
           },
@@ -7504,29 +7504,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#c8c6c5",
+                "hex": "#c8c6c6",
                 "oklch": {
-                  "l": 0.8288,
-                  "c": 0.0028,
-                  "h": 59.3
+                  "l": 0.8289,
+                  "c": 0.0023,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8288 0.0028 59.30)",
-                "relativeChroma": 0.0241,
+                "css": "oklch(0.8289 0.0023 15.00)",
+                "relativeChroma": 0.024,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1135
+                "chromaHeadroom": 0.0937
               },
               {
                 "gamut": "display-p3",
-                "hex": "#c8c6c5",
+                "hex": "#c8c6c6",
                 "oklch": {
-                  "l": 0.8289,
-                  "c": 0.0036,
-                  "h": 59.3
+                  "l": 0.8291,
+                  "c": 0.003,
+                  "h": 15.0
                 },
-                "css": "oklch(0.8289 0.0036 59.30)",
-                "relativeChroma": 0.0245,
+                "css": "oklch(0.8291 0.0030 15.00)",
+                "relativeChroma": 0.0241,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.1436
+                "chromaHeadroom": 0.1214
               }
             ]
           },
@@ -7536,29 +7536,29 @@
             "renditions": [
               {
                 "gamut": "srgb",
-                "hex": "#eeeeed",
+                "hex": "#eeedee",
                 "oklch": {
                   "l": 0.948,
-                  "c": 0.0007,
-                  "h": 59.3
+                  "c": 0.0006,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9480 0.0007 59.30)",
-                "relativeChroma": 0.0217,
+                "css": "oklch(0.9480 0.0006 15.00)",
+                "relativeChroma": 0.023,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0315
+                "chromaHeadroom": 0.0255
               },
               {
                 "gamut": "display-p3",
-                "hex": "#eeeeed",
+                "hex": "#eeedee",
                 "oklch": {
-                  "l": 0.948,
-                  "c": 0.001,
-                  "h": 59.3
+                  "l": 0.9481,
+                  "c": 0.0008,
+                  "h": 15.0
                 },
-                "css": "oklch(0.9480 0.0010 59.30)",
-                "relativeChroma": 0.0243,
+                "css": "oklch(0.9481 0.0008 15.00)",
+                "relativeChroma": 0.0235,
                 "requestedRelativeChroma": 0.0246,
-                "chromaHeadroom": 0.0401
+                "chromaHeadroom": 0.0333
               }
             ]
           }
@@ -13456,62 +13456,62 @@
       "neutral-a1": {
         "of": "neutral-text-strong",
         "percentage": 2.0,
-        "hex": "#eeeeed05"
+        "hex": "#eeedee05"
       },
       "neutral-a2": {
         "of": "neutral-text-strong",
         "percentage": 4.0,
-        "hex": "#eeeeed0a"
+        "hex": "#eeedee0a"
       },
       "neutral-a3": {
         "of": "neutral-text-strong",
         "percentage": 6.0,
-        "hex": "#eeeeed0f"
+        "hex": "#eeedee0f"
       },
       "neutral-a4": {
         "of": "neutral-text-strong",
         "percentage": 8.0,
-        "hex": "#eeeeed14"
+        "hex": "#eeedee14"
       },
       "neutral-a5": {
         "of": "neutral-text-strong",
         "percentage": 12.0,
-        "hex": "#eeeeed1f"
+        "hex": "#eeedee1f"
       },
       "neutral-a6": {
         "of": "neutral-text-strong",
         "percentage": 16.0,
-        "hex": "#eeeeed29"
+        "hex": "#eeedee29"
       },
       "neutral-a7": {
         "of": "neutral-text-strong",
         "percentage": 24.0,
-        "hex": "#eeeeed3d"
+        "hex": "#eeedee3d"
       },
       "neutral-a8": {
         "of": "neutral-text-strong",
         "percentage": 32.0,
-        "hex": "#eeeeed52"
+        "hex": "#eeedee52"
       },
       "neutral-a9": {
         "of": "neutral-text-strong",
         "percentage": 48.0,
-        "hex": "#eeeeed7a"
+        "hex": "#eeedee7a"
       },
       "neutral-a10": {
         "of": "neutral-text-strong",
         "percentage": 64.0,
-        "hex": "#eeeeeda3"
+        "hex": "#eeedeea3"
       },
       "neutral-a11": {
         "of": "neutral-text-strong",
         "percentage": 80.0,
-        "hex": "#eeeeedcc"
+        "hex": "#eeedeecc"
       },
       "neutral-a12": {
         "of": "neutral-text-strong",
         "percentage": 92.0,
-        "hex": "#eeeeedeb"
+        "hex": "#eeedeeeb"
       },
       "neutral-cool-a1": {
         "of": "neutral-cool-text-strong",
@@ -13698,7 +13698,7 @@
       {
         "fg": "fg",
         "bg": "surface",
-        "lc": 96.0046,
+        "lc": 95.9995,
         "wcag": 16.21,
         "minimum": 90.0,
         "severity": "fail",
@@ -13708,7 +13708,7 @@
       {
         "fg": "fg",
         "bg": "surface-subtle",
-        "lc": 95.4703,
+        "lc": 95.4669,
         "wcag": 15.36,
         "minimum": 90.0,
         "severity": "fail",
@@ -13718,8 +13718,8 @@
       {
         "fg": "fg",
         "bg": "surface-raised",
-        "lc": 94.5132,
-        "wcag": 14.13,
+        "lc": 94.5124,
+        "wcag": 14.14,
         "minimum": 90.0,
         "severity": "fail",
         "passes": true,
@@ -13728,7 +13728,7 @@
       {
         "fg": "fg-muted",
         "bg": "surface",
-        "lc": 72.0049,
+        "lc": 72.0026,
         "wcag": 11.13,
         "minimum": 60.0,
         "severity": "fail",
@@ -13738,8 +13738,8 @@
       {
         "fg": "border-strong",
         "bg": "surface",
-        "lc": 33.2667,
-        "wcag": 4.64,
+        "lc": 33.1988,
+        "wcag": 4.63,
         "minimum": 15.0,
         "severity": "fail",
         "passes": true,
@@ -13748,7 +13748,7 @@
       {
         "fg": "border",
         "bg": "surface",
-        "lc": 15.2133,
+        "lc": 15.1758,
         "wcag": 2.49,
         "minimum": 8.0,
         "severity": "warn",
@@ -13758,7 +13758,7 @@
       {
         "fg": "ring",
         "bg": "surface",
-        "lc": 31.338,
+        "lc": 31.3401,
         "wcag": 4.27,
         "minimum": 30.0,
         "severity": "fail",
@@ -13838,7 +13838,7 @@
       {
         "fg": "fg",
         "bg": "surface-cool",
-        "lc": 95.9991,
+        "lc": 95.9918,
         "wcag": 16.2,
         "minimum": 90.0,
         "severity": "fail",
@@ -13918,7 +13918,7 @@
       {
         "fg": "fg",
         "bg": "surface-warm",
-        "lc": 96.0097,
+        "lc": 96.0025,
         "wcag": 16.23,
         "minimum": 90.0,
         "severity": "fail",
@@ -13948,8 +13948,8 @@
       {
         "fg": "accent",
         "bg": "surface",
-        "lc": 45.4858,
-        "wcag": 6.37,
+        "lc": 45.4879,
+        "wcag": 6.38,
         "minimum": 45.0,
         "severity": "warn",
         "passes": true,
@@ -13958,8 +13958,8 @@
       {
         "fg": "accent",
         "bg": "surface",
-        "lc": 45.4858,
-        "wcag": 6.37,
+        "lc": 45.4879,
+        "wcag": 6.38,
         "minimum": 30.0,
         "severity": "fail",
         "passes": true,
@@ -13968,7 +13968,7 @@
       {
         "fg": "fg",
         "bg": "accent-bg",
-        "lc": 95.4937,
+        "lc": 95.4865,
         "wcag": 15.42,
         "minimum": 90.0,
         "severity": "fail",
@@ -13978,7 +13978,7 @@
       {
         "fg": "accent-border",
         "bg": "surface",
-        "lc": 14.3663,
+        "lc": 14.3684,
         "wcag": 2.33,
         "minimum": 8.0,
         "severity": "warn",
@@ -13988,7 +13988,7 @@
       {
         "fg": "danger",
         "bg": "surface",
-        "lc": 57.4965,
+        "lc": 57.4986,
         "wcag": 8.4,
         "minimum": 30.0,
         "severity": "fail",
@@ -13998,7 +13998,7 @@
       {
         "fg": "fg",
         "bg": "danger-bg",
-        "lc": 95.4878,
+        "lc": 95.4806,
         "wcag": 15.41,
         "minimum": 90.0,
         "severity": "fail",
@@ -14018,7 +14018,7 @@
       {
         "fg": "danger-border",
         "bg": "surface",
-        "lc": 14.5163,
+        "lc": 14.5184,
         "wcag": 2.34,
         "minimum": 8.0,
         "severity": "warn",
@@ -14028,7 +14028,7 @@
       {
         "fg": "warning",
         "bg": "surface",
-        "lc": 35.4952,
+        "lc": 35.4973,
         "wcag": 4.94,
         "minimum": 30.0,
         "severity": "fail",
@@ -14038,7 +14038,7 @@
       {
         "fg": "fg",
         "bg": "warning-bg",
-        "lc": 95.4646,
+        "lc": 95.4573,
         "wcag": 15.35,
         "minimum": 90.0,
         "severity": "fail",
@@ -14058,7 +14058,7 @@
       {
         "fg": "warning-border",
         "bg": "surface",
-        "lc": 15.2869,
+        "lc": 15.289,
         "wcag": 2.49,
         "minimum": 8.0,
         "severity": "warn",
@@ -14068,7 +14068,7 @@
       {
         "fg": "success",
         "bg": "surface",
-        "lc": 43.5133,
+        "lc": 43.5154,
         "wcag": 6.09,
         "minimum": 30.0,
         "severity": "fail",
@@ -14078,7 +14078,7 @@
       {
         "fg": "fg",
         "bg": "success-bg",
-        "lc": 95.4212,
+        "lc": 95.414,
         "wcag": 15.3,
         "minimum": 90.0,
         "severity": "fail",
@@ -14098,7 +14098,7 @@
       {
         "fg": "success-border",
         "bg": "surface",
-        "lc": 16.6794,
+        "lc": 16.6815,
         "wcag": 2.61,
         "minimum": 8.0,
         "severity": "warn",
@@ -14108,7 +14108,7 @@
       {
         "fg": "info",
         "bg": "surface",
-        "lc": 39.5062,
+        "lc": 39.5083,
         "wcag": 5.5,
         "minimum": 30.0,
         "severity": "fail",
@@ -14118,8 +14118,8 @@
       {
         "fg": "fg",
         "bg": "info-bg",
-        "lc": 95.4497,
-        "wcag": 15.34,
+        "lc": 95.4425,
+        "wcag": 15.33,
         "minimum": 90.0,
         "severity": "fail",
         "passes": true,
@@ -14138,7 +14138,7 @@
       {
         "fg": "info-border",
         "bg": "surface",
-        "lc": 15.7854,
+        "lc": 15.7874,
         "wcag": 2.53,
         "minimum": 8.0,
         "severity": "warn",
@@ -14148,7 +14148,7 @@
       {
         "fg": "urgent",
         "bg": "surface",
-        "lc": 51.4908,
+        "lc": 51.4928,
         "wcag": 7.36,
         "minimum": 30.0,
         "severity": "fail",
@@ -14158,7 +14158,7 @@
       {
         "fg": "fg",
         "bg": "urgent-bg",
-        "lc": 95.4822,
+        "lc": 95.4749,
         "wcag": 15.39,
         "minimum": 90.0,
         "severity": "fail",
@@ -14178,7 +14178,7 @@
       {
         "fg": "urgent-border",
         "bg": "surface",
-        "lc": 14.6578,
+        "lc": 14.6599,
         "wcag": 2.4,
         "minimum": 8.0,
         "severity": "warn",
@@ -14188,7 +14188,7 @@
       {
         "fg": "waiting",
         "bg": "surface",
-        "lc": 37.5045,
+        "lc": 37.5066,
         "wcag": 5.23,
         "minimum": 30.0,
         "severity": "fail",
@@ -14198,7 +14198,7 @@
       {
         "fg": "fg",
         "bg": "waiting-bg",
-        "lc": 95.4508,
+        "lc": 95.4435,
         "wcag": 15.33,
         "minimum": 90.0,
         "severity": "fail",
@@ -14218,7 +14218,7 @@
       {
         "fg": "waiting-border",
         "bg": "surface",
-        "lc": 15.7671,
+        "lc": 15.7692,
         "wcag": 2.54,
         "minimum": 8.0,
         "severity": "warn",
@@ -14228,7 +14228,7 @@
       {
         "fg": "active",
         "bg": "surface",
-        "lc": 49.4993,
+        "lc": 49.5014,
         "wcag": 7.05,
         "minimum": 30.0,
         "severity": "fail",
@@ -14238,7 +14238,7 @@
       {
         "fg": "fg",
         "bg": "active-bg",
-        "lc": 95.442,
+        "lc": 95.4347,
         "wcag": 15.32,
         "minimum": 90.0,
         "severity": "fail",
@@ -14258,7 +14258,7 @@
       {
         "fg": "active-border",
         "bg": "surface",
-        "lc": 16.0877,
+        "lc": 16.0898,
         "wcag": 2.56,
         "minimum": 8.0,
         "severity": "warn",
@@ -14268,7 +14268,7 @@
       {
         "fg": "progress",
         "bg": "surface",
-        "lc": 31.5003,
+        "lc": 31.5024,
         "wcag": 4.37,
         "minimum": 30.0,
         "severity": "fail",
@@ -14278,7 +14278,7 @@
       {
         "fg": "fg",
         "bg": "progress-bg",
-        "lc": 95.4646,
+        "lc": 95.4574,
         "wcag": 15.39,
         "minimum": 90.0,
         "severity": "fail",
@@ -14298,7 +14298,7 @@
       {
         "fg": "progress-border",
         "bg": "surface",
-        "lc": 14.2772,
+        "lc": 14.2792,
         "wcag": 2.3,
         "minimum": 8.0,
         "severity": "warn",
@@ -14308,7 +14308,7 @@
       {
         "fg": "inactive",
         "bg": "surface",
-        "lc": 45.5054,
+        "lc": 45.5064,
         "wcag": 6.44,
         "minimum": 30.0,
         "severity": "fail",
@@ -14318,7 +14318,7 @@
       {
         "fg": "fg",
         "bg": "inactive-bg",
-        "lc": 95.4703,
+        "lc": 95.4669,
         "wcag": 15.36,
         "minimum": 90.0,
         "severity": "fail",
@@ -14328,7 +14328,7 @@
       {
         "fg": "on-inactive",
         "bg": "inactive",
-        "lc": 47.5891,
+        "lc": 47.5908,
         "wcag": 6.44,
         "minimum": 30.0,
         "severity": "fail",
@@ -14338,7 +14338,7 @@
       {
         "fg": "inactive-border",
         "bg": "surface",
-        "lc": 15.2133,
+        "lc": 15.1758,
         "wcag": 2.49,
         "minimum": 8.0,
         "severity": "warn",

@@ -44,15 +44,17 @@ jobs:
       # compiler is deterministic: two builds from the same input must be
       # byte-identical, or nothing downstream can be reproducible and every
       # diff becomes noise.
+      # A plain `cargo xtask build` writes its scratch generation to
+      # target/system/, so that is what the two builds are compared on.
       - name: Build twice and compare
         run: |
           cargo xtask build
-          cp -r system /tmp/system-first
+          cp -r target/system /tmp/system-first
           cargo xtask build
           # Excluding build output: compiling the generated crate leaves
           # incremental-compilation fingerprints, which are not reproducible
           # and are not artifacts of this compiler.
-          diff -r --exclude=target --exclude=Cargo.lock /tmp/system-first system
+          diff -r --exclude=target --exclude=Cargo.lock /tmp/system-first target/system
 
       # The site is generated too, and its WebAssembly bundle is part of it.
       # Both are byte-identical across builds; if that ever stops being true,

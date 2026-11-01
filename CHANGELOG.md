@@ -12,6 +12,26 @@ meet contrast?** Generated release notes list commits. They do not list that.
 
 ## [Unreleased]
 
+A changed colour value, so the next release is a minor one (`TOKEN-POLICY.md`).
+
+### Changed
+
+- **Each palette's neutral family now leans toward that palette's own accent.**
+  The spec pinned `[neutral] tint_hue` to the house ochre, so every palette's
+  surfaces, borders and text were warm grey whatever its accent. It now sets
+  none, so a blue palette's surfaces read blue-grey and a green one's
+  green-grey. The tint keeps its 3% strength and every contrast gate still
+  passes. No name changed, and the shared `--nc-gray-*` ramps keep the base hue.
+- **The chart sets are unchanged, and now say why.** A set with no `hue_start`
+  starts from its palette's neutral tint, so letting the neutral follow the
+  accent would have rotated every chart as well. Measured, that drops two series
+  of indigo-vivid and magenta-vivid below the protanopia floor in dark mode. So
+  `chart`, `chart-wide` and `chart-trio` now pin `hue_start = 59.3`, the hue they
+  already started from, and every palette's charts stay the same colours.
+- Every generated file's header names the command that regenerates it,
+  `cargo xtask build --system`; it named `cargo xtask build`, which writes a
+  scratch copy instead.
+
 ## [0.2.1]
 
 No colour changed. One file was missing, and its absence was the kind that only

@@ -38,8 +38,11 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
 
-      - name: system/ must match the spec
-        run: cargo xtask check --colors-only
+      # The whole gate, as ci.yml runs it: a release never ships from a tree
+      # that has not passed it, and no CI job passes a flag that skips steps
+      # (NOCTUA.md §19.4).
+      - name: The gate
+        run: cargo xtask check
 
       - name: Pack
         run: |

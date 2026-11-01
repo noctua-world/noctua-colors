@@ -126,7 +126,7 @@ fn explain(message: &str) -> (String, &'static str) {
 
     (
         message.to_owned(),
-        "check the field name and the value's type against the reference in README.md",
+        "check the field name and the value's type against the comments in specs/noctua.toml and the fields of crates/noctua-spec/src/model.rs",
     )
 }
 

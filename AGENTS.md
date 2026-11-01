@@ -465,7 +465,9 @@ green above lime is out. Re-measure before adding a hue in that arc.
 shared by every theme, so it takes the base tint hue and can follow no accent. Each theme's
 `neutral` family takes `[neutral] tint_hue` when the spec sets one, and its own accent's hue
 otherwise (`neutral_tint_hue` in `crates/noctua-engine/src/palette.rs`); the shipped spec sets
-it, so every palette's neutral is tinted alike. The `cool` and `warm` hues are fixed in
+none, so each palette's neutral leans toward its own accent. **A chart set with no `hue_start`
+starts from that same hue** — so every shipped set pins one, because letting the charts rotate
+with the accent drops two palettes' series below the protanopia floor. The `cool` and `warm` hues are fixed in
 `[neutral]`, where naming a hue is what asks for the variant. All three share step lightnesses,
 because `neutral::place` depends only on `steps` and `density`, so `gray-7` swaps for
 `gray-cool-7` without moving any contrast.

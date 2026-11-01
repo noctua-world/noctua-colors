@@ -111,7 +111,7 @@ pub fn emit_all(palette: &Palette) -> Vec<EmittedFile> {
 }
 
 /// The command that regenerates everything, quoted in every header.
-pub const REGENERATE: &str = "cargo xtask build";
+pub const REGENERATE: &str = "cargo xtask build --system";
 
 /// Where this project lives.
 ///
