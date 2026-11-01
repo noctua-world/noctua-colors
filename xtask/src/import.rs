@@ -582,7 +582,8 @@ mod tests {
         // Two colors cannot describe a curve, and pretending otherwise would
         // report a perfect fit that means nothing.
         let found = read("--one: #ff0000;\n--two: #00ff00;\n"); // allow-literal: parser fixture
-        assert!(group(&found).is_empty());
+        let seen = group(&found);
+        assert!(seen.is_empty(), "{seen:?}");
     }
 
     #[test]

@@ -155,7 +155,10 @@ vivid = 1.15
             .hue_correction
             .as_ref()
             .expect("the override is always set, even when empty");
-        assert!(ochre.is_empty(), "no correction, not the base family's");
+        assert!(
+            ochre.is_empty(),
+            "no correction, not the base family's: {ochre:?}"
+        );
     }
 
     #[test]
