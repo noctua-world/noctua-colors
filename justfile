@@ -34,6 +34,6 @@ export:
 import source:
     cargo xtask import {{source}}
 
-# Prepare a release. Writes the version; committing is left to a human.
+# Prepare a release. Writes the version; it does not commit or tag.
 release version:
     cargo xtask release {{version}}

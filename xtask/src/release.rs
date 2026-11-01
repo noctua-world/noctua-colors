@@ -4,11 +4,9 @@
 //! appears, checks that the changelog has an entry for it, and stops. It does
 //! **not** commit, tag, push or publish.
 //!
-//! That is not timidity: what enters the history is the developer's decision
-//! (`NOCTUA.md §2.6`), and the commit and the tag are signed by whatever means
-//! the developer uses, which a tool cannot assume. It also means a release is
-//! reviewable before it becomes a fact — the printed next steps are three
-//! commands a human runs deliberately.
+//! That is not timidity: a release ought to be reviewable before it becomes a
+//! fact, so the verb stops at a state anyone can inspect, and the printed next
+//! steps are the three commands that make it one.
 
 use std::path::Path;
 
@@ -144,15 +142,14 @@ fn rebuild_with_the_new_version(root: &Path, spec_path: &Path) -> Result<(), Str
     }
 }
 
-/// The three commands a human runs to turn a prepared version into a release.
+/// The three commands that turn a prepared version into a release.
 ///
-/// Printed rather than executed: committing and signing are the developer's
-/// (`NOCTUA.md §2.6`), by whatever means they use — and a release ought to be
-/// reviewable before it becomes a fact.
+/// Printed rather than executed, so the release can be reviewed before it
+/// becomes a fact.
 fn next_steps(version: &str) {
     ui::gap();
     ui::heading("next steps");
-    ui::detail("these are left to you, because committing and signing are yours to do:");
+    ui::detail("these come next, once the release has been reviewed:");
     ui::detail(&format!("    git commit -am \"release: {version}\""));
     ui::detail(&format!(
         "    git tag -a v{version} -m \"noctua-colors {version}\""

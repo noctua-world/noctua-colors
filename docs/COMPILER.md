@@ -342,7 +342,7 @@ alias for each; neither is required.
 | `cargo xtask dev` | Watch the spec and the site, rebuild, serve with live reload |
 | `cargo xtask export` | Copy `system/` into every consumer registered in the spec |
 | `cargo xtask import <source>` | Fit an existing palette back to spec parameters |
-| `cargo xtask release <version>` | Prepare a colour-system version; committing is left to a human |
+| `cargo xtask release <version>` | Prepare a colour-system version; it does not commit or tag |
 | `cargo xtask release --tool <version>` | The same for the compiler's own version |
 
 `cargo xtask check --colors-only` skips fmt, lints and tests for a fast loop

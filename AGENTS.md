@@ -642,8 +642,8 @@ integration tests live in the crate they exercise.
   `crates/<crate>/tests/properties.rs`. A test that found a real bug says so in a comment.
 - **Floats.** `f64` throughout, quantized once at palette construction, so what the gates
   checked is byte-for-byte what ships.
-- **Commits.** Conventional commits, in English, signed: never commit unprompted, and nothing a
-  commit says credits an agent (`NOCTUA.md §2.6`).
+- **Commits.** Conventional commits, in English, signed, made whenever the work is ready without
+  asking, and nothing a commit says credits an agent (`NOCTUA.md §2.6`).
 
 ## Dependencies
 
@@ -697,7 +697,7 @@ only `.TEMP/.gitkeep` is tracked (`NOCTUA.md §3.7`).
 the spec's `[system]` table **and `package.json`**, rebuilds so `system/MANIFEST.json` and the
 generated crate's manifest follow, and warns if `CHANGELOG.md` has no entry. `--tool <version>`
 bumps the compiler's version in `Cargo.toml` instead, and publishes nothing. The verb stops
-there; committing, tagging and pushing are the developer's to run:
+there and prints the rest, to run once the release has been reviewed:
 
 ```sh
 git commit -am "release: <version>"
