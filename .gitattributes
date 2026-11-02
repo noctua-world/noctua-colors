@@ -1,0 +1,4 @@
+# Every text file is checked out with LF line endings on every system, so the
+# generated files and golden outputs this repository compares byte for byte read
+# the same on Windows as on Linux and macOS. Git tells binaries by their content.
+* text=auto eol=lf
