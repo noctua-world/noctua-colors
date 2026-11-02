@@ -17,9 +17,16 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
+  # The gate runs on Linux, macOS and Windows: what this repository generates has
+  # to be the same bytes wherever it is built. A step that cannot run on a system
+  # says so by name in the gate's own output.
   check:
-    name: cargo xtask check
-    runs-on: ubuntu-latest
+    name: cargo xtask check (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
