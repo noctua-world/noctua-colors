@@ -34,11 +34,11 @@ glyphs and roughly 1,500 mathematical operators. The site renders about 250
 codepoints of that.
 
 ```
-Regular   1,617,752 B  ->  10,912 B
-Bold      1,630,316 B  ->  10,952 B
-Italic    1,750,096 B  ->  12,684 B
+Regular   1,619,328 B  ->  10,948 B
+Bold      1,631,952 B  ->  11,012 B
+Italic    1,753,356 B  ->  12,724 B
                           --------
-          4,998,164 B  ->  34,548 B     145x smaller
+          5,004,636 B  ->  34,684 B     144x smaller
 ```
 
 Shipping five megabytes of fonts to a site whose stated bar is "genuinely
