@@ -144,7 +144,7 @@ blue-greens rather than a tidy dial.
 
 ## Every context an application needs
 
-**1,767 names in the semantic contract, covering 349 subjects** — each subject
+**1,791 names in the semantic contract, covering 352 subjects** — each subject
 emitted as the fill, its hover, a tinted background, a border, and a foreground
 to put on the fill. Grouped in `specs/noctua.toml` by subject, because that is
 how a name gets looked up:
@@ -232,7 +232,7 @@ One command compiles the spec into a committed `system/`; one command gates it.
 | Engine | monotone cubic Hermite curves, contrast-anchored solving, density-weighted neutral ramp |
 | Emitters | CSS, Tailwind v4, Rust, DTCG, JSON/TS, SCSS, QML, plus compliance reports |
 | Palettes | **39**, generated as a grid: 13 accent hues × 3 saturations, from 18 lines of specification |
-| Contexts | **1,767 names** over 349 subjects and 10 families, plus two ordered scales, three neutral temperatures and a translucency ladder |
+| Contexts | **1,791 names** over 352 subjects and 10 families, plus two ordered scales, three neutral temperatures and a translucency ladder |
 | Quality gates | contrast matrix across families, colour-vision margins, perceptual spacing, source invariants, and consumer token references |
 | Documentation site | static, generated from `system/`, dogfooding its own tokens |
 | Playground | the compiler itself, compiled to WebAssembly and running in the browser |

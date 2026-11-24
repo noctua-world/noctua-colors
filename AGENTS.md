@@ -283,8 +283,23 @@ Where each kind of change goes, once the developer has asked for it. Each is a s
 that grows into a refactor is a reason to stop and ask.
 
 **Add a context.** One line in `[semantic]` mapping it to an existing family, in the subject group
-it belongs to; it reaches every target. Read **The hue wheel is full** before adding a family
-instead.
+it belongs to; it reaches every target. **It goes below the family's existing first slot**
+(**Spec order names a family's pair rows**). A hyphenated name is fine — `match-rest` — and every
+target but QML keeps the hyphen: QML camel-cases it, `matchRest` and `onMatchRest`, through
+`name::qml_property`. Read **The hue wheel is full** before adding a family instead.
+
+**Add a page-furniture shade.** A neutral background with no `on-` pair — `surface`, `modeline`,
+`infoline`, `corner` — is not a `[semantic]` line; it is three places, and each of the three
+neutral temperatures follows from them:
+
+1. a row in `SURFACE_SHAPE` in `crates/noctua-emit/src/tokens.rs`, which emits it;
+2. the same row in `contrast::semantic_view` in `crates/noctua-check/src/contrast.rs`, the gate's
+   mirror — `the_gate_and_the_emitter_resolve_every_token_alike` fails without it;
+3. an `fg` pair in `surface_rows` there, or the shade ships with nothing measured on it.
+
+Insert after the existing rows of its kind, never between them and never reordered, and extend
+`the_footer_shades_are_distinct_in_every_palette` when the shade must stay distinct from its
+neighbours: two shades on one colour is not a contrast failure, and no gate reports it.
 
 **Add a categorical set.** One `[[charts]]` block with a `name`. Past about six entries no
 generated set separates under all three dichromacies; `labelled = true` declares that the legend
@@ -332,6 +347,12 @@ a margin where one is meaningful — a verdict alone tells nobody how close they
 
 **Register a consumer.** Three lines under `[[consumers]]` in the spec — `name`, `path`,
 `targets` — then `cargo xtask export`.
+
+**Refresh one consumer.** `export` has no selector: it writes every `[[consumers]]` path, the
+sibling repositories included. To refresh only `docs-site/vendor/tokens`, run
+`cargo xtask export --dry-run` to read the targets and file count, then copy the differing files
+of those targets' directories from `system/` — for `css` and `json-ts`, `system/css`,
+`system/json` and `system/ts` — which is exactly what `export` does for that entry.
 
 ## Gotchas
 
@@ -423,6 +444,18 @@ confusion changes what the interface *said* — "it worked" for "it broke", wait
 while `margins` returns every pair and `system/reports/colour-vision.md` publishes them, so a
 collision stays findable without burying a dangerous one. Extend `OPPOSED` for a meaning, never
 for tidiness.
+
+**`fg` on `corner` is gated at Lc 75, not 90, because a corner holds a mark, never running
+text.** It is the footer shade furthest from the page, and light mode measures Lc 86.5 there at
+worst. `modeline` and `infoline` carry text and keep 90. Never put running text on `corner`, and
+never lower the two lines to match it.
+
+**Spec order names a family's pair rows.** `contrast::pairs` emits one set of rows per family and
+names them after the first slot that reaches it in `[semantic]` — `inactive` for the neutral. An
+alias inserted above that slot renames every one of the family's rows in
+`system/reports/wcag.md`, so a change meant to add names rewrites existing rows though no colour
+moved. A new alias goes below it, and an additions-only change is proved, not assumed: diff
+`system/` against the previous commit and expect insertions and changed hashes only.
 
 **`Severity::Note` is a measured limit, not a quiet warning.** A warning says a different choice
 would fix it, so it is fixed; a note says no palette can. Only `cvd` emits notes, and only above

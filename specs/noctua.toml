@@ -39,7 +39,7 @@ version = "0.2.1"
 # the npm package, the generated Rust crate, and MANIFEST.json — so those
 # describe the colour system rather than the tool that emitted it.
 name = "noctua-colors"
-description = "A generated colour system: 39 palettes and 1,767 semantic names, solved in OKLCH against APCA contrast targets rather than hand-picked."
+description = "A generated colour system: 39 palettes and 1,791 semantic names, solved in OKLCH against APCA contrast targets rather than hand-picked."
 
 [output]
 # The gamut relative chroma resolves against, and the one the hex fallback
@@ -235,7 +235,17 @@ highlight = "accent"
 new = "accent"
 experimental = "accent"
 
+# States that are the absence of a state. Gray on purpose: nothing here should
+# compete with a real status for attention.
+inactive = "neutral"
+draft = "neutral"
+archived = "neutral"
+paused = "neutral"
+
 # Typing and finding.
+# Below the group above on purpose: the first slot that reaches a family in
+# this file names that family's rows in the contrast reports, and `inactive`
+# is the neutral family's.
 # A prompt and the list it filters. `cursor` is the block drawn where the next
 # character goes, and `on-cursor` the glyph under it. `match` marks what the
 # first word of a query found in an entry; an interface that marks a second
@@ -244,13 +254,6 @@ experimental = "accent"
 cursor     = "accent"
 match      = "accent"
 match-rest = "neutral"
-
-# States that are the absence of a state. Gray on purpose: nothing here should
-# compete with a real status for attention.
-inactive = "neutral"
-draft = "neutral"
-archived = "neutral"
-paused = "neutral"
 
 # In flight, in both directions.
 sent = "progress"

@@ -1,6 +1,6 @@
 # noctua-colors
 
-**A colour system whose colours were solved, not picked.** 39 palettes, 1,767
+**A colour system whose colours were solved, not picked.** 39 palettes, 1,791
 semantic names, light and dark from one file, every contrast pair checked.
 
 It ships as CSS custom properties, a Tailwind v4 theme, DTCG tokens, SCSS,

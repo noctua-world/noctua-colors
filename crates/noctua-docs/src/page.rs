@@ -60,7 +60,7 @@ impl Kind {
         match self {
             Self::Product => t(
                 locale,
-                "39 palettes and 1,767 semantic names, solved in OKLCH against APCA contrast \
+                "39 palettes and 1,791 semantic names, solved in OKLCH against APCA contrast \
                  targets rather than hand-picked. Light and dark from one stylesheet, and one \
                  palette costs 29 KB.",
                 "39 paletas e 1.767 nomes semânticos, resolvidos em OKLCH contra alvos de \

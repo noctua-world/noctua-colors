@@ -3108,7 +3108,7 @@ export const palette = {
     ]
   },
   "axes": {
-    "specHash": "blake3:ce9c40f4e93eafdd22a5a472b30d3cea",
+    "specHash": "blake3:fa1e93ad61532ca6719684905561502a",
     "accents": [
       "ochre",
       "amber",
@@ -3175,6 +3175,9 @@ export const palette = {
     "surface": "neutral-bg-app",
     "surface-subtle": "neutral-bg-subtle",
     "surface-raised": "neutral-bg-element",
+    "modeline": "neutral-bg-subtle",
+    "infoline": "neutral-bg-element",
+    "corner": "neutral-bg-element-hover",
     "fg": "neutral-text-strong",
     "fg-muted": "neutral-text-muted",
     "border": "neutral-border-element",
@@ -3182,6 +3185,9 @@ export const palette = {
     "surface-cool": "neutral-cool-bg-app",
     "surface-subtle-cool": "neutral-cool-bg-subtle",
     "surface-raised-cool": "neutral-cool-bg-element",
+    "modeline-cool": "neutral-cool-bg-subtle",
+    "infoline-cool": "neutral-cool-bg-element",
+    "corner-cool": "neutral-cool-bg-element-hover",
     "fg-cool": "neutral-cool-text-strong",
     "fg-muted-cool": "neutral-cool-text-muted",
     "border-cool": "neutral-cool-border-element",
@@ -3189,6 +3195,9 @@ export const palette = {
     "surface-warm": "neutral-warm-bg-app",
     "surface-subtle-warm": "neutral-warm-bg-subtle",
     "surface-raised-warm": "neutral-warm-bg-element",
+    "modeline-warm": "neutral-warm-bg-subtle",
+    "infoline-warm": "neutral-warm-bg-element",
+    "corner-warm": "neutral-warm-bg-element-hover",
     "fg-warm": "neutral-warm-text-strong",
     "fg-muted-warm": "neutral-warm-text-muted",
     "border-warm": "neutral-warm-border-element",
@@ -3314,6 +3323,21 @@ export const palette = {
     "paused-bg": "neutral-bg-subtle",
     "paused-border": "neutral-border-element",
     "on-paused": "neutral-bg-app",
+    "cursor": "accent-solid",
+    "cursor-hover": "accent-solid-hover",
+    "cursor-bg": "accent-bg-subtle",
+    "cursor-border": "accent-border-element",
+    "on-cursor": "accent-bg-app",
+    "match": "accent-solid",
+    "match-hover": "accent-solid-hover",
+    "match-bg": "accent-bg-subtle",
+    "match-border": "accent-border-element",
+    "on-match": "accent-bg-app",
+    "match-rest": "neutral-solid",
+    "match-rest-hover": "neutral-solid-hover",
+    "match-rest-bg": "neutral-bg-subtle",
+    "match-rest-border": "neutral-border-element",
+    "on-match-rest": "neutral-bg-app",
     "sent": "progress-solid",
     "sent-hover": "progress-solid-hover",
     "sent-bg": "progress-bg-subtle",
@@ -4968,6 +4992,9 @@ export const palette = {
     "draft": "neutral",
     "archived": "neutral",
     "paused": "neutral",
+    "cursor": "accent",
+    "match": "accent",
+    "match-rest": "neutral",
     "sent": "progress",
     "received": "progress",
     "critical": "danger",
@@ -11849,6 +11876,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.201,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4747,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6403,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0043,
@@ -11917,6 +11974,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -11997,6 +12084,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -19023,6 +19140,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4703,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5132,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0597,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0049,
@@ -19091,6 +19238,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -19171,6 +19348,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -26199,6 +26406,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.201,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4736,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6373,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9988,
@@ -26267,6 +26504,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -26347,6 +26614,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -33373,6 +33670,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4662,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5096,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0565,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9929,
@@ -33441,6 +33768,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -33521,6 +33878,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -40549,6 +40936,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2005,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4763,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6429,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9977,
@@ -40617,6 +41034,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -40697,6 +41144,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -47723,6 +48200,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4722,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5148,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0606,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9948,
@@ -47791,6 +48298,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -47871,6 +48408,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -54899,6 +55466,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2202,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5134,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6901,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9999,
@@ -54967,6 +55564,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -55047,6 +55674,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -62073,6 +62730,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4726,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5137,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0576,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9928,
@@ -62141,6 +62828,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -62221,6 +62938,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -69249,6 +69996,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2198,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5189,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6986,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9957,
@@ -69317,6 +70094,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -69397,6 +70204,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -76423,6 +77260,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4668,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5077,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0512,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0068,
@@ -76491,6 +77358,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -76571,6 +77468,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -83599,6 +84526,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2153,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5034,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6777,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0031,
@@ -83667,6 +84624,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -83747,6 +84734,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -90773,6 +91790,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4596,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.501,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0453,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0002,
@@ -90841,6 +91888,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -90921,6 +91998,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -97949,6 +99056,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.219,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5231,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7232,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0028,
@@ -98017,6 +99154,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -98097,6 +99264,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -105123,6 +106320,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4687,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5088,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0508,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9918,
@@ -105191,6 +106418,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -105271,6 +106528,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -112299,6 +113586,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2314,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5442,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7578,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -112367,6 +113684,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -112447,6 +113794,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -119473,6 +120850,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4713,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5105,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0518,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9911,
@@ -119541,6 +120948,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -119621,6 +121058,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -126649,6 +128116,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.215,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5103,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7003,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.001,
@@ -126717,6 +128214,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -126797,6 +128324,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -133823,6 +135380,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4714,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5122,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0552,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9992,
@@ -133891,6 +135478,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -133971,6 +135588,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -140999,6 +142646,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2214,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5213,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7146,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0007,
@@ -141067,6 +142744,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -141147,6 +142854,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -148173,6 +149910,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4593,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4992,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0419,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9905,
@@ -148241,6 +150008,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -148321,6 +150118,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -155349,6 +157176,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2251,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5348,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7352,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -155417,6 +157274,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -155497,6 +157384,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -162523,6 +164440,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4586,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4979,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0393,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0074,
@@ -162591,6 +164538,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -162671,6 +164648,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -169699,6 +171706,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2117,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5042,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6905,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.001,
@@ -169767,6 +171804,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -169847,6 +171914,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -176873,6 +178970,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4652,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5059,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0492,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9975,
@@ -176941,6 +179068,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -177021,6 +179178,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -184049,6 +186236,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2163,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5149,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7091,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9957,
@@ -184117,6 +186334,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -184197,6 +186444,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -191223,6 +193500,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4595,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4996,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0425,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9952,
@@ -191291,6 +193598,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -191371,6 +193708,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -198399,6 +200766,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2281,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5359,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7368,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.996,
@@ -198467,6 +200864,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -198547,6 +200974,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -205573,6 +208030,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4575,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4971,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0389,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9888,
@@ -205641,6 +208128,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -205721,6 +208238,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -212749,6 +215296,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.212,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5061,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6913,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0037,
@@ -212817,6 +215394,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -212897,6 +215504,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -219923,6 +222560,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4637,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5046,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0481,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0083,
@@ -219991,6 +222658,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -220071,6 +222768,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -227099,6 +229826,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2138,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5013,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6802,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9979,
@@ -227167,6 +229924,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -227247,6 +230034,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -234273,6 +237090,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4539,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4943,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0376,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0038,
@@ -234341,6 +237188,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -234421,6 +237298,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -241449,6 +244356,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2147,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5061,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6887,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9989,
@@ -241517,6 +244454,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -241597,6 +244564,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -248623,6 +251620,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4637,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5037,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.046,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9923,
@@ -248691,6 +251718,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -248771,6 +251828,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -255799,6 +258886,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2063,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4899,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6671,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0046,
@@ -255867,6 +258984,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -255947,6 +259094,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -262973,6 +266150,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4695,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5106,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0544,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0001,
@@ -263041,6 +266248,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -263121,6 +266358,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -270149,6 +273416,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2034,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4824,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6544,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9963,
@@ -270217,6 +273514,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -270297,6 +273624,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -277323,6 +280680,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4586,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4998,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0438,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0065,
@@ -277391,6 +280778,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -277471,6 +280888,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -284499,6 +287946,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2024,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4826,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6546,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0039,
@@ -284567,6 +288044,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -284647,6 +288154,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -291673,6 +295210,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4594,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5004,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0439,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9926,
@@ -291741,6 +295308,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -291821,6 +295418,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -298849,6 +302476,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2039,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4829,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6537,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0009,
@@ -298917,6 +302574,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -298997,6 +302684,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -306023,6 +309740,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4577,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4991,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0435,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0026,
@@ -306091,6 +309838,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -306171,6 +309948,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -313199,6 +317006,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1997,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4757,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6436,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9995,
@@ -313267,6 +317104,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -313347,6 +317214,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -320373,6 +324270,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4752,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5186,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0656,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0026,
@@ -320441,6 +324368,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -320521,6 +324478,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -327549,6 +331536,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2017,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4772,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6445,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9984,
@@ -327617,6 +331634,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -327697,6 +331744,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -334723,6 +338800,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4746,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5187,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0667,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9984,
@@ -334791,6 +338898,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -334871,6 +339008,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -341899,6 +346066,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2037,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4803,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6488,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0027,
@@ -341967,6 +346164,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -342047,6 +346274,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -349073,6 +353330,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4758,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5187,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0651,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0064,
@@ -349141,6 +353428,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -349221,6 +353538,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -356249,6 +360596,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1992,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4727,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6368,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.997,
@@ -356317,6 +360694,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -356397,6 +360804,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -363423,6 +367860,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4704,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5154,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0649,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0012,
@@ -363491,6 +367958,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -363571,6 +368068,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -370599,6 +375126,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1984,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.469,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6318,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9962,
@@ -370667,6 +375224,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -370747,6 +375334,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -377773,6 +382390,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4673,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5138,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0652,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0068,
@@ -377841,6 +382488,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -377921,6 +382598,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -384949,6 +389656,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2009,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4759,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6428,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -385017,6 +389754,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -385097,6 +389864,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -392123,6 +396920,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4737,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5177,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0656,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9927,
@@ -392191,6 +397018,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -392271,6 +397128,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -399299,6 +404186,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1912,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4583,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6156,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0006,
@@ -399367,6 +404284,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -399447,6 +404394,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -406473,6 +411450,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4779,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5239,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0745,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9936,
@@ -406541,6 +411548,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -406621,6 +411658,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -413649,6 +418716,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1891,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.452,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6051,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.995,
@@ -413717,6 +418814,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -413797,6 +418924,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -420823,6 +425980,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4708,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5183,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0713,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9989,
@@ -420891,6 +426078,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -420971,6 +426188,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -427999,6 +433246,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1945,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4637,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6272,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0016,
@@ -428067,6 +433344,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -428147,6 +433454,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -435173,6 +440510,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4641,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5089,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0578,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9989,
@@ -435241,6 +440608,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -435321,6 +440718,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -442349,6 +447776,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1952,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4632,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6259,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0043,
@@ -442417,6 +447874,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -442497,6 +447984,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -449523,6 +455040,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4639,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5098,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0607,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0088,
@@ -449591,6 +455138,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -449671,6 +455248,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -456699,6 +462306,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1946,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4602,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6156,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.997,
@@ -456767,6 +462404,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -456847,6 +462514,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -463873,6 +469570,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4792,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5269,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0799,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0001,
@@ -463941,6 +469668,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -464021,6 +469778,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -471049,6 +476836,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1964,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4693,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6319,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -471117,6 +476934,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -471197,6 +477044,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -478223,6 +484100,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4674,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.512,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0611,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0105,
@@ -478291,6 +484198,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -478371,6 +484308,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -485399,6 +491366,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1929,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4638,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6269,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9948,
@@ -485467,6 +491464,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -485547,6 +491574,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -492573,6 +498630,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4669,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5124,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0628,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0026,
@@ -492641,6 +498728,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -492721,6 +498838,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -499749,6 +505896,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1925,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4611,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6197,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9987,
@@ -499817,6 +505994,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -499897,6 +506104,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -506923,6 +513160,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4638,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5109,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0632,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0,
@@ -506991,6 +513258,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -507071,6 +513368,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -514099,6 +520426,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1951,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4683,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6336,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9963,
@@ -514167,6 +520524,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -514247,6 +520634,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -521273,6 +527690,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4703,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5146,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0633,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0007,
@@ -521341,6 +527788,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -521421,6 +527898,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -528449,6 +534956,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1965,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4702,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6345,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.001,
@@ -528517,6 +535054,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -528597,6 +535164,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -535623,6 +542220,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4683,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5117,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0589,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9984,
@@ -535691,6 +542318,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -535771,6 +542428,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -542799,6 +549486,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1979,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4688,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6318,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9994,
@@ -542867,6 +549584,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -542947,6 +549694,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -549973,6 +556750,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4645,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5084,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0565,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0042,
@@ -550041,6 +556848,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -550121,6 +556958,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -557149,6 +564016,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2014,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4764,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6434,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0045,
@@ -557217,6 +564114,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -557297,6 +564224,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -564323,6 +571280,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4722,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5151,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0616,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9914,
@@ -564391,6 +571378,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -564471,6 +571488,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",

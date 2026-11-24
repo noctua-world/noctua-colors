@@ -6552,6 +6552,36 @@
         "for": "body text on a card"
       },
       {
+        "fg": "fg",
+        "bg": "modeline",
+        "lc": 96.2009,
+        "wcag": 13.42,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's status line"
+      },
+      {
+        "fg": "fg",
+        "bg": "infoline",
+        "lc": 91.4759,
+        "wcag": 12.5,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's information line"
+      },
+      {
+        "fg": "fg",
+        "bg": "corner",
+        "lc": 86.6428,
+        "wcag": 11.59,
+        "minimum": 75.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "a mark on a footer's corner, which is never running text"
+      },
+      {
         "fg": "fg-muted",
         "bg": "surface",
         "lc": 78.0012,
@@ -6620,6 +6650,36 @@
         "severity": "fail",
         "passes": true,
         "for": "body text on a card"
+      },
+      {
+        "fg": "fg-cool",
+        "bg": "modeline-cool",
+        "lc": 96.209,
+        "wcag": 13.42,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's status line"
+      },
+      {
+        "fg": "fg-cool",
+        "bg": "infoline-cool",
+        "lc": 91.4933,
+        "wcag": 12.51,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's information line"
+      },
+      {
+        "fg": "fg-cool",
+        "bg": "corner-cool",
+        "lc": 86.6693,
+        "wcag": 11.6,
+        "minimum": 75.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "a mark on a footer's corner, which is never running text"
       },
       {
         "fg": "fg-muted-cool",
@@ -6700,6 +6760,36 @@
         "severity": "fail",
         "passes": true,
         "for": "body text on a card"
+      },
+      {
+        "fg": "fg-warm",
+        "bg": "modeline-warm",
+        "lc": 96.1864,
+        "wcag": 13.42,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's status line"
+      },
+      {
+        "fg": "fg-warm",
+        "bg": "infoline-warm",
+        "lc": 91.4445,
+        "wcag": 12.5,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's information line"
+      },
+      {
+        "fg": "fg-warm",
+        "bg": "corner-warm",
+        "lc": 86.5935,
+        "wcag": 11.59,
+        "minimum": 75.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "a mark on a footer's corner, which is never running text"
       },
       {
         "fg": "fg-muted-warm",
@@ -13726,6 +13816,36 @@
         "for": "body text on a card"
       },
       {
+        "fg": "fg",
+        "bg": "modeline",
+        "lc": 95.4737,
+        "wcag": 15.36,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's status line"
+      },
+      {
+        "fg": "fg",
+        "bg": "infoline",
+        "lc": 94.5177,
+        "wcag": 14.14,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's information line"
+      },
+      {
+        "fg": "fg",
+        "bg": "corner",
+        "lc": 93.0656,
+        "wcag": 12.66,
+        "minimum": 75.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "a mark on a footer's corner, which is never running text"
+      },
+      {
         "fg": "fg-muted",
         "bg": "surface",
         "lc": 71.9927,
@@ -13794,6 +13914,36 @@
         "severity": "fail",
         "passes": true,
         "for": "body text on a card"
+      },
+      {
+        "fg": "fg-cool",
+        "bg": "modeline-cool",
+        "lc": 95.4657,
+        "wcag": 15.35,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's status line"
+      },
+      {
+        "fg": "fg-cool",
+        "bg": "infoline-cool",
+        "lc": 94.5051,
+        "wcag": 14.12,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's information line"
+      },
+      {
+        "fg": "fg-cool",
+        "bg": "corner-cool",
+        "lc": 93.0465,
+        "wcag": 12.65,
+        "minimum": 75.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "a mark on a footer's corner, which is never running text"
       },
       {
         "fg": "fg-muted-cool",
@@ -13874,6 +14024,36 @@
         "severity": "fail",
         "passes": true,
         "for": "body text on a card"
+      },
+      {
+        "fg": "fg-warm",
+        "bg": "modeline-warm",
+        "lc": 95.4635,
+        "wcag": 15.37,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's status line"
+      },
+      {
+        "fg": "fg-warm",
+        "bg": "infoline-warm",
+        "lc": 94.5125,
+        "wcag": 14.15,
+        "minimum": 90.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "text on a footer's information line"
+      },
+      {
+        "fg": "fg-warm",
+        "bg": "corner-warm",
+        "lc": 93.0677,
+        "wcag": 12.68,
+        "minimum": 75.0,
+        "severity": "fail",
+        "passes": true,
+        "for": "a mark on a footer's corner, which is never running text"
       },
       {
         "fg": "fg-muted-warm",
@@ -14351,6 +14531,9 @@
     "surface": "neutral-bg-app",
     "surface-subtle": "neutral-bg-subtle",
     "surface-raised": "neutral-bg-element",
+    "modeline": "neutral-bg-subtle",
+    "infoline": "neutral-bg-element",
+    "corner": "neutral-bg-element-hover",
     "fg": "neutral-text-strong",
     "fg-muted": "neutral-text-muted",
     "border": "neutral-border-element",
@@ -14358,6 +14541,9 @@
     "surface-cool": "neutral-cool-bg-app",
     "surface-subtle-cool": "neutral-cool-bg-subtle",
     "surface-raised-cool": "neutral-cool-bg-element",
+    "modeline-cool": "neutral-cool-bg-subtle",
+    "infoline-cool": "neutral-cool-bg-element",
+    "corner-cool": "neutral-cool-bg-element-hover",
     "fg-cool": "neutral-cool-text-strong",
     "fg-muted-cool": "neutral-cool-text-muted",
     "border-cool": "neutral-cool-border-element",
@@ -14365,6 +14551,9 @@
     "surface-warm": "neutral-warm-bg-app",
     "surface-subtle-warm": "neutral-warm-bg-subtle",
     "surface-raised-warm": "neutral-warm-bg-element",
+    "modeline-warm": "neutral-warm-bg-subtle",
+    "infoline-warm": "neutral-warm-bg-element",
+    "corner-warm": "neutral-warm-bg-element-hover",
     "fg-warm": "neutral-warm-text-strong",
     "fg-muted-warm": "neutral-warm-text-muted",
     "border-warm": "neutral-warm-border-element",
@@ -14490,6 +14679,21 @@
     "paused-bg": "neutral-bg-subtle",
     "paused-border": "neutral-border-element",
     "on-paused": "neutral-bg-app",
+    "cursor": "accent-solid",
+    "cursor-hover": "accent-solid-hover",
+    "cursor-bg": "accent-bg-subtle",
+    "cursor-border": "accent-border-element",
+    "on-cursor": "accent-bg-app",
+    "match": "accent-solid",
+    "match-hover": "accent-solid-hover",
+    "match-bg": "accent-bg-subtle",
+    "match-border": "accent-border-element",
+    "on-match": "accent-bg-app",
+    "match-rest": "neutral-solid",
+    "match-rest-hover": "neutral-solid-hover",
+    "match-rest-bg": "neutral-bg-subtle",
+    "match-rest-border": "neutral-border-element",
+    "on-match-rest": "neutral-bg-app",
     "sent": "progress-solid",
     "sent-hover": "progress-solid-hover",
     "sent-bg": "progress-bg-subtle",
@@ -16144,6 +16348,9 @@
     "draft": "neutral",
     "archived": "neutral",
     "paused": "neutral",
+    "cursor": "accent",
+    "match": "accent",
+    "match-rest": "neutral",
     "sent": "progress",
     "received": "progress",
     "critical": "danger",

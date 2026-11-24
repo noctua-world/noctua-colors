@@ -82,10 +82,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## ochre-balanced/dark
 
@@ -161,10 +161,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## ochre-vivid/light
 
@@ -240,10 +240,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## ochre-vivid/dark
 
@@ -319,10 +319,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## ochre-sober/light
 
@@ -398,10 +398,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## ochre-sober/dark
 
@@ -477,10 +477,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## amber-balanced/light
 
@@ -556,10 +556,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## amber-balanced/dark
 
@@ -635,10 +635,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## amber-vivid/light
 
@@ -714,10 +714,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.41:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## amber-vivid/dark
 
@@ -793,10 +793,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## amber-sober/light
 
@@ -872,10 +872,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## amber-sober/dark
 
@@ -951,10 +951,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## lime-balanced/light
 
@@ -1030,10 +1030,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.41:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## lime-balanced/dark
 
@@ -1109,10 +1109,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.3 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.3 |
 
 ## lime-vivid/light
 
@@ -1188,10 +1188,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.41:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.4 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.4 |
 
 ## lime-vivid/dark
 
@@ -1267,10 +1267,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.3 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.3 |
 
 ## lime-sober/light
 
@@ -1346,10 +1346,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## lime-sober/dark
 
@@ -1425,10 +1425,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## jade-balanced/light
 
@@ -1504,10 +1504,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## jade-balanced/dark
 
@@ -1583,10 +1583,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.3 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.3 |
 
 ## jade-vivid/light
 
@@ -1662,10 +1662,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.41:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.4 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.4 |
 
 ## jade-vivid/dark
 
@@ -1741,10 +1741,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.3 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.3 |
 
 ## jade-sober/light
 
@@ -1820,10 +1820,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## jade-sober/dark
 
@@ -1899,10 +1899,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## teal-balanced/light
 
@@ -1978,10 +1978,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.41:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## teal-balanced/dark
 
@@ -2057,10 +2057,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.2 |
 
 ## teal-vivid/light
 
@@ -2136,10 +2136,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## teal-vivid/dark
 
@@ -2215,10 +2215,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.3 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.3 |
 
 ## teal-sober/light
 
@@ -2294,10 +2294,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## teal-sober/dark
 
@@ -2373,10 +2373,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## azure-balanced/light
 
@@ -2452,10 +2452,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## azure-balanced/dark
 
@@ -2531,10 +2531,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.38:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## azure-vivid/light
 
@@ -2610,10 +2610,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## azure-vivid/dark
 
@@ -2689,10 +2689,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.50:1 | no | no | 15.3 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.50:1 | no | no | 15.3 |
 
 ## azure-sober/light
 
@@ -2768,10 +2768,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.15:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.15:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.15:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.15:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## azure-sober/dark
 
@@ -2847,10 +2847,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## blue-balanced/light
 
@@ -2926,10 +2926,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## blue-balanced/dark
 
@@ -3005,10 +3005,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.38:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## blue-vivid/light
 
@@ -3084,10 +3084,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## blue-vivid/dark
 
@@ -3163,10 +3163,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## blue-sober/light
 
@@ -3242,10 +3242,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.5 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.5 |
 
 ## blue-sober/dark
 
@@ -3321,10 +3321,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.35:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.35:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## indigo-balanced/light
 
@@ -3400,10 +3400,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## indigo-balanced/dark
 
@@ -3479,10 +3479,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## indigo-vivid/light
 
@@ -3558,10 +3558,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## indigo-vivid/dark
 
@@ -3637,10 +3637,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## indigo-sober/light
 
@@ -3716,10 +3716,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## indigo-sober/dark
 
@@ -3795,10 +3795,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## violet-balanced/light
 
@@ -3874,10 +3874,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## violet-balanced/dark
 
@@ -3953,10 +3953,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## violet-vivid/light
 
@@ -4032,10 +4032,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## violet-vivid/dark
 
@@ -4111,10 +4111,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## violet-sober/light
 
@@ -4190,10 +4190,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## violet-sober/dark
 
@@ -4269,10 +4269,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.41:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## magenta-balanced/light
 
@@ -4348,10 +4348,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## magenta-balanced/dark
 
@@ -4427,10 +4427,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## magenta-vivid/light
 
@@ -4506,10 +4506,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.79:1 | no | no | 32.7 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.79:1 | no | no | 32.7 |
 
 ## magenta-vivid/dark
 
@@ -4585,10 +4585,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.15:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.1 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.1 |
 
 ## magenta-sober/light
 
@@ -4664,10 +4664,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## magenta-sober/dark
 
@@ -4743,10 +4743,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.41:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## rose-balanced/light
 
@@ -4822,10 +4822,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## rose-balanced/dark
 
@@ -4901,10 +4901,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.38:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## rose-vivid/light
 
@@ -4980,10 +4980,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.7 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.7 |
 
 ## rose-vivid/dark
 
@@ -5059,10 +5059,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.15:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.37:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.1 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.37:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.1 |
 
 ## rose-sober/light
 
@@ -5138,10 +5138,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## rose-sober/dark
 
@@ -5217,10 +5217,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.41:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## clay-balanced/light
 
@@ -5296,10 +5296,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## clay-balanced/dark
 
@@ -5375,10 +5375,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## clay-vivid/light
 
@@ -5454,10 +5454,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## clay-vivid/dark
 
@@ -5533,10 +5533,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## clay-sober/light
 
@@ -5612,10 +5612,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## clay-sober/dark
 
@@ -5691,10 +5691,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.41:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## umber-balanced/light
 
@@ -5770,10 +5770,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.7 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## umber-balanced/dark
 
@@ -5849,10 +5849,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.39:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.37:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.30:1 | no | no | 14.3 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## umber-vivid/light
 
@@ -5928,10 +5928,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.26:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.79:1 | no | no | 32.8 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## umber-vivid/dark
 
@@ -6007,10 +6007,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.41:1 | yes | yes | 95.4 |
 | `on-progress` | `progress` | 4.34:1 | no | no | 33.7 |
 | `progress-border` | `surface` | 2.14:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
 
 ## umber-sober/light
 
@@ -6086,10 +6086,10 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 13.42:1 | yes | yes | 96.2 |
 | `on-progress` | `progress` | 2.25:1 | no | no | 48.7 |
 | `progress-border` | `surface` | 1.78:1 | no | no | 32.6 |
-| `match-rest` | `surface` | 3.14:1 | no | no | 58.0 |
-| `fg` | `match-rest-bg` | 13.42:1 | yes | yes | 96.2 |
-| `on-match-rest` | `match-rest` | 3.14:1 | no | no | 63.3 |
-| `match-rest-border` | `surface` | 1.78:1 | no | no | 32.6 |
+| `inactive` | `surface` | 3.14:1 | no | no | 58.0 |
+| `fg` | `inactive-bg` | 13.42:1 | yes | yes | 96.2 |
+| `on-inactive` | `inactive` | 3.14:1 | no | no | 63.3 |
+| `inactive-border` | `surface` | 1.78:1 | no | no | 32.6 |
 
 ## umber-sober/dark
 
@@ -6165,7 +6165,7 @@ so the disagreements are visible rather than buried.
 | `fg` | `progress-bg` | 15.37:1 | yes | yes | 95.5 |
 | `on-progress` | `progress` | 4.39:1 | no | no | 33.8 |
 | `progress-border` | `surface` | 2.40:1 | no | no | 14.7 |
-| `match-rest` | `surface` | 6.44:1 | yes | no | 45.5 |
-| `fg` | `match-rest-bg` | 15.36:1 | yes | yes | 95.5 |
-| `on-match-rest` | `match-rest` | 6.44:1 | yes | no | 47.6 |
-| `match-rest-border` | `surface` | 2.49:1 | no | no | 15.2 |
+| `inactive` | `surface` | 6.44:1 | yes | no | 45.5 |
+| `fg` | `inactive-bg` | 15.36:1 | yes | yes | 95.5 |
+| `on-inactive` | `inactive` | 6.44:1 | yes | no | 47.6 |
+| `inactive-border` | `surface` | 2.49:1 | no | no | 15.2 |
