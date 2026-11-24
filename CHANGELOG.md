@@ -12,7 +12,9 @@ meet contrast?** Generated release notes list commits. They do not list that.
 
 ## [Unreleased]
 
-A changed colour value, so the next release is a minor one (`TOKEN-POLICY.md`).
+## [0.3.0]
+
+A changed colour value, so this release is a minor one (`TOKEN-POLICY.md`).
 
 ### Added
 
@@ -293,7 +295,8 @@ what changed, since there is nothing before it.
   that had no trusted publisher yet. The artifacts are correct and verified — see
   the release assets' checksums and `npm audit signatures`.
 
-[Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/noctua-world/noctua-colors/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/noctua-world/noctua-colors/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/noctua-world/noctua-colors/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/noctua-world/noctua-colors/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/noctua-world/noctua-colors/compare/v0.1.0...v0.1.1

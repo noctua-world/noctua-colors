@@ -1,11 +1,11 @@
 {
   "tool": "noctua-colors",
   "version": "0.1.1",
-  "systemVersion": "0.2.1",
+  "systemVersion": "0.3.0",
   "system": "noctua-colors",
   "regenerate": "cargo xtask build --system",
   "spec": "specs/noctua.toml",
-  "specHash": "blake3:fa1e93ad61532ca6719684905561502a",
+  "specHash": "blake3:f349659f7e685a8b7d5f571cb5561130",
   "files": {
     "css/contexts.css": "blake3:c33742b5132be1b90e9ad46d75fe71a6",
     "css/index.css": "blake3:a62fda7d7da5c9f45414dee3d272dac4",
@@ -89,8 +89,8 @@
     "css/theme-violet-balanced.css": "blake3:db6242228e579c1c51f8e5cc379ad06d",
     "css/theme-violet-sober.css": "blake3:da18918e2ce76cfcdad2ddb72081be6c",
     "css/theme-violet-vivid.css": "blake3:6b770bfd1c9af5014761fe5226730556",
-    "json/axes.json": "blake3:2a7cddd0b0aee1f5bf6d8be8460ec466",
-    "json/palette.json": "blake3:f9d104668ab2c10b97d93a3ffd6dd979",
+    "json/axes.json": "blake3:709a7b68a28f49301b3de3a68f97da33",
+    "json/palette.json": "blake3:40adb3ba9476c22dc04fc2327382ab14",
     "json/themes/amber-balanced.json": "blake3:8966abba938d7ed49f4f9d4bfe754d87",
     "json/themes/amber-sober.json": "blake3:9cc5d2a2b71b129ce3f56ae3ce845e15",
     "json/themes/amber-vivid.json": "blake3:61c75ae54faea52690574083eafdb226",
@@ -211,8 +211,8 @@
     "qml/qmldir": "blake3:c0302a2add1c704bd8fa3d8d1223ec8e",
     "reports/colour-vision.md": "blake3:74826e4e53cd78b3f51f9a66f7fe96b7",
     "reports/wcag.md": "blake3:66b7f2d4d25e0fb35c19e9c5e9601b72",
-    "rust/Cargo.toml": "blake3:c106b48b8b5ab3a9fa7bd3cb736b04f8",
-    "rust/README.md": "blake3:cbcbb5d57bba9fb7ce108cf5e7a8ee23",
+    "rust/Cargo.toml": "blake3:e79addb8bb851408801e2439bd31daee",
+    "rust/README.md": "blake3:8e17cf48d70a707e9425f1558eb9f2e2",
     "rust/src/lib.rs": "blake3:41a354086c46fd395ef6e22374e54ddc",
     "scss/_noctua.scss": "blake3:26d0eb6c69598efe2254adb5d8863c5d",
     "tailwind/bridge.css": "blake3:43198936904a194e3b8c06df903ccf91",
@@ -335,6 +335,6 @@
     "tokens/violet-vivid-dark.json": "blake3:88cfccec2beb7f3e91e27b13638ea60c",
     "tokens/violet-vivid-light.json": "blake3:36a8200414c267c71217d62c32a6e611",
     "ts/index.d.ts": "blake3:a24c931945a2c389873638f8f3f0cb5c",
-    "ts/index.js": "blake3:0f829dbf0d46cc7bb14190b67f1ab15a"
+    "ts/index.js": "blake3:2ec7fbf89a32c8bad02f58ea7a28f3e8"
   }
 }
