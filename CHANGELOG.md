@@ -14,6 +14,28 @@ meet contrast?** Generated release notes list commits. They do not list that.
 
 A changed colour value, so the next release is a minor one (`TOKEN-POLICY.md`).
 
+### Added
+
+- **Three page-furniture shades for an application footer**: `--nc-color-modeline`,
+  `--nc-color-infoline` and `--nc-color-corner`, each with its `-cool` and `-warm`
+  variant. A footer drawn as thin lines with no border separates them by
+  background alone, so the three sit one neutral step apart — `bg-subtle`,
+  `bg-element` and `bg-element-hover` — and none equals `--nc-color-surface`,
+  which the line that takes typed text keeps. A test compares the shipped
+  channels pairwise in every palette, both modes and every gamut. They are names
+  for steps that already exist: no family was added and no value moved.
+
+  `--nc-color-fg` is gated at Lc 90 on the two lines, as on any surface that
+  carries text. On `corner` it is gated at **Lc 75**, and measures 86.5 at worst
+  in light mode: a corner holds a mark, not a line of text. Set running text on
+  it and it falls short of the body-text target.
+- **Three contexts for a prompt and the list it filters**: `cursor` and `match`
+  on the accent, and `match-rest` on the neutral. `--nc-color-cursor` is a block
+  cursor and `--nc-color-on-cursor` the glyph drawn on it; `--nc-color-match`
+  marks what the first word of a query found, and `--nc-color-match-rest` the
+  third word and every one after it. `match-rest` is the first context whose
+  name has a hyphen; the QML singletons spell it `matchRest`.
+
 ### Changed
 
 - **Each palette's neutral family now leans toward that palette's own accent.**

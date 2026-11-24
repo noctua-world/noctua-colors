@@ -125,7 +125,7 @@ fn row(
 
 /// The page, for one neutral temperature.
 fn surface_rows(out: &mut Vec<Pair>, variant: &str) {
-    let table: [(String, String, f64, Severity, &'static str); 7] = [
+    let table: [(String, String, f64, Severity, &'static str); 10] = [
         (
             format!("fg{variant}"),
             format!("surface{variant}"),
@@ -146,6 +146,30 @@ fn surface_rows(out: &mut Vec<Pair>, variant: &str) {
             90.0,
             Severity::Fail,
             "body text on a card",
+        ),
+        (
+            format!("fg{variant}"),
+            format!("modeline{variant}"),
+            90.0,
+            Severity::Fail,
+            "text on a footer's status line",
+        ),
+        (
+            format!("fg{variant}"),
+            format!("infoline{variant}"),
+            90.0,
+            Severity::Fail,
+            "text on a footer's information line",
+        ),
+        // Not 90: a corner holds a mark, never a line of text, and it is the
+        // furthest of the footer's shades from the page — light mode measures
+        // Lc 86.5 there. The two lines, which do carry text, keep 90.
+        (
+            format!("fg{variant}"),
+            format!("corner{variant}"),
+            75.0,
+            Severity::Fail,
+            "a mark on a footer's corner, which is never running text",
         ),
         (
             format!("fg-muted{variant}"),
@@ -319,6 +343,9 @@ pub fn semantic_view(mode: &ResolvedMode) -> Vec<(String, (String, String))> {
             push(format!("surface{variant}"), family, "bg-app");
             push(format!("surface-subtle{variant}"), family, "bg-subtle");
             push(format!("surface-raised{variant}"), family, "bg-element");
+            push(format!("modeline{variant}"), family, "bg-subtle");
+            push(format!("infoline{variant}"), family, "bg-element");
+            push(format!("corner{variant}"), family, "bg-element-hover");
             push(format!("fg{variant}"), family, "text-strong");
             push(format!("fg-muted{variant}"), family, "text-muted");
             push(format!("border{variant}"), family, "border-element");

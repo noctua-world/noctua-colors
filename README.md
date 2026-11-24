@@ -269,6 +269,9 @@ Every name in this section exists in every palette, in both modes.
 | `--nc-color-surface` | the page background |
 | `--nc-color-surface-subtle` | a slightly recessed area |
 | `--nc-color-surface-raised` | cards, panels, popovers |
+| `--nc-color-modeline` | a status line at the foot of an application, one shade from the page |
+| `--nc-color-infoline` | a second line beside it, one shade further |
+| `--nc-color-corner` | the squares that close such a footer at each end |
 | `--nc-color-fg` | body text |
 | `--nc-color-fg-muted` | secondary text |
 | `--nc-color-border` | ordinary dividers and outlines |

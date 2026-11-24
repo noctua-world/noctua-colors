@@ -3108,7 +3108,7 @@ export const palette = {
     ]
   },
   "axes": {
-    "specHash": "blake3:ce9c40f4e93eafdd22a5a472b30d3cea",
+    "specHash": "blake3:646f1006005809bd635113a427a39d8f",
     "accents": [
       "ochre",
       "amber",
@@ -3175,6 +3175,9 @@ export const palette = {
     "surface": "neutral-bg-app",
     "surface-subtle": "neutral-bg-subtle",
     "surface-raised": "neutral-bg-element",
+    "modeline": "neutral-bg-subtle",
+    "infoline": "neutral-bg-element",
+    "corner": "neutral-bg-element-hover",
     "fg": "neutral-text-strong",
     "fg-muted": "neutral-text-muted",
     "border": "neutral-border-element",
@@ -3182,6 +3185,9 @@ export const palette = {
     "surface-cool": "neutral-cool-bg-app",
     "surface-subtle-cool": "neutral-cool-bg-subtle",
     "surface-raised-cool": "neutral-cool-bg-element",
+    "modeline-cool": "neutral-cool-bg-subtle",
+    "infoline-cool": "neutral-cool-bg-element",
+    "corner-cool": "neutral-cool-bg-element-hover",
     "fg-cool": "neutral-cool-text-strong",
     "fg-muted-cool": "neutral-cool-text-muted",
     "border-cool": "neutral-cool-border-element",
@@ -3189,6 +3195,9 @@ export const palette = {
     "surface-warm": "neutral-warm-bg-app",
     "surface-subtle-warm": "neutral-warm-bg-subtle",
     "surface-raised-warm": "neutral-warm-bg-element",
+    "modeline-warm": "neutral-warm-bg-subtle",
+    "infoline-warm": "neutral-warm-bg-element",
+    "corner-warm": "neutral-warm-bg-element-hover",
     "fg-warm": "neutral-warm-text-strong",
     "fg-muted-warm": "neutral-warm-text-muted",
     "border-warm": "neutral-warm-border-element",
@@ -3294,6 +3303,21 @@ export const palette = {
     "experimental-bg": "accent-bg-subtle",
     "experimental-border": "accent-border-element",
     "on-experimental": "accent-bg-app",
+    "cursor": "accent-solid",
+    "cursor-hover": "accent-solid-hover",
+    "cursor-bg": "accent-bg-subtle",
+    "cursor-border": "accent-border-element",
+    "on-cursor": "accent-bg-app",
+    "match": "accent-solid",
+    "match-hover": "accent-solid-hover",
+    "match-bg": "accent-bg-subtle",
+    "match-border": "accent-border-element",
+    "on-match": "accent-bg-app",
+    "match-rest": "neutral-solid",
+    "match-rest-hover": "neutral-solid-hover",
+    "match-rest-bg": "neutral-bg-subtle",
+    "match-rest-border": "neutral-border-element",
+    "on-match-rest": "neutral-bg-app",
     "inactive": "neutral-solid",
     "inactive-hover": "neutral-solid-hover",
     "inactive-bg": "neutral-bg-subtle",
@@ -4964,6 +4988,9 @@ export const palette = {
     "highlight": "accent",
     "new": "accent",
     "experimental": "accent",
+    "cursor": "accent",
+    "match": "accent",
+    "match-rest": "neutral",
     "inactive": "neutral",
     "draft": "neutral",
     "archived": "neutral",
@@ -11849,6 +11876,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.201,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4747,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6403,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0043,
@@ -11917,6 +11974,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -11997,6 +12084,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -12429,7 +12546,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0054,
             "wcag": 3.14,
@@ -12440,7 +12557,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.201,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -12449,8 +12566,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2992,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -12459,7 +12576,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5851,
             "wcag": 1.78,
@@ -19023,6 +19140,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4703,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5132,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0597,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0049,
@@ -19091,6 +19238,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -19171,6 +19348,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -19603,7 +19810,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5054,
             "wcag": 6.44,
@@ -19614,7 +19821,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4703,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -19623,8 +19830,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5891,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -19633,7 +19840,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2133,
             "wcag": 2.49,
@@ -26199,6 +26406,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.201,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4736,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6373,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9988,
@@ -26267,6 +26504,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -26347,6 +26614,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -26779,7 +27076,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0023,
             "wcag": 3.14,
@@ -26790,7 +27087,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.201,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -26799,8 +27096,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2959,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -26809,7 +27106,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5963,
             "wcag": 1.78,
@@ -33373,6 +33670,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4662,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5096,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0565,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9929,
@@ -33441,6 +33768,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -33521,6 +33878,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -33953,7 +34340,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5079,
             "wcag": 6.44,
@@ -33964,7 +34351,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4662,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -33973,8 +34360,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5916,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -33983,7 +34370,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2073,
             "wcag": 2.49,
@@ -40549,6 +40936,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2005,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4763,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6429,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9977,
@@ -40617,6 +41034,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -40697,6 +41144,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -41129,7 +41606,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9957,
             "wcag": 3.14,
@@ -41140,7 +41617,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2005,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -41149,8 +41626,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2893,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -41159,7 +41636,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5746,
             "wcag": 1.78,
@@ -47723,6 +48200,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4722,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5148,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0606,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9948,
@@ -47791,6 +48298,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -47871,6 +48408,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -48303,7 +48870,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5004,
             "wcag": 6.44,
@@ -48314,7 +48881,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4722,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -48323,8 +48890,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5842,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -48333,7 +48900,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2175,
             "wcag": 2.49,
@@ -54899,6 +55466,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2202,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5134,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6901,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9999,
@@ -54967,6 +55564,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -55047,6 +55674,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -55479,7 +56136,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0022,
             "wcag": 3.14,
@@ -55490,7 +56147,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2202,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -55499,8 +56156,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2963,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -55509,7 +56166,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5262,
             "wcag": 1.78,
@@ -62073,6 +62730,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4726,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5137,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0576,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9928,
@@ -62141,6 +62828,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -62221,6 +62938,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -62653,7 +63400,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4989,
             "wcag": 6.44,
@@ -62664,7 +63411,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4726,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -62673,8 +63420,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5822,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -62683,7 +63430,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2371,
             "wcag": 2.49,
@@ -69249,6 +69996,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2198,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5189,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6986,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9957,
@@ -69317,6 +70094,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -69397,6 +70204,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -69829,7 +70666,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9954,
             "wcag": 3.14,
@@ -69840,7 +70677,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2198,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -69849,8 +70686,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2895,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -69859,7 +70696,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5148,
             "wcag": 1.78,
@@ -76423,6 +77260,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4668,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5077,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0512,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0068,
@@ -76491,6 +77358,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -76571,6 +77468,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -77003,7 +77930,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4926,
             "wcag": 6.44,
@@ -77014,7 +77941,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4668,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -77023,8 +77950,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5761,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -77033,7 +77960,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2411,
             "wcag": 2.49,
@@ -83599,6 +84526,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2153,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5034,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6777,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0031,
@@ -83667,6 +84624,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -83747,6 +84734,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -84179,7 +85196,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9934,
             "wcag": 3.14,
@@ -84190,7 +85207,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2153,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -84199,8 +85216,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2872,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -84209,7 +85226,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5353,
             "wcag": 1.78,
@@ -90773,6 +91790,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4596,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.501,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0453,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0002,
@@ -90841,6 +91888,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -90921,6 +91998,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -91353,7 +92460,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5064,
             "wcag": 6.44,
@@ -91364,7 +92471,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4596,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -91373,8 +92480,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5896,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -91383,7 +92490,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2335,
             "wcag": 2.49,
@@ -97949,6 +99056,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.219,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5231,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7232,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0028,
@@ -98017,6 +99154,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -98097,6 +99264,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -98529,7 +99726,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9972,
             "wcag": 3.14,
@@ -98540,7 +99737,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.219,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -98549,8 +99746,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2913,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -98559,7 +99756,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4752,
             "wcag": 1.78,
@@ -105123,6 +106320,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4687,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5088,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0508,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9918,
@@ -105191,6 +106418,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -105271,6 +106528,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -105703,7 +106990,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5049,
             "wcag": 6.44,
@@ -105714,7 +107001,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4687,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -105723,8 +107010,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5878,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -105733,7 +107020,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2534,
             "wcag": 2.5,
@@ -112299,6 +113586,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2314,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5442,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7578,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -112367,6 +113684,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -112447,6 +113794,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -112879,7 +114256,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0058,
             "wcag": 3.14,
@@ -112890,7 +114267,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2314,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -112899,8 +114276,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.3003,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -112909,7 +114286,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4419,
             "wcag": 1.78,
@@ -119473,6 +120850,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4713,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5105,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0518,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9911,
@@ -119541,6 +120948,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -119621,6 +121058,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -120053,7 +121520,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4985,
             "wcag": 6.44,
@@ -120064,7 +121531,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4713,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -120073,8 +121540,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5813,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -120083,7 +121550,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2643,
             "wcag": 2.5,
@@ -126649,6 +128116,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.215,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5103,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7003,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.001,
@@ -126717,6 +128214,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -126797,6 +128324,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -127229,7 +128786,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0009,
             "wcag": 3.14,
@@ -127240,7 +128797,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.215,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -127249,8 +128806,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2949,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -127259,7 +128816,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5022,
             "wcag": 1.78,
@@ -133823,6 +135380,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4714,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5122,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0552,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9992,
@@ -133891,6 +135478,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -133971,6 +135588,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -134403,7 +136050,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4997,
             "wcag": 6.44,
@@ -134414,7 +136061,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4714,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -134423,8 +136070,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.583,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -134433,7 +136080,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2442,
             "wcag": 2.49,
@@ -140999,6 +142646,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2214,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5213,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7146,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0007,
@@ -141067,6 +142744,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -141147,6 +142854,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -141579,7 +143316,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9955,
             "wcag": 3.14,
@@ -141590,7 +143327,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2214,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -141599,8 +143336,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2894,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -141609,7 +143346,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4741,
             "wcag": 1.78,
@@ -148173,6 +149910,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4593,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4992,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0419,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9905,
@@ -148241,6 +150008,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -148321,6 +150118,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -148753,7 +150580,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5041,
             "wcag": 6.44,
@@ -148764,7 +150591,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4593,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -148773,8 +150600,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.587,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -148783,7 +150610,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2524,
             "wcag": 2.5,
@@ -155349,6 +157176,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2251,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5348,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7352,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -155417,6 +157274,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -155497,6 +157384,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -155929,7 +157846,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0049,
             "wcag": 3.14,
@@ -155940,7 +157857,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2251,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -155949,8 +157866,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2992,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -155959,7 +157876,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4428,
             "wcag": 1.78,
@@ -162523,6 +164440,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4586,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4979,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0393,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0074,
@@ -162591,6 +164538,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -162671,6 +164648,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -163103,7 +165110,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4963,
             "wcag": 6.44,
@@ -163114,7 +165121,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4586,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -163123,8 +165130,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5792,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -163133,7 +165140,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2628,
             "wcag": 2.5,
@@ -169699,6 +171706,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2117,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5042,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6905,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.001,
@@ -169767,6 +171804,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -169847,6 +171914,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -170279,7 +172376,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9998,
             "wcag": 3.14,
@@ -170290,7 +172387,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2117,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -170299,8 +172396,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2937,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -170309,7 +172406,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5034,
             "wcag": 1.78,
@@ -176873,6 +178970,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4652,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5059,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0492,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9975,
@@ -176941,6 +179068,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -177021,6 +179178,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -177453,7 +179640,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4983,
             "wcag": 6.44,
@@ -177464,7 +179651,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4652,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -177473,8 +179660,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5815,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -177483,7 +179670,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2434,
             "wcag": 2.49,
@@ -184049,6 +186236,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2163,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5149,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7091,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9957,
@@ -184117,6 +186334,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -184197,6 +186444,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -184629,7 +186906,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0066,
             "wcag": 3.14,
@@ -184640,7 +186917,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2163,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -184649,8 +186926,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.3008,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -184659,7 +186936,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4876,
             "wcag": 1.78,
@@ -191223,6 +193500,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4595,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4996,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0425,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9952,
@@ -191291,6 +193598,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -191371,6 +193708,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -191803,7 +194170,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4951,
             "wcag": 6.44,
@@ -191814,7 +194181,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4595,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -191823,8 +194190,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5783,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -191833,7 +194200,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2485,
             "wcag": 2.5,
@@ -198399,6 +200766,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2281,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5359,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.7368,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.996,
@@ -198467,6 +200864,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -198547,6 +200974,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -198979,7 +201436,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0016,
             "wcag": 3.14,
@@ -198990,7 +201447,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2281,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -198999,8 +201456,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2958,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -199009,7 +201466,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.46,
             "wcag": 1.78,
@@ -205573,6 +208030,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4575,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4971,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0389,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9888,
@@ -205641,6 +208128,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -205721,6 +208238,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -206153,7 +208700,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4997,
             "wcag": 6.44,
@@ -206164,7 +208711,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4575,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -206173,8 +208720,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5826,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -206183,7 +208730,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2583,
             "wcag": 2.5,
@@ -212749,6 +215296,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.212,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5061,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6913,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0037,
@@ -212817,6 +215394,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -212897,6 +215504,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -213329,7 +215966,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0055,
             "wcag": 3.14,
@@ -213340,7 +215977,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.212,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -213349,8 +215986,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2995,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -213359,7 +215996,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5106,
             "wcag": 1.78,
@@ -219923,6 +222560,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4637,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5046,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0481,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0083,
@@ -219991,6 +222658,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -220071,6 +222768,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -220503,7 +223230,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4941,
             "wcag": 6.44,
@@ -220514,7 +223241,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4637,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -220523,8 +223250,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5775,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -220533,7 +223260,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2412,
             "wcag": 2.49,
@@ -227099,6 +229826,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2138,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5013,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6802,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9979,
@@ -227167,6 +229924,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -227247,6 +230034,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -227679,7 +230496,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9966,
             "wcag": 3.14,
@@ -227690,7 +230507,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2138,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -227699,8 +230516,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2904,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -227709,7 +230526,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4964,
             "wcag": 1.78,
@@ -234273,6 +237090,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4539,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4943,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0376,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0038,
@@ -234341,6 +237188,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -234421,6 +237298,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -234853,7 +237760,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5025,
             "wcag": 6.44,
@@ -234864,7 +237771,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4539,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -234873,8 +237780,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5856,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -234883,7 +237790,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2461,
             "wcag": 2.49,
@@ -241449,6 +244356,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2147,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.5061,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6887,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9989,
@@ -241517,6 +244454,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -241597,6 +244564,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -242029,7 +245026,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9933,
             "wcag": 3.14,
@@ -242040,7 +245037,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2147,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -242049,8 +245046,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2871,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -242059,7 +245056,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.4714,
             "wcag": 1.78,
@@ -248623,6 +251620,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4637,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5037,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.046,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9923,
@@ -248691,6 +251718,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -248771,6 +251828,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -249203,7 +252290,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5054,
             "wcag": 6.44,
@@ -249214,7 +252301,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4637,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -249223,8 +252310,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5882,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -249233,7 +252320,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2532,
             "wcag": 2.5,
@@ -255799,6 +258886,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2063,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4899,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6671,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0046,
@@ -255867,6 +258984,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -255947,6 +259094,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -256379,7 +259556,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0082,
             "wcag": 3.15,
@@ -256390,7 +259567,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2063,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -256399,8 +259576,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.3021,
             "wcag": 3.15,
             "minimum": 30.0,
@@ -256409,7 +259586,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5139,
             "wcag": 1.78,
@@ -262973,6 +266150,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4695,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5106,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0544,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0001,
@@ -263041,6 +266248,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -263121,6 +266358,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -263553,7 +266820,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5042,
             "wcag": 6.44,
@@ -263564,7 +266831,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4695,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -263573,8 +266840,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5874,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -263583,7 +266850,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2388,
             "wcag": 2.49,
@@ -270149,6 +273416,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2034,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4824,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6544,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9963,
@@ -270217,6 +273514,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -270297,6 +273624,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -270729,7 +274086,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9996,
             "wcag": 3.14,
@@ -270740,7 +274097,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2034,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -270749,8 +274106,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2933,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -270759,7 +274116,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5416,
             "wcag": 1.78,
@@ -277323,6 +280680,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4586,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4998,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0438,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0065,
@@ -277391,6 +280778,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -277471,6 +280888,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -277903,7 +281350,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4952,
             "wcag": 6.44,
@@ -277914,7 +281361,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4586,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -277923,8 +281370,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5786,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -277933,7 +281380,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2364,
             "wcag": 2.49,
@@ -284499,6 +287946,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2024,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4826,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6546,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0039,
@@ -284567,6 +288044,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -284647,6 +288154,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -285079,7 +288616,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0069,
             "wcag": 3.14,
@@ -285090,7 +288627,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2024,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -285099,8 +288636,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.3009,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -285109,7 +288646,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5368,
             "wcag": 1.78,
@@ -291673,6 +295210,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4594,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5004,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0439,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9926,
@@ -291741,6 +295308,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -291821,6 +295418,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -292253,7 +295880,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5035,
             "wcag": 6.44,
@@ -292264,7 +295891,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4594,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -292273,8 +295900,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5867,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -292283,7 +295910,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2401,
             "wcag": 2.49,
@@ -298849,6 +302476,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2039,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4829,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6537,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0009,
@@ -298917,6 +302574,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -298997,6 +302684,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -299429,7 +303146,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0065,
             "wcag": 3.14,
@@ -299440,7 +303157,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2039,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -299449,8 +303166,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.3004,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -299459,7 +303176,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.546,
             "wcag": 1.78,
@@ -306023,6 +309740,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4577,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.4991,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0435,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0026,
@@ -306091,6 +309838,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -306171,6 +309948,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -306603,7 +310410,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5043,
             "wcag": 6.44,
@@ -306614,7 +310421,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4577,
             "wcag": 15.35,
             "minimum": 90.0,
@@ -306623,8 +310430,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5876,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -306633,7 +310440,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.233,
             "wcag": 2.49,
@@ -313199,6 +317006,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1997,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4757,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6436,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9995,
@@ -313267,6 +317104,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -313347,6 +317214,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -313779,7 +317676,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.997,
             "wcag": 3.14,
@@ -313790,7 +317687,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1997,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -313799,8 +317696,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2906,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -313809,7 +317706,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5672,
             "wcag": 1.78,
@@ -320373,6 +324270,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4752,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5186,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0656,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0026,
@@ -320441,6 +324368,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -320521,6 +324478,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -320953,7 +324940,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5026,
             "wcag": 6.44,
@@ -320964,7 +324951,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4752,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -320973,8 +324960,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5865,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -320983,7 +324970,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2055,
             "wcag": 2.49,
@@ -327549,6 +331536,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2017,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4772,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6445,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9984,
@@ -327617,6 +331634,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -327697,6 +331744,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -328129,7 +332206,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0055,
             "wcag": 3.14,
@@ -328140,7 +332217,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2017,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -328149,8 +332226,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2994,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -328159,7 +332236,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5726,
             "wcag": 1.78,
@@ -334723,6 +338800,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4746,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5187,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0667,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9984,
@@ -334791,6 +338898,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -334871,6 +339008,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -335303,7 +339470,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4946,
             "wcag": 6.44,
@@ -335314,7 +339481,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4746,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -335323,8 +339490,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5788,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -335333,7 +339500,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1966,
             "wcag": 2.49,
@@ -341899,6 +346066,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2037,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4803,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6488,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0027,
@@ -341967,6 +346164,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -342047,6 +346274,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -342479,7 +346736,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0044,
             "wcag": 3.14,
@@ -342490,7 +346747,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2037,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -342499,8 +346756,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2982,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -342509,7 +346766,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5628,
             "wcag": 1.78,
@@ -349073,6 +353330,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4758,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5187,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0651,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0064,
@@ -349141,6 +353428,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -349221,6 +353538,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -349653,7 +354000,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4935,
             "wcag": 6.44,
@@ -349664,7 +354011,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4758,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -349673,8 +354020,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5775,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -349683,7 +354030,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2126,
             "wcag": 2.49,
@@ -356249,6 +360596,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1992,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4727,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6368,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.997,
@@ -356317,6 +360694,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -356397,6 +360804,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -356829,7 +361266,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0053,
             "wcag": 3.14,
@@ -356840,7 +361277,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1992,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -356849,8 +361286,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2991,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -356859,7 +361296,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5903,
             "wcag": 1.78,
@@ -363423,6 +367860,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4704,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5154,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0649,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0012,
@@ -363491,6 +367958,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -363571,6 +368068,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -364003,7 +368530,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4981,
             "wcag": 6.44,
@@ -364014,7 +368541,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4704,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -364023,8 +368550,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5826,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -364033,7 +368560,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1829,
             "wcag": 2.49,
@@ -370599,6 +375126,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1984,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.469,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6318,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9962,
@@ -370667,6 +375224,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -370747,6 +375334,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -371179,7 +375796,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9988,
             "wcag": 3.14,
@@ -371190,7 +375807,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1984,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -371199,8 +375816,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2924,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -371209,7 +375826,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6033,
             "wcag": 1.78,
@@ -377773,6 +382390,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4673,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5138,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0652,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0068,
@@ -377841,6 +382488,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -377921,6 +382598,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -378353,7 +383060,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5067,
             "wcag": 6.44,
@@ -378364,7 +383071,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4673,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -378373,8 +383080,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5913,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -378383,7 +383090,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1645,
             "wcag": 2.49,
@@ -384949,6 +389656,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2009,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4759,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6428,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -385017,6 +389754,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -385097,6 +389864,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -385529,7 +390326,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.001,
             "wcag": 3.14,
@@ -385540,7 +390337,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2009,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -385549,8 +390346,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2948,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -385559,7 +390356,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5784,
             "wcag": 1.78,
@@ -392123,6 +396920,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4737,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5177,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0656,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9927,
@@ -392191,6 +397018,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -392271,6 +397128,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -392703,7 +397590,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5005,
             "wcag": 6.44,
@@ -392714,7 +397601,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4737,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -392723,8 +397610,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5846,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -392733,7 +397620,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1973,
             "wcag": 2.49,
@@ -399299,6 +404186,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1912,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4583,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6156,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0006,
@@ -399367,6 +404284,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -399447,6 +404394,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -399879,7 +404856,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9935,
             "wcag": 3.14,
@@ -399890,7 +404867,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1912,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -399899,8 +404876,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2869,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -399909,7 +404886,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6368,
             "wcag": 1.78,
@@ -406473,6 +411450,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4779,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5239,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0745,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9936,
@@ -406541,6 +411548,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -406621,6 +411658,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -407053,7 +412120,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5005,
             "wcag": 6.44,
@@ -407064,7 +412131,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4779,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -407073,8 +412140,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5852,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -407083,7 +412150,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1699,
             "wcag": 2.49,
@@ -413649,6 +418716,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1891,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.452,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6051,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.995,
@@ -413717,6 +418814,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -413797,6 +418924,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -414229,7 +419386,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9985,
             "wcag": 3.14,
@@ -414240,7 +419397,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1891,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -414249,8 +419406,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.292,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -414259,7 +419416,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.672,
             "wcag": 1.79,
@@ -420823,6 +425980,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4708,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5183,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0713,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9989,
@@ -420891,6 +426078,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -420971,6 +426188,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -421403,7 +426650,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4929,
             "wcag": 6.44,
@@ -421414,7 +426661,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4708,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -421423,8 +426670,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5782,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -421433,7 +426680,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1477,
             "wcag": 2.49,
@@ -427999,6 +433246,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1945,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4637,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6272,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0016,
@@ -428067,6 +433344,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -428147,6 +433454,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -428579,7 +433916,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9991,
             "wcag": 3.14,
@@ -428590,7 +433927,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1945,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -428599,8 +433936,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2927,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -428609,7 +433946,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6116,
             "wcag": 1.78,
@@ -435173,6 +440510,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4641,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5089,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0578,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9989,
@@ -435241,6 +440608,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -435321,6 +440718,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -435753,7 +441180,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.496,
             "wcag": 6.44,
@@ -435764,7 +441191,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4641,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -435773,8 +441200,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5804,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -435783,7 +441210,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1887,
             "wcag": 2.49,
@@ -442349,6 +447776,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1952,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4632,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6259,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0043,
@@ -442417,6 +447874,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -442497,6 +447984,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -442929,7 +448446,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9977,
             "wcag": 3.14,
@@ -442940,7 +448457,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1952,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -442949,8 +448466,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2914,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -442959,7 +448476,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.624,
             "wcag": 1.78,
@@ -449523,6 +455040,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4639,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5098,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0607,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0088,
@@ -449591,6 +455138,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -449671,6 +455248,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -450103,7 +455710,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4961,
             "wcag": 6.44,
@@ -450114,7 +455721,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4639,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -450123,8 +455730,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5809,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -450133,7 +455740,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1698,
             "wcag": 2.49,
@@ -456699,6 +462306,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1946,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4602,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6156,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.997,
@@ -456767,6 +462404,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -456847,6 +462514,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -457279,7 +462976,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.001,
             "wcag": 3.14,
@@ -457290,7 +462987,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1946,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -457299,8 +462996,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2945,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -457309,7 +463006,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6504,
             "wcag": 1.78,
@@ -463873,6 +469570,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4792,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5269,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0799,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0001,
@@ -463941,6 +469668,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -464021,6 +469778,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -464453,7 +470240,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4931,
             "wcag": 6.44,
@@ -464464,7 +470251,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4792,
             "wcag": 15.37,
             "minimum": 90.0,
@@ -464473,8 +470260,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5784,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -464483,7 +470270,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1459,
             "wcag": 2.49,
@@ -471049,6 +476836,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1964,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4693,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6319,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0012,
@@ -471117,6 +476934,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -471197,6 +477044,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -471629,7 +477506,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9992,
             "wcag": 3.14,
@@ -471640,7 +477517,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1964,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -471649,8 +477526,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2929,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -471659,7 +477536,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6017,
             "wcag": 1.78,
@@ -478223,6 +484100,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4674,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.512,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0611,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0105,
@@ -478291,6 +484198,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -478371,6 +484308,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -478803,7 +484770,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5033,
             "wcag": 6.44,
@@ -478814,7 +484781,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4674,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -478823,8 +484790,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5876,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -478833,7 +484800,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1886,
             "wcag": 2.49,
@@ -485399,6 +491366,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1929,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4638,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6269,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9948,
@@ -485467,6 +491464,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -485547,6 +491574,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -485979,7 +492036,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0037,
             "wcag": 3.14,
@@ -485990,7 +492047,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1929,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -485999,8 +492056,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2974,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -486009,7 +492066,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6092,
             "wcag": 1.78,
@@ -492573,6 +498630,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4669,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5124,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0628,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0026,
@@ -492641,6 +498728,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -492721,6 +498838,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -493153,7 +499300,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5064,
             "wcag": 6.44,
@@ -493164,7 +499311,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4669,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -493173,8 +499320,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5908,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -493183,7 +499330,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1758,
             "wcag": 2.49,
@@ -499749,6 +505896,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1925,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4611,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6197,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9987,
@@ -499817,6 +505994,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -499897,6 +506104,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -500329,7 +506566,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9992,
             "wcag": 3.14,
@@ -500340,7 +506577,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1925,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -500349,8 +506586,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2929,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -500359,7 +506596,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6322,
             "wcag": 1.78,
@@ -506923,6 +513160,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4638,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5109,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0632,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0,
@@ -506991,6 +513258,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -507071,6 +513368,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -507503,7 +513830,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.4982,
             "wcag": 6.44,
@@ -507514,7 +513841,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4638,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -507523,8 +513850,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5832,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -507533,7 +513860,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1548,
             "wcag": 2.49,
@@ -514099,6 +520426,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1951,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4683,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6336,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9963,
@@ -514167,6 +520524,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -514247,6 +520634,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -514679,7 +521096,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0,
             "wcag": 3.14,
@@ -514690,7 +521107,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1951,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -514699,8 +521116,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2937,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -514709,7 +521126,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5925,
             "wcag": 1.78,
@@ -521273,6 +527690,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4703,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5146,
+            "wcag": 14.14,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0633,
+            "wcag": 12.67,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0007,
@@ -521341,6 +527788,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -521421,6 +527898,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -521853,7 +528360,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5056,
             "wcag": 6.44,
@@ -521864,7 +528371,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4703,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -521873,8 +528380,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5897,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -521883,7 +528390,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1922,
             "wcag": 2.49,
@@ -528449,6 +534956,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1965,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4702,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6345,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.001,
@@ -528517,6 +535054,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2106,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4973,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6766,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -528597,6 +535164,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1796,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4295,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5691,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -529029,7 +535626,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0057,
             "wcag": 3.14,
@@ -529040,7 +535637,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1965,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -529049,8 +535646,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2995,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -529059,7 +535656,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5914,
             "wcag": 1.78,
@@ -535623,6 +542220,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4683,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5117,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0589,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9984,
@@ -535691,6 +542318,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4701,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.508,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0476,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -535771,6 +542428,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4659,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5181,
+            "wcag": 14.16,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0783,
+            "wcag": 12.7,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -536203,7 +542890,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5061,
             "wcag": 6.44,
@@ -536214,7 +542901,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4683,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -536223,8 +542910,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5899,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -536233,7 +542920,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.2059,
             "wcag": 2.49,
@@ -542799,6 +549486,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.1979,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4688,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6318,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 77.9994,
@@ -542867,6 +549584,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.2156,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.5064,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6896,
+            "wcag": 11.61,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -542947,6 +549694,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1716,
+            "wcag": 13.43,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.41,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5369,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -543379,7 +550156,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 57.9925,
             "wcag": 3.14,
@@ -543390,7 +550167,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.1979,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -543399,8 +550176,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2859,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -543409,7 +550186,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.6051,
             "wcag": 1.78,
@@ -549973,6 +556750,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4645,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5084,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0565,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 72.0042,
@@ -550041,6 +556848,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4538,
+            "wcag": 15.34,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.4901,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0273,
+            "wcag": 12.64,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -550121,6 +556958,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4835,
+            "wcag": 15.39,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5394,
+            "wcag": 14.18,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.1049,
+            "wcag": 12.71,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -550553,7 +557420,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.502,
             "wcag": 6.44,
@@ -550564,7 +557431,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4645,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -550573,8 +557440,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5861,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -550583,7 +557450,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.1981,
             "wcag": 2.49,
@@ -557149,6 +564016,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 96.2014,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 91.4764,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 86.6434,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 78.0045,
@@ -557217,6 +564114,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 96.209,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 91.4933,
+            "wcag": 12.51,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 86.6693,
+            "wcag": 11.6,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -557297,6 +564224,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 96.1864,
+            "wcag": 13.42,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 91.4445,
+            "wcag": 12.5,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 86.5935,
+            "wcag": 11.59,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -557729,7 +564686,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 58.0056,
             "wcag": 3.14,
@@ -557740,7 +564697,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 96.2014,
             "wcag": 13.42,
             "minimum": 90.0,
@@ -557749,8 +564706,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 63.2995,
             "wcag": 3.14,
             "minimum": 30.0,
@@ -557759,7 +564716,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 32.5787,
             "wcag": 1.78,
@@ -564323,6 +571280,36 @@ export const palette = {
             "for": "body text on a card"
           },
           {
+            "fg": "fg",
+            "bg": "modeline",
+            "lc": 95.4722,
+            "wcag": 15.36,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg",
+            "bg": "infoline",
+            "lc": 94.5151,
+            "wcag": 14.13,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg",
+            "bg": "corner",
+            "lc": 93.0616,
+            "wcag": 12.66,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
+          },
+          {
             "fg": "fg-muted",
             "bg": "surface",
             "lc": 71.9914,
@@ -564391,6 +571378,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "modeline-cool",
+            "lc": 95.4657,
+            "wcag": 15.35,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "infoline-cool",
+            "lc": 94.5051,
+            "wcag": 14.12,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-cool",
+            "bg": "corner-cool",
+            "lc": 93.0465,
+            "wcag": 12.65,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-cool",
@@ -564471,6 +571488,36 @@ export const palette = {
             "severity": "fail",
             "passes": true,
             "for": "body text on a card"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "modeline-warm",
+            "lc": 95.4635,
+            "wcag": 15.37,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's status line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "infoline-warm",
+            "lc": 94.5125,
+            "wcag": 14.15,
+            "minimum": 90.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "text on a footer's information line"
+          },
+          {
+            "fg": "fg-warm",
+            "bg": "corner-warm",
+            "lc": 93.0677,
+            "wcag": 12.68,
+            "minimum": 75.0,
+            "severity": "fail",
+            "passes": true,
+            "for": "a mark on a footer's corner, which is never running text"
           },
           {
             "fg": "fg-muted-warm",
@@ -564903,7 +571950,7 @@ export const palette = {
             "for": "a status border must be visible"
           },
           {
-            "fg": "inactive",
+            "fg": "match-rest",
             "bg": "surface",
             "lc": 45.5057,
             "wcag": 6.44,
@@ -564914,7 +571961,7 @@ export const palette = {
           },
           {
             "fg": "fg",
-            "bg": "inactive-bg",
+            "bg": "match-rest-bg",
             "lc": 95.4722,
             "wcag": 15.36,
             "minimum": 90.0,
@@ -564923,8 +571970,8 @@ export const palette = {
             "for": "body text inside a callout"
           },
           {
-            "fg": "on-inactive",
-            "bg": "inactive",
+            "fg": "on-match-rest",
+            "bg": "match-rest",
             "lc": 47.5894,
             "wcag": 6.44,
             "minimum": 30.0,
@@ -564933,7 +571980,7 @@ export const palette = {
             "for": "a fill's own foreground must be visible on it"
           },
           {
-            "fg": "inactive-border",
+            "fg": "match-rest-border",
             "bg": "surface",
             "lc": 15.213,
             "wcag": 2.49,

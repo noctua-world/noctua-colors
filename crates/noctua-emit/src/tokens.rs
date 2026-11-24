@@ -89,10 +89,20 @@ const NEUTRAL_SLOT: &str = "neutral";
 /// Qualifiers accumulate rightward, so the cool variant of `fg-muted` is
 /// `fg-muted-cool`. Same direction as `accent-hover` and `border-strong`, and
 /// it keeps the base names exactly what they have always been.
-const SURFACE_SHAPE: [(&str, &str); 7] = [
+///
+/// `modeline`, `infoline` and `corner` are the three shades of an application
+/// footer: two thin lines stacked above a prompt line that keeps `surface`, and
+/// the square at each end of them. Separation there comes from the shades alone,
+/// never from a border, so each is one neutral step from the next and none
+/// equals `surface` — `the_footer_shades_are_distinct_in_every_palette` holds
+/// that against the generated values.
+const SURFACE_SHAPE: [(&str, &str); 10] = [
     ("surface{}", "bg-app"),
     ("surface-subtle{}", "bg-subtle"),
     ("surface-raised{}", "bg-element"),
+    ("modeline{}", "bg-subtle"),
+    ("infoline{}", "bg-element"),
+    ("corner{}", "bg-element-hover"),
     ("fg{}", "text-strong"),
     ("fg-muted{}", "text-muted"),
     ("border{}", "border-element"),
@@ -556,6 +566,63 @@ mod tests {
                 "missing --nc-color-{required}"
             );
         }
+    }
+
+    /// A footer is drawn with no border at all: its lines and corners are told
+    /// apart, and told from the page, by their backgrounds alone. Two of these
+    /// names landing on one colour would not be a contrast failure any gate
+    /// reports — the footer would simply lose a line.
+    ///
+    /// Compared on the eight-bit channels that ship, for every gamut, in every
+    /// palette, both modes and all three neutral temperatures, because
+    /// quantization is where two close steps could meet.
+    #[test]
+    fn the_footer_shades_are_distinct_in_every_palette() {
+        const SHADES: [&str; 4] = ["surface", "modeline", "infoline", "corner"];
+
+        let palette = shipped();
+        let mut compared = 0_usize;
+        for theme in &palette.themes {
+            for mode in &theme.modes {
+                let aliases = semantic_tokens(mode);
+                let stems = palette_tokens(mode);
+                let step_of = |name: &str| {
+                    let alias = aliases
+                        .iter()
+                        .find(|alias| alias.name == name)
+                        .unwrap_or_else(|| panic!("missing --nc-color-{name}"));
+                    stems
+                        .iter()
+                        .find(|token| token.stem() == alias.target)
+                        .unwrap_or_else(|| panic!("{name} points at nothing"))
+                        .step
+                };
+
+                for variant in ["", "-cool", "-warm"] {
+                    let names: Vec<String> = SHADES
+                        .iter()
+                        .map(|shade| format!("{shade}{variant}"))
+                        .collect();
+                    for (i, a) in names.iter().enumerate() {
+                        for b in &names[i + 1..] {
+                            let (left, right) = (step_of(a), step_of(b));
+                            assert_eq!(left.renditions.len(), right.renditions.len());
+                            for (x, y) in left.renditions.iter().zip(&right.renditions) {
+                                assert_ne!(
+                                    x.hex(),
+                                    y.hex(),
+                                    "{a} and {b} are the same colour in {} {:?}",
+                                    theme.name,
+                                    mode.mode
+                                );
+                                compared += 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        assert!(compared > 0, "no footer shade was compared");
     }
 
     /// The contract must be the same in both modes, or an application would

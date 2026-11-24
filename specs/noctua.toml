@@ -235,6 +235,16 @@ highlight = "accent"
 new = "accent"
 experimental = "accent"
 
+# Typing and finding.
+# A prompt and the list it filters. `cursor` is the block drawn where the next
+# character goes, and `on-cursor` the glyph under it. `match` marks what the
+# first word of a query found in an entry; an interface that marks a second
+# word uses a softer tone of the same family, and `match-rest` is every word
+# after that — grey, so the first two stay the ones the eye finds.
+cursor     = "accent"
+match      = "accent"
+match-rest = "neutral"
+
 # States that are the absence of a state. Gray on purpose: nothing here should
 # compete with a real status for attention.
 inactive = "neutral"
